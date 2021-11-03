@@ -3,7 +3,7 @@ if vim.fn.exepath('typescript-language-server') ~= '' then
 	if not present then
 		return
 	end
-	local capabilities = require('lsp.capabilities')
+	local capabilities = require('plugins.config.lsp.capabilities')
 
 	lspconfig.tsserver.setup({
 		capabilities = capabilities,

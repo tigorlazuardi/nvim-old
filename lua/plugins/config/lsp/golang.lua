@@ -23,7 +23,7 @@ if vim.fn.exepath('gopls') ~= '' then
 	local configuration = {
 		on_attach = function(client, bufnr)
 			client.resolved_capabilities.document_formatting = true
-			require('lsp.on_attach')(client, bufnr)
+			require('plugins.config.lsp.on_attach')(client, bufnr)
 			vim.cmd([[
 				augroup golang_format
 					autocmd!
