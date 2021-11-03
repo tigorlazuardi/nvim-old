@@ -20,7 +20,7 @@ return function(use)
 		disable = vim.g.vscode,
 		setup = tokyonight_setup,
 		config = function()
-			-- vim.cmd([[colorscheme tokyonight]])
+			vim.cmd([[colorscheme tokyonight]])
 		end,
 	})
 
@@ -55,7 +55,7 @@ return function(use)
 	use({
 		'sainnhe/everforest',
 		config = function()
-			vim.cmd([[colorscheme everforest]])
+			-- vim.cmd([[colorscheme everforest]])
 		end,
 	})
 end

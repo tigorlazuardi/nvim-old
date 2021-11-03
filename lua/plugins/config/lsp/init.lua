@@ -38,4 +38,16 @@ return function(use)
 			require('plugins.config.lsp.setup')
 		end,
 	})
+use({
+		'vuki656/package-info.nvim',
+		requires = 'MunifTanjim/nui.nvim',
+		config = function()
+			require('package-info').setup({
+				colors = {
+					up_to_date = '#ffd042',
+					outdated = '#db0d0d',
+				},
+			})
+		end,
+	})
 end
