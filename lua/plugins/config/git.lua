@@ -1,5 +1,4 @@
 local signs_config = function()
-	-- WARN: Gitsigns broken on windows
 	require('gitsigns').setup({
 		signs = {
 			add = {
@@ -82,5 +81,6 @@ return function(use)
 		'lewis6991/gitsigns.nvim',
 		requires = 'nvim-lua/plenary.nvim',
 		config = signs_config,
+		disable = _G.is_windows(),
 	})
 end

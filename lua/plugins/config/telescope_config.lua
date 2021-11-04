@@ -39,8 +39,10 @@ local function run()
 			},
 		},
 	})
-	telescope.load_extension('fzf')
-	telescope.load_extension('frecency')
+	if not _G.is_windows() then
+		telescope.load_extension('fzf')
+		telescope.load_extension('frecency')
+	end
 end
 
 return function(use)
@@ -52,10 +54,12 @@ return function(use)
 			{
 				'nvim-telescope/telescope-fzf-native.nvim',
 				run = 'make',
+				disable = _G.is_windows(),
 			},
 			{
 				'nvim-telescope/telescope-frecency.nvim',
 				requires = { 'tami5/sqlite.lua' },
+				disable = _G.is_windows(),
 			},
 		},
 		wants = { 'which-key.nvim' },
