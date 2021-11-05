@@ -132,5 +132,6 @@ return function(use)
 			},
 		},
 		config = run,
+		cond = 'vim.g.not_vscode',
 	})
 end
