@@ -3,6 +3,8 @@ function _G.is_windows()
 	return vim.fn.has('win32') ~= 0 or vim.fn.has('win64') ~= 0
 end
 
+vim.g.not_vscode = vim.g.vscode ~= 1
+
 ---@return string
 ---@param str string
 function _G.t(str)
