@@ -1,9 +1,8 @@
 local nremap = require('vscode.mappings.utils').nremap
-local opts = { silent = true, noremap = true }
 
-nremap('gs', 'workbench.action.gotoSymbol', opts)
-nremap('gS', 'workbench.action.showAllSymbols', opts)
-nremap('<leader>ff', 'workbench.action.findInFiles', opts)
+nremap('gs', 'workbench.action.gotoSymbol')
+nremap('gS', 'workbench.action.showAllSymbols')
+nremap('<leader>ff', 'workbench.action.findInFiles')
 
 vim.cmd([[
 	xmap gc  <Plug>VSCodeCommentary
@@ -13,7 +12,9 @@ vim.cmd([[
 ]])
 
 -- error navigation
-nremap('gnn', 'editor.action.marker.next', opts)
-nremap('gpp', 'editor.action.marker.prev', opts)
-nremap('gn', 'editor.action.marker.nextInFiles', opts)
-nremap('gp', 'editor.action.marker.prevInFiles', opts)
+nremap('gnn', 'editor.action.marker.next')
+nremap('gpp', 'editor.action.marker.prev')
+nremap('gn', 'editor.action.marker.nextInFiles')
+nremap('gp', 'editor.action.marker.prevInFiles')
+nremap('gr', 'editor.action.goToReferences')
+nremap('gi', 'editor.action.goToImplementation')
