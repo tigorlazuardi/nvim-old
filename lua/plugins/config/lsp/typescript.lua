@@ -52,7 +52,7 @@ if vim.fn.exepath('typescript-language-server') ~= '' then
 			-- required to fix code action ranges
 			ts_utils.setup_client(client)
 
-			require('lsp.on_attach')(client, buffer)
+			require('plugins.config.lsp.on_attach')(client, buffer)
 		end,
 	})
 end

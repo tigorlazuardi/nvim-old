@@ -10,7 +10,7 @@ end
 return function(use)
 	signs_config()
 
-		require('plugins.config.lsp.rust')(use)
+	require('plugins.config.lsp.rust')(use)
 	use({
 		'neovim/nvim-lspconfig',
 		requires = {
@@ -20,7 +20,7 @@ return function(use)
 			'nvim-lua/lsp_extensions.nvim',
 			'kosayoda/nvim-lightbulb',
 			'simrat39/symbols-outline.nvim',
-			{'jose-elias-alvarez/nvim-lsp-ts-utils', wants = {'null-ls.nvim'}},
+			{ 'jose-elias-alvarez/nvim-lsp-ts-utils', wants = { 'null-ls.nvim' } },
 		},
 		wants = { 'telescope.nvim', 'which-key.nvim' },
 		config = function()
@@ -35,10 +35,19 @@ return function(use)
 					s = { '<cmd>LspStart<cr>', 'LSP Start' },
 				},
 			})
+
+			require('lsp_extensions').inlay_hints({
+				highlight = 'Comment',
+				prefix = ' > ',
+				aligned = false,
+				only_current_line = false,
+				enabled = { 'ChainingHint' },
+			})
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
 			require('plugins.config.lsp.setup')
 		end,
 	})
-use({
+	use({
 		'vuki656/package-info.nvim',
 		requires = 'MunifTanjim/nui.nvim',
 		config = function()

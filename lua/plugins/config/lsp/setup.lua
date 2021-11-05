@@ -1,6 +1,6 @@
 require('plugins.config.lsp.lua_lsp')
 require('plugins.config.lsp.golang')
--- require('config.lsp.typescript')
+require('plugins.config.lsp.typescript')
 -- require('config.lsp.yaml')
 -- require('config.lsp.vim')
 -- require('config.lsp.json')

@@ -1,15 +1,12 @@
 ---On attach lsp callback.
----Requires lsp-config, which-key and telescope
+---Requires lsp-config, which-key, lsp_signature and telescope
 ---@param client any
 ---@param bufnr number
 return function(client, bufnr)
-	-- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 	local wk_option = { buffer = bufnr }
+	require('lsp_signature').on_attach(client, bufnr)
 
-	local present, wk = pcall(require, 'which-key')
-	if not present then
-		return
-	end
+	local wk = require('which-key')
 	wk.register({
 		['K'] = { '<Cmd>lua vim.lsp.buf.hover()<CR>', '(LSP) Symbol Definition / Documentation' },
 		['<leader>w'] = {
@@ -37,6 +34,12 @@ return function(client, bufnr)
 			"<cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<cr>",
 			'(LSP) List Workspace Diagnostics',
 		},
+		gp = {
+			"<cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<cr>",
+			'(LSP) List Workspace Diagnostics',
+		},
+		gpp = { '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', '(Diagnostics) Go to Previous Diagnostic' },
+		gnn = { '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', '(Diagnostics) Go to Next Diagnostic' },
 		ga = {
 			"<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>",
 			'(LSP) Code Actions',
@@ -61,8 +64,6 @@ return function(client, bufnr)
 			'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
 			'(Diagnostics) Show Current Line Diagnostic',
 		},
-		['[d'] = { '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', '(Diagnostics) Go to Previous Diagnostic' },
-		[']d'] = { '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', '(Diagnostics) Go to Next Diagnostic' },
 	}, wk_option)
 
 	if client.resolved_capabilities.document_highlight then
