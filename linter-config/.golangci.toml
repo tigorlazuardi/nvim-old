@@ -34,7 +34,7 @@ enable = [
 max-complexity = 10
 
 [issues]
-fix = true
+fix = false
 
 [output]
 print-linter-name = true
