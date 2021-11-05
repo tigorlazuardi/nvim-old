@@ -1,4 +1,31 @@
 
+<a name="v1.0.2"></a>
+## [v1.0.2](https://github.com/tigorlazuardi/nvim/compare/v1.0.1...v1.0.2)
+
+> 2021-11-05
+
+### Config
+
+* `yoink`: added configuration
+
+### Feat
+
+* `neoclip`: moved clipboard management to neoclip
+* `neoclip`: moved clipboard management to neoclip
+* `treesitter`: treesitter now not running on vscode
+* `vscode`: mappings for vscode
+
+### Fix
+
+* `lsp`: fix lsp status not initialized, and typescript lsp config not called
+* `packer-init-nvim`: clone timeout raised from 600 to 3000
+* `windows`: disabled some plugins and settings that are incompatible in windows
+
+### Linter
+
+* `golangci`: disabled auto fix for compability reason
+
+
 <a name="v1.0.1"></a>
 ## [v1.0.1](https://github.com/tigorlazuardi/nvim/compare/v1.0.0...v1.0.1)
 
