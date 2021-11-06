@@ -46,6 +46,7 @@ local function run()
 end
 
 return function(use)
+	use({'nvim-lua/plenary.nvim'})
 	use({
 		'nvim-telescope/telescope.nvim',
 		requires = {

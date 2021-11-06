@@ -13,3 +13,7 @@ require('settings.clipboard')
 require('settings.search')
 require('settings.window')
 require('settings.neovide')
+
+if vim.fn.exists('g:GuiLoaded') == 1 then
+	vim.cmd([[GuiTabline 0]])
+end

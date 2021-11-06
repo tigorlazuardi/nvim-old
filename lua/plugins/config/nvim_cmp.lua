@@ -1,46 +1,46 @@
 local function cmp_config()
-	require('crates').setup({
-		avoid_prerelease = true,
-		autoload = true,
-		autoupdate = true,
-		loading_indicator = true,
-		text = {
-			loading = 'Loading...',
-			version = '%s',
-			prerelease = '%s',
-			yanked = '%s yanked',
-			nomatch = 'No match',
-			update = '  %s',
-			error = 'Error fetching version',
-		},
-		highlight = {
-			loading = 'CratesNvimLoading',
-			version = 'CratesNvimVersion',
-			prerelease = 'CratesNvimPreRelease',
-			yanked = 'CratesNvimYanked',
-			nomatch = 'CratesNvimNoMatch',
-			update = 'CratesNvimUpdate',
-			error = 'CratesNvimError',
-		},
-		popup = {
-			auto_focus = false,
-			text = {
-				yanked = 'yanked',
-			},
-			highlight = {
-				yanked = 'CratesNvimPopupYanked',
-			},
-			keys = {
-				hide = { 'q', '<esc>' },
-				select = { '<cr>' },
-				copy_version = { 'yy' },
-			},
-			style = 'minimal',
-			border = 'none',
-			max_height = 30,
-			min_width = 20,
-		},
-	})
+	-- require('crates').setup({
+	-- 	avoid_prerelease = true,
+	-- 	autoload = true,
+	-- 	autoupdate = true,
+	-- 	loading_indicator = true,
+	-- 	text = {
+	-- 		loading = 'Loading...',
+	-- 		version = '%s',
+	-- 		prerelease = '%s',
+	-- 		yanked = '%s yanked',
+	-- 		nomatch = 'No match',
+	-- 		update = '  %s',
+	-- 		error = 'Error fetching version',
+	-- 	},
+	-- 	highlight = {
+	-- 		loading = 'CratesNvimLoading',
+	-- 		version = 'CratesNvimVersion',
+	-- 		prerelease = 'CratesNvimPreRelease',
+	-- 		yanked = 'CratesNvimYanked',
+	-- 		nomatch = 'CratesNvimNoMatch',
+	-- 		update = 'CratesNvimUpdate',
+	-- 		error = 'CratesNvimError',
+	-- 	},
+	-- 	popup = {
+	-- 		auto_focus = false,
+	-- 		text = {
+	-- 			yanked = 'yanked',
+	-- 		},
+	-- 		highlight = {
+	-- 			yanked = 'CratesNvimPopupYanked',
+	-- 		},
+	-- 		keys = {
+	-- 			hide = { 'q', '<esc>' },
+	-- 			select = { '<cr>' },
+	-- 			copy_version = { 'yy' },
+	-- 		},
+	-- 		style = 'minimal',
+	-- 		border = 'none',
+	-- 		max_height = 30,
+	-- 		min_width = 20,
+	-- 	},
+	-- })
 
 	require('lspkind').init({
 		with_text = true,
@@ -81,7 +81,7 @@ local function cmp_config()
 					path = '[Path]',
 					vsnip = '[VSnip]',
 					calc = '[Calc]',
-					crates = '[Crates]',
+					-- crates = '[Crates]',
 				})[entry.source.name]
 				return vim_item
 			end,
@@ -91,7 +91,7 @@ local function cmp_config()
 			-- { name = 'nvim_lua' },
 			{ name = 'path' },
 			{ name = 'buffer' },
-			{ name = 'crates' },
+			-- { name = 'crates' },
 			{ name = 'spell' },
 			{ name = 'calc' },
 			{ name = 'emoji' },
@@ -143,7 +143,7 @@ return function(use)
 			'saadparwaiz1/cmp_luasnip',
 			'hrsh7th/cmp-path',
 			'hrsh7th/cmp-buffer',
-			'Saecki/crates.nvim',
+			-- {'Saecki/crates.nvim', cond = function() return not _G.is_windows() end},
 			'f3fora/cmp-spell',
 			'hrsh7th/cmp-calc',
 			'hrsh7th/cmp-emoji',

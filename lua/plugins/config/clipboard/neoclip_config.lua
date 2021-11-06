@@ -1,4 +1,5 @@
 return function(use)
+	if not _G.is_windows() then
 	use({
 		'AckslD/nvim-neoclip.lua',
 		require = { 'tami5/sqlite.lua' },
@@ -43,4 +44,5 @@ return function(use)
 			})
 		end,
 	})
+	end
 end
