@@ -10,6 +10,8 @@ remap('n', 'H', '^', opts)
 remap('n', 'L', '$', opts)
 remap('n', ']t', ':bn!<CR>', opts)
 remap('n', '[t', ':bp!<cr>', opts)
+remap('n', 'Q', 'q', opts)
+remap('n', 'q', '<nop>', opts)
 
 require('mappings.line_swap')
 require('mappings.gx')
