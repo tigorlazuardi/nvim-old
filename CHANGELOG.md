@@ -1,4 +1,33 @@
 
+<a name="v1.0.3"></a>
+## [v1.0.3](https://github.com/tigorlazuardi/nvim/compare/v1.0.2...v1.0.3)
+
+> 2021-11-10
+
+### Config
+
+* `focus.nvim`: sign column now won't disappear on not focused windows
+
+### Feat
+
+* `clipboard`: reenable cutlass, registers and subversibe, but removed yoink
+* `focus.nvim`: added focus nvim
+* `windline`: added lsp status integration to airline
+* `windline`: moved from sample to local airline config
+
+### Fix
+
+* `windows`: more compability codes
+
+### Refactor
+
+* `globals`: changed from using _G to vim.g
+
+### Settings
+
+* no backup files in writing files
+
+
 <a name="v1.0.2"></a>
 ## [v1.0.2](https://github.com/tigorlazuardi/nvim/compare/v1.0.1...v1.0.2)
 
