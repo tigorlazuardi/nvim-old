@@ -43,7 +43,7 @@ return function(use)
 				only_current_line = false,
 				enabled = { 'ChainingHint' },
 			})
-vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
+			vim.cmd([[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]])
 			require('plugins.config.lsp.setup')
 		end,
 	})
