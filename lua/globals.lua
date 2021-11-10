@@ -1,8 +1,5 @@
 ---@return boolean
-function _G.is_windows()
-	return vim.fn.has('win32') ~= 0 or vim.fn.has('win64') ~= 0
-end
-
+vim.g.is_windows = vim.fn.has('win32') or vim.fn.has('win64')
 vim.g.not_vscode = vim.g.vscode ~= 1
 
 ---@return string

@@ -17,7 +17,7 @@ end
 return function(use)
 	use({
 		'folke/tokyonight.nvim',
-		disable = vim.g.vscode,
+		cond = 'vim.g.not_vscode',
 		setup = tokyonight_setup,
 		config = function()
 			vim.cmd([[colorscheme tokyonight]])
@@ -26,7 +26,7 @@ return function(use)
 
 	use({
 		'EdenEast/nightfox.nvim',
-		disable = vim.g.vscode,
+		cond = 'vim.g.not_vscode',
 		config = function()
 			local nightfox = require('nightfox')
 			nightfox.setup({

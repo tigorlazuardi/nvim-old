@@ -1,4 +1,4 @@
-if not _G.is_windows() then
+if not vim.g.is_windows then
 	local dap = require('dap')
 
 	dap.adapters.node2 = {

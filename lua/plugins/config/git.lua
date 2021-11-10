@@ -81,6 +81,6 @@ return function(use)
 		'lewis6991/gitsigns.nvim',
 		requires = 'nvim-lua/plenary.nvim',
 		config = signs_config,
-		disable = _G.is_windows(),
+		cond = 'vim.g.is_windows',
 	})
 end
