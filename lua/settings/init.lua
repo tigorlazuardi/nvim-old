@@ -14,4 +14,4 @@ require('settings.search')
 require('settings.window')
 require('settings.neovide')
 
-vim.cmd('set nobackup nowritebackup')
+vim.cmd('set nobackup nowritebackup noswapfile noundofile')
