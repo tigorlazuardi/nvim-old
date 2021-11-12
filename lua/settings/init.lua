@@ -13,5 +13,7 @@ require('settings.clipboard')
 require('settings.search')
 require('settings.window')
 require('settings.neovide')
+require('settings.nvr')
+-- require('settings.backup')
 
 vim.cmd('set nobackup nowritebackup noswapfile noundofile')
