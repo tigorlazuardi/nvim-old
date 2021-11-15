@@ -50,6 +50,7 @@ return function(use)
 	use({
 		'vuki656/package-info.nvim',
 		requires = 'MunifTanjim/nui.nvim',
+		ft = {'json'},
 		config = function()
 			local present, package_info = pcall(require, 'package-info')
 			if not present then
