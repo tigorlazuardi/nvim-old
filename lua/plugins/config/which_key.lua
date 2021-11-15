@@ -29,6 +29,18 @@ return function(use)
 				mode = 'v',
 			})
 
+			wk.register({
+				['<leader>p'] = {
+					name = 'plugins',
+					c = { [[<cmd>PackerClean<cr>]], 'Clean Plugins' },
+					s = { [[<cmd>PackerStatus<cr>]], 'Plugin Status' },
+					i = { [[<cmd>PackerInstall<cr>]], 'Install Missing Plugins' },
+					S = { [[<cmd>PackerSync<cr>]], 'Sync Plugins' },
+					u = { [[<cmd>PackerUpdate<cr>]], 'Update Plugins' },
+					p = { [[<cmd>PackerProfile<cr>]], 'Packer Profile' },
+				},
+			})
+
 			vim.cmd([[
 				command! WhichKeyV WhichKey '' v
 				command! WhichKeyI WhichKey '' i
