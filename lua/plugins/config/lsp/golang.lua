@@ -30,6 +30,16 @@ if vim.fn.exepath('gopls') ~= '' then
 					autocmd BufWritePre *.go lua OrgImports(1000)
 				augroup end
 			]])
+			local wk = require('which-key')
+
+			wk.register({
+				q = {
+					name = 'quick',
+					q = {function ()
+						OrgImports(1000)	
+					end, 'Organize Imports'}
+				}
+			}, {buffer = bufnr})
 		end,
 		cmd = {
 			'gopls',
