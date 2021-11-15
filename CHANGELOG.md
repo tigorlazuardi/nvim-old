@@ -1,4 +1,14 @@
 
+<a name="v1.0.5"></a>
+## [v1.0.5](https://github.com/tigorlazuardi/nvim/compare/v1.0.4...v1.0.5)
+
+> 2021-11-15
+
+### Fix
+
+* `telescope`: now fzf and frecency is loaded properly after telescope
+
+
 <a name="v1.0.4"></a>
 ## [v1.0.4](https://github.com/tigorlazuardi/nvim/compare/v1.0.3...v1.0.4)
 
