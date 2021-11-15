@@ -1,4 +1,20 @@
 
+<a name="v1.0.7"></a>
+## [v1.0.7](https://github.com/tigorlazuardi/nvim/compare/v1.0.6...v1.0.7)
+
+> 2021-11-15
+
+### Config
+
+* `godot`: added global option to disable godot lsp if godot is installed but don't plan to use neovim for coding
+* `null-ls`: mappings now always possible whenever null_ls is loaded
+* `package-info`: package info now is limited to filetype json
+
+### Fix
+
+* `treesitter`: fix plugins failed to load
+
+
 <a name="v1.0.6"></a>
 ## [v1.0.6](https://github.com/tigorlazuardi/nvim/compare/v1.0.5...v1.0.6)
 
