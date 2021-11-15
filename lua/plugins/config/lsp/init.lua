@@ -51,7 +51,11 @@ return function(use)
 		'vuki656/package-info.nvim',
 		requires = 'MunifTanjim/nui.nvim',
 		config = function()
-			require('package-info').setup({
+			local present, package_info = pcall(require, 'package-info')
+			if not present then
+				return
+			end
+			package_info.setup({
 				colors = {
 					up_to_date = '#ffd042',
 					outdated = '#db0d0d',
