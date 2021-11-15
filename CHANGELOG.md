@@ -1,4 +1,29 @@
 
+<a name="v1.0.4"></a>
+## [v1.0.4](https://github.com/tigorlazuardi/nvim/compare/v1.0.3...v1.0.4)
+
+> 2021-11-15
+
+### Chore
+
+* format
+
+### Feat
+
+* `lsp`: added godot lsp setting
+* `lspconfig`: added support for godot and tailwindcss
+
+### Settings
+
+* added backup settings
+* added nvr integration
+* added noswapfile noundofile
+
+### Reverts
+
+* feat(lsp): added godot lsp setting
+
+
 <a name="v1.0.3"></a>
 ## [v1.0.3](https://github.com/tigorlazuardi/nvim/compare/v1.0.2...v1.0.3)
 
