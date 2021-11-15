@@ -2,6 +2,7 @@ local windline = require('windline')
 local helper = require('windline.helpers')
 local sep = helper.separators
 local b_components = require('windline.components.basic')
+---@diagnostic disable-next-line: global_usage
 local state = _G.WindLine.state
 local vim_components = require('windline.components.vim')
 local HSL = require('wlanimation.utils')
@@ -183,10 +184,10 @@ basic.lsp_diagnos = {
 basic.lsp_status = {
 	name = 'lsp_status',
 	hl_colors = {
-		white = {'white', 'NormalBg'}
+		white = { 'white', 'NormalBg' },
 	},
 	text = function()
-		return {{ require('lsp-status').status(), 'white' }}
+		return { { require('lsp-status').status(0), 'white' } }
 	end,
 }
 
