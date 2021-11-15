@@ -4,18 +4,6 @@ local function run()
 		highlight = { enable = true },
 		indent = { enable = true, disable = { 'python', 'yaml' } },
 		autopairs = { enable = true },
-		autotag = {
-			enable = true,
-			filetypes = {
-				'html',
-				'xml',
-				'javascript',
-				'javascriptreact',
-				'typescriptreact',
-				'svelte',
-				'vue',
-			},
-		},
 		textsubjects = {
 			enable = true,
 			keymaps = {
@@ -37,7 +25,7 @@ local function run()
 				},
 			},
 			swap = {
-				enable = true,
+				enable = false,
 				swap_next = { ['<leader>a'] = '@parameter.inner' },
 				swap_previous = { ['<leader>A'] = '@parameter.inner' },
 			},
@@ -114,24 +102,44 @@ return function(use)
 		run = ':TSUpdate',
 		requires = {
 			{ 'nvim-treesitter/nvim-treesitter-textobjects' },
-			{ 'windwp/nvim-ts-autotag' },
 			{
 				'JoosepAlviste/nvim-ts-context-commentstring',
 				ft = { 'typescriptreact', 'javascriptreact' },
 				config = configure_kommentary,
 			},
 			{ 'RRethy/nvim-treesitter-textsubjects' },
-			{ 'nvim-treesitter/playground' },
-			{
-				'lewis6991/spellsitter.nvim',
-				config = spell_sitter,
-				cond = function()
-					-- WARN: Seems to be broken on rust. Disable it for now.
-					return not vim.bo.filetype == 'rust'
-				end,
-			},
 		},
 		config = run,
 		cond = 'vim.g.not_vscode',
+	})
+	use({
+		'nvim-treesitter/playground',
+		after = { 'nvim-treesitter' },
+	})
+	use({
+		'lewis6991/spellsitter.nvim',
+		after = { 'nvim-treesitter' },
+		config = spell_sitter,
+		-- cond = function()
+		-- 	-- WARN: Seems to be broken on rust. Disable it for now.
+		-- 	return not vim.bo.filetype == 'rust'
+		-- end,
+	})
+	use({
+		'windwp/nvim-ts-autotag',
+		after = { 'nvim-treesitter' },
+		config = function()
+			require('nvim-ts-autotag').setup({
+				filetypes = {
+					'html',
+					'xml',
+					'javascript',
+					'javascriptreact',
+					'typescriptreact',
+					'svelte',
+					'vue',
+				},
+			})
+		end,
 	})
 end
