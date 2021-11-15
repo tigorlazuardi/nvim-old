@@ -1,4 +1,25 @@
 
+<a name="v1.0.6"></a>
+## [v1.0.6](https://github.com/tigorlazuardi/nvim/compare/v1.0.5...v1.0.6)
+
+> 2021-11-15
+
+### Feat
+
+* `tailwind-headwind`: added tailwind and headwind support
+
+### Fix
+
+* `lsp_status`: fix lsp status on airline not showing messages
+* `package_info`: fix package_info yelling error on recompiling
+
+### Mappings
+
+* `gitsigns`: added mappings to controls hunks
+* `lsp`: added mappings for lsp formatting
+* `packer`: added packer command mappings
+
+
 <a name="v1.0.5"></a>
 ## [v1.0.5](https://github.com/tigorlazuardi/nvim/compare/v1.0.4...v1.0.5)
 
