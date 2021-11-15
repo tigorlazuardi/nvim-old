@@ -4,7 +4,9 @@ return function(use)
 		require = { 'tami5/sqlite.lua' },
 		wants = { 'telescope.nvim', 'which-key.nvim' },
 		after = { 'registers.nvim' },
-		cond = 'vim.g.is_windows',
+		cond = function()
+			return not vim.g.is_windows
+		end,
 		config = function()
 			require('neoclip').setup({
 				history = 1000,

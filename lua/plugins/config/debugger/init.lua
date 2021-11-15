@@ -66,10 +66,8 @@ local function config()
 		augroup end
 	]])
 	-- broken format due to emoji. have to be ignored.
-	-- stylua: ignore start
-	vim.fn.sign_define('DapBreakpoint', { text = '🟥', texthl = '', linehl = '', numhl = '' })
-	vim.fn.sign_define('DapStopped', { text = '🟢', texthl = '', linehl = '', numhl = '' })
-	-- stylua: ignore end
+	vim.fn.sign_define('DapBreakpoint', { text = '', texthl = '', linehl = '', numhl = '' })
+	vim.fn.sign_define('DapStopped', { text = '', texthl = '', linehl = '', numhl = '' })
 
 	require('nvim-dap-virtual-text').setup({
 		all_frames = true,

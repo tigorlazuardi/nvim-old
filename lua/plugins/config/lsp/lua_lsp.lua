@@ -23,6 +23,7 @@ if vim.fn.exepath('lua-language-server') ~= '' then
 						'client',
 						'root',
 						'screen',
+						'packer_plugins',
 					},
 				},
 			},
