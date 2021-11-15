@@ -74,6 +74,20 @@ local signs_config = function()
 		-- use_decoration_api = true,
 		diff_opts = { internal = true },
 	})
+
+	local wk = require('which-key')
+
+	wk.register({
+		['<leader>h'] = {
+			name = 'gitsigns',
+			s = {'Stage Hunk'},
+			u = {'Undo Stage Hunk'},
+			r = {'Reset Hunk'},
+			R = {'Reset Buffer'},
+			p = {'Preview Hunk'},
+			b = {'Blame Line'}
+		}
+	})
 end
 
 return function(use)
@@ -81,7 +95,8 @@ return function(use)
 		'lewis6991/gitsigns.nvim',
 		requires = 'nvim-lua/plenary.nvim',
 		config = signs_config,
-		cond = function ()
+		wants = { 'which-key.nvim' },
+		cond = function()
 			return not vim.g.is_windows
 		end,
 	})
