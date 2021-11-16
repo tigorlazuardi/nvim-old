@@ -17,3 +17,6 @@ require('settings.nvr')
 -- require('settings.backup')
 
 vim.cmd('set nobackup nowritebackup noswapfile noundofile')
+
+-- Line break by words, not by characters
+c('set wrap linebreak')
