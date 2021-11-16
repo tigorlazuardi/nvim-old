@@ -1,5 +1,2 @@
 [vim]
 any = true
-
-[packer_plugins]
-any = true
