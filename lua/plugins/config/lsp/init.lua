@@ -64,4 +64,8 @@ return function(use)
 			})
 		end,
 	})
+use({
+  'weilbith/nvim-code-action-menu',
+  cmd = 'CodeActionMenu',
+})
 end

@@ -40,8 +40,12 @@ return function(client, bufnr)
 		},
 		gpp = { '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', '(Diagnostics) Go to Previous Diagnostic' },
 		gnn = { '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', '(Diagnostics) Go to Next Diagnostic' },
+		-- ga = {
+		-- 	"<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>",
+		-- 	'(LSP) Code Actions',
+		-- },
 		ga = {
-			"<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>",
+			"<cmd>CodeActionMenu<cr>",
 			'(LSP) Code Actions',
 		},
 		gr = {
