@@ -1,4 +1,18 @@
 
+<a name="v1.0.9"></a>
+## [v1.0.9](https://github.com/tigorlazuardi/nvim/compare/v1.0.8...v1.0.9)
+
+> 2021-11-16
+
+### Config
+
+* `settings`: added linebreak by words not character settings
+
+### Fix
+
+* `selene`: fix vim global not set
+
+
 <a name="v1.0.8"></a>
 ## [v1.0.8](https://github.com/tigorlazuardi/nvim/compare/v1.0.7...v1.0.8)
 
