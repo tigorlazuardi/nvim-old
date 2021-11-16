@@ -1,4 +1,19 @@
 
+<a name="v1.0.8"></a>
+## [v1.0.8](https://github.com/tigorlazuardi/nvim/compare/v1.0.7...v1.0.8)
+
+> 2021-11-16
+
+### Config
+
+* `headwind`: surpressed headwind error message on sorting
+* `neovide`: disable blur for multigrid mode
+
+### Feat
+
+* `codeactionmenu`: added new plugin code action menu
+
+
 <a name="v1.0.7"></a>
 ## [v1.0.7](https://github.com/tigorlazuardi/nvim/compare/v1.0.6...v1.0.7)
 
