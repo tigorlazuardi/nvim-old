@@ -23,7 +23,7 @@ local function config()
 	end
 
 	wk.register({
-		['<leader>c'] = {
+		['<leader>d'] = {
 			name = '+debugger',
 			c = { [[<cmd>lua require('dapui').toggle()<cr>]], 'Open Debugger' },
 			b = { [[<cmd>lua require('dap').toggle_breakpoint()<cr>]], 'Toggle Breakpoints' },
@@ -49,7 +49,7 @@ local function config()
 	})
 
 	wk.register({
-		['<leader>ck'] = {
+		['<leader>dk'] = {
 			[[<cmd>lua require('dap.ui.variables').visual_hover()<cr>]],
 			'Debug Hover (Visual)',
 		},

@@ -11,7 +11,7 @@ local args = {
 	'--out-format=json',
 	'run',
 	'-c',
-	vim.fn.stdpath('config') .. '/linter-config/.golangci.toml'
+	vim.fn.stdpath('config') .. '/linter-config/.golangci.toml',
 }
 
 M.generator = helpers.generator_factory({

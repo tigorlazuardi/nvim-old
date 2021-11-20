@@ -80,13 +80,13 @@ local signs_config = function()
 	wk.register({
 		['<leader>h'] = {
 			name = 'gitsigns',
-			s = {'Stage Hunk'},
-			u = {'Undo Stage Hunk'},
-			r = {'Reset Hunk'},
-			R = {'Reset Buffer'},
-			p = {'Preview Hunk'},
-			b = {'Blame Line'}
-		}
+			s = { 'Stage Hunk' },
+			u = { 'Undo Stage Hunk' },
+			r = { 'Reset Hunk' },
+			R = { 'Reset Buffer' },
+			p = { 'Preview Hunk' },
+			b = { 'Blame Line' },
+		},
 	})
 end
 

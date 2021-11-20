@@ -143,7 +143,7 @@ return function(use)
 			'saadparwaiz1/cmp_luasnip',
 			'hrsh7th/cmp-path',
 			'hrsh7th/cmp-buffer',
-			{'Saecki/crates.nvim', cond = 'vim.g.is_windows'},
+			{ 'Saecki/crates.nvim', cond = 'vim.g.is_windows' },
 			'f3fora/cmp-spell',
 			'hrsh7th/cmp-calc',
 			'hrsh7th/cmp-emoji',

@@ -15,7 +15,7 @@ return function(use)
 				['<A-K>'] = { '<cmd>m .-2<cr>==', 'Swap Line Downwards' },
 			})
 
-		wk.register({ ['?'] = { '<cmd>WhichKey<cr>', 'List Normal Mappings' } })
+			wk.register({ ['?'] = { '<cmd>WhichKey<cr>', 'List Normal Mappings' } })
 
 			wk.register({
 				['?'] = {

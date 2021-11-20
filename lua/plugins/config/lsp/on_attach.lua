@@ -60,10 +60,6 @@ return function(client, bufnr)
 			'(LSP) Go To Definitions (V-Split)',
 		},
 		['<F2>'] = { '<cmd>lua vim.lsp.buf.rename()<CR>', '(LSP) Rename Symbol' },
-		['<leader>d'] = {
-			'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
-			'(Diagnostics) Show Current Line Diagnostic',
-		},
 	}, wk_option)
 
 	if client.resolved_capabilities.document_highlight then

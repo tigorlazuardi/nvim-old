@@ -43,4 +43,3 @@ if vim.fn.exepath('lua-language-server') ~= '' then
 		}))
 	end
 end
-

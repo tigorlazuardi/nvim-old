@@ -50,7 +50,7 @@ return function(use)
 	use({
 		'vuki656/package-info.nvim',
 		requires = 'MunifTanjim/nui.nvim',
-		ft = {'json'},
+		ft = { 'json' },
 		config = function()
 			local present, package_info = pcall(require, 'package-info')
 			if not present then
@@ -64,8 +64,17 @@ return function(use)
 			})
 		end,
 	})
-use({
-  'weilbith/nvim-code-action-menu',
-  cmd = 'CodeActionMenu',
-})
+	use({
+		'weilbith/nvim-code-action-menu',
+		cmd = 'CodeActionMenu',
+	})
+	use({
+		'ldelossa/calltree.nvim',
+		config = function()
+			require('calltree').setup({})
+			local wk = require('which-key')
+
+			wk.register({})
+		end,
+	})
 end

@@ -35,11 +35,14 @@ if vim.fn.exepath('gopls') ~= '' then
 			wk.register({
 				q = {
 					name = 'quick',
-					q = {function ()
-						OrgImports(1000)	
-					end, 'Organize Imports'}
-				}
-			}, {buffer = bufnr})
+					q = {
+						function()
+							OrgImports(1000)
+						end,
+						'Organize Imports',
+					},
+				},
+			}, { buffer = bufnr })
 		end,
 		cmd = {
 			'gopls',
