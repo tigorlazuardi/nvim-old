@@ -4,6 +4,9 @@
 ### Chore
 - format lua files
 
+### Conf
+- **lefthook:** reword pipe names
+
 ### Doc
 - change changelog template
 
