@@ -1,11 +1,5 @@
 _G.buffer_filetype_mapping = function()
-	local function prequire(m)
-		local ok, err = pcall(require, m)
-		if not ok then
-			return nil, err
-		end
-		return err
-	end
+	local prequire = require('personal.utils.prequire')
 	local wk = prequire('which-key')
 
 	if not wk then
@@ -17,6 +11,10 @@ _G.buffer_filetype_mapping = function()
 	---@return boolean
 	local function is(filetype)
 		return vim.bo.filetype == filetype
+	end
+
+	if is('Calltree') then
+		require('plugins.buffers.calltree_buffer')()
 	end
 end
 
