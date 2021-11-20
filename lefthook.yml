@@ -34,13 +34,12 @@ post-commit:
 changelog:
   piped: true
   commands:
-    1_create:
+    create:
       run: git-chglog -o CHANGELOG.md
-    2_add:
+    add:
       run: LEFTHOOK=0 git add CHANGELOG.md
-    3_commit:
+    commit:
       run: LEFTHOOK=0 git commit --amend --no-edit
-
 #     eslint:
 #       glob: "*.{js,ts}"
 #       run: yarn eslint {staged_files}
