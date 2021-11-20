@@ -10,6 +10,9 @@
 ### Doc
 - change changelog template
 
+### Fix
+- **lefthook:** removed double changelog running
+
 ### Mappings
 - **diagnostic:** gn now shows line diagnostic, gN show workspace. gnn show next. gnp show previous
 
