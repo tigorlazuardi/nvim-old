@@ -31,21 +31,17 @@ return function(client, bufnr)
 			'(LSP) Search Workspace Symbols',
 		},
 		gn = {
-			"<cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<cr>",
-			'(LSP) List Workspace Diagnostics',
+			'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
+			'(LSP) Show Line Diagnostic',
 		},
-		gp = {
+		gN = {
 			"<cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<cr>",
-			'(LSP) List Workspace Diagnostics',
+			'(LSP) Show Workspace Diagnostics',
 		},
-		gpp = { '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', '(Diagnostics) Go to Previous Diagnostic' },
+		gnp = { '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', '(Diagnostics) Go to Previous Diagnostic' },
 		gnn = { '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', '(Diagnostics) Go to Next Diagnostic' },
-		-- ga = {
-		-- 	"<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>",
-		-- 	'(LSP) Code Actions',
-		-- },
 		ga = {
-			"<cmd>CodeActionMenu<cr>",
+			'<cmd>CodeActionMenu<cr>',
 			'(LSP) Code Actions',
 		},
 		gr = {

@@ -15,6 +15,19 @@ return function(use)
 				['<A-K>'] = { '<cmd>m .-2<cr>==', 'Swap Line Downwards' },
 			})
 
+		wk.register({ ['?'] = { '<cmd>WhichKey<cr>', 'List Normal Mappings' } })
+
+			wk.register({
+				['?'] = {
+					name = 'mappings',
+					['?'] = { '<cmd>WhichKey<cr>', 'normal' },
+					n = { '<cmd>WhichKey<cr>', 'normal' },
+					v = { "<cmd>WhichKey '' v<cr>", 'visual' },
+					i = { "<cmd>WhichKey '' i<cr>", 'insert' },
+					x = { "<cmd>WhichKey '' x<cr>", 'selection' },
+				},
+			})
+
 			wk.register({
 				['<A-J>'] = { '<esc><cmd>m .+1<cr>==gi', 'Swap Line Upwards' },
 				['<A-K>'] = { '<esc><cmd>m .-2<cr>==gi', 'Swap Line Downwards' },
