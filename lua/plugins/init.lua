@@ -18,6 +18,7 @@ return packer.startup(function(use)
 	require('plugins.config.golang_enhancement')(use)
 	require('plugins.config.headwind_config')(use)
 	require('plugins.config.kommentary')(use)
+	require('plugins.config.lightspeed_config')(use)
 	-- require('plugins.config.lualine_config')(use)
 	require('plugins.config.nvim_cmp')(use)
 	require('plugins.config.nvim_tree')(use)
@@ -35,6 +36,7 @@ return packer.startup(function(use)
 	require('plugins.config.which_key')(use)
 	require('plugins.config.windline_config')(use)
 	require('plugins.config.godot_integration')(use)
+
 	require('plugins.buffers')
 
 	if should_sync then

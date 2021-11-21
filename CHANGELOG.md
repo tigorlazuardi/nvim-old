@@ -1,6 +1,12 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Feat
+- **lightspeed:** added lightspeed plugin
+
+
+<a name="v1.1.0"></a>
+## [v1.1.0] - 2021-11-21
 ### Chore
 - format lua files
 
@@ -24,6 +30,9 @@
 
 ### Wip
 - **calltree:** bootstrapped calltree
+
+### Reverts
+- conf(lefthook): reword pipe names
 
 
 <a name="v1.0.9"></a>
@@ -157,7 +166,8 @@
 - **indentation:** moved indentation to it's own folder
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v1.0.9...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v1.1.0...HEAD
+[v1.1.0]: https://github.com/tigorlazuardi/nvim/compare/v1.0.9...v1.1.0
 [v1.0.9]: https://github.com/tigorlazuardi/nvim/compare/v1.0.8...v1.0.9
 [v1.0.8]: https://github.com/tigorlazuardi/nvim/compare/v1.0.7...v1.0.8
 [v1.0.7]: https://github.com/tigorlazuardi/nvim/compare/v1.0.6...v1.0.7
