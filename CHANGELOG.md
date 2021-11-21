@@ -7,6 +7,9 @@
 ### Conf
 - **lefthook:** reword pipe names
 
+### Config
+- **null_ls:** enabled autostart
+
 ### Doc
 - change changelog template
 

@@ -74,7 +74,9 @@ return function(use)
 			require('calltree').setup({})
 			local wk = require('which-key')
 
-			wk.register({})
+			wk.register({
+				gt = { '<cmd>CTOpen<cr>', 'Open Calltree' },
+			})
 		end,
 	})
 end

@@ -21,6 +21,6 @@ end
 vim.cmd([[
 	augroup set_buffer_mappings
 		au!
-		au BufNewFile,BufRead * v:lua.buffer_filetype_mapping()
+		au BufNewFile,BufRead * call v:lua.buffer_filetype_mapping()
 	augroup end
 ]])

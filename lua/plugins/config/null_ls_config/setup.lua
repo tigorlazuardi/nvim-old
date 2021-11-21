@@ -1,5 +1,14 @@
-local null_ls = require('null-ls')
-local lspconfig = require('lspconfig')
+local prequire = require('personal.utils.prequire')
+
+local lspconfig = prequire('lspconfig')
+if not lspconfig then
+	return
+end
+
+local null_ls = prequire('null-ls')
+if not null_ls then
+	return
+end
 
 local sources = {}
 
@@ -24,7 +33,7 @@ end
 
 -- golang
 if exist('golangci-lint') then
-	table.insert(sources, require('plugins.config.null_ls_config.golangcilint'))
+	table.insert(sources, null_ls.builtins.diagnostics.golangci_lint)
 end
 
 -- docker
@@ -46,6 +55,7 @@ null_ls.config({ sources = sources })
 
 if lspconfig['null-ls'] then
 	lspconfig['null-ls'].setup({
+		autostart = true,
 		on_attach = function(client, bufnr)
 			if client.resolved_capabilities.document_formatting then
 				vim.cmd([[

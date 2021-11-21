@@ -35,6 +35,7 @@ return packer.startup(function(use)
 	require('plugins.config.which_key')(use)
 	require('plugins.config.windline_config')(use)
 	require('plugins.config.godot_integration')(use)
+	require('plugins.buffers')
 
 	if should_sync then
 		packer.sync()
