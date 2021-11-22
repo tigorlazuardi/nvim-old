@@ -2,7 +2,9 @@
 ## [Unreleased]
 
 ### Feat
+- **fine-cmdline:** added new plugin fine-cmdline
 - **lightspeed:** added lightspeed plugin
+- **neovide:** added keymaps to increase or decrease font size in neovide
 
 
 <a name="v1.1.0"></a>
