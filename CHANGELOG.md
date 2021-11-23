@@ -11,6 +11,9 @@
 - **lightspeed:** added lightspeed plugin
 - **neovide:** added keymaps to increase or decrease font size in neovide
 
+### Fix
+- **jsonls:** fix command not found
+
 
 <a name="v1.1.0"></a>
 ## [v1.1.0] - 2021-11-21

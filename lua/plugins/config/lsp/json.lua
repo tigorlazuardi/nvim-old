@@ -1,5 +1,6 @@
 if vim.fn.exepath('vscode-json-languageserver') ~= '' then
 	require('lspconfig').jsonls.setup({
+		cmd = { 'vscode-json-languageserver', '--stdio' },
 		commands = {
 			Format = {
 				function()
@@ -53,7 +54,10 @@ if vim.fn.exepath('vscode-json-languageserver') ~= '' then
 				},
 			},
 		},
-		on_attach = require('plugins.config.lsp.on_attach'),
+		on_attach = function(client, bufnr)
+			client.resolved_capabilities.document_formatting = false
+			require('plugins.config.lsp.on_attach')(client, bufnr)
+		end,
 		capabilities = require('plugins.config.lsp.capabilities'),
 	})
 end
