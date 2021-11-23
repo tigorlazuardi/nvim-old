@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Config
+- **neovide:** added font size change implementation for UNIX system
+
 ### Feat
 - **fine-cmdline:** added new plugin fine-cmdline
 - **lightspeed:** added lightspeed plugin
