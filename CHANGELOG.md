@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Config
+- **neovide:** added firacode nerd font support on start
 - **neovide:** added font size change implementation for UNIX system
 
 ### Feat

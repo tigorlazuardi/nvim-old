@@ -11,7 +11,8 @@ vim.g.neovide_font_size_linux = 14
 
 if vim.g.is_windows then
 	vim.cmd([[set guifont=FiraCode\ NF:h]] .. tostring(vim.g.neovide_font_size_windows))
-	-- TODO: Add support guifont change for linux as well
+else
+	vim.cmd([[set guifont=FiraCode\ Nerd\ Font\ Mono:h]] .. tostring(vim.g.neovide_font_size_linux))
 end
 
 _G.font_size = function(increase)
