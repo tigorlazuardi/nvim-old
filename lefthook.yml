@@ -2,9 +2,8 @@ pre-commit:
   parallel: true
   commands:
     format:
-      files: git diff --name-only @{push}
       glob: "*.{lua}"
-      run: stylua {files} && git add {files}
+      run: stylua {staged_files} && git add {staged_files}
 commit-msg:
   parallel: true
   commands:

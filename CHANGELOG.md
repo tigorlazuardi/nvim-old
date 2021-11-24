@@ -14,6 +14,9 @@
 ### Fix
 - **jsonls:** fix command not found
 
+### Remove
+- **package-info:** removed package info causing crashes
+
 
 <a name="v1.1.0"></a>
 ## [v1.1.0] - 2021-11-21
