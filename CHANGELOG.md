@@ -15,6 +15,7 @@
 - **fine-cmdline:** added new plugin fine-cmdline
 - **lightspeed:** added lightspeed plugin
 - **neovide:** added keymaps to increase or decrease font size in neovide
+- **vim_sneak:** removed lightspeed, replaced with vim sneak
 
 ### Fix
 - **jsonls:** fix command not found
