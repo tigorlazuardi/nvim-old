@@ -7,6 +7,7 @@
 - **neovide:** added font size change implementation for UNIX system
 
 ### Feat
+- **eslint_server:** added support for eslint_d lang server
 - **fine-cmdline:** added new plugin fine-cmdline
 - **lightspeed:** added lightspeed plugin
 - **neovide:** added keymaps to increase or decrease font size in neovide

@@ -8,6 +8,7 @@ if vim.fn.exepath('typescript-language-server') ~= '' then
 	lspconfig.tsserver.setup({
 		capabilities = capabilities,
 		on_attach = function(client, buffer)
+			local prequire = require('personal.utils.prequire')
 			if client.config.flags then
 				client.config.flags.allow_incremental_sync = true
 			end
@@ -30,19 +31,6 @@ if vim.fn.exepath('typescript-language-server') ~= '' then
 				},
 				import_all_scan_buffers = 100,
 				import_all_select_source = false,
-
-				-- eslint
-				eslint_enable_code_actions = true,
-				eslint_enable_disable_comments = true,
-				eslint_bin = 'eslint_d',
-				eslint_config_fallback = nil,
-				eslint_enable_diagnostics = true,
-
-				-- formatting
-				enable_formatting = true,
-				formatter = 'prettierd',
-				formatter_config_fallback = vim.fn.stdpath('config') .. '/linter-config/.prettierrc.toml',
-
 				-- update imports on file move
 				update_imports_on_move = true,
 				require_confirmation_on_move = false,
@@ -53,6 +41,17 @@ if vim.fn.exepath('typescript-language-server') ~= '' then
 			ts_utils.setup_client(client)
 
 			require('plugins.config.lsp.on_attach')(client, buffer)
+
+			local wk = prequire('which-key')
+			if not wk then
+				return
+			end
+
+			wk.register({
+				qs = { '<cmd>TSLspOrganize<CR>', 'Organize Import' },
+				qr = { '<cmd>TSLspRenameFile<CR>', 'Rename File' },
+				qi = { '<cmd>TSLspImportAll<CR>', 'Import All' },
+			}, { buffer = buffer })
 		end,
 	})
 end

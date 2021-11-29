@@ -46,6 +46,11 @@ if exist('prettierd') then
 	table.insert(sources, null_ls.builtins.formatting.prettierd)
 end
 
+if exist('eslint_d') then
+	table.insert(sources, null_ls.builtins.formatting.eslint_d)
+	-- table.insert(sources, null_ls.builtins.diagnostics.eslint_d)
+end
+
 -- lua
 if exist('selene') then
 	table.insert(sources, null_ls.builtins.diagnostics.selene)
