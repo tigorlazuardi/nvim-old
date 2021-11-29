@@ -2,6 +2,7 @@ return function(use)
 	use({
 		'justinmk/vim-sneak',
 		wants = { 'which-key.nvim' },
+		after = { 'vim-cutlass' },
 		config = function()
 			local wk = require('which-key')
 			wk.register({

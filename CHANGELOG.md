@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Fix
+- **vim-sneak:** load after vim-cutlass so vim-sneak overrides cutlass
+
 
 <a name="v1.2.0"></a>
 ## [v1.2.0] - 2021-11-29
