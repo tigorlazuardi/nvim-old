@@ -3,7 +3,11 @@ return function(use)
 		'folke/which-key.nvim',
 		config = function()
 			local wk = require('which-key')
-			wk.setup({})
+			wk.setup({
+				plugins = {
+					registers = false,
+				},
+			})
 
 			wk.register({
 				['<c-s>'] = { '<cmd>wa<cr>', 'Save All Buffer' },
@@ -56,11 +60,8 @@ return function(use)
 			})
 
 			vim.cmd([[
-
 				command! WhichKeyV WhichKey '' v
-
 				command! WhichKeyI WhichKey '' i
-
 			]])
 		end,
 	})

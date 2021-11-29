@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Config
+- **which-key:** disabled registers plugin for compability with tversteeg/registers
+
 
 <a name="v1.3.0"></a>
 ## [v1.3.0] - 2021-11-29
