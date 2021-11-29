@@ -62,4 +62,5 @@ return function(use)
 			})
 		end,
 	})
+	use({ 'simrat39/symbols-outline.nvim' })
 end

@@ -4,6 +4,9 @@
 ### Doc
 - **vim-sneak:** added which key alias to jump forward repeat sneak
 
+### Feat
+- **symbols-outline:** added symbols outline support
+
 ### Fix
 - **vim-sneak:** load after vim-cutlass so vim-sneak overrides cutlass
 

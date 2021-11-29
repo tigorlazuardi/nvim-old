@@ -1,4 +1,4 @@
-std = "lua51+vim"
+std = "lua51+vim+packer_plugins"
 
 [rules]
 global_usage = "allow"

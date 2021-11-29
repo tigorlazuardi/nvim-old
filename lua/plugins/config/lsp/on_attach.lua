@@ -83,4 +83,10 @@ return function(client, bufnr)
 		local hl = 'DiagnosticSign' .. type
 		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 	end
+
+	if packer_plugins['symbols-outline.nvim'] and packer_plugins['symbols-outline.nvim'].loaded then
+		wk.register({
+			gs = { '<cmd>SymbolsOutline<cr>', 'Symbol Outline' },
+		}, wk_option)
+	end
 end
