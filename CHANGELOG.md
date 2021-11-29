@@ -14,6 +14,7 @@
 
 ### Fix
 - **jsonls:** fix command not found
+- **nvim_tree:** disabled diagnostics on nvim-tree because it broke
 
 ### Remove
 - **package-info:** removed package info causing crashes

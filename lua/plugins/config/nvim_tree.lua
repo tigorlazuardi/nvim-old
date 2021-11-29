@@ -57,7 +57,7 @@ local function run()
 	require('nvim-tree').setup({
 		update_cwd = true,
 		diagnostics = {
-			enable = true,
+			enable = false,
 			icons = {
 				hint = '',
 				info = '',
