@@ -4,13 +4,6 @@ local function run()
 		highlight = { enable = true },
 		indent = { enable = true, disable = { 'python', 'yaml' } },
 		autopairs = { enable = true },
-		textsubjects = {
-			enable = true,
-			keymaps = {
-				['.'] = 'textsubjects-smart',
-				[';'] = 'textsubjects-container-outer',
-			},
-		},
 		textobjects = {
 			select = {
 				enable = true,
@@ -68,6 +61,15 @@ local function run()
 				show_help = '?',
 			},
 		},
+		incremental_selection = {
+			enable = true,
+			keymaps = {
+				init_selection = '<CR>',
+				scope_incremental = '<CR>',
+				node_incremental = '<TAB>',
+				node_decremental = '<S-TAB>',
+			},
+		},
 	})
 end
 
@@ -107,7 +109,6 @@ return function(use)
 				ft = { 'typescriptreact', 'javascriptreact' },
 				config = configure_kommentary,
 			},
-			{ 'RRethy/nvim-treesitter-textsubjects' },
 		},
 		config = run,
 		cond = 'vim.g.not_vscode',
@@ -120,10 +121,6 @@ return function(use)
 		'lewis6991/spellsitter.nvim',
 		after = { 'nvim-treesitter' },
 		config = spell_sitter,
-		-- cond = function()
-		-- 	-- WARN: Seems to be broken on rust. Disable it for now.
-		-- 	return not vim.bo.filetype == 'rust'
-		-- end,
 	})
 	use({
 		'windwp/nvim-ts-autotag',

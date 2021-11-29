@@ -7,6 +7,9 @@
 ### Fix
 - **selene:** packer plugins global variable is now proper
 
+### Remove
+- **textsubjects:** changed in favor of builtin selection
+
 
 <a name="v1.3.0"></a>
 ## [v1.3.0] - 2021-11-29
