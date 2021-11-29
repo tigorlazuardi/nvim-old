@@ -20,6 +20,9 @@
 ### Remove
 - **package-info:** removed package info causing crashes
 
+### Revert
+- **fine_cmdline:** cmdline broke too much and broke compability with vscode
+
 
 <a name="v1.1.0"></a>
 ## [v1.1.0] - 2021-11-21
