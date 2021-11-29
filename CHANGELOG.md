@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+
+<a name="v1.3.0"></a>
+## [v1.3.0] - 2021-11-29
 ### Doc
 - **vim-sneak:** added which key alias to jump forward repeat sneak
 
@@ -201,7 +204,8 @@
 - **indentation:** moved indentation to it's own folder
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v1.3.0...HEAD
+[v1.3.0]: https://github.com/tigorlazuardi/nvim/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/tigorlazuardi/nvim/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/tigorlazuardi/nvim/compare/v1.0.9...v1.1.0
 [v1.0.9]: https://github.com/tigorlazuardi/nvim/compare/v1.0.8...v1.0.9
