@@ -5,6 +5,7 @@
 - **lspconfig:** added support for json and yaml language server
 - **neovide:** added firacode nerd font support on start
 - **neovide:** added font size change implementation for UNIX system
+- **nvim-cmp:** added colorscheme to various item highlight in autocomplete
 - **nvim_tree:** update nvim tree configuration
 
 ### Feat
