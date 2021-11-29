@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+
+<a name="v1.2.0"></a>
+## [v1.2.0] - 2021-11-29
 ### Config
 - **lspconfig:** added support for json and yaml language server
 - **neovide:** added font size change implementation for UNIX system
@@ -189,7 +192,8 @@
 - **indentation:** moved indentation to it's own folder
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v1.2.0...HEAD
+[v1.2.0]: https://github.com/tigorlazuardi/nvim/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/tigorlazuardi/nvim/compare/v1.0.9...v1.1.0
 [v1.0.9]: https://github.com/tigorlazuardi/nvim/compare/v1.0.8...v1.0.9
 [v1.0.8]: https://github.com/tigorlazuardi/nvim/compare/v1.0.7...v1.0.8
