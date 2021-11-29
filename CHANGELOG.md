@@ -4,6 +4,9 @@
 ### Config
 - **which-key:** disabled registers plugin for compability with tversteeg/registers
 
+### Fix
+- **selene:** packer plugins global variable is now proper
+
 
 <a name="v1.3.0"></a>
 ## [v1.3.0] - 2021-11-29
