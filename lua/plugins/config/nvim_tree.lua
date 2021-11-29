@@ -1,8 +1,8 @@
 local function setup()
-	vim.g.nvim_tree_gitignore = 0
 	-- vim.g.nvim_tree_follow = 1
 	vim.g.nvim_tree_git_hl = 1
 	vim.g.nvim_tree_disable_window_picker = 0
+	-- vim.g.nvim_tree_ignore = { '.git', 'node_modules', '.cache' }
 	vim.g.nvim_tree_window_picker_exclude = {
 		filetype = {
 			'packer',
@@ -67,6 +67,11 @@ local function run()
 		},
 		open_on_setup = true,
 		ignore_ft_on_setup = { 'dashboard' },
+		git = {
+			enable = true,
+			ignore = false,
+			timeout = 500,
+		},
 		update_focused_file = {
 			enable = true,
 			update_cwd = true,

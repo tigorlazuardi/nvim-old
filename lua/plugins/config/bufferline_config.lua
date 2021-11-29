@@ -5,7 +5,10 @@ return function(use)
 		config = function()
 			require('bufferline').setup({
 				custom_filter = function(bufnr)
-					if vim.bo[bufnr].filetype == 'dashboard' then
+					if vim.bo[bufnr].filetype ~= 'dashboard' then
+						return true
+					end
+					if vim.bo[bufnr].filetype ~= 'packer' then
 						return true
 					end
 				end,

@@ -5,6 +5,7 @@
 - **lspconfig:** added support for json and yaml language server
 - **neovide:** added firacode nerd font support on start
 - **neovide:** added font size change implementation for UNIX system
+- **nvim_tree:** update nvim tree configuration
 
 ### Feat
 - **eslint_server:** added support for eslint_d lang server
