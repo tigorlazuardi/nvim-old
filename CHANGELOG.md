@@ -3,11 +3,12 @@
 
 ### Config
 - **lspconfig:** added support for json and yaml language server
-- **neovide:** added firacode nerd font support on start
 - **neovide:** added font size change implementation for UNIX system
+- **neovide:** added firacode nerd font support on start
 - **nvim-cmp:** now uses dark vscode theme
 - **nvim-cmp:** added colorscheme to various item highlight in autocomplete
 - **nvim_tree:** update nvim tree configuration
+- **surround:** changed prefix to q instead of ss
 
 ### Feat
 - **eslint_server:** added support for eslint_d lang server
