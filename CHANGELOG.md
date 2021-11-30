@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+
+<a name="v1.3.1"></a>
+## [v1.3.1] - 2021-11-30
 ### Config
 - **tailwind-lsp:** disabled autostart
 - **vim-sneak:** mappings now extended to visual and selection mode
@@ -215,7 +218,8 @@
 - **indentation:** moved indentation to it's own folder
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v1.3.1...HEAD
+[v1.3.1]: https://github.com/tigorlazuardi/nvim/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/tigorlazuardi/nvim/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/tigorlazuardi/nvim/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/tigorlazuardi/nvim/compare/v1.0.9...v1.1.0
