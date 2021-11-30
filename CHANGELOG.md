@@ -3,6 +3,7 @@
 
 ### Fix
 - **neoclip:** changed neoclip open to ge from <c-r>
+- **tailwind-lsp:** autostart set back to true but depends on filetypes
 
 
 <a name="v1.3.1"></a>

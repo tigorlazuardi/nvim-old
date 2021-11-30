@@ -5,8 +5,9 @@ if vim.fn.exepath('tailwindcss-language-server') ~= '' then
 	local lspconfig = require('lspconfig')
 
 	lspconfig.tailwindcss.setup({
-		autostart = false,
 		capabilities = capabilities,
+		-- default filetypes in lspconfig are much bigger. update as necessary to enable on certain filetypes. For now it only activates on filetypes below only.
+		filetypes = { 'typescriptreact', 'javascriptreact', 'html', 'css', 'vue', 'svelte' },
 		on_attach = function(client, bufnr)
 			on_attach(client, bufnr)
 
