@@ -5,6 +5,7 @@ if vim.fn.exepath('tailwindcss-language-server') ~= '' then
 	local lspconfig = require('lspconfig')
 
 	lspconfig.tailwindcss.setup({
+		autostart = false,
 		capabilities = capabilities,
 		on_attach = function(client, bufnr)
 			on_attach(client, bufnr)
