@@ -5,7 +5,7 @@ return function(use)
 		after = { 'vim-cutlass' },
 		config = function()
 			local wk = require('which-key')
-			wk.register({
+			local mappings = {
 				s = '<Motion> Sneak Two Chars Forward',
 				S = '<Motion> Sneak Two Chars Backward',
 				f = { '<Plug>Sneak_f', 'Sneak One Char Forward' },
@@ -14,7 +14,10 @@ return function(use)
 				T = { '<Plug>Sneak_T', 'Sneak (unTill) One Char Backward' },
 				[';'] = 'Jump Forward Last Sneak',
 				[','] = 'Jump backward Last Sneak',
-			})
+			}
+			wk.register(mappings)
+			wk.register(mappings, { mode = 'v' })
+			wk.register(mappings, { mode = 'x' })
 		end,
 	})
 end

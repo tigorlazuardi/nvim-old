@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Config
+- **vim-sneak:** mappings now extended to visual and selection mode
 - **which-key:** disabled registers plugin for compability with tversteeg/registers
 
 ### Fix
