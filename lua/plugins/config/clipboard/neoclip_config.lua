@@ -37,14 +37,8 @@ return function(use)
 
 			local wk = require('which-key')
 			wk.register({
-				['<c-r>'] = { [[<cmd>Telescope neoclip<cr>]], 'Open Clipboard Register' },
-				-- ['"'] = { [[<cmd>Telescope neoclip<cr>]], 'Open Clipboard Register' },
+				['ge'] = { [[<cmd>Telescope neoclip<cr>]], 'Open Clipboard Register' },
 			})
-			-- wk.register({
-			-- 	['<c-r>'] = { [[<esc><cmd>Telescope neoclip<cr>]], 'Open Clipboard Register' },
-			-- }, {
-			-- 	mode = 'i',
-			-- })
 		end,
 	})
 end

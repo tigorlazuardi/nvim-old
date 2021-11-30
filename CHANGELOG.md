@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Fix
+- **neoclip:** changed neoclip open to ge from <c-r>
+
 
 <a name="v1.3.1"></a>
 ## [v1.3.1] - 2021-11-30
