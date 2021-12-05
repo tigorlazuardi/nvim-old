@@ -3,7 +3,7 @@ local function rust_tools_config()
 		local server_configuration = {
 			on_attach = function(client, bufnr)
 				client.resolved_capabilities.document_formatting = true
-				require('lsp.on_attach')(client, bufnr)
+				require('plugins.config.lsp.on_attach')(client, bufnr)
 				local wk = require('which-key')
 				wk.register({
 					K = {

@@ -3,6 +3,7 @@
 
 ### Fix
 - **neoclip:** changed neoclip open to ge from <c-r>
+- **rust_lsp:** proper path handling on require
 - **tailwind-lsp:** autostart set back to true but depends on filetypes
 
 
