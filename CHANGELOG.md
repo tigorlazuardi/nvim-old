@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Feat
+- **taplo-lsp:** added lsp support for taplo
+
 ### Fix
 - **neoclip:** changed neoclip open to ge from <c-r>
 - **rust_lsp:** proper path handling on require

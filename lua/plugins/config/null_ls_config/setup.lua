@@ -56,6 +56,10 @@ if exist('selene') then
 	table.insert(sources, null_ls.builtins.diagnostics.selene)
 end
 
+if exist('taplo') then
+	table.insert(sources, null_ls.builtins.formatting.taplo)
+end
+
 null_ls.config({ sources = sources })
 
 if lspconfig['null-ls'] then
