@@ -9,11 +9,6 @@ if vim.fn.exepath('lua-language-server') ~= '' then
 		on_attach = require('plugins.config.lsp.on_attach'),
 		settings = {
 			Lua = {
-				workspace = {
-					library = {
-						['/usr/share/awesome/lib'] = true,
-					},
-				},
 				diagnostics = {
 					enable = false,
 					globals = {
@@ -29,6 +24,12 @@ if vim.fn.exepath('lua-language-server') ~= '' then
 			},
 		},
 	}
+
+	if vim.fn.has('win32') == 1 then
+		local root_path = 'C:/Users/tigor/local/share/lua-language-server/'
+		local binary = root_path .. '/bin/Windows/lua-language-server'
+		configuration.cmd = { binary, '-E', root_path .. '/main.lua' }
+	end
 	local coq_present, coq = pcall(require, 'coq')
 	if coq_present then
 		lspconfig.sumneko_lua.setup(coq.lsp_ensure_capabilities(require('lua-dev').setup({
