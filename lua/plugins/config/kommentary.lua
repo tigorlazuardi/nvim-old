@@ -7,5 +7,5 @@ local run = function()
 end
 
 return function(use)
-	use({ 'b3nj5m1n/kommentary', disable = vim.g.vscode, config = run })
+	use({ 'b3nj5m1n/kommentary', config = run, event = 'BufEnter' })
 end

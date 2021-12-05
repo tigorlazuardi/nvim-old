@@ -1,16 +1,26 @@
 local fn = vim.fn
-local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-local not_installed = fn.empty(fn.glob(install_path)) > 0
+local cmd = vim.cmd
+
 local should_sync = false
 
-if not_installed then
-	print('Cloning packer...')
-	fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+pcall(cmd, 'packadd packer.nvim')
+local present, packer = pcall(require, 'packer')
+
+if not present then
+	local install_path = fn.stdpath('data') .. '/site/pack/packer/opt/packer.nvim'
+	print('cloning packer...')
+	vim.fn.delete(install_path, 'rf')
+	vim.fn.system({ 'git', 'clone', 'https://github.com/wbthomason/packer.nvim', '--depth', '1', install_path })
+	cmd('packadd packer.nvim')
+	present, packer = pcall(require, 'packer')
+	if present then
+		print('Packer cloned successfully')
+	else
+		error('Failed to clone packer to ' .. install_path .. ' reason: ', packer)
+		return
+	end
 	should_sync = true
 end
-
-local packer = require('packer')
-local util = require('packer.util')
 
 packer.init({
 	display = {
@@ -24,7 +34,7 @@ packer.init({
 	},
 	auto_clean = true,
 	compile_on_sync = true,
-	compile_path = util.join_paths(vim.fn.stdpath('config'), 'plugin', 'packer_nvim.lua'),
+	opt_default = true,
 })
 
 return packer, should_sync

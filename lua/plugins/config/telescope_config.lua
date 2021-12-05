@@ -1,4 +1,6 @@
 local function run()
+	vim.cmd('PackerLoad plenary.nvim')
+	vim.cmd('PackerLoad telescope-fzf-native.nvim')
 	local wk = require('which-key')
 	wk.register({
 		['<leader>f'] = {
@@ -7,10 +9,6 @@ local function run()
 			g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", 'Live Grep (Word Search)' },
 			b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", 'Find Buffer' },
 			h = { "<cmd>lua require('telescope.builtin').help_tags()<cr>", 'List Help Tags' },
-		},
-		['<leader><leader>'] = {
-			"<Cmd>lua require('telescope').extensions.frecency.frecency()<CR>",
-			'Recent Files',
 		},
 	})
 
@@ -42,11 +40,10 @@ local function run()
 end
 
 return function(use)
-	use({ 'nvim-lua/plenary.nvim' })
-	use({ 'nvim-lua/popup.nvim' })
 	use({
 		'nvim-telescope/telescope.nvim',
 		wants = { 'which-key.nvim' },
+		event = { 'BufRead' },
 		config = run,
 	})
 	use({
@@ -54,25 +51,13 @@ return function(use)
 		run = 'make',
 		wants = { 'telescope.nvim' },
 		after = { 'telescope.nvim' },
+		event = { 'BufRead' },
 		cond = function()
 			return not vim.g.is_windows
 		end,
 		config = function()
 			local telescope = require('telescope')
 			telescope.load_extension('fzf')
-		end,
-	})
-	use({
-		'nvim-telescope/telescope-frecency.nvim',
-		wants = { 'telescope.nvim' },
-		after = { 'telescope.nvim' },
-		requires = { 'tami5/sqlite.lua' },
-		cond = function()
-			return not vim.g.is_windows
-		end,
-		config = function()
-			local telescope = require('telescope')
-			telescope.load_extension('frecency')
 		end,
 	})
 end

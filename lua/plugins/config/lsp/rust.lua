@@ -72,5 +72,6 @@ return function(use)
 		wants = { 'nvim-lspconfig', 'which-key.nvim' },
 		config = rust_tools_config,
 		ft = { 'rust' },
+		event = { 'BufRead' },
 	})
 end

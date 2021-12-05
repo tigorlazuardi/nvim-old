@@ -1,7 +1,9 @@
 local packer, should_sync = require('plugins.bootstrap')
 
 return packer.startup(function(use)
-	use({ 'wbthomason/packer.nvim' })
+	use({ 'wbthomason/packer.nvim', opt = true })
+	use({ 'nvim-lua/plenary.nvim', event = 'BufReadCmd' })
+	use({ 'nvim-lua/popup.nvim', event = 'BufReadCmd' })
 	require('plugins.config.clipboard')(use)
 	require('plugins.config.debugger')(use)
 	require('plugins.config.indentation')(use)

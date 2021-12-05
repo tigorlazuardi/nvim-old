@@ -93,9 +93,8 @@ end
 return function(use)
 	use({
 		'lewis6991/gitsigns.nvim',
-		requires = 'nvim-lua/plenary.nvim',
+		event = 'VimEnter',
 		config = signs_config,
-		wants = { 'which-key.nvim' },
 		cond = function()
 			return not vim.g.is_windows
 		end,

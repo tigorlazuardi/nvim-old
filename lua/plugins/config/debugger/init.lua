@@ -1,4 +1,8 @@
 local function config()
+	vim.cmd('PackerLoad nvim-dap')
+	vim.cmd('PackerLoad nvim-dap-virtual-text')
+	vim.cmd('PackerLoad telescope-dap.nvim')
+
 	require('dapui').setup()
 
 	require('plugins.config.debugger.go')
@@ -77,11 +81,12 @@ end
 return function(use)
 	use({
 		'rcarriga/nvim-dap-ui',
+		event = 'BufEnter',
 		requires = {
-			'mfussenegger/nvim-dap',
-			'theHamsta/nvim-dap-virtual-text',
-			'nvim-telescope/telescope-dap.nvim',
-			'jbyuki/one-small-step-for-vimkind',
+			{ 'mfussenegger/nvim-dap', opt = true },
+			{ 'theHamsta/nvim-dap-virtual-text', opt = true },
+			{ 'nvim-telescope/telescope-dap.nvim', opt = true },
+			{ 'jbyuki/one-small-step-for-vimkind', opt = true },
 		},
 		wants = { 'which-key.nvim', 'telescope.nvim', 'nvim-treesitter' },
 		config = config,

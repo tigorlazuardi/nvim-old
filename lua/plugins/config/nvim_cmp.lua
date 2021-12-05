@@ -1,4 +1,16 @@
 local function cmp_config()
+	vim.cmd([[
+		PackerLoad friendly-snippets
+		PackerLoad LuaSnip
+		PackerLoad lspkind-nvim
+		PackerLoad cmp-buffer
+		PackerLoad cmp-emoji
+		PackerLoad cmp-nvim-lsp
+		PackerLoad cmp-path
+		PackerLoad cmp-spell
+		PackerLoad cmp_luasnip
+		PackerLoad nvim-autopairs
+	]])
 	require('lspkind').init({
 		with_text = true,
 		preset = 'default',
@@ -37,20 +49,15 @@ local function cmp_config()
 					latex_symbols = '[Latex]',
 					path = '[Path]',
 					vsnip = '[VSnip]',
-					calc = '[Calc]',
-					-- crates = '[Crates]',
 				})[entry.source.name]
 				return vim_item
 			end,
 		},
 		sources = {
 			{ name = 'nvim_lsp' },
-			-- { name = 'nvim_lua' },
 			{ name = 'path' },
 			{ name = 'buffer' },
-			-- { name = 'crates' },
 			{ name = 'spell' },
-			{ name = 'calc' },
 			{ name = 'emoji' },
 			{ name = 'luasnip' },
 		},
@@ -111,21 +118,19 @@ return function(use)
 	use({
 		'hrsh7th/nvim-cmp',
 		requires = {
+			'L3MON4D3/LuaSnip',
+			'f3fora/cmp-spell',
+			'hrsh7th/cmp-buffer',
+			'hrsh7th/cmp-emoji',
+			'hrsh7th/cmp-nvim-lsp',
+			'hrsh7th/cmp-path',
 			'onsails/lspkind-nvim',
 			'rafamadriz/friendly-snippets',
-			'L3MON4D3/LuaSnip',
-			'hrsh7th/cmp-nvim-lsp',
-			'hrsh7th/cmp-nvim-lua',
 			'saadparwaiz1/cmp_luasnip',
-			'hrsh7th/cmp-path',
-			'hrsh7th/cmp-buffer',
-			{ 'Saecki/crates.nvim', cond = 'vim.g.is_windows' },
-			'f3fora/cmp-spell',
-			'hrsh7th/cmp-calc',
-			'hrsh7th/cmp-emoji',
 			'windwp/nvim-autopairs',
 		},
 		wants = { 'which-key.nvim' },
 		config = cmp_config,
+		event = 'InsertEnter',
 	})
 end

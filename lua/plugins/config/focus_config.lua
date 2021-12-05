@@ -7,5 +7,6 @@ return function(use)
 				excluded_filetypes = { 'calltree' },
 			})
 		end,
+		event = 'VimEnter',
 	})
 end

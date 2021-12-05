@@ -2,6 +2,8 @@
 ## [Unreleased]
 
 ### Feat
+- **lsp-lua:** added lsp lua config for windows
+- **neovim:** all plugins are lazyloaded
 - **taplo-lsp:** added lsp support for taplo
 
 ### Fix

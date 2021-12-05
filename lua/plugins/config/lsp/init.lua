@@ -1,15 +1,4 @@
-local function signs_config()
-	local signs = { Error = ' ', Warn = ' ', Hint = ' ', Information = ' ' }
-
-	for type, icon in pairs(signs) do
-		local hl = 'DiagnosticSign' .. type
-		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
-	end
-end
-
 return function(use)
-	signs_config()
-
 	require('plugins.config.lsp.rust')(use)
 	use({
 		'neovim/nvim-lspconfig',
@@ -19,11 +8,26 @@ return function(use)
 			'folke/lsp-colors.nvim',
 			'nvim-lua/lsp_extensions.nvim',
 			'kosayoda/nvim-lightbulb',
-			'simrat39/symbols-outline.nvim',
 			{ 'jose-elias-alvarez/nvim-lsp-ts-utils', wants = { 'null-ls.nvim' } },
 		},
-		wants = { 'telescope.nvim', 'which-key.nvim' },
+		after = { 'telescope.nvim', 'which-key.nvim' },
+		event = { 'BufReadPre' },
+		setup = function()
+			local signs = { Error = ' ', Warn = ' ', Hint = ' ', Information = ' ' }
+
+			for type, icon in pairs(signs) do
+				local hl = 'DiagnosticSign' .. type
+				vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
+			end
+		end,
 		config = function()
+			local cmd = vim.cmd
+			cmd('PackerLoad lsp_signature.nvim')
+			cmd('PackerLoad lua-dev.nvim')
+			cmd('PackerLoad lsp-colors.nvim')
+			cmd('PackerLoad lsp_extensions.nvim')
+			cmd('PackerLoad nvim-lightbulb')
+
 			local wk = require('which-key')
 
 			wk.register({
@@ -62,5 +66,4 @@ return function(use)
 			})
 		end,
 	})
-	use({ 'simrat39/symbols-outline.nvim' })
 end

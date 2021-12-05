@@ -3,6 +3,7 @@ return function(use)
 		'justinmk/vim-sneak',
 		wants = { 'which-key.nvim' },
 		after = { 'vim-cutlass' },
+		event = 'BufEnter',
 		config = function()
 			local wk = require('which-key')
 			local mappings = {

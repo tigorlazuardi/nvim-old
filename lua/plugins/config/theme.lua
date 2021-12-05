@@ -17,8 +17,8 @@ end
 return function(use)
 	use({
 		'folke/tokyonight.nvim',
-		cond = 'vim.g.not_vscode',
 		setup = tokyonight_setup,
+		event = 'VimEnter',
 		config = function()
 			vim.cmd([[colorscheme tokyonight]])
 		end,
@@ -26,7 +26,7 @@ return function(use)
 
 	use({
 		'EdenEast/nightfox.nvim',
-		cond = 'vim.g.not_vscode',
+		event = 'VimEnter',
 		config = function()
 			local nightfox = require('nightfox')
 			nightfox.setup({
@@ -38,9 +38,10 @@ return function(use)
 			-- nightfox.load()
 		end,
 	})
-	use('sainnhe/edge')
+	use({ 'sainnhe/edge', event = 'VimEnter' })
 	use({
 		'projekt0n/github-nvim-theme',
+		event = 'VimEnter',
 		config = function()
 			-- require('github-theme').setup({
 			-- 	theme_style = 'dimmed',
@@ -54,6 +55,7 @@ return function(use)
 
 	use({
 		'sainnhe/everforest',
+		event = 'VimEnter',
 		config = function()
 			-- vim.cmd([[colorscheme everforest]])
 		end,

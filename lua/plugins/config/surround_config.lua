@@ -1,7 +1,7 @@
 return function(use)
 	use({
 		'blackCauldron7/surround.nvim',
-		after = { 'vim-cutlass' },
+		event = 'VimEnter',
 		config = function()
 			local prequire = require('personal.utils.prequire')
 			local surround = require('surround')
