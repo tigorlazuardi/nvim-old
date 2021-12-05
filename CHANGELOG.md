@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+
+<a name="v2.0.0"></a>
+## [v2.0.0] - 2021-12-05
 ### Feat
 - **lsp-lua:** added lsp lua config for windows
 - **neovim:** all plugins are lazyloaded
@@ -228,7 +231,8 @@
 - **indentation:** moved indentation to it's own folder
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v1.3.1...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v2.0.0...HEAD
+[v2.0.0]: https://github.com/tigorlazuardi/nvim/compare/v1.3.1...v2.0.0
 [v1.3.1]: https://github.com/tigorlazuardi/nvim/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/tigorlazuardi/nvim/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/tigorlazuardi/nvim/compare/v1.1.0...v1.2.0
