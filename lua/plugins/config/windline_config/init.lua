@@ -3,7 +3,12 @@ return function(use)
 		'windwp/windline.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', 'nvim-lua/lsp-status.nvim' },
 		config = function()
-			vim.cmd('PackerLoad lsp-status.nvim')
+			local prequire = require('personal.utils.prequire')
+			local packer = prequire('packer')
+			if not packer then
+				return
+			end
+			packer.loader('lsp-status.nvim')
 			local lsp_status = require('lsp-status')
 			lsp_status.config({
 				indicator_errors = '',

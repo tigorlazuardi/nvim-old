@@ -18,7 +18,7 @@ return function(use)
 	use({
 		'folke/tokyonight.nvim',
 		setup = tokyonight_setup,
-		event = 'VimEnter',
+		opt = false,
 		config = function()
 			vim.cmd([[colorscheme tokyonight]])
 		end,

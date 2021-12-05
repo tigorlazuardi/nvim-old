@@ -21,12 +21,16 @@ return function(use)
 			end
 		end,
 		config = function()
-			local cmd = vim.cmd
-			cmd('PackerLoad lsp_signature.nvim')
-			cmd('PackerLoad lua-dev.nvim')
-			cmd('PackerLoad lsp-colors.nvim')
-			cmd('PackerLoad lsp_extensions.nvim')
-			cmd('PackerLoad nvim-lightbulb')
+			local prequire = require('personal.utils.prequire')
+			local packer = prequire('packer')
+			if not packer then
+				return
+			end
+			packer.loader('lsp_signature.nvim')
+			packer.loader('lua-dev.nvim')
+			packer.loader('lsp-colors.nvim')
+			packer.loader('lsp_extensions.nvim')
+			packer.loader('nvim-lightbulb')
 
 			local wk = require('which-key')
 

@@ -1,16 +1,19 @@
 local function cmp_config()
-	vim.cmd([[
-		PackerLoad friendly-snippets
-		PackerLoad LuaSnip
-		PackerLoad lspkind-nvim
-		PackerLoad cmp-buffer
-		PackerLoad cmp-emoji
-		PackerLoad cmp-nvim-lsp
-		PackerLoad cmp-path
-		PackerLoad cmp-spell
-		PackerLoad cmp_luasnip
-		PackerLoad nvim-autopairs
-	]])
+	local prequire = require('personal.utils.prequire')
+	local packer = prequire('packer')
+	if not packer then
+		return
+	end
+	packer.loader('friendly-snippets')
+	packer.loader('LuaSnip')
+	packer.loader('lspkind-nvim')
+	packer.loader('cmp-buffer')
+	packer.loader('cmp-emoji')
+	packer.loader('cmp-nvim-lsp')
+	packer.loader('cmp-path')
+	packer.loader('cmp-spell')
+	packer.loader('cmp_luasnip')
+	packer.loader('nvim-autopairs')
 	require('lspkind').init({
 		with_text = true,
 		preset = 'default',

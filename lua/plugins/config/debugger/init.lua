@@ -1,7 +1,12 @@
 local function config()
-	vim.cmd('PackerLoad nvim-dap')
-	vim.cmd('PackerLoad nvim-dap-virtual-text')
-	vim.cmd('PackerLoad telescope-dap.nvim')
+	local prequire = require('personal.utils.prequire')
+	local packer = prequire('packer')
+	if not packer then
+		return
+	end
+	packer.loader('nvim-dap')
+	packer.loader('nvim-dap-virtual-text')
+	packer.loader('telescope-dap.nvim')
 
 	require('dapui').setup()
 

@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Fix
+- **vscode-compability:** packerload moved to packer.loader
+
 
 <a name="v2.0.0"></a>
 ## [v2.0.0] - 2021-12-05

@@ -1,6 +1,11 @@
 local function run()
-	vim.cmd('PackerLoad plenary.nvim')
-	vim.cmd('PackerLoad telescope-fzf-native.nvim')
+	local prequire = require('personal.utils.prequire')
+	local packer = prequire('packer')
+	if not packer then
+		return
+	end
+	packer.loader('plenary.nvim')
+	packer.loader('telescope-fzf-native.nvim')
 	local wk = require('which-key')
 	wk.register({
 		['<leader>f'] = {

@@ -74,7 +74,12 @@ local function run()
 end
 
 local function configure_kommentary()
-	vim.cmd('PackerLoad kommentary')
+	local prequire = require('personal.utils.prequire')
+	local packer = prequire('packer')
+	if not packer then
+		return
+	end
+	packer.loader('kommentary')
 	require('kommentary.config').configure_language('typescriptreact', {
 		single_line_comment_string = 'auto',
 		multi_line_comment_strings = 'auto',
