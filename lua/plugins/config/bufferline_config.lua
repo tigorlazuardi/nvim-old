@@ -2,6 +2,7 @@ return function(use)
 	use({
 		'akinsho/nvim-bufferline.lua',
 		requires = 'kyazdani42/nvim-web-devicons',
+		event = 'BufRead',
 		config = function()
 			require('bufferline').setup({
 				custom_filter = function(bufnr)

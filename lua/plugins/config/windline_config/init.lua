@@ -3,6 +3,7 @@ return function(use)
 		'windwp/windline.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', 'nvim-lua/lsp-status.nvim' },
 		config = function()
+			vim.cmd('PackerLoad lsp-status.nvim')
 			local lsp_status = require('lsp-status')
 			lsp_status.config({
 				indicator_errors = '',
@@ -16,5 +17,6 @@ return function(use)
 			vim.cmd([[set noshowmode]])
 			require('plugins.config.windline_config.airline')
 		end,
+		event = 'BufEnter',
 	})
 end

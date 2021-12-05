@@ -1,6 +1,7 @@
 return function(use)
 	use({
 		'folke/which-key.nvim',
+		event = 'BufReadPre',
 		config = function()
 			local wk = require('which-key')
 			wk.setup({

@@ -22,5 +22,6 @@ return function(use)
 		requires = { 'nvim-lua/plenary.nvim' },
 		wants = { 'which-key.nvim' },
 		config = config,
+		event = 'VimEnter',
 	})
 end

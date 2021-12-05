@@ -1,7 +1,7 @@
 return function(use)
 	use({
 		'svermeulen/vim-subversive',
-		wants = { 'which-key.nvim' },
+		event = 'BufRead',
 		config = function()
 			local wk = require('which-key')
 			wk.register({

@@ -1,7 +1,7 @@
 return function(use)
 	use({
 		'svermeulen/vim-cutlass',
-		wants = { 'which-key.nvim' },
+		event = 'BufReadPre',
 		config = function()
 			local wk = require('which-key')
 			wk.register({

@@ -3,6 +3,7 @@ return function(use)
 		'folke/todo-comments.nvim',
 		requires = 'nvim-lua/plenary.nvim',
 		wants = { 'which-key.nvim' },
+		event = 'BufEnter',
 		config = function()
 			require('todo-comments').setup({
 				highlight = { pattern = [[.*<(KEYWORDS)\s*]] },

@@ -74,6 +74,7 @@ local function run()
 end
 
 local function configure_kommentary()
+	vim.cmd('PackerLoad kommentary')
 	require('kommentary.config').configure_language('typescriptreact', {
 		single_line_comment_string = 'auto',
 		multi_line_comment_strings = 'auto',
@@ -111,16 +112,18 @@ return function(use)
 			},
 		},
 		config = run,
-		cond = 'vim.g.not_vscode',
+		event = 'BufReadPre',
 	})
 	use({
 		'nvim-treesitter/playground',
 		after = { 'nvim-treesitter' },
+		event = 'BufReadPre',
 	})
 	use({
 		'lewis6991/spellsitter.nvim',
 		after = { 'nvim-treesitter' },
 		config = spell_sitter,
+		event = 'BufReadPre',
 	})
 	use({
 		'windwp/nvim-ts-autotag',

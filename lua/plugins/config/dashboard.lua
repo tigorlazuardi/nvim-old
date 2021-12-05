@@ -69,5 +69,5 @@ local function setup()
 end
 
 return function(use)
-	use({ 'glepnir/dashboard-nvim', setup = setup })
+	use({ 'glepnir/dashboard-nvim', setup = setup, event = 'VimEnter' })
 end

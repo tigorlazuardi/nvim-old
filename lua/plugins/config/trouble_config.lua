@@ -4,6 +4,7 @@ return function(use)
 		'folke/trouble.nvim',
 		requires = 'kyazdani42/nvim-web-devicons',
 		wants = { 'which-key.nvim' },
+		event = 'BufEnter',
 		config = function()
 			require('trouble').setup({
 				position = 'right',

@@ -22,5 +22,6 @@ return function(use)
 	use({
 		'andweeb/presence.nvim',
 		config = run,
+		event = 'BufEnter',
 	})
 end
