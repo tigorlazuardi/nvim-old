@@ -117,22 +117,23 @@ return function(use)
 			},
 		},
 		config = run,
-		event = 'BufReadPre',
+		event = 'VimEnter',
 	})
 	use({
 		'nvim-treesitter/playground',
 		after = { 'nvim-treesitter' },
-		event = 'BufReadPre',
+		event = 'VimEnter',
 	})
 	use({
 		'lewis6991/spellsitter.nvim',
 		after = { 'nvim-treesitter' },
 		config = spell_sitter,
-		event = 'BufReadPre',
+		event = 'VimEnter',
 	})
 	use({
 		'windwp/nvim-ts-autotag',
 		after = { 'nvim-treesitter' },
+		event = 'VimEnter',
 		config = function()
 			require('nvim-ts-autotag').setup({
 				filetypes = {

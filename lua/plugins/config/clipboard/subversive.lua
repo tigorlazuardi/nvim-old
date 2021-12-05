@@ -1,7 +1,7 @@
 return function(use)
 	use({
 		'svermeulen/vim-subversive',
-		event = 'BufRead',
+		event = 'VimEnter',
 		config = function()
 			local wk = require('which-key')
 			wk.register({

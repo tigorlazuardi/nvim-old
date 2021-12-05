@@ -11,7 +11,7 @@ return function(use)
 			{ 'jose-elias-alvarez/nvim-lsp-ts-utils', wants = { 'null-ls.nvim' } },
 		},
 		after = { 'telescope.nvim', 'which-key.nvim' },
-		event = { 'BufReadPre' },
+		event = { 'VimEnter' },
 		setup = function()
 			local signs = { Error = ' ', Warn = ' ', Hint = ' ', Information = ' ' }
 

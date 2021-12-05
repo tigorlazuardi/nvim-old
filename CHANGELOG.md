@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Fix
+- **bug-empty-file:** fixed bug empty file on open
 - **vscode-compability:** packerload moved to packer.loader
 
 

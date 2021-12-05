@@ -48,7 +48,7 @@ return function(use)
 	use({
 		'nvim-telescope/telescope.nvim',
 		wants = { 'which-key.nvim' },
-		event = { 'BufRead' },
+		event = 'VimEnter',
 		config = run,
 	})
 	use({
@@ -56,7 +56,7 @@ return function(use)
 		run = 'make',
 		wants = { 'telescope.nvim' },
 		after = { 'telescope.nvim' },
-		event = { 'BufRead' },
+		event = 'VimEnter',
 		cond = function()
 			return not vim.g.is_windows
 		end,
