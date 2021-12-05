@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+
+<a name="v2.0.1"></a>
+## [v2.0.1] - 2021-12-05
 ### Fix
 - **bug-empty-file:** fixed bug empty file on open
 - **vscode-compability:** packerload moved to packer.loader
@@ -235,7 +238,8 @@
 - **indentation:** moved indentation to it's own folder
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v2.0.1...HEAD
+[v2.0.1]: https://github.com/tigorlazuardi/nvim/compare/v2.0.0...v2.0.1
 [v2.0.0]: https://github.com/tigorlazuardi/nvim/compare/v1.3.1...v2.0.0
 [v1.3.1]: https://github.com/tigorlazuardi/nvim/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/tigorlazuardi/nvim/compare/v1.2.0...v1.3.0
