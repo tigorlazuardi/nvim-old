@@ -22,6 +22,7 @@ local function run()
 		i = { ['<esc>'] = actions.close },
 	}
 
+	pcall(packer.loader, 'trouble.nvim')
 	local present, trouble = pcall(require, 'trouble.providers.telescope')
 	if present then
 		telescope_mappings['i']['<c-t>'] = trouble.open_with_trouble

@@ -3,6 +3,7 @@
 
 ### Config
 - **textobjects:** textobject is now loaded by vim-texobj-user
+- **trouble:** trouble now calls the function directly instead of via command
 
 
 <a name="v2.0.1"></a>

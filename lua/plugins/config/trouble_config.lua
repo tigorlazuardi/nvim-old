@@ -4,7 +4,7 @@ return function(use)
 		'folke/trouble.nvim',
 		requires = 'kyazdani42/nvim-web-devicons',
 		wants = { 'which-key.nvim' },
-		event = 'BufEnter',
+		-- event = 'BufEnter',
 		config = function()
 			require('trouble').setup({
 				position = 'right',
@@ -13,18 +13,42 @@ return function(use)
 			wk.register({
 				['<leader>x'] = {
 					name = '+trouble',
-					x = { '<cmd>TroubleToggle<cr>', 'Toggle Trouble' },
+					x = {
+						function()
+							require('trouble').toggle()
+						end,
+						'Toggle Trouble',
+					},
 					w = {
-						'<cmd>TroubleToggle lsp_workspace_diagnostics<cr>',
+						function()
+							require('trouble').toggle('lsp_workspace_diagnostics')
+						end,
 						'Toggle Trouble LSP Workspace Diagnostics',
 					},
 					d = {
-						'<cmd>TroubleToggle lsp_document_diagnostics<cr>',
+						function()
+							require('trouble').toggle('lsp_document_diagnostics')
+						end,
 						'Toggle Trouble LSP Document Diagnostics',
 					},
-					l = { '<cmd>TroubleToggle loclist<cr>', 'Toggle Trouble loclist' },
-					q = { '<cmd>TroubleToggle quickfix<cr>', 'Toggle Trouble quickfix' },
-					r = { '<cmd>TroubleToggle lsp_references<cr>', 'Toggle Trouble LSP References' },
+					l = {
+						function()
+							require('trouble').toggle('loclist')
+						end,
+						'Toggle Trouble loclist',
+					},
+					q = {
+						function()
+							require('trouble').toggle('quickfix')
+						end,
+						'Toggle Trouble quickfix',
+					},
+					r = {
+						function()
+							require('trouble').toggle('lsp_references')
+						end,
+						'Toggle Trouble LSP References',
+					},
 				},
 			})
 		end,
