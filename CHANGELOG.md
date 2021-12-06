@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Config
+- **textobjects:** textobject is now loaded by vim-texobj-user
+
 
 <a name="v2.0.1"></a>
 ## [v2.0.1] - 2021-12-05
