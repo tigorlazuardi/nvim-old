@@ -5,6 +5,9 @@
 - **textobjects:** textobject is now loaded by vim-texobj-user
 - **trouble:** trouble now calls the function directly instead of via command
 
+### Feat
+- **settings:** enabled set title so neovide can show different filesnames
+
 
 <a name="v2.0.1"></a>
 ## [v2.0.1] - 2021-12-05

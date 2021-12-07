@@ -8,6 +8,8 @@ c('set nu') -- line numbers
 c('set completeopt=menuone,noinsert,noselect')
 c('set shortmess+=c')
 
+c('set title')
+
 require('settings.indent')
 require('settings.clipboard')
 require('settings.search')
