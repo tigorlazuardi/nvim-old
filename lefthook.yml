@@ -4,11 +4,13 @@ pre-commit:
     format:
       glob: "*.{lua}"
       run: stylua {staged_files} && git add {staged_files}
+
 commit-msg:
   parallel: true
   commands:
     commitlint:
-      run: npx --no-install commitlint --edit "$1"
+      run: bash commitlint.sh {1}
+
 post-commit:
   parallel: true
   commands:

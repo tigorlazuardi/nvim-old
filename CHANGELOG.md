@@ -6,6 +6,7 @@
 - **trouble:** trouble now calls the function directly instead of via command
 
 ### Feat
+- **commitlint:** commitlint changed from nodejs to pure bash
 - **settings:** enabled set title so neovide can show different filesnames
 
 
