@@ -1,7 +1,6 @@
 local function setup()
 	-- vim.g.nvim_tree_follow = 1
 	vim.g.nvim_tree_git_hl = 1
-	vim.g.nvim_tree_disable_window_picker = 0
 	-- vim.g.nvim_tree_ignore = { '.git', 'node_modules', '.cache' }
 	vim.g.nvim_tree_window_picker_exclude = {
 		filetype = {
@@ -19,6 +18,7 @@ local function setup()
 		},
 		buftype = { 'terminal' },
 	}
+	vim.g.nvim_tree_highlight_opened_files = 3
 
 	vim.g.nvim_tree_icons = {
 		default = '',
@@ -57,7 +57,7 @@ local function run()
 	require('nvim-tree').setup({
 		update_cwd = true,
 		diagnostics = {
-			enable = false,
+			enable = true,
 			icons = {
 				hint = '',
 				info = '',
@@ -74,10 +74,7 @@ local function run()
 		},
 		update_focused_file = {
 			enable = true,
-			update_cwd = true,
-		},
-		view = {
-			auto_resize = true,
+			update_cwd = false,
 		},
 	})
 

@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Conf
+- **nvim-tree:** nvim tree highlight set to 3
+
 ### Config
 - **textobjects:** textobject is now loaded by vim-texobj-user
 - **trouble:** trouble now calls the function directly instead of via command
