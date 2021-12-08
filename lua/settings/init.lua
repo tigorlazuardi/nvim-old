@@ -9,6 +9,13 @@ c('set completeopt=menuone,noinsert,noselect')
 c('set shortmess+=c')
 
 c('set title')
+c([[
+	augroup titlestringer
+		au!
+		au VimEnter * set titlestring=%{getcwd()}
+		au DirChanged * set titlestring=%{getcwd()}
+	augroup end
+]])
 
 require('settings.indent')
 require('settings.clipboard')

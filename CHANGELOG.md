@@ -11,6 +11,7 @@
 ### Feat
 - **commitlint:** commitlint changed from nodejs to pure bash
 - **settings:** enabled set title so neovide can show different filesnames
+- **titlestring:** title string changed to cwd upon VimEnter and DirChanged
 
 
 <a name="v2.0.1"></a>
