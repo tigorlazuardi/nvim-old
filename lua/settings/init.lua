@@ -9,11 +9,11 @@ c('set completeopt=menuone,noinsert,noselect')
 c('set shortmess+=c')
 
 c('set title')
-c([[
+vim.cmd([[
 	augroup titlestringer
 		au!
-		au VimEnter * set titlestring=%{getcwd()}
-		au DirChanged * set titlestring=%{getcwd()}
+		au DirChanged * let &titlestring = 'nvim - ' . getcwd()
+		au VimEnter * let &titlestring = 'nvim - ' . getcwd()
 	augroup end
 ]])
 

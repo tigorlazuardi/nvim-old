@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Feat
+- **titlestring:** changed from only getcwd to prefixed with `nvim -`
+
 
 <a name="v2.0.2"></a>
 ## [v2.0.2] - 2021-12-08
