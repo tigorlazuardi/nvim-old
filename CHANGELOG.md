@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+
+<a name="v2.1.0"></a>
+## [v2.1.0] - 2021-12-08
 ### Chore
 - format
 
@@ -260,7 +263,8 @@
 - **indentation:** moved indentation to it's own folder
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v2.0.2...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v2.1.0...HEAD
+[v2.1.0]: https://github.com/tigorlazuardi/nvim/compare/v2.0.2...v2.1.0
 [v2.0.2]: https://github.com/tigorlazuardi/nvim/compare/v2.0.1...v2.0.2
 [v2.0.1]: https://github.com/tigorlazuardi/nvim/compare/v2.0.0...v2.0.1
 [v2.0.0]: https://github.com/tigorlazuardi/nvim/compare/v1.3.1...v2.0.0
