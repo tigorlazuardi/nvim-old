@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Chore
+- format
+
 ### Feat
 - **titlestring:** changed from only getcwd to prefixed with `nvim -`
 

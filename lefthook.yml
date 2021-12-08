@@ -1,28 +1,31 @@
 pre-commit:
-  parallel: true
-  commands:
-    format:
-      glob: "*.{lua}"
-      run: stylua {staged_files} && git add {staged_files}
+    parallel: true
+    commands:
+        format:
+            glob: '*.{lua}'
+            run: stylua {staged_files} && git add {staged_files}
 
 commit-msg:
-  parallel: true
-  commands:
-    commitlint:
-      run: bash commitlint.sh {1}
+    parallel: true
+    commands:
+        commitlint:
+            run: bash commitlint.sh {1}
+            skip:
+                - merge
+                - rebase
 
 post-commit:
-  parallel: true
-  commands:
-    changelog:
-      run: lefthook run changelog
+    parallel: true
+    commands:
+        changelog:
+            run: lefthook run changelog
 
 changelog:
-  piped: true
-  commands:
-    1_create:
-      run: git-chglog -o CHANGELOG.md
-    2_add:
-      run: LEFTHOOK=0 git add CHANGELOG.md
-    3_commit:
-      run: LEFTHOOK=0 git commit --amend --no-edit
+    piped: true
+    commands:
+        1_create:
+            run: git-chglog -o CHANGELOG.md
+        2_add:
+            run: LEFTHOOK=0 git add CHANGELOG.md
+        3_commit:
+            run: LEFTHOOK=0 git commit --amend --no-edit
