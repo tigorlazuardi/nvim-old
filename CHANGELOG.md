@@ -5,6 +5,7 @@
 - format
 
 ### Feat
+- **clang-format:** added clang-format to null_ls
 - **titlestring:** changed from only getcwd to prefixed with `nvim -`
 
 

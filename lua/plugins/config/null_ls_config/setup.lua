@@ -60,6 +60,16 @@ if exist('taplo') then
 	table.insert(sources, null_ls.builtins.formatting.taplo)
 end
 
+if exist('clang-format') then
+	table.insert(
+		sources,
+		null_ls.builtins.formatting.clang_format.with({
+			filetypes = { 'proto', 'c', 'cpp', 'cs', 'java' },
+			args = { '--style=google', '-assume-filename=<FILENAME>' },
+		})
+	)
+end
+
 null_ls.config({ sources = sources })
 
 if lspconfig['null-ls'] then
