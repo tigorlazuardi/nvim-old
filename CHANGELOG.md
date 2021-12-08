@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Feat
+- **clang-format:** removed extra args in favor of .clang-format instead
+
 
 <a name="v2.1.0"></a>
 ## [v2.1.0] - 2021-12-08

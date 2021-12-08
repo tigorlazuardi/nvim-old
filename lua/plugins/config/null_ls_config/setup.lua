@@ -65,7 +65,6 @@ if exist('clang-format') then
 		sources,
 		null_ls.builtins.formatting.clang_format.with({
 			filetypes = { 'proto', 'c', 'cpp', 'cs', 'java' },
-			args = { '--style=google', '-assume-filename=<FILENAME>' },
 		})
 	)
 end
