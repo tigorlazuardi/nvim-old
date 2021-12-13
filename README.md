@@ -4,7 +4,7 @@ Neovim Configuration
 
 # Requirements
 
-Neovim 0.5.1 or higher
+Always Nightly Neovim. (Latest edit from this readme.md requires neovim 0.7+)
 
 # Installation
 
@@ -16,7 +16,7 @@ Full command (SSH):
 git clone git@github.com:tigorlazuardi/nvim.git
 ```
 
-Run `nvim`. It should install `packer` automatically.
+Run `nvim` and run command `:PackerSync`.
 
 # Mappings
 
