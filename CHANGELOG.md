@@ -5,6 +5,9 @@
 - **prepare.sh:** added prepare.sh
 - **settings:** font settings now check for wsl
 
+### Fix
+- **settings:** fix logic for wsl font in neovide
+
 
 <a name="v2.0.3"></a>
 ## [v2.0.3] - 2021-12-13
