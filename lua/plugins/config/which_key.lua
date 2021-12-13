@@ -34,15 +34,15 @@ return function(use)
 			})
 
 			wk.register({
-				['<A-J>'] = { '<esc><cmd>m .+1<cr>==gi', 'Swap Line Upwards' },
-				['<A-K>'] = { '<esc><cmd>m .-2<cr>==gi', 'Swap Line Downwards' },
+				['<A-j>'] = { '<esc><cmd>m .+1<cr>==gi', 'Swap Line Upwards' },
+				['<A-k>'] = { '<esc><cmd>m .-2<cr>==gi', 'Swap Line Downwards' },
 			}, {
 				mode = 'i',
 			})
 
 			wk.register({
-				['<A-J>'] = { [[<cmd>m '>+1<cr>gv=gv]], 'Swap Line Upwards' },
-				['<A-K>'] = { [[<cmd>m '<-2<cr>gv=gv]], 'Swap Line Downwards' },
+				['<A-j>'] = { [[<cmd>m '>+1<cr>gv=gv]], 'Swap Line Upwards' },
+				['<A-k>'] = { [[<cmd>m '<-2<cr>gv=gv]], 'Swap Line Downwards' },
 			}, {
 				mode = 'v',
 			})
@@ -60,9 +60,13 @@ return function(use)
 				},
 			})
 
-			vim.cmd([[
-				command! WhichKeyV WhichKey '' v
-				command! WhichKeyI WhichKey '' i
+			wk.register({q = {
+				'<cmd>WhichKey q<cr>', '+quick'
+			}})
+
+			vim.cmd([[
+				command! WhichKeyV WhichKey '' v
+				command! WhichKeyI WhichKey '' i
 			]])
 		end,
 	})
