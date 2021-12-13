@@ -3,10 +3,7 @@ if vim.fn.exepath('vscode-eslint-language-server') then
 		on_attach = function(_client, buffer)
 			local prequire = require('personal.utils.prequire')
 			vim.cmd([[
-				augroup eslint_format
-					au!
 					au BufWritePre <buffer> EslintFixAll
-				augroup end
 			]])
 
 			local wk = prequire('which-key')
