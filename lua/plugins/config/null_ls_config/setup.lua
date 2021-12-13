@@ -69,29 +69,23 @@ if exist('clang-format') then
 	)
 end
 
-null_ls.config({ sources = sources })
-
-if lspconfig['null-ls'] then
-	lspconfig['null-ls'].setup({
-		autostart = true,
-		on_attach = function(client, bufnr)
-			if client.resolved_capabilities.document_formatting then
-				vim.cmd([[
-					augroup null_ls_format
-						au!		
-						au BufWritePost <buffer> lua vim.lsp.buf.formatting_sync() 
-					augroup end
-				]])
-			end
-			local wk = require('which-key')
-			wk.register({
-				q = {
-					name = 'quick',
-					f = { '<cmd>lua vim.lsp.buf.formatting_sync()<cr>', 'Format Current Buffer' },
-				},
-			}, {
-				buffer = bufnr,
-			})
-		end,
-	})
-end
+null_ls.setup({
+	sources = sources,
+	diagnostics_format = '(#{s}) #{m}',
+	on_attach = function(client, bufnr)
+		if client.resolved_capabilities.document_formatting then
+			vim.cmd([[
+				au BufWritePost <buffer> lua vim.lsp.buf.formatting_sync() 
+			]])
+		end
+		local wk = require('which-key')
+		wk.register({
+			q = {
+				name = 'quick',
+				f = { '<cmd>lua vim.lsp.buf.formatting_sync()<cr>', 'Format Current Buffer' },
+			},
+		}, {
+			buffer = bufnr,
+		})
+	end,
+})
