@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Conf
+- **nvim_tree:** filtered node_modules and target for ts and rust respectively
 - **prepare.sh:** added prepare.sh
 - **settings:** font settings now check for wsl
 

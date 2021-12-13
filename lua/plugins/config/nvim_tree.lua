@@ -76,6 +76,9 @@ local function run()
 			enable = true,
 			update_cwd = false,
 		},
+		filters = {
+			custom = { 'node_modules', 'target' },
+		},
 	})
 
 	local wk = require('which-key')
