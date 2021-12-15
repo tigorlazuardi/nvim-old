@@ -74,7 +74,7 @@ local function run()
 		},
 		update_focused_file = {
 			enable = true,
-			update_cwd = false,
+			update_cwd = true,
 		},
 		filters = {
 			custom = { 'node_modules', 'target' },
