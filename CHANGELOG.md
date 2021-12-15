@@ -8,6 +8,7 @@
 - **settings:** font settings now check for wsl
 
 ### Fix
+- **settings:** fix wsl check not checking the integer value
 - **settings:** fix logic for wsl font in neovide
 
 

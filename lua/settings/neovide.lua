@@ -9,7 +9,7 @@ vim.g.neovide_window_floating_blur = 0
 vim.g.neovide_font_size_windows = 14
 vim.g.neovide_font_size_linux = 14
 
-if vim.g.is_windows or vim.fn.has('wsl') then
+if vim.g.is_windows or vim.fn.has('wsl') == 1 then
 	vim.cmd([[set guifont=FiraCode\ NF:h]] .. tostring(vim.g.neovide_font_size_windows))
 else
 	vim.cmd([[set guifont=FiraCode\ Nerd\ Font\ Mono:h]] .. tostring(vim.g.neovide_font_size_linux))
@@ -27,7 +27,7 @@ _G.font_size = function(increase)
 	else
 		vim.g.neovide_font_size_windows = vim.g.neovide_font_size_windows - 1
 		vim.g.neovide_font_size_linux = vim.g.neovide_font_size_linux - 1
-		if vim.g.is_windows or vim.fn.has('wsl') then
+		if vim.g.is_windows or vim.fn.has('wsl') == 1 then
 			vim.cmd([[set guifont=FiraCode\ NF:h]] .. tostring(vim.g.neovide_font_size_windows))
 		else
 			vim.cmd([[set guifont=FiraCode\ Nerd\ Font\ Mono:h]] .. tostring(vim.g.neovide_font_size_linux))
