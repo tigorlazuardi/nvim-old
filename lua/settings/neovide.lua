@@ -19,19 +19,14 @@ _G.font_size = function(increase)
 	if increase then
 		vim.g.neovide_font_size_windows = vim.g.neovide_font_size_windows + 1
 		vim.g.neovide_font_size_linux = vim.g.neovide_font_size_linux + 1
-		if vim.g.is_windows or vim.fn.has('wsl') == 1 then
-			vim.cmd([[set guifont=FiraCode\ NF:h]] .. tostring(vim.g.neovide_font_size_windows))
-		else
-			vim.cmd([[set guifont=FiraCode\ Nerd\ Font\ Mono:h]] .. tostring(vim.g.neovide_font_size_linux))
-		end
 	else
 		vim.g.neovide_font_size_windows = vim.g.neovide_font_size_windows - 1
 		vim.g.neovide_font_size_linux = vim.g.neovide_font_size_linux - 1
-		if vim.g.is_windows or vim.fn.has('wsl') == 1 then
-			vim.cmd([[set guifont=FiraCode\ NF:h]] .. tostring(vim.g.neovide_font_size_windows))
-		else
-			vim.cmd([[set guifont=FiraCode\ Nerd\ Font\ Mono:h]] .. tostring(vim.g.neovide_font_size_linux))
-		end
+	end
+	if vim.g.is_windows or vim.fn.has('wsl') == 1 then
+		vim.cmd([[set guifont=FiraCode\ NF:h]] .. tostring(vim.g.neovide_font_size_windows))
+	else
+		vim.cmd([[set guifont=FiraCode\ Nerd\ Font\ Mono:h]] .. tostring(vim.g.neovide_font_size_linux))
 	end
 end
 

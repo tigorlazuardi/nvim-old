@@ -11,6 +11,9 @@
 - **settings:** fix wsl check not checking the integer value
 - **settings:** fix logic for wsl font in neovide
 
+### Refactor
+- **settings:** more readable neovide config
+
 
 <a name="v2.0.3"></a>
 ## [v2.0.3] - 2021-12-13
