@@ -12,6 +12,9 @@
 - **project.nvim:** reenabled project nvim
 - **settings:** font settings now check for wsl
 
+### Feat
+- **telescope:** added custom picker to cwd to given folder
+
 ### Fix
 - **settings:** fix wsl check not checking the integer value
 - **settings:** fix logic for wsl font in neovide

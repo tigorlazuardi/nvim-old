@@ -6,6 +6,7 @@ local function run()
 	end
 	packer.loader('plenary.nvim')
 	packer.loader('telescope-fzf-native.nvim')
+	packer.loader('telescope-file-browser.nvim')
 	local wk = require('which-key')
 	wk.register({
 		['<leader>f'] = {
@@ -14,6 +15,45 @@ local function run()
 			g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", 'Live Grep (Word Search)' },
 			b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", 'Find Buffer' },
 			h = { "<cmd>lua require('telescope.builtin').help_tags()<cr>", 'List Help Tags' },
+			c = {
+				function()
+					local pickers = require('telescope.pickers')
+					local finders = require('telescope.finders')
+					local conf = require('telescope.config').values
+					local actions = require('telescope.actions')
+					local actions_set = require('telescope.actions.set')
+					local state = require('telescope.actions.state')
+					local Path = require('plenary.path')
+					local os_sep = Path.path.sep
+
+					pickers.new({}, {
+						prompt_title = 'CD Dir',
+						finder = finders.new_oneshot_job({ 'fd', '-t', 'd', '-H' }, {
+							cwd = vim.fn.getcwd(),
+						}),
+						sorter = conf.generic_sorter({}),
+						previewer = conf.file_previewer({}),
+						attach_mappings = function(prompt_bufnr, _map)
+							local test = function()
+								return state.get_selected_entry().path:sub(-1) == os_sep
+							end
+							actions_set.select:replace_if(test, function()
+								local selected = state.get_selected_entry(prompt_bufnr)
+								actions.close(prompt_bufnr)
+								if selected == nil then
+									return
+								end
+								local result = vim.fn.chdir(selected.value)
+								if result == '' then
+									error('failed to cd to ' .. selected.value, vim.diagnostic.severity.E)
+								end
+							end)
+							return true
+						end,
+					}):find()
+				end,
+				'Change Directory',
+			},
 		},
 	})
 
@@ -51,6 +91,12 @@ return function(use)
 		wants = { 'which-key.nvim' },
 		event = 'VimEnter',
 		config = run,
+	})
+	use({
+		'nvim-telescope/telescope-file-browser.nvim',
+		config = function()
+			require('telescope').load_extension('file_browser')
+		end,
 	})
 	use({
 		'nvim-telescope/telescope-fzf-native.nvim',
