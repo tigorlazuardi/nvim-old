@@ -60,9 +60,10 @@ return function(use)
 				},
 			})
 
-			wk.register({q = {
-				'<cmd>WhichKey q<cr>', '+quick'
-			}})
+			wk.register({ q = {
+				'<cmd>WhichKey q<cr>',
+				'+quick',
+			} })
 
 			vim.cmd([[
 				command! WhichKeyV WhichKey '' v

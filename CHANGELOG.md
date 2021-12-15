@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Chore
+- format
+
 ### Conf
 - **golang:** enabled dap config on golang files
 - **neovide:** neovide config blur is removed since they fixed the blur problem on telescope
