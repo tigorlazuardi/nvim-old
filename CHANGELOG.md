@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Conf
+- **neovide:** neovide config blur is removed since they fixed the blur problem on telescope
 - **nvim_tree:** filtered node_modules and target for ts and rust respectively
 - **prepare.sh:** added prepare.sh
 - **project.nvim:** reenabled project nvim
