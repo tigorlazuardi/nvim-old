@@ -13,6 +13,7 @@
 - **settings:** font settings now check for wsl
 
 ### Feat
+- **null-ls:** added integration to curl and proselint
 - **telescope:** added custom picker to cwd to given folder
 
 ### Fix

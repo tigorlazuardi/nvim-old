@@ -10,7 +10,7 @@ if not null_ls then
 	return
 end
 
-local sources = {}
+local sources = { null_ls.builtins.completion.spell }
 
 local function exist(bin)
 	return vim.fn.exepath(bin) ~= ''
@@ -69,6 +69,14 @@ if exist('clang-format') then
 	)
 end
 
+if exist('curl') then
+	table.insert(sources, null_ls.builtins.hover.dictionary)
+end
+
+if exist('proselint') then
+	table.insert(sources, null_ls.builtins.diagnostics.proselint)
+end
+
 null_ls.setup({
 	sources = sources,
 	diagnostics_format = '(#{s}) #{m}',
@@ -78,6 +86,7 @@ null_ls.setup({
 				au BufWritePost <buffer> lua vim.lsp.buf.formatting_sync() 
 			]])
 		end
+		require('plugins.config.lsp.on_attach')(client, bufnr)
 		local wk = require('which-key')
 		wk.register({
 			q = {
