@@ -41,7 +41,7 @@ return function(client, bufnr)
 		gnp = { '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', '(Diagnostics) Go to Previous Diagnostic' },
 		gnn = { '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', '(Diagnostics) Go to Next Diagnostic' },
 		ga = {
-			'<cmd>CodeActionMenu<cr>',
+			'<cmd>lua vim.lsp.buf.code_action()<cr>',
 			'(LSP) Code Actions',
 		},
 		gr = {

@@ -1,9 +1,6 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
-
-<a name="v2.0.4"></a>
-## [v2.0.4] - 2021-12-16
 ### Chore
 - format
 
@@ -19,6 +16,7 @@
 - **telescope:** added custom picker to cwd to given folder
 
 ### Fix
+- **code-action:** removed code-action-menu because it does not get updated to neovim nightly
 - **settings:** fix wsl check not checking the integer value
 - **settings:** fix logic for wsl font in neovide
 - **telescope:** fix cd picker
@@ -233,8 +231,7 @@
 - **indentation:** moved indentation to it's own folder
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v2.0.4...HEAD
-[v2.0.4]: https://github.com/tigorlazuardi/nvim/compare/v2.0.3...v2.0.4
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v2.0.3...HEAD
 [v2.0.3]: https://github.com/tigorlazuardi/nvim/compare/v1.3.1...v2.0.3
 [v1.3.1]: https://github.com/tigorlazuardi/nvim/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/tigorlazuardi/nvim/compare/v1.2.0...v1.3.0

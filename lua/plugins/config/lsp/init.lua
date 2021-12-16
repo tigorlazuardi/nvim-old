@@ -55,10 +55,11 @@ return function(use)
 			require('plugins.config.lsp.setup')
 		end,
 	})
-	use({
-		'weilbith/nvim-code-action-menu',
-		cmd = 'CodeActionMenu',
-	})
+	-- use({
+	-- 	'weilbith/nvim-code-action-menu',
+	-- 	-- cmd = 'CodeActionMenu',
+	-- 	event = {'VimEnter'},
+	-- })
 	use({
 		'ldelossa/calltree.nvim',
 		config = function()
