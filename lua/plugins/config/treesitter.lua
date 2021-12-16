@@ -110,11 +110,11 @@ return function(use)
 		run = ':TSUpdate',
 		requires = {
 			{ 'nvim-treesitter/nvim-treesitter-textobjects' },
-			{
-				'JoosepAlviste/nvim-ts-context-commentstring',
-				ft = { 'typescriptreact', 'javascriptreact' },
-				config = configure_kommentary,
-			},
+			-- {
+			-- 	'JoosepAlviste/nvim-ts-context-commentstring',
+			-- 	ft = { 'typescriptreact', 'javascriptreact' },
+			-- 	config = configure_kommentary,
+			-- },
 		},
 		config = run,
 		event = 'VimEnter',
