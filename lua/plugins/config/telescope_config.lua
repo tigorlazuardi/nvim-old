@@ -20,11 +20,8 @@ local function run()
 					local pickers = require('telescope.pickers')
 					local finders = require('telescope.finders')
 					local conf = require('telescope.config').values
-					local actions = require('telescope.actions')
-					local actions_set = require('telescope.actions.set')
-					local state = require('telescope.actions.state')
-					local Path = require('plenary.path')
-					local os_sep = Path.path.sep
+							local state = require('telescope.actions.state')
+							local actions = require('telescope.actions')
 
 					pickers.new({}, {
 						prompt_title = 'CD Dir',
@@ -34,10 +31,7 @@ local function run()
 						sorter = conf.generic_sorter({}),
 						previewer = conf.file_previewer({}),
 						attach_mappings = function(prompt_bufnr, _map)
-							local test = function()
-								return state.get_selected_entry().path:sub(-1) == os_sep
-							end
-							actions_set.select:replace_if(test, function()
+							actions.select_default:replace(function()
 								local selected = state.get_selected_entry(prompt_bufnr)
 								actions.close(prompt_bufnr)
 								if selected == nil then
