@@ -22,6 +22,7 @@
 - **settings:** fix wsl check not checking the integer value
 - **settings:** fix logic for wsl font in neovide
 - **telescope:** fix cd picker
+- **trouble.nvim:** fix trouble.nvim toggle update
 
 ### Refactor
 - **settings:** more readable neovide config

@@ -21,13 +21,13 @@ return function(use)
 					},
 					w = {
 						function()
-							require('trouble').toggle('lsp_workspace_diagnostics')
+							require('trouble').toggle('workspace_diagnostics')
 						end,
 						'Toggle Trouble LSP Workspace Diagnostics',
 					},
 					d = {
 						function()
-							require('trouble').toggle('lsp_document_diagnostics')
+							require('trouble').toggle('document_diagnostics')
 						end,
 						'Toggle Trouble LSP Document Diagnostics',
 					},
