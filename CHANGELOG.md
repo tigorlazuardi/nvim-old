@@ -14,6 +14,7 @@
 - **settings:** font settings now check for wsl
 
 ### Feat
+- **bufdelete:** support for bufdelete
 - **comment.nvim:** removed kommentary in favor of comment.nvim
 - **dressing.nvim:** added dressing.nvim plugin
 - **null-ls:** added integration to curl and proselint

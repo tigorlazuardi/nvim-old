@@ -11,6 +11,7 @@ return packer.startup(function(use)
 	require('plugins.config.null_ls_config')(use)
 	require('plugins.config.windline_config')(use)
 
+	require('plugins.config.bufdelete_config')(use)
 	require('plugins.config.bufferline_config')(use)
 	require('plugins.config.comment_nvim')(use)
 	require('plugins.config.dashboard')(use)
