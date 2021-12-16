@@ -16,6 +16,7 @@
 ### Feat
 - **bufdelete:** support for bufdelete
 - **comment.nvim:** removed kommentary in favor of comment.nvim
+- **coq_nvim:** added coq_nvim
 - **dressing.nvim:** added dressing.nvim plugin
 - **null-ls:** added integration to curl and proselint
 - **telescope:** added custom picker to cwd to given folder

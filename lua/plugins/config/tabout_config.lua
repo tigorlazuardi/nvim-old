@@ -35,7 +35,7 @@ return function(use)
 		'abecodes/tabout.nvim',
 		config = configure,
 		wants = { 'nvim-treesitter', 'which-key.nvim' },
-		after = { 'nvim-treesitter', 'nvim-cmp' },
+		-- after = { 'nvim-treesitter', 'nvim-cmp' },
 		event = 'InsertEnter',
 	})
 end
