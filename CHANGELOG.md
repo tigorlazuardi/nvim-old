@@ -5,6 +5,7 @@
 - format
 
 ### Conf
+- **bootstrap:** packer reset called before packer init to support reloading config
 - **golang:** enabled dap config on golang files
 - **neovide:** neovide config blur is removed since they fixed the blur problem on telescope
 - **nvim_tree:** filtered node_modules and target for ts and rust respectively

@@ -22,6 +22,8 @@ if not present then
 	should_sync = true
 end
 
+packer.reset()
+
 packer.init({
 	display = {
 		open_fn = function()
