@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Feat
+- **theme:** removed themes containing light colors so random colors wont load the white ones
+
 
 <a name="v2.2.0"></a>
 ## [v2.2.0] - 2021-12-18

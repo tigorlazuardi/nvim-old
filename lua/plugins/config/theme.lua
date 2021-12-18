@@ -1,32 +1,5 @@
 return function(use)
 	use({
-		'folke/tokyonight.nvim',
-		setup = function()
-			vim.g.tokyonight_style = 'storm'
-			vim.g.tokyonight_sidebars = { 'qf', 'vista_kind', 'terminal', 'packer', 'NvimTree' }
-			vim.g.tokyonight_italic_functions = true
-			-- vim.g.tokyonight_transparent = require('config.firenvim').run()
-		end,
-		config = function()
-			-- vim.cmd([[colorscheme tokyonight]])
-		end,
-	})
-
-	use({
-		'EdenEast/nightfox.nvim',
-		event = 'VimEnter',
-		config = function()
-			local nightfox = require('nightfox')
-			nightfox.setup({
-				styles = {
-					keywords = 'bold',
-					functions = 'italic,bold',
-				},
-			})
-			-- nightfox.load()
-		end,
-	})
-	use({
 		'sainnhe/edge',
 		event = 'VimEnter',
 		setup = function()
@@ -35,19 +8,6 @@ return function(use)
 			vim.g.edge_disable_italic_comment = 0
 		end,
 	})
-	-- use({
-	-- 	'projekt0n/github-nvim-theme',
-	-- 	config = function()
-	-- 		-- require('github-theme').setup({
-	-- 		-- 	theme_style = 'dimmed',
-	-- 		-- 	comment_style = 'italic',
-	-- 		-- 	keyword_style = 'italic',
-	-- 		-- 	function_style = 'italic',
-	-- 		-- 	variable_style = 'italic',
-	-- 		-- })
-	-- 	end,
-	-- })
-
 	use({
 		'sainnhe/everforest',
 		event = 'VimEnter',
@@ -64,16 +24,24 @@ return function(use)
 	})
 
 	use({
+		'kvrohit/substrata.nvim',
+	})
+
+	use({
+		'catppuccin/nvim',
+		as = 'catppuccin',
+	})
+
+	use({
 		'tssm/nvim-random-colors',
 		event = 'VimEnter',
 		setup = function()
 			local load = require('packer').loader
-			-- load('github-nvim-theme')
 			load('everforest')
 			load('edge')
-			load('nightfox.nvim')
-			load('tokyonight.nvim')
 			load('nord.nvim')
+			load('substrata.nvim')
+			load('catppuccin')
 		end,
 		config = function()
 			vim.cmd([[command! RandomColors lua require('random-colors')()]])
