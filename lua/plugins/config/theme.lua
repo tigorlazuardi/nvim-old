@@ -32,6 +32,8 @@ return function(use)
 		as = 'catppuccin',
 	})
 
+	use({ 'sainnhe/sonokai' })
+
 	use({
 		'tssm/nvim-random-colors',
 		event = 'VimEnter',
@@ -42,6 +44,7 @@ return function(use)
 			load('nord.nvim')
 			load('substrata.nvim')
 			load('catppuccin')
+			load('sonokai')
 		end,
 		config = function()
 			vim.cmd([[command! RandomColors lua require('random-colors')()]])

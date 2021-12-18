@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Feat
+- **theme:** added sonokai to the list
+
 
 <a name="v2.3.0"></a>
 ## [v2.3.0] - 2021-12-18
