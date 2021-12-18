@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+
+<a name="v2.3.0"></a>
+## [v2.3.0] - 2021-12-18
 ### Feat
 - **theme:** removed themes containing light colors so random colors wont load the white ones
 
@@ -256,7 +259,8 @@
 - **indentation:** moved indentation to it's own folder
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v2.2.0...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v2.3.0...HEAD
+[v2.3.0]: https://github.com/tigorlazuardi/nvim/compare/v2.2.0...v2.3.0
 [v2.2.0]: https://github.com/tigorlazuardi/nvim/compare/v2.1.0...v2.2.0
 [v2.1.0]: https://github.com/tigorlazuardi/nvim/compare/v2.0.3...v2.1.0
 [v2.0.3]: https://github.com/tigorlazuardi/nvim/compare/v1.3.1...v2.0.3
