@@ -5,6 +5,7 @@
 - removed kommentary
 
 ### Feat
+- **golang:** added go coverage and go impl telescope
 - **treesitter-context:** added support for tree sitter context
 
 
