@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Feat
+- **treesitter-context:** added support for tree sitter context
+
 
 <a name="v2.1.0"></a>
 ## [v2.1.0] - 2021-12-16

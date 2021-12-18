@@ -73,30 +73,6 @@ local function run()
 	})
 end
 
-local function configure_kommentary()
-	local prequire = require('personal.utils.prequire')
-	local packer = prequire('packer')
-	if not packer then
-		return
-	end
-	packer.loader('kommentary')
-	require('kommentary.config').configure_language('typescriptreact', {
-		single_line_comment_string = 'auto',
-		multi_line_comment_strings = 'auto',
-		hook_function = function()
-			require('ts_context_commentstring.internal').update_commentstring()
-		end,
-	})
-
-	require('kommentary.config').configure_language('javascriptreact', {
-		single_line_comment_string = 'auto',
-		multi_line_comment_strings = 'auto',
-		hook_function = function()
-			require('ts_context_commentstring.internal').update_commentstring()
-		end,
-	})
-end
-
 local function spell_sitter()
 	require('spellsitter').setup({
 		hl = 'SpellBad',
@@ -110,11 +86,6 @@ return function(use)
 		run = ':TSUpdate',
 		requires = {
 			{ 'nvim-treesitter/nvim-treesitter-textobjects' },
-			-- {
-			-- 	'JoosepAlviste/nvim-ts-context-commentstring',
-			-- 	ft = { 'typescriptreact', 'javascriptreact' },
-			-- 	config = configure_kommentary,
-			-- },
 		},
 		config = run,
 		event = 'VimEnter',
@@ -128,6 +99,16 @@ return function(use)
 		'lewis6991/spellsitter.nvim',
 		after = { 'nvim-treesitter' },
 		config = spell_sitter,
+		event = 'VimEnter',
+	})
+	use({
+		'romgrk/nvim-treesitter-context',
+		config = function()
+			require('treesitter-context').setup({
+				enable = true,
+			})
+		end,
+		after = { 'nvim-treesitter' },
 		event = 'VimEnter',
 	})
 	use({
