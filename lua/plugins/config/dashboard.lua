@@ -20,6 +20,10 @@ local function setup()
 			description = { '  Find Word            ' },
 			command = 'Telescope live_grep',
 		},
+		f = {
+			description = { 'ﳟ  Change Theme         ' },
+			command = "lua require('random-colors')()",
+		},
 	}
 
 	local header = [[

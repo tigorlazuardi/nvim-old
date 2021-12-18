@@ -6,6 +6,7 @@
 
 ### Feat
 - **golang:** added go coverage and go impl telescope
+- **theme:** added random color loader
 - **treesitter-context:** added support for tree sitter context
 
 
