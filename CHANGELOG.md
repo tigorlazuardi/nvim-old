@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Chore
+- removed kommentary
+
 ### Feat
 - **treesitter-context:** added support for tree sitter context
 
