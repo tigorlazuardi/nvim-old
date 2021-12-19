@@ -7,6 +7,9 @@
 ### Feat
 - **theme:** added sonokai to the list
 
+### Fix
+- **goimpl:** mapping is now localized to buffer filetype go
+
 
 <a name="v2.3.0"></a>
 ## [v2.3.0] - 2021-12-18
