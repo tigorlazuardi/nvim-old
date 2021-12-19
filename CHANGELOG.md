@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Feat
+- **golang:** moved from context organize imports to goimports in null ls
+
 ### Refactor
 - **golang:** format and generate implementations moved to <leader>g group
 - **lazygit:** moved mapkey from <leader>g to <leader>z

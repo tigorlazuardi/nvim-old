@@ -1,5 +1,5 @@
 if vim.fn.exepath('gopls') ~= '' then
-	function OrgImports(wait_ms)
+	_G.organize_imports = function(wait_ms)
 		local params = vim.lsp.util.make_range_params()
 		params.context = { only = { 'source.organizeImports' } }
 		local result = vim.lsp.buf_request_sync(0, 'textDocument/codeAction', params, wait_ms)
@@ -14,6 +14,21 @@ if vim.fn.exepath('gopls') ~= '' then
 		end
 		vim.lsp.buf.formatting_sync({}, wait_ms)
 	end
+	-- function OrgImports(wait_ms)
+	-- 	local params = vim.lsp.util.make_range_params()
+	-- 	params.context = { only = { 'source.organizeImports' } }
+	-- 	local result = vim.lsp.buf_request_sync(0, 'textDocument/codeAction', params, wait_ms)
+	-- 	for _, res in pairs(result or {}) do
+	-- 		for _, r in pairs(res.result or {}) do
+	-- 			if r.edit then
+	-- 				vim.lsp.util.apply_workspace_edit(r.edit)
+	-- 			else
+	-- 				pcall(vim.lsp.buf.execute_command, r.command)
+	-- 			end
+	-- 		end
+	-- 	end
+	-- 	vim.lsp.buf.formatting_sync({}, wait_ms)
+	-- end
 
 	local present, lspconfig = pcall(require, 'lspconfig')
 	if not present then
@@ -22,11 +37,9 @@ if vim.fn.exepath('gopls') ~= '' then
 
 	local configuration = {
 		on_attach = function(client, bufnr)
-			client.resolved_capabilities.document_formatting = true
+			client.resolved_capabilities.document_formatting = false
 			require('plugins.config.lsp.on_attach')(client, bufnr)
-			vim.cmd([[
-					autocmd BufWritePre <buffer> lua OrgImports(1000)
-			]])
+			-- vim.cmd([[autocmd BufWritePost <buffer> lua _G.organize_imports(1000)]])
 			local wk = require('which-key')
 
 			wk.register({
@@ -34,7 +47,7 @@ if vim.fn.exepath('gopls') ~= '' then
 					name = '+go',
 					f = {
 						function()
-							OrgImports(1000)
+							_G.organize_imports(1000)
 						end,
 						'Organize Imports',
 					},
