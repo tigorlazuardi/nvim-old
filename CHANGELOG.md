@@ -11,6 +11,7 @@
 ### Fix
 - **goimpl:** added buffer target of current
 - **goimpl:** mapping is now localized to buffer filetype go
+- **lsp:** formatting now done on BufWritePre not on BufWritePost and scoped to current buffer
 - **on_attach:** fix diagnostic and telescope diagnostic
 
 ### Refactor

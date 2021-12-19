@@ -12,10 +12,7 @@ local function rust_tools_config()
 					},
 				}, { buffer = bufnr })
 				vim.cmd([[
-					augroup rust_format
-						autocmd!
-						autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync()
-					augroup end
+					au BufWritePre <buffer> lua vim.lsp.buf.formatting_sync() 
 				]])
 			end,
 			settings = {

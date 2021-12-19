@@ -25,10 +25,7 @@ if vim.fn.exepath('gopls') ~= '' then
 			client.resolved_capabilities.document_formatting = true
 			require('plugins.config.lsp.on_attach')(client, bufnr)
 			vim.cmd([[
-				augroup golang_format
-					autocmd!
-					autocmd BufWritePre *.go lua OrgImports(1000)
-				augroup end
+					autocmd BufWritePre <buffer> lua OrgImports(1000)
 			]])
 			local wk = require('which-key')
 

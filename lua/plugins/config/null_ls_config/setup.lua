@@ -83,7 +83,7 @@ null_ls.setup({
 	on_attach = function(client, bufnr)
 		if client.resolved_capabilities.document_formatting then
 			vim.cmd([[
-				au BufWritePost <buffer> lua vim.lsp.buf.formatting_sync() 
+				au BufWritePre <buffer> lua vim.lsp.buf.formatting_sync() 
 			]])
 		end
 		require('plugins.config.lsp.on_attach')(client, bufnr)
