@@ -11,6 +11,9 @@
 - **goimpl:** added buffer target of current
 - **goimpl:** mapping is now localized to buffer filetype go
 
+### Refactor
+- **telescope-cd:** moved telescope cd to a file for more readable
+
 
 <a name="v2.3.0"></a>
 ## [v2.3.0] - 2021-12-18
