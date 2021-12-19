@@ -88,7 +88,7 @@ return function(use)
 			{ 'nvim-treesitter/nvim-treesitter-textobjects' },
 		},
 		config = run,
-		event = 'VimEnter',
+		opt = false,
 	})
 	use({
 		'nvim-treesitter/playground',
