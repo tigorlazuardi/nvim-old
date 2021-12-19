@@ -30,9 +30,9 @@ if vim.fn.exepath('gopls') ~= '' then
 			local wk = require('which-key')
 
 			wk.register({
-				q = {
-					name = 'quick',
-					q = {
+				['<leader>g'] = {
+					name = '+go',
+					f = {
 						function()
 							OrgImports(1000)
 						end,
@@ -40,6 +40,17 @@ if vim.fn.exepath('gopls') ~= '' then
 					},
 				},
 			}, { buffer = bufnr })
+
+			if packer_plugins['goimpl.nvim'] then
+				wk.register({
+					['<leader>gi'] = {
+						function()
+							require('telescope').extensions.goimpl.goimpl()
+						end,
+						'Generate Implementations',
+					},
+				}, { buffer = bufnr })
+			end
 		end,
 		cmd = {
 			'gopls',

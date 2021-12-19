@@ -92,15 +92,4 @@ return function(client, bufnr)
 			gs = { '<cmd>SymbolsOutline<cr>', 'Symbol Outline' },
 		}, wk_option)
 	end
-
-	if vim.bo.filetype == 'go' and packer_plugins['goimpl.nvim'] then
-		wk.register({
-			qi = {
-				function()
-					require('telescope').extensions.goimpl.goimpl()
-				end,
-				'Go Impl',
-			},
-		}, wk_option)
-	end
 end

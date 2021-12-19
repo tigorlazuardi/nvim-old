@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Refactor
+- **golang:** format and generate implementations moved to <leader>g group
 - **lazygit:** moved mapkey from <leader>g to <leader>z
 
 
