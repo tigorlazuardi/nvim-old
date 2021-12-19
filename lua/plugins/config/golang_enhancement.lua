@@ -62,9 +62,6 @@ return function(use)
 			end
 
 			telescope.load_extension('goimpl')
-			vim.cmd(
-				[[au filetype go <buffer> lua require('which-key').register({qi = {function() require('telescope').extensions.goimpl.goimpl() end, 'Go Impl'}}, {buffer = 0})]]
-			)
 		end,
 		ft = { 'go' },
 	})

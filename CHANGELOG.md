@@ -12,6 +12,7 @@
 - **goimpl:** mapping is now localized to buffer filetype go
 
 ### Refactor
+- **goimpl:** moved autocmd to on-attach
 - **telescope-cd:** moved telescope cd to a file for more readable
 
 
