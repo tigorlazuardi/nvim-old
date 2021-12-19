@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Refactor
+- **lazygit:** moved mapkey from <leader>g to <leader>z
+
 
 <a name="v2.3.1"></a>
 ## [v2.3.1] - 2021-12-19

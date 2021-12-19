@@ -42,7 +42,7 @@ local function run()
 
 	local wk = require('which-key')
 
-	wk.register({ ['<leader>g'] = { '<cmd>lua _lazygit_toggle()<CR>', 'Lazygit' } })
+	wk.register({ ['<leader>z'] = { '<cmd>lua _lazygit_toggle()<CR>', 'Lazygit' } })
 end
 
 return function(use)
