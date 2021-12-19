@@ -30,19 +30,19 @@ return function(client, bufnr)
 			"<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>",
 			'(LSP) Search Workspace Symbols',
 		},
-		gn = {
-			'<cmd>lua vim.diagnostic.show_line_diagnostics({ popup_opts = { border = "single" }})<CR>',
+		gnn = {
+			'<cmd>lua vim.diagnostic.open_float(nil, {border = "single", focus = false, scope = "cursor"})<CR>',
 			'(LSP) Show Line Diagnostic',
 		},
 		gN = {
-			"<cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<cr>",
+			"<cmd>lua require('telescope.builtin').diagnostics()<cr>",
 			'(LSP) Show Workspace Diagnostics',
 		},
 		gnp = {
 			'<cmd>lua vim.diagnostic.goto_prev({ popup_opts = { border = "single" }})<CR>',
 			'(Diagnostics) Go to Previous Diagnostic',
 		},
-		gnn = {
+		gne = {
 			'<cmd>lua vim.diagnostic.goto_next({ popup_opts = { border = "single" }})<CR>',
 			'(Diagnostics) Go to Next Diagnostic',
 		},
