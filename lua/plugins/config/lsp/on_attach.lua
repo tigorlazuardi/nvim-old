@@ -30,22 +30,6 @@ return function(client, bufnr)
 			"<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>",
 			'(LSP) Search Workspace Symbols',
 		},
-		gn = {
-			'<cmd>lua vim.diagnostic.show_line_diagnostics({ popup_opts = { border = "single" }})<CR>',
-			'(LSP) Show Line Diagnostic',
-		},
-		gN = {
-			"<cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<cr>",
-			'(LSP) Show Workspace Diagnostics',
-		},
-		gnp = {
-			'<cmd>lua vim.diagnostic.goto_prev({ popup_opts = { border = "single" }})<CR>',
-			'(Diagnostics) Go to Previous Diagnostic',
-		},
-		gnn = {
-			'<cmd>lua vim.diagnostic.goto_next({ popup_opts = { border = "single" }})<CR>',
-			'(Diagnostics) Go to Next Diagnostic',
-		},
 		ga = {
 			'<cmd>lua vim.lsp.buf.code_action()<cr>',
 			'(LSP) Code Actions',
@@ -66,6 +50,25 @@ return function(client, bufnr)
 			'(LSP) Go To Definitions (V-Split)',
 		},
 		['<F2>'] = { '<cmd>lua vim.lsp.buf.rename()<CR>', '(LSP) Rename Symbol' },
+		gn = {
+			name = { '+diagnostics' },
+			n = {
+				'<cmd>lua vim.diagnostic.open_float(nil, { scope = "cursor", focus = false })<CR>',
+				'Show Line Diagnostic',
+			},
+			e = {
+				'<cmd>lua vim.diagnostic.goto_next({ popup_opts = { border = "single" }})<CR>',
+				'Go to Next Diagnostic',
+			},
+			p = {
+				'<cmd>lua vim.diagnostic.goto_prev({ popup_opts = { border = "single" }})<CR>',
+				'Go to Previous Diagnostic',
+			},
+			N = {
+				"<cmd>lua require('telescope.builtin').diagnostics()<cr>",
+				'Show Workspace Diagnostics',
+			},
+		},
 	}, wk_option)
 
 	if client.resolved_capabilities.document_highlight then

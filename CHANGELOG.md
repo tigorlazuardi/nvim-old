@@ -13,6 +13,7 @@
 
 ### Refactor
 - **goimpl:** moved autocmd to on-attach
+- **on_attach:** moved gn diagnostic mapping to a new sub whichkey group
 - **telescope-cd:** moved telescope cd to a file for more readable
 
 
