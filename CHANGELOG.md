@@ -3,6 +3,7 @@
 
 ### Feat
 - **golang:** moved from context organize imports to goimports in null ls
+- **null_ls:** added sqlformat and codespell diagnostics
 
 ### Refactor
 - **golang:** format and generate implementations moved to <leader>g group

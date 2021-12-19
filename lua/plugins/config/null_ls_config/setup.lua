@@ -64,6 +64,10 @@ if exist('taplo') then
 	table.insert(sources, null_ls.builtins.formatting.taplo)
 end
 
+if exist('sqlformat') then
+	table.insert(sources, null_ls.builtins.formatting.sqlformat)
+end
+
 if exist('clang-format') then
 	table.insert(
 		sources,
@@ -71,6 +75,10 @@ if exist('clang-format') then
 			filetypes = { 'proto', 'c', 'cpp', 'cs', 'java' },
 		})
 	)
+end
+
+if exist('codespell') then
+	table.insert(sources, null_ls.builtins.diagnostics.codespell)
 end
 
 if exist('curl') then
