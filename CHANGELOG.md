@@ -8,6 +8,7 @@
 - **theme:** added sonokai to the list
 
 ### Fix
+- **goimpl:** added buffer target of current
 - **goimpl:** mapping is now localized to buffer filetype go
 
 
