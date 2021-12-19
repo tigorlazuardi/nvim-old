@@ -10,9 +10,7 @@ local function rust_tools_config()
 						"<cmd>lua require'rust-tools.hover_actions'.hover_actions()<cr>",
 						'(LSP) Symbol Definition / Documentation',
 					},
-				}, {
-					buffer = bufnr,
-				})
+				}, { buffer = bufnr })
 				vim.cmd([[
 					augroup rust_format
 						autocmd!
