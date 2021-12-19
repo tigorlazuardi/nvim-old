@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+
+<a name="v2.3.1"></a>
+## [v2.3.1] - 2021-12-19
 ### Chore
 - formatting
 - comment codes for documentation
@@ -18,6 +21,9 @@
 - **goimpl:** moved autocmd to on-attach
 - **on_attach:** moved gn diagnostic mapping to a new sub whichkey group
 - **telescope-cd:** moved telescope cd to a file for more readable
+
+### Reverts
+- refactor(on_attach): moved gn diagnostic mapping to a new sub whichkey group
 
 
 <a name="v2.3.0"></a>
@@ -341,7 +347,8 @@
 - **indentation:** moved indentation to it's own folder
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v2.3.0...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v2.3.1...HEAD
+[v2.3.1]: https://github.com/tigorlazuardi/nvim/compare/v2.3.0...v2.3.1
 [v2.3.0]: https://github.com/tigorlazuardi/nvim/compare/v2.2.0...v2.3.0
 [v2.2.0]: https://github.com/tigorlazuardi/nvim/compare/v2.0.3...v2.2.0
 [v2.0.3]: https://github.com/tigorlazuardi/nvim/compare/v2.1.0...v2.0.3
