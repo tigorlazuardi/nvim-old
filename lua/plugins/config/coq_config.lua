@@ -17,11 +17,15 @@ return function(use)
 		end,
 		config = function()
 			local packer = require('packer')
-			packer.loader('nvim-autopairs')
+
+			-- trigger coq side-effects
+			packer.loader('coq.thirdparty')
 			packer.loader('coq_nvim')
 			packer.loader('coq.artifacts')
-			packer.loader('coq.thirdparty')
 			require('coq')
+
+			-- Nvim Autopairs configuration
+			packer.loader('nvim-autopairs')
 			local remap = vim.api.nvim_set_keymap
 			local npairs = require('nvim-autopairs')
 
