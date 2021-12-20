@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Feat
+- **golang:** commented null_ls goimports gofumpt golines
 - **golang:** null_ls added golines
 
 
