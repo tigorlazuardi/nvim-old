@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Feat
+- **golang:** null_ls added golines
+
 
 <a name="v2.4.0"></a>
 ## [v2.4.0] - 2021-12-19

@@ -89,6 +89,10 @@ if exist('proselint') then
 	table.insert(sources, null_ls.builtins.diagnostics.proselint)
 end
 
+if exist('golines') then
+	table.insert(sources, null_ls.builtins.formatting.golines)
+end
+
 null_ls.setup({
 	sources = sources,
 	diagnostics_format = '(#{s}) #{m}',
