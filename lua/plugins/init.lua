@@ -42,6 +42,7 @@ return packer.startup(function(use)
 	require('plugins.config.toggleterm_config')(use)
 	require('plugins.config.treesitter')(use)
 	require('plugins.config.trouble_config')(use)
+	require('plugins.config.vim_move')(use)
 	require('plugins.config.vim_sneak')(use)
 	require('plugins.config.which_key')(use)
 
