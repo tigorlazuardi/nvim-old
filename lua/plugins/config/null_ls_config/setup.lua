@@ -36,9 +36,9 @@ if exist('golangci-lint') then
 	table.insert(sources, null_ls.builtins.diagnostics.golangci_lint)
 end
 
--- if exist('goimports') then
--- 	table.insert(sources, null_ls.builtins.formatting.goimports)
--- end
+if exist('goimports') then
+	table.insert(sources, null_ls.builtins.formatting.goimports)
+end
 
 -- docker
 if exist('hadolint') then
