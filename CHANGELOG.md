@@ -7,6 +7,9 @@
 - **golang:** null_ls added golines
 - **vim_move:** added vim move
 
+### Fix
+- **treesitter:** textobjects and various treesitter plugins now loaded manually using packer loader
+
 ### Refactor
 - **nvim-goc:** change mapping group to <leader>g
 

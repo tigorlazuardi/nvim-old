@@ -1,4 +1,10 @@
 local function run()
+	local load = require('packer').loader
+	load('playground')
+	load('spellsitter.nvim')
+	load('nvim-treesitter-context')
+	load('nvim-ts-autotag')
+	load('nvim-treesitter-textobjects')
 	require('nvim-treesitter.configs').setup({
 		context_commentstring = { enable = true },
 		highlight = { enable = true },
@@ -84,22 +90,16 @@ return function(use)
 	use({
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate',
-		requires = {
-			{ 'nvim-treesitter/nvim-treesitter-textobjects' },
-		},
 		config = run,
 		opt = false,
 	})
+	use('nvim-treesitter/nvim-treesitter-textobjects')
 	use({
 		'nvim-treesitter/playground',
-		after = { 'nvim-treesitter' },
-		event = 'VimEnter',
 	})
 	use({
 		'lewis6991/spellsitter.nvim',
-		after = { 'nvim-treesitter' },
 		config = spell_sitter,
-		event = 'VimEnter',
 	})
 	use({
 		'romgrk/nvim-treesitter-context',
@@ -108,13 +108,9 @@ return function(use)
 				enable = true,
 			})
 		end,
-		after = { 'nvim-treesitter' },
-		event = 'VimEnter',
 	})
 	use({
 		'windwp/nvim-ts-autotag',
-		after = { 'nvim-treesitter' },
-		event = 'VimEnter',
 		config = function()
 			require('nvim-ts-autotag').setup({
 				filetypes = {
