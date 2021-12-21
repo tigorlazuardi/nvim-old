@@ -10,6 +10,9 @@
 ### Refactor
 - **nvim-goc:** change mapping group to <leader>g
 
+### Revert
+- return back to nvim_cmp because coq crashes too often
+
 
 <a name="v2.4.0"></a>
 ## [v2.4.0] - 2021-12-19

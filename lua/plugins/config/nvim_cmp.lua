@@ -14,6 +14,7 @@ local function cmp_config()
 	packer.loader('cmp-spell')
 	packer.loader('cmp_luasnip')
 	packer.loader('nvim-autopairs')
+	packer.loader('cmp-nvim-lsp-signature-help')
 	require('lspkind').init({
 		with_text = true,
 		preset = 'default',
@@ -127,6 +128,7 @@ return function(use)
 			'hrsh7th/cmp-emoji',
 			'hrsh7th/cmp-nvim-lsp',
 			'hrsh7th/cmp-path',
+			'hrsh7th/cmp-nvim-lsp-signature-help',
 			'onsails/lspkind-nvim',
 			'rafamadriz/friendly-snippets',
 			'saadparwaiz1/cmp_luasnip',
