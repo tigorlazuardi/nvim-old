@@ -7,6 +7,9 @@
 - **golang:** null_ls added golines
 - **vim_move:** added vim move
 
+### Refactor
+- **nvim-goc:** change mapping group to <leader>g
+
 
 <a name="v2.4.0"></a>
 ## [v2.4.0] - 2021-12-19

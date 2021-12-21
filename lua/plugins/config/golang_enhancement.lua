@@ -13,7 +13,7 @@ return function(use)
 					lsp_diag_hdlr = true, -- hook lsp diag handler
 					dap_debug = true, -- set to true to enable dap
 					dap_debug_keymap = true, -- set keymaps for debugger
-					dap_debug_gui = true, -- set to true to enable dap gui, highly recommand
+					dap_debug_gui = true, -- set to true to enable dap gui, highly recommended
 					dap_debug_vt = true, -- set to true to enable dap virtual text
 				})
 			end,
@@ -27,8 +27,8 @@ return function(use)
 			require('nvim-goc').setup({})
 
 			require('which-key').register({
-				['<leader>c'] = {
-					name = '+coverage',
+				['<leader>g'] = {
+					name = '+go',
 					c = {
 						function()
 							require('nvim-goc').ClearCoverage()
