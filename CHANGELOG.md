@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+
+<a name="v2.4.1"></a>
+## [v2.4.1] - 2021-12-22
 ### Feat
 - **golang:** reenabled goimports
 - **golang:** commented null_ls goimports gofumpt golines
@@ -375,7 +378,8 @@
 - **indentation:** moved indentation to it's own folder
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v2.4.0...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v2.4.1...HEAD
+[v2.4.1]: https://github.com/tigorlazuardi/nvim/compare/v2.4.0...v2.4.1
 [v2.4.0]: https://github.com/tigorlazuardi/nvim/compare/v2.3.1...v2.4.0
 [v2.3.1]: https://github.com/tigorlazuardi/nvim/compare/v2.3.0...v2.3.1
 [v2.3.0]: https://github.com/tigorlazuardi/nvim/compare/v2.2.0...v2.3.0
