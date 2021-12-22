@@ -12,6 +12,7 @@
 - **treesitter:** textobjects and various treesitter plugins now loaded manually using packer loader
 
 ### Refactor
+- **nvim-cmp:** <cr> now does not select selection
 - **nvim-goc:** change mapping group to <leader>g
 
 ### Revert
