@@ -8,6 +8,7 @@
 - **vim_move:** added vim move
 
 ### Fix
+- **on_attach:** open float diagnostic is now line wise
 - **treesitter:** textobjects and various treesitter plugins now loaded manually using packer loader
 
 ### Refactor

@@ -31,7 +31,7 @@ return function(client, bufnr)
 			'(LSP) Search Workspace Symbols',
 		},
 		gnn = {
-			'<cmd>lua vim.diagnostic.open_float(nil, {border = "single", focus = false, scope = "cursor"})<CR>',
+			'<cmd>lua vim.diagnostic.open_float(nil, {border = "single"})<CR>',
 			'(LSP) Show Line Diagnostic',
 		},
 		gN = {
