@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Fix
+- **null_ls:** removed generic on attach from null_ls
+
 
 <a name="v2.4.1"></a>
 ## [v2.4.1] - 2021-12-22
