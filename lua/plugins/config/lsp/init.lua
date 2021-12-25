@@ -49,7 +49,14 @@ return function(use)
 					name = '+lsp',
 					i = { '<cmd>LspInfo<cr>', 'LSP Info' },
 					r = { '<cmd>LspRestart<cr>', 'LSP Restart' },
-					S = { '<cmd>LspStop<cr>', 'LSP Stop' },
+					S = {
+						function()
+							for _, client in pairs(vim.lsp.buf_get_clients()) do
+								client.stop()
+							end
+						end,
+						'LSP Stop',
+					},
 					s = { '<cmd>LspStart<cr>', 'LSP Start' },
 				},
 			})

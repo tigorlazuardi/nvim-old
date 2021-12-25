@@ -5,6 +5,7 @@
 - **lspsaga:** added lspsaga
 
 ### Fix
+- **lsp:** Stopping hotkey now stops ALL lsp server instead of only one
 - **null_ls:** removed generic on attach from null_ls
 
 
