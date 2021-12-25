@@ -8,6 +8,7 @@ return function(use)
 			'folke/lsp-colors.nvim',
 			'nvim-lua/lsp_extensions.nvim',
 			'kosayoda/nvim-lightbulb',
+			'tami5/lspsaga.nvim',
 			{ 'jose-elias-alvarez/nvim-lsp-ts-utils', wants = { 'null-ls.nvim' } },
 		},
 		after = { 'telescope.nvim', 'which-key.nvim' },
@@ -39,6 +40,7 @@ return function(use)
 			packer.loader('lsp-colors.nvim')
 			packer.loader('lsp_extensions.nvim')
 			packer.loader('nvim-lightbulb')
+			packer.loader('lspsaga.nvim')
 
 			local wk = require('which-key')
 
@@ -59,7 +61,9 @@ return function(use)
 				only_current_line = false,
 				enabled = { 'ChainingHint' },
 			})
-			vim.cmd([[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]])
+			vim.cmd([[autocmd CursorHold,CursorHoldI * silent! lua require'nvim-lightbulb'.update_lightbulb()]])
+
+			require('lspsaga').init_lsp_saga()
 			require('plugins.config.lsp.setup')
 		end,
 	})

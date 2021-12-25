@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Feat
+- **lspsaga:** added lspsaga
+
 ### Fix
 - **null_ls:** removed generic on attach from null_ls
 

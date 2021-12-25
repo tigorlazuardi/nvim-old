@@ -101,9 +101,10 @@ null_ls.setup({
 	sources = sources,
 	diagnostics_format = '(#{s}) #{m}',
 	on_attach = function(client, bufnr)
+		-- client.resolved_capabilities.document_highlight = true
 		if client.resolved_capabilities.document_formatting then
 			vim.cmd([[
-				au BufWritePre <buffer> lua vim.lsp.buf.formatting_sync() 
+				au BufWritePre <buffer> silent! lua vim.lsp.buf.formatting_sync() 
 			]])
 		end
 		local wk = require('which-key')

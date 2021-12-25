@@ -39,7 +39,7 @@ if vim.fn.exepath('gopls') ~= '' then
 		on_attach = function(client, bufnr)
 			client.resolved_capabilities.document_formatting = false
 			require('plugins.config.lsp.on_attach')(client, bufnr)
-			vim.cmd([[autocmd BufWritePost <buffer> lua _G.organize_imports(1000)]])
+			vim.cmd([[autocmd BufWritePost <buffer> silent! lua _G.organize_imports(1000)]])
 			local wk = require('which-key')
 
 			wk.register({
