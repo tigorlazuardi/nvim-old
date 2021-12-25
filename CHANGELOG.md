@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+
+<a name="v2.5.0"></a>
+## [v2.5.0] - 2021-12-25
 ### Feat
 - **lspsaga:** added lspsaga
 
@@ -385,7 +388,8 @@
 - **indentation:** moved indentation to it's own folder
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v2.4.1...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v2.5.0...HEAD
+[v2.5.0]: https://github.com/tigorlazuardi/nvim/compare/v2.4.1...v2.5.0
 [v2.4.1]: https://github.com/tigorlazuardi/nvim/compare/v2.4.0...v2.4.1
 [v2.4.0]: https://github.com/tigorlazuardi/nvim/compare/v2.3.1...v2.4.0
 [v2.3.1]: https://github.com/tigorlazuardi/nvim/compare/v2.3.0...v2.3.1
