@@ -30,6 +30,11 @@ return function(use)
 	use({
 		'catppuccin/nvim',
 		as = 'catppuccin',
+		config = function()
+			if vim.g.is_windows then
+				vim.cmd([[colo catppuccin]])
+			end
+		end,
 	})
 
 	use({ 'sainnhe/sonokai' })
@@ -45,6 +50,9 @@ return function(use)
 			load('substrata.nvim')
 			load('catppuccin')
 			load('sonokai')
+		end,
+		cond = function()
+			return not vim.g.is_windows
 		end,
 		config = function()
 			vim.cmd([[command! RandomColors lua require('random-colors')()]])
