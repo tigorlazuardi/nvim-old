@@ -8,6 +8,10 @@ convetional_commit_regex="^($types)(\(.+\))?!?: .+$"
 # Get the commit message.
 commit_message=$(cat "$1")
 
+if [[ "$commit_message" =~ ^Merge.* ]]; then
+	exit 0
+fi
+
 # Check Regex
 if [[ "$commit_message" =~ $convetional_commit_regex ]]; then
 	exit 0

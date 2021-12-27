@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Fix
+- **commitlint:** skip on pull
 - **theme:** disabled catpuccin and sonokai on windows
 
 ### Revert
