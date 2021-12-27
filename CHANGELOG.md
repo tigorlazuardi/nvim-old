@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Revert
+- **lsp:** return back to dressing and disabled lsp saga
+
 
 <a name="v2.5.0"></a>
 ## [v2.5.0] - 2021-12-25
