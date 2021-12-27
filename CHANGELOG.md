@@ -1,8 +1,12 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Fix
+- **theme:** disabled catpuccin and sonokai on windows
+
 ### Revert
 - **lsp:** return back to dressing and disabled lsp saga
+- **lspsaga:** removed lsp saga
 
 
 <a name="v2.5.0"></a>
