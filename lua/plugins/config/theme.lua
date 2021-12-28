@@ -22,4 +22,37 @@ return function(use)
 			table.insert(_G.theme_list, 'tokyonight')
 		end,
 	})
+
+	use({
+		'rafamadriz/neon',
+		opt = false,
+		setup = function()
+			table.insert(_G.theme_list, 'neon')
+		end,
+	})
+
+	use({
+		'marko-cerovac/material.nvim',
+		opt = false,
+		setup = function()
+			vim.g.material_style = 'darker'
+			table.insert(_G.theme_list, 'material')
+		end,
+	})
+
+	use({
+		'mhartington/oceanic-next',
+		opt = false,
+		setup = function()
+			table.insert(_G.theme_list, 'OceanicNext')
+		end,
+	})
+
+	use({
+		'glepnir/zephyr-nvim',
+		opt = false,
+		setup = function()
+			table.insert(_G.theme_list, 'zephyr')
+		end,
+	})
 end

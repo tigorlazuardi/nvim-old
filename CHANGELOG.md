@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Feat
+- **theme:** add more themes
 - **theme:** added tokyonight
 
 
