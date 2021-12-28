@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Conf
+- **focus:** excluded filetypes now includes dapui
 - **neovide:** update neovide setting
 
 ### Feat
