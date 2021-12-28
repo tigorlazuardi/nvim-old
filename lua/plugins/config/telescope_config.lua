@@ -7,6 +7,8 @@ local function run()
 	packer.loader('plenary.nvim')
 	packer.loader('telescope-fzf-native.nvim')
 	packer.loader('telescope-file-browser.nvim')
+	packer.loader('project.nvim')
+
 	local wk = require('which-key')
 	wk.register({
 		['<leader>f'] = {

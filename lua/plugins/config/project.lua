@@ -18,7 +18,10 @@ return function(use)
 					'package.json',
 					'go.mod',
 					'cargo.toml',
+					'=src',
 				},
+				show_hidden = true,
+				ignore_lsp = { 'efm', 'null-ls' },
 				silent_chdir = true,
 			})
 

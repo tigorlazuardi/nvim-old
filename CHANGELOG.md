@@ -6,6 +6,7 @@
 
 ### Fix
 - **commitlint:** skip on pull
+- **project:** fix project loader
 - **theme:** disabled catpuccin and sonokai on windows
 
 ### Revert
