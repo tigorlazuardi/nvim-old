@@ -46,7 +46,7 @@ local function config()
 			l = { [[<cmd>lua require('dap').step_over()<cr>]], 'Step Over' },
 			j = { [[<cmd>lua require('dap').step_into()<cr>]], 'Step Into' },
 			r = { [[<cmd>lua require('dap').repl.open({}, 'vsplit')<cr>]], 'Open Repl' },
-			k = { [[<cmd>lua _G.dapui_eval_twice()<cr>]], 'Debug Hover' },
+			k = { [[<cmd>silent! lua _G.dapui_eval_twice()<cr>]], 'Debug Hover' },
 			s = { [[<cmd>lua require('dap.ui.variables').scopes()<cr>]], 'Scope' },
 			S = { [[<cmd>lua _G.dap_close()<cr>]], 'Stop Debugger' },
 			B = { [[<cmd>lua require('telescope').extensions.dap.list_breakpoints({})<cr>]], 'List Breakpoints' },
@@ -66,12 +66,20 @@ local function config()
 		mode = 'v',
 	})
 
-	vim.cmd([[command! DapLoadVSCode lua require('dap.ext.vscode').load_launchjs()]])
+	_G.load_launchjs = function()
+		require('dap.ext.vscode').load_launchjs()
+		local dap = require('dap')
+		for _, cfg in ipairs(dap.configurations.go) do
+			cfg.dlvToolPath = vim.fn.exepath('dlv')
+		end
+	end
+
+	vim.cmd([[command! DapLoadVSCode lua _G.load_launchjs()]])
 
 	vim.cmd([[
 		augroup dap_load_vscode
 			au!
-			au DirChanged * silent! lua require('dap.ext.vscode').load_launchjs()
+			au DirChanged * silent! lua _G.load_launchjs()
 		augroup end
 	]])
 	-- broken format due to emoji. have to be ignored.
@@ -82,9 +90,8 @@ local function config()
 		all_frames = true,
 	})
 
-	local dap, dapui = require('dap'), require('dapui')
-	dap.listeners.after.event_initialized['dapui_config'] = function()
-		dapui.open()
+	require('dap').listeners.after.event_initialized['dapui_config'] = function()
+		require('dapui').open()
 	end
 end
 

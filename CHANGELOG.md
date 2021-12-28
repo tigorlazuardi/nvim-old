@@ -6,6 +6,7 @@
 - **neovide:** update neovide setting
 
 ### Feat
+- **dap:** load vs code config now appends dlvToolPath
 - **debugger:** added dapui open on success booting dap
 - **lsp-server:** schemas now using schemastore
 - **telescope:** include oldfiles in code
