@@ -11,6 +11,7 @@
 - **commitlint:** skip on pull
 - **neovide:** opacity
 - **project:** fix project loader
+- **theme:** fix theme
 - **theme:** disabled catpuccin and sonokai on windows
 
 ### Revert

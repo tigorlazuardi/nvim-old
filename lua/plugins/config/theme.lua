@@ -1,61 +1,17 @@
 return function(use)
+	_G.theme_list = {}
+	_G.load_random_theme = function()
+		local theme_name = _G.theme_list[math.random(#_G.theme_list)]
+		vim.cmd('colo ' .. theme_name)
+	end
+	vim.cmd([[au VimEnter * lua _G.load_random_theme()]])
+	vim.cmd([[command! RandomColor lua _G.load_random_theme()]])
+
 	use({
-		'sainnhe/edge',
-		event = 'VimEnter',
+		'sainnhe/sonokai',
+		opt = false,
 		setup = function()
-			vim.g.edge_style = 'aura'
-			vim.g.edge_enable_italic = 1
-			vim.g.edge_disable_italic_comment = 0
-		end,
-	})
-	use({
-		'sainnhe/everforest',
-		event = 'VimEnter',
-	})
-
-	use({
-		'shaunsingh/nord.nvim',
-		setup = function()
-			vim.g.nord_underline_option = 'underline'
-			vim.g.nord_italic = true
-			vim.g.nord_italic_comments = false
-			vim.g.nord_minimal_mode = false
-		end,
-	})
-
-	use({
-		'kvrohit/substrata.nvim',
-	})
-
-	use({
-		'catppuccin/nvim',
-		as = 'catppuccin',
-		config = function()
-			if vim.g.is_windows then
-				vim.cmd([[colo catppuccin]])
-			end
-		end,
-	})
-
-	use({ 'sainnhe/sonokai' })
-
-	use({
-		'tssm/nvim-random-colors',
-		event = 'VimEnter',
-		setup = function()
-			local load = require('packer').loader
-			load('everforest')
-			load('edge')
-			load('nord.nvim')
-			load('substrata.nvim')
-			load('catppuccin')
-			load('sonokai')
-		end,
-		cond = function()
-			return not vim.g.is_windows
-		end,
-		config = function()
-			vim.cmd([[command! RandomColors lua require('random-colors')()]])
+			table.insert(_G.theme_list, 'sonokai')
 		end,
 	})
 end
