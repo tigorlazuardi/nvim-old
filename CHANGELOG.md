@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Feat
+- **theme:** added tokyonight
+
 
 <a name="v2.6.0"></a>
 ## [v2.6.0] - 2021-12-28

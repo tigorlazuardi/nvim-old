@@ -14,4 +14,12 @@ return function(use)
 			table.insert(_G.theme_list, 'sonokai')
 		end,
 	})
+	use({
+		'folke/tokyonight.nvim',
+		opt = false,
+		setup = function()
+			vim.g.tokyonight_italic_functions = true
+			table.insert(_G.theme_list, 'tokyonight')
+		end,
+	})
 end
