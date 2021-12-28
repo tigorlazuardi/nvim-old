@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Conf
+- **neovide:** update neovide setting
+
 ### Feat
 - **debugger:** added dapui open on success booting dap
 
