@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Feat
+- **debugger:** added dapui open on success booting dap
+
 ### Fix
 - **commitlint:** skip on pull
 - **theme:** disabled catpuccin and sonokai on windows

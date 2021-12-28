@@ -11,7 +11,7 @@ return function(use)
 					lsp_gofumpt = true, -- true: set default gofmt in gopls format to gofumpt
 					lsp_on_attach = require('plugins.config.lsp.on_attach'),
 					lsp_diag_hdlr = true, -- hook lsp diag handler
-					dap_debug = true, -- set to true to enable dap
+					dap_debug = false, -- set to true to enable dap
 					dap_debug_keymap = true, -- set keymaps for debugger
 					dap_debug_gui = true, -- set to true to enable dap gui, highly recommended
 					dap_debug_vt = true, -- set to true to enable dap virtual text

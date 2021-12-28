@@ -81,6 +81,11 @@ local function config()
 	require('nvim-dap-virtual-text').setup({
 		all_frames = true,
 	})
+
+	local dap, dapui = require('dap'), require('dapui')
+	dap.listeners.after.event_initialized['dapui_config'] = function()
+		dapui.open()
+	end
 end
 
 return function(use)
