@@ -7,6 +7,7 @@ return function(use)
 			'folke/lua-dev.nvim',
 			'folke/lsp-colors.nvim',
 			'nvim-lua/lsp_extensions.nvim',
+			'b0o/schemastore.nvim',
 			'kosayoda/nvim-lightbulb',
 			-- 'tami5/lspsaga.nvim',
 			{ 'jose-elias-alvarez/nvim-lsp-ts-utils', wants = { 'null-ls.nvim' } },
@@ -40,6 +41,7 @@ return function(use)
 			packer.loader('lsp-colors.nvim')
 			packer.loader('lsp_extensions.nvim')
 			packer.loader('nvim-lightbulb')
+			packer.loader('schemastore.nvim')
 			-- packer.loader('lspsaga.nvim')
 
 			local wk = require('which-key')

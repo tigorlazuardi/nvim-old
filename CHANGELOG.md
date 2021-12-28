@@ -6,6 +6,7 @@
 
 ### Feat
 - **debugger:** added dapui open on success booting dap
+- **lsp-server:** schemas now using schemastore
 
 ### Fix
 - **commitlint:** skip on pull
