@@ -18,6 +18,7 @@ local function run()
 			b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", 'Find Buffer' },
 			h = { "<cmd>lua require('telescope.builtin').help_tags()<cr>", 'List Help Tags' },
 			c = { require('personal.telescope.cd'), 'Change Directory' },
+			o = { "<cmd>lua require('telescope.builtin').oldfiles()<cr>", 'List Recent Files' },
 		},
 	})
 

@@ -8,6 +8,7 @@
 ### Feat
 - **debugger:** added dapui open on success booting dap
 - **lsp-server:** schemas now using schemastore
+- **telescope:** include oldfiles in code
 
 ### Fix
 - **commitlint:** skip on pull
