@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+
+<a name="v2.6.0"></a>
+## [v2.6.0] - 2021-12-28
 ### Conf
 - **focus:** excluded filetypes now includes dapui
 - **neovide:** update neovide setting
@@ -410,7 +413,8 @@
 - **indentation:** moved indentation to it's own folder
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v2.5.0...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v2.6.0...HEAD
+[v2.6.0]: https://github.com/tigorlazuardi/nvim/compare/v2.5.0...v2.6.0
 [v2.5.0]: https://github.com/tigorlazuardi/nvim/compare/v2.4.1...v2.5.0
 [v2.4.1]: https://github.com/tigorlazuardi/nvim/compare/v2.4.0...v2.4.1
 [v2.4.0]: https://github.com/tigorlazuardi/nvim/compare/v2.3.1...v2.4.0
