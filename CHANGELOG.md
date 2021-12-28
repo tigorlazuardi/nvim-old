@@ -9,6 +9,7 @@
 
 ### Fix
 - **commitlint:** skip on pull
+- **neovide:** opacity
 - **project:** fix project loader
 - **theme:** disabled catpuccin and sonokai on windows
 
