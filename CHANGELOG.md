@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Chore
+- **golang-ls:** removed unused codes
+
 ### Feat
 - **theme:** add more themes
 - **theme:** added tokyonight

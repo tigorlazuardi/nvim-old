@@ -8,28 +8,12 @@ if vim.fn.exepath('gopls') ~= '' then
 				if r.edit then
 					vim.lsp.util.apply_workspace_edit(r.edit)
 				else
-					pcall(vim.lsp.buf.execute_command, r.command)
+					vim.lsp.buf.execute_command(r.command)
 				end
 			end
 		end
 		vim.lsp.buf.formatting_sync({}, wait_ms)
 	end
-	-- function OrgImports(wait_ms)
-	-- 	local params = vim.lsp.util.make_range_params()
-	-- 	params.context = { only = { 'source.organizeImports' } }
-	-- 	local result = vim.lsp.buf_request_sync(0, 'textDocument/codeAction', params, wait_ms)
-	-- 	for _, res in pairs(result or {}) do
-	-- 		for _, r in pairs(res.result or {}) do
-	-- 			if r.edit then
-	-- 				vim.lsp.util.apply_workspace_edit(r.edit)
-	-- 			else
-	-- 				pcall(vim.lsp.buf.execute_command, r.command)
-	-- 			end
-	-- 		end
-	-- 	end
-	-- 	vim.lsp.buf.formatting_sync({}, wait_ms)
-	-- end
-
 	local present, lspconfig = pcall(require, 'lspconfig')
 	if not present then
 		return
@@ -75,15 +59,15 @@ if vim.fn.exepath('gopls') ~= '' then
 				analyses = { unusedparams = true, unreachable = false },
 				codelenses = {
 					generate = true, -- show the `go generate` lens.
-					gc_details = true, --  // Show a code lens toggling the display of gc's choices.
+					gc_details = true, -- Show a code lens toggling the display of gc's choices.
 				},
 				usePlaceholders = false,
 				completeUnimported = true,
-				staticcheck = false, -- handled by null_ls
+				staticcheck = true,
 				matcher = 'fuzzy',
 				diagnosticsDelay = '500ms',
 				symbolMatcher = 'fuzzy',
-				gofumpt = false, -- true, -- turn on for new repos, gofmpt is good but also create code turmoils
+				gofumpt = false, -- depending on your projects, you may want this on.
 			},
 		},
 	}
