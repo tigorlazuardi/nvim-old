@@ -1,7 +1,13 @@
 return function(use)
 	_G.theme_list = {}
+	_G.loaded_theme = ''
 	_G.load_random_theme = function()
 		local theme_name = _G.theme_list[math.random(#_G.theme_list)]
+		if theme_name == _G.loaded_theme and #_G.theme_list >= 2 then
+			_G.load_random_theme()
+			return
+		end
+		_G.loaded_theme = theme_name
 		vim.cmd('colo ' .. theme_name)
 	end
 	vim.cmd([[au VimEnter * lua _G.load_random_theme()]])
