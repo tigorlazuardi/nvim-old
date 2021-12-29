@@ -1,3 +1,3 @@
 return function(use)
-	use({ 'matze/vim-move', event = 'VimEnter' })
+	use({ 'matze/vim-move' })
 end

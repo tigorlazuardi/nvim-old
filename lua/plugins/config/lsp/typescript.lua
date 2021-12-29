@@ -48,9 +48,12 @@ if vim.fn.exepath('typescript-language-server') ~= '' then
 			end
 
 			wk.register({
-				qs = { '<cmd>TSLspOrganize<CR>', 'Organize Import' },
-				qr = { '<cmd>TSLspRenameFile<CR>', 'Rename File' },
-				qi = { '<cmd>TSLspImportAll<CR>', 'Import All' },
+				['<leader>g'] = {
+					name = '+web',
+					f = { '<cmd>TSLspOrganize<CR>', 'Organize Import' },
+					r = { '<cmd>TSLspRenameFile<CR>', 'Rename File' },
+					i = { '<cmd>TSLspImportAll<CR>', 'Import All' },
+				},
 			}, { buffer = buffer })
 		end,
 	})

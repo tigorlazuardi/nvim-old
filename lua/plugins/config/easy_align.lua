@@ -11,6 +11,5 @@ return function(use)
 				gA = { '<Plug>(EasyAlign)', '(TextObject) EasyAlign' },
 			}, { mode = 'n' })
 		end,
-		event = 'BufEnter',
 	})
 end

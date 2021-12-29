@@ -1,5 +1,6 @@
 if vim.fn.exepath('yaml-language-server') ~= '' then
 	require('lspconfig').yamlls.setup({
+		on_attach = require('plugins.config.lsp.on_attach'),
 		settings = {
 			yaml = {
 				schemas = {

@@ -14,6 +14,5 @@ return function(use)
 				},
 			})
 		end,
-		event = 'VimEnter',
 	})
 end

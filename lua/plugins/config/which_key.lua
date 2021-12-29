@@ -1,7 +1,6 @@
 return function(use)
 	use({
 		'folke/which-key.nvim',
-		opt = false,
 		config = function()
 			local wk = require('which-key')
 			wk.setup({

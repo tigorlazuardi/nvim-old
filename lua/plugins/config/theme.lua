@@ -15,14 +15,12 @@ return function(use)
 
 	use({
 		'sainnhe/sonokai',
-		opt = false,
 		setup = function()
 			table.insert(_G.theme_list, 'sonokai')
 		end,
 	})
 	use({
 		'folke/tokyonight.nvim',
-		opt = false,
 		setup = function()
 			vim.g.tokyonight_italic_functions = true
 			table.insert(_G.theme_list, 'tokyonight')
@@ -31,7 +29,6 @@ return function(use)
 
 	use({
 		'rafamadriz/neon',
-		opt = false,
 		setup = function()
 			table.insert(_G.theme_list, 'neon')
 		end,
@@ -39,7 +36,6 @@ return function(use)
 
 	use({
 		'marko-cerovac/material.nvim',
-		opt = false,
 		setup = function()
 			vim.g.material_style = 'darker'
 			table.insert(_G.theme_list, 'material')
@@ -48,7 +44,6 @@ return function(use)
 
 	use({
 		'mhartington/oceanic-next',
-		opt = false,
 		setup = function()
 			table.insert(_G.theme_list, 'OceanicNext')
 		end,
@@ -56,7 +51,6 @@ return function(use)
 
 	use({
 		'glepnir/zephyr-nvim',
-		opt = false,
 		setup = function()
 			table.insert(_G.theme_list, 'zephyr')
 		end,

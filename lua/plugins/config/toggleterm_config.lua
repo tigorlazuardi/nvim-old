@@ -48,8 +48,6 @@ end
 return function(use)
 	use({
 		'akinsho/nvim-toggleterm.lua',
-		wants = { 'which-key.nvim' },
 		config = run,
-		event = 'VimEnter',
 	})
 end

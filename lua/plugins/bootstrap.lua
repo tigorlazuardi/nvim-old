@@ -36,7 +36,6 @@ packer.init({
 	},
 	auto_clean = true,
 	compile_on_sync = true,
-	opt_default = true,
 })
 
 return packer, should_sync

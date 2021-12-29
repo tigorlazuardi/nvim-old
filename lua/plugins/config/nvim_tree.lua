@@ -103,6 +103,5 @@ return function(use)
 		setup = setup,
 		config = run,
 		wants = { 'which-key.nvim' },
-		event = 'VimEnter',
 	})
 end

@@ -1,10 +1,4 @@
 local function run()
-	local load = require('packer').loader
-	load('playground')
-	load('spellsitter.nvim')
-	load('nvim-treesitter-context')
-	load('nvim-ts-autotag')
-	load('nvim-treesitter-textobjects')
 	require('nvim-treesitter.configs').setup({
 		context_commentstring = { enable = true },
 		highlight = { enable = true },
@@ -77,12 +71,24 @@ local function run()
 			},
 		},
 	})
-end
 
-local function spell_sitter()
 	require('spellsitter').setup({
 		hl = 'SpellBad',
 		captures = { 'comment' }, -- set to {} to spellcheck everything
+	})
+	require('treesitter-context').setup({
+		enable = true,
+	})
+	require('nvim-ts-autotag').setup({
+		filetypes = {
+			'html',
+			'xml',
+			'javascript',
+			'javascriptreact',
+			'typescriptreact',
+			'svelte',
+			'vue',
+		},
 	})
 end
 
@@ -90,39 +96,13 @@ return function(use)
 	use({
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate',
+		requires = {
+			'nvim-treesitter/nvim-treesitter-textobjects',
+			'nvim-treesitter/playground',
+			'lewis6991/spellsitter.nvim',
+			'romgrk/nvim-treesitter-context',
+			'windwp/nvim-ts-autotag',
+		},
 		config = run,
-		opt = false,
-	})
-	use('nvim-treesitter/nvim-treesitter-textobjects')
-	use({
-		'nvim-treesitter/playground',
-	})
-	use({
-		'lewis6991/spellsitter.nvim',
-		config = spell_sitter,
-	})
-	use({
-		'romgrk/nvim-treesitter-context',
-		config = function()
-			require('treesitter-context').setup({
-				enable = true,
-			})
-		end,
-	})
-	use({
-		'windwp/nvim-ts-autotag',
-		config = function()
-			require('nvim-ts-autotag').setup({
-				filetypes = {
-					'html',
-					'xml',
-					'javascript',
-					'javascriptreact',
-					'typescriptreact',
-					'svelte',
-					'vue',
-				},
-			})
-		end,
 	})
 end

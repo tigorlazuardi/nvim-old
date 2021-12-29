@@ -1,3 +1,3 @@
 return function(use)
-	use({ 'stevearc/dressing.nvim', event = 'VimEnter' })
+	use({ 'stevearc/dressing.nvim' })
 end

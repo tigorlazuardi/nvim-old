@@ -1,13 +1,23 @@
 local function run()
-	local prequire = require('personal.utils.prequire')
-	local packer = prequire('packer')
-	if not packer then
-		return
-	end
-	packer.loader('plenary.nvim')
-	packer.loader('telescope-fzf-native.nvim')
-	packer.loader('telescope-file-browser.nvim')
-	packer.loader('project.nvim')
+	require('project_nvim').setup({
+		manual_mode = false,
+		detection_methods = { 'lsp', 'pattern' },
+		patterns = {
+			'.git',
+			'_darcs',
+			'.hg',
+			'.bzr',
+			'.svn',
+			'Makefile',
+			'package.json',
+			'go.mod',
+			'cargo.toml',
+			'=src',
+		},
+		show_hidden = true,
+		ignore_lsp = { 'efm', 'null-ls' },
+		silent_chdir = true,
+	})
 
 	local wk = require('which-key')
 	wk.register({
@@ -22,18 +32,25 @@ local function run()
 		},
 	})
 
-	local actions = require('telescope.actions')
 	local telescope_mappings = {
-		i = { ['<esc>'] = actions.close },
+		i = {},
+		n = {},
 	}
 
-	pcall(packer.loader, 'trouble.nvim')
 	local present, trouble = pcall(require, 'trouble.providers.telescope')
 	if present then
 		telescope_mappings['i']['<c-t>'] = trouble.open_with_trouble
-		telescope_mappings['n'] = { ['<c-t>'] = trouble.open_with_trouble }
+		telescope_mappings['n']['<c-t>'] = trouble.open_with_trouble
 	end
+
 	local telescope = require('telescope')
+
+	if not vim.g.is_windows then
+		require('packer').loader('telescope-fzf-native.nvim')
+		telescope.load_extension('fzf')
+	end
+	telescope.load_extension('file_browser')
+	telescope.load_extension('projects')
 	telescope.setup({
 		defaults = {
 			mappings = telescope_mappings,
@@ -53,28 +70,17 @@ end
 return function(use)
 	use({
 		'nvim-telescope/telescope.nvim',
-		wants = { 'which-key.nvim' },
-		event = 'VimEnter',
+		requires = {
+			{
+				'nvim-telescope/telescope-fzf-native.nvim',
+				run = 'make',
+				cond = function()
+					return not vim.g.is_windows
+				end,
+			},
+			{ 'nvim-telescope/telescope-file-browser.nvim' },
+			{ 'ahmedkhalf/project.nvim' },
+		},
 		config = run,
-	})
-	use({
-		'nvim-telescope/telescope-file-browser.nvim',
-		config = function()
-			require('telescope').load_extension('file_browser')
-		end,
-	})
-	use({
-		'nvim-telescope/telescope-fzf-native.nvim',
-		run = 'make',
-		wants = { 'telescope.nvim' },
-		after = { 'telescope.nvim' },
-		event = 'VimEnter',
-		cond = function()
-			return not vim.g.is_windows
-		end,
-		config = function()
-			local telescope = require('telescope')
-			telescope.load_extension('fzf')
-		end,
 	})
 end

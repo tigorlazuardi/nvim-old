@@ -3,7 +3,6 @@ return function(use)
 	use({
 		'ahmedkhalf/project.nvim',
 		wants = { 'telescope.nvim' },
-		event = 'VimEnter',
 		config = function()
 			require('project_nvim').setup({
 				manual_mode = false,

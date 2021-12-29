@@ -1,7 +1,6 @@
 return function(use)
 	use({
 		'famiu/bufdelete.nvim',
-		event = 'VimEnter',
 		config = function()
 			require('which-key').register({
 				['<leader>b'] = {

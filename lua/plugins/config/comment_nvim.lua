@@ -5,7 +5,6 @@ return function(use)
 	})
 	use({
 		'numToStr/Comment.nvim',
-		event = 'VimEnter',
 		config = function()
 			require('Comment').setup({
 				pre_hook = function(ctx)

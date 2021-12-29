@@ -4,10 +4,6 @@ local function config()
 	if not packer then
 		return
 	end
-	packer.loader('nvim-dap')
-	packer.loader('nvim-dap-virtual-text')
-	packer.loader('telescope-dap.nvim')
-
 	require('dapui').setup({
 		mappings = { edit = 'i', remove = 'd' },
 	})
@@ -102,12 +98,11 @@ end
 return function(use)
 	use({
 		'rcarriga/nvim-dap-ui',
-		event = 'BufEnter',
 		requires = {
-			{ 'mfussenegger/nvim-dap', opt = true },
-			{ 'theHamsta/nvim-dap-virtual-text', opt = true },
-			{ 'nvim-telescope/telescope-dap.nvim', opt = true },
-			{ 'jbyuki/one-small-step-for-vimkind', opt = true },
+			{ 'mfussenegger/nvim-dap' },
+			{ 'theHamsta/nvim-dap-virtual-text' },
+			{ 'nvim-telescope/telescope-dap.nvim' },
+			{ 'jbyuki/one-small-step-for-vimkind' },
 		},
 		wants = { 'which-key.nvim', 'telescope.nvim', 'nvim-treesitter' },
 		config = config,

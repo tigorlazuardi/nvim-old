@@ -12,8 +12,7 @@ return function(use)
 			-- 'tami5/lspsaga.nvim',
 			{ 'jose-elias-alvarez/nvim-lsp-ts-utils', wants = { 'null-ls.nvim' } },
 		},
-		after = { 'telescope.nvim', 'which-key.nvim' },
-		event = { 'VimEnter' },
+		-- after = { 'telescope.nvim', 'which-key.nvim' },
 		setup = function()
 			local signs = { Error = ' ', Warn = ' ', Hint = ' ', Information = ' ' }
 
@@ -31,19 +30,6 @@ return function(use)
 			})
 		end,
 		config = function()
-			local prequire = require('personal.utils.prequire')
-			local packer = prequire('packer')
-			if not packer then
-				return
-			end
-			packer.loader('lsp_signature.nvim')
-			packer.loader('lua-dev.nvim')
-			packer.loader('lsp-colors.nvim')
-			packer.loader('lsp_extensions.nvim')
-			packer.loader('nvim-lightbulb')
-			packer.loader('schemastore.nvim')
-			-- packer.loader('lspsaga.nvim')
-
 			local wk = require('which-key')
 
 			wk.register({
@@ -74,22 +60,6 @@ return function(use)
 
 			-- require('lspsaga').init_lsp_saga()
 			require('plugins.config.lsp.setup')
-		end,
-	})
-	-- use({
-	-- 	'weilbith/nvim-code-action-menu',
-	-- 	-- cmd = 'CodeActionMenu',
-	-- 	event = {'VimEnter'},
-	-- })
-	use({
-		'ldelossa/calltree.nvim',
-		config = function()
-			require('calltree').setup({})
-			local wk = require('which-key')
-
-			wk.register({
-				gt = { '<cmd>CTOpen<cr>', 'Open Calltree' },
-			})
 		end,
 	})
 end

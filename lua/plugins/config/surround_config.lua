@@ -1,7 +1,6 @@
 return function(use)
 	use({
 		'blackCauldron7/surround.nvim',
-		event = 'VimEnter',
 		config = function()
 			local prequire = require('personal.utils.prequire')
 			local surround = require('surround')

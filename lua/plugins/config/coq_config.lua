@@ -3,7 +3,6 @@ return function(use)
 		'ms-jpq/coq_nvim',
 		branch = 'coq',
 		run = ':COQdeps',
-		event = 'BufEnter',
 		requires = {
 			{ 'ms-jpq/coq.artifacts', branch = 'artifacts' },
 			{

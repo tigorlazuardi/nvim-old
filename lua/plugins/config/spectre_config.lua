@@ -20,8 +20,6 @@ return function(use)
 	use({
 		'windwp/nvim-spectre',
 		requires = { 'nvim-lua/plenary.nvim' },
-		wants = { 'which-key.nvim' },
 		config = config,
-		event = 'VimEnter',
 	})
 end

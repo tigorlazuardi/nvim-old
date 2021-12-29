@@ -21,6 +21,7 @@ if vim.fn.exepath('gopls') ~= '' then
 
 	local configuration = {
 		on_attach = function(client, bufnr)
+			-- disable in favor of null_ls
 			client.resolved_capabilities.document_formatting = false
 			require('plugins.config.lsp.on_attach')(client, bufnr)
 			vim.cmd([[autocmd BufWritePost <buffer> silent! lua _G.organize_imports(1000)]])

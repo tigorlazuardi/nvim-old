@@ -22,6 +22,5 @@ return function(use)
 			vim.cmd([[set noshowmode]])
 			require('plugins.config.windline_config.airline')
 		end,
-		event = 'BufEnter',
 	})
 end

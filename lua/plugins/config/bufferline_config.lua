@@ -2,7 +2,6 @@ return function(use)
 	use({
 		'akinsho/nvim-bufferline.lua',
 		requires = 'kyazdani42/nvim-web-devicons',
-		event = 'VimEnter',
 		config = function()
 			require('bufferline').setup({
 				custom_filter = function(bufnr)
@@ -14,6 +13,10 @@ return function(use)
 					end
 				end,
 				diagnostics = 'nvim_lsp',
+			})
+			require('which-key').register({
+				['[t'] = { '<cmd>BufferLineCyclePrev<cr>', 'Previous Buffer' },
+				[']t'] = { '<cmd>BufferLineCycleNext<cr>', 'Previous Buffer' },
 			})
 		end,
 	})

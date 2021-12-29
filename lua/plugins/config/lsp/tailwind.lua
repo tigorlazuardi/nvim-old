@@ -19,8 +19,8 @@ if vim.fn.exepath('tailwindcss-language-server') ~= '' then
 			local wk = require('which-key')
 			local wk_option = { buffer = bufnr }
 			wk.register({
-				q = {
-					name = 'quick',
+				['<leader>g'] = {
+					name = '+web',
 					s = {
 						"<cmd>lua require('headwind').buf_sort_tailwind_classes()<cr>",
 						'Sort Tailwind Classes (Buffer)',
@@ -28,8 +28,8 @@ if vim.fn.exepath('tailwindcss-language-server') ~= '' then
 				},
 			}, wk_option)
 			wk.register({
-				q = {
-					name = 'quick',
+				['<leader>g'] = {
+					name = '+web',
 					s = {
 						"<cmd>lua require('headwind').visual_sort_tailwind_classes()<cr>",
 						'Sort Tailwind Classes (Visual)',
