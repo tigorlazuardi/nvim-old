@@ -11,7 +11,7 @@ dap.adapters.go = function(callback, _config)
 		args = { 'dap', '-l', '127.0.0.1:' .. port },
 		detached = true,
 	}
-	handle, pid_or_err = vim.loop.spawn('dlv-dap', opts, function(code)
+	handle, pid_or_err = vim.loop.spawn('dlv', opts, function(code)
 		stdout:close()
 		stderr:close()
 		handle:close()

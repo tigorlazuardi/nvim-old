@@ -8,6 +8,9 @@
 - **theme:** add more themes
 - **theme:** added tokyonight
 
+### Fix
+- **dlv:** command returned from dlv-dap to dlv
+
 
 <a name="v2.6.0"></a>
 ## [v2.6.0] - 2021-12-28
