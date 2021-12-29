@@ -8,7 +8,9 @@ local function config()
 	packer.loader('nvim-dap-virtual-text')
 	packer.loader('telescope-dap.nvim')
 
-	require('dapui').setup()
+	require('dapui').setup({
+		mappings = { edit = 'i', remove = 'd' },
+	})
 
 	require('plugins.config.debugger.go')
 	require('plugins.config.debugger.chrome_js')
@@ -30,6 +32,8 @@ local function config()
 		require('dap').repl.close()
 		require('dapui').close()
 	end
+
+	vim.cmd([[autocmd filetype dap-repl setlocal wrap]])
 
 	wk.register({
 		['<leader>d'] = {

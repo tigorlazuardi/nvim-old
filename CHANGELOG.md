@@ -5,6 +5,7 @@
 - **golang-ls:** removed unused codes
 
 ### Feat
+- **debugger:** change mapping and local
 - **theme:** random theme now won't repeat last
 - **theme:** add more themes
 - **theme:** added tokyonight
