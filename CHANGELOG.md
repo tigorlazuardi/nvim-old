@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Refactor
+- **golang-lsp:** staticcheck now depends on golangci lint
+
 
 <a name="v3.0.0"></a>
 ## [v3.0.0] - 2021-12-29

@@ -64,7 +64,7 @@ if vim.fn.exepath('gopls') ~= '' then
 				},
 				usePlaceholders = false,
 				completeUnimported = true,
-				staticcheck = true,
+				staticcheck = false, -- in favor of golangci lint
 				matcher = 'fuzzy',
 				diagnosticsDelay = '500ms',
 				symbolMatcher = 'fuzzy',
