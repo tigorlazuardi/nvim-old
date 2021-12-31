@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Feat
+- **debugger:** now uses personal one with wrap set to default on
+
 ### Refactor
 - **golang-lsp:** staticcheck now depends on golangci lint
 

@@ -29,12 +29,13 @@ local function config()
 		require('dapui').close()
 	end
 
-	vim.cmd([[autocmd filetype dap-repl setlocal wrap]])
+	vim.cmd([[au FileType dap-repl setlocal wrap linebreak]])
+	vim.cmd([[au FileType dap-repl lua require('dap.ext.autocompl').attach()]])
 
 	wk.register({
 		['<leader>d'] = {
 			name = '+debugger',
-			c = { [[<cmd>lua require('dapui').toggle()<cr>]], 'Open Debugger' },
+			d = { [[<cmd>lua require('dapui').toggle()<cr>]], 'Open Debugger' },
 			b = { [[<cmd>lua require('dap').toggle_breakpoint()<cr>]], 'Toggle Breakpoints' },
 			e = {
 				[[<cmd>lua require('dap').set_exception_breakpoints({"all"})<cr>]],
@@ -69,8 +70,11 @@ local function config()
 	_G.load_launchjs = function()
 		require('dap.ext.vscode').load_launchjs()
 		local dap = require('dap')
-		for _, cfg in ipairs(dap.configurations.go) do
-			cfg.dlvToolPath = vim.fn.exepath('dlv')
+		local dlv = vim.fn.exepath('dlv')
+		if dlv ~= '' then
+			for _, cfg in ipairs(dap.configurations.go) do
+				cfg.dlvToolPath = dlv
+			end
 		end
 	end
 
@@ -97,7 +101,7 @@ end
 
 return function(use)
 	use({
-		'rcarriga/nvim-dap-ui',
+		'tigorlazuardi/nvim-dap-ui',
 		requires = {
 			{ 'mfussenegger/nvim-dap' },
 			{ 'theHamsta/nvim-dap-virtual-text' },
