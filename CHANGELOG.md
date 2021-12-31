@@ -3,6 +3,7 @@
 
 ### Feat
 - **debugger:** now uses personal one with wrap set to default on
+- **flutter:** added more keybindings
 - **flutter:** added flutter
 
 ### Fix

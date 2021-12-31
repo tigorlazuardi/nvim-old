@@ -48,7 +48,20 @@ return function(use)
 									'<cmd>FlutterDevices<cr>',
 									'Quit',
 								},
+								t = {
+									'<cmd>FlutterDevTools<cr>',
+									'Dev Tools',
+								},
+								y = {
+									'<cmd>FlutterCopyProfileUrl<cr>',
+									'Copy Profile URL',
+								},
+								b = {
+									'<cmr>FlutterLspRestart<cr>',
+									'LSP Restart',
+								},
 							},
+							gs = { '<cmd>FlutterOutlineToggle<cr>', 'Widget Outline' },
 						}, { buffer = bufnr })
 					end,
 					capabilities = require('plugins.config.lsp.capabilities'), -- e.g. lsp_status capabilities
