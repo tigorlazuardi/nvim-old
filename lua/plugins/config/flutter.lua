@@ -21,7 +21,7 @@ return function(use)
 							['<leader>g'] = {
 								name = '+flutter',
 								c = {
-									"<cmd>require('telescope').extensions.flutter.commands()<cr>",
+									'<cmd>Telescope flutter commands<cr>',
 									'Commands',
 								},
 								s = {
