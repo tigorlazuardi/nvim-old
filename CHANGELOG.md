@@ -7,6 +7,7 @@
 - **flutter:** added flutter
 
 ### Fix
+- **flutter:** run via dap disabled
 - **flutter:** fix list commands
 - **theme:** theme now fixed
 
