@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+
+<a name="v3.0.1"></a>
+## [v3.0.1] - 2022-01-01
 ### Feat
 - **debugger:** now uses personal one with wrap set to default on
 - **flutter:** added more keybindings
@@ -442,7 +445,8 @@
 - **indentation:** moved indentation to it's own folder
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v3.0.0...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v3.0.1...HEAD
+[v3.0.1]: https://github.com/tigorlazuardi/nvim/compare/v3.0.0...v3.0.1
 [v3.0.0]: https://github.com/tigorlazuardi/nvim/compare/v2.6.0...v3.0.0
 [v2.6.0]: https://github.com/tigorlazuardi/nvim/compare/v2.5.0...v2.6.0
 [v2.5.0]: https://github.com/tigorlazuardi/nvim/compare/v2.4.1...v2.5.0
