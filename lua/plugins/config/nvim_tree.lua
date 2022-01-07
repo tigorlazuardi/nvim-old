@@ -66,7 +66,7 @@ local function run()
 			},
 		},
 		open_on_setup = true,
-		ignore_ft_on_setup = { 'dashboard' },
+		ignore_ft_on_setup = {},
 		git = {
 			enable = true,
 			ignore = false,

@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Feat
+- update config for nvim-tree
 - added session manager
 - lsp diagnostic now is float based on scope cursor
 - set default color to catpuccin
