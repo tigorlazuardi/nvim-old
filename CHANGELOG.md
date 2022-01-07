@@ -3,6 +3,7 @@
 
 ### Feat
 - moved to coq and chadtree
+- **airline:** added support to show the tree plugin name
 
 
 <a name="v3.0.1"></a>

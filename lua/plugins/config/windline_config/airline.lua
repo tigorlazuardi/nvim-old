@@ -232,11 +232,40 @@ local quickfix = {
 	show_last_status = true,
 }
 
+local explorer_filetypes = { 'fern', 'NvimTree', 'lir', 'CHADTree' }
+
+---@param target string
+---@return boolean
+function explorer_filetypes:has(target)
+	for _, v in pairs(self) do
+		if v == target then
+			return true
+		end
+	end
+	return false
+end
+
+local explorer_current = 'FileTree'
+local explorer_checked = false
+
 local explorer = {
-	filetypes = { 'fern', 'NvimTree', 'lir' },
+	filetypes = explorer_filetypes,
 	active = {
 		{ '  ', { 'white', 'magenta_b' } },
-		{ helper.separators.slant_right, { 'magenta_b', 'NormalBg' } },
+		{ sep.slant_right, { 'magenta_b', 'magenta_c' } },
+		{
+			function()
+				if not explorer_checked then
+					explorer_checked = true
+					if explorer_filetypes:has(vim.bo.filetype) then
+						explorer_current = vim.bo.filetype
+					end
+				end
+				return ' ' .. explorer_current .. ' '
+			end,
+			{ 'white', 'magenta_c' },
+		},
+		{ helper.separators.slant_right, { 'magenta_c', 'NormalBg' } },
 		{ b_components.divider, '' },
 		{ b_components.file_name(''), { 'NormalFg', 'NormalBg' } },
 	},
