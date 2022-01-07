@@ -79,6 +79,11 @@ local function run()
 		filters = {
 			custom = { 'node_modules', 'target', '.git' },
 		},
+		view = {
+			width = 40,
+			hide_root_folder = true,
+			auto_resize = true,
+		},
 	})
 
 	local wk = require('which-key')

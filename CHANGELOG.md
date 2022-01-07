@@ -9,6 +9,7 @@
 - update
 - **airline:** removed file icon in explorer tree in bottom right
 - **airline:** added support to show the tree plugin name
+- **nvim-tree:** nvim tree width size now 40
 - **nvim-tree:** added `.git` to ignore list
 
 ### Revert
