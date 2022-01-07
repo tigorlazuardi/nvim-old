@@ -20,6 +20,7 @@
 - **which-key:** temporarily changed to zeertzjq fork To support latest neovim branch
 
 ### Revert
+- removed nvim-treesitter-context in favor of session manager
 - removed theme change on DirChanged
 - return to nvim tree because chadtree theme is ugly
 

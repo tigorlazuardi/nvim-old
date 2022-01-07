@@ -76,9 +76,9 @@ local function run()
 		hl = 'SpellBad',
 		captures = { 'comment' }, -- set to {} to spellcheck everything
 	})
-	require('treesitter-context').setup({
-		enable = true,
-	})
+	-- require('treesitter-context').setup({
+	-- 	enable = true,
+	-- })
 	require('nvim-ts-autotag').setup({
 		filetypes = {
 			'html',
@@ -100,7 +100,7 @@ return function(use)
 			'nvim-treesitter/nvim-treesitter-textobjects',
 			'nvim-treesitter/playground',
 			'lewis6991/spellsitter.nvim',
-			'romgrk/nvim-treesitter-context',
+			-- 'romgrk/nvim-treesitter-context',
 			'windwp/nvim-ts-autotag',
 		},
 		config = run,
