@@ -5,7 +5,7 @@ return function(use)
 		requires = 'kyazdani42/nvim-web-devicons',
 		config = function()
 			require('trouble').setup({
-				position = 'right',
+				-- position = 'right',
 			})
 			local wk = require('which-key')
 			wk.register({

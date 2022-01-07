@@ -57,7 +57,7 @@ return function(use)
 					u = { [[<cmd>PackerUpdate<cr>]], 'Update Plugins' },
 					p = { [[<cmd>PackerProfile<cr>]], 'Packer Profile' },
 				},
-			})
+			}, { silent = false })
 
 			wk.register({ q = {
 				'<cmd>WhichKey q<cr>',

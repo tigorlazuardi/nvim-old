@@ -4,6 +4,7 @@ return function(use)
 		config = function()
 			require('focus').setup({
 				signcolumn = false, -- disable sign column only on main window
+				cursorline = false, -- disabling this enable cursorlines on all window
 				excluded_filetypes = {
 					'calltree',
 					'dapui_scopes',
@@ -12,6 +13,8 @@ return function(use)
 					'dapui_watches',
 					'dap-repl',
 					'CHADTree',
+					'symboltree',
+					'filetree',
 				},
 			})
 		end,
