@@ -6,6 +6,9 @@
 - **airline:** removed file icon in explorer tree in bottom right
 - **airline:** added support to show the tree plugin name
 
+### Revert
+- return to nvim tree because chadtree theme is ugly
+
 
 <a name="v3.0.1"></a>
 ## [v3.0.1] - 2022-01-01
