@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+
+<a name="v3.0.2"></a>
+## [v3.0.2] - 2022-01-07
 ### Feat
 - moved to coq and chadtree
 - update config for nvim-tree
@@ -469,7 +472,8 @@
 - **indentation:** moved indentation to it's own folder
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v3.0.1...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v3.0.2...HEAD
+[v3.0.2]: https://github.com/tigorlazuardi/nvim/compare/v3.0.1...v3.0.2
 [v3.0.1]: https://github.com/tigorlazuardi/nvim/compare/v3.0.0...v3.0.1
 [v3.0.0]: https://github.com/tigorlazuardi/nvim/compare/v2.6.0...v3.0.0
 [v2.6.0]: https://github.com/tigorlazuardi/nvim/compare/v2.5.0...v2.6.0
