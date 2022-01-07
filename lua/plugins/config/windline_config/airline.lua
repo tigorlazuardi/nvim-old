@@ -266,8 +266,6 @@ local explorer = {
 			{ 'white', 'magenta_c' },
 		},
 		{ helper.separators.slant_right, { 'magenta_c', 'NormalBg' } },
-		{ b_components.divider, '' },
-		{ b_components.file_name(''), { 'NormalFg', 'NormalBg' } },
 	},
 	always_active = true,
 	show_last_status = true,

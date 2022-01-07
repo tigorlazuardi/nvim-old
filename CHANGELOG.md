@@ -3,6 +3,7 @@
 
 ### Feat
 - moved to coq and chadtree
+- **airline:** removed file icon in explorer tree in bottom right
 - **airline:** added support to show the tree plugin name
 
 
