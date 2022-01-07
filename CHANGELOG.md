@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Feat
+- removed plenary from lazygit plugin
 - changed lazygit to direct integration
 - update
 - moved to coq and chadtree
