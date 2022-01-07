@@ -77,7 +77,7 @@ local function run()
 			update_cwd = true,
 		},
 		filters = {
-			custom = { 'node_modules', 'target' },
+			custom = { 'node_modules', 'target', '.git' },
 		},
 	})
 
