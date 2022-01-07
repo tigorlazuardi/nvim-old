@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Feat
+- changed lazygit to direct integration
 - update
 - moved to coq and chadtree
 - **airline:** removed file icon in explorer tree in bottom right
