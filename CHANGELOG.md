@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Feat
+- set default color to catpuccin
 - moved to coq and chadtree
 - removed plenary from lazygit plugin
 - changed lazygit to direct integration

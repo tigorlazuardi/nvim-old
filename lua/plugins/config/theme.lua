@@ -26,13 +26,6 @@ return function(use)
 			vim.g.tokyonight_italic_functions = true
 			table.insert(_G.theme_list, 'tokyonight')
 		end,
-		config = function()
-			-- draw twice to avoid black bars on startup
-			vim.cmd([[colo tokyonight]])
-			vim.defer_fn(function()
-				vim.cmd([[colo tokyonight]])
-			end, 100)
-		end,
 	})
 
 	use({
@@ -61,6 +54,20 @@ return function(use)
 		'glepnir/zephyr-nvim',
 		setup = function()
 			table.insert(_G.theme_list, 'zephyr')
+		end,
+	})
+
+	use({
+		'catppuccin/nvim',
+		as = 'catppuccin',
+		setup = function()
+			table.insert(_G.theme_list, 'catppuccin')
+		end,
+		config = function()
+			vim.cmd([[colo catppuccin]])
+			vim.defer_fn(function()
+				vim.cmd([[colo catppuccin]])
+			end, 100)
 		end,
 	})
 end
