@@ -14,6 +14,12 @@ return function(use)
 		},
 		-- after = { 'telescope.nvim', 'which-key.nvim' },
 		setup = function()
+			vim.diagnostic.config({
+				virtual_text = true,
+				signs = true,
+				float = { border = 'single' },
+			})
+
 			local signs = { Error = ' ', Warn = ' ', Hint = ' ', Information = ' ' }
 
 			for type, icon in pairs(signs) do
@@ -57,7 +63,7 @@ return function(use)
 				enabled = { 'ChainingHint' },
 			})
 			vim.cmd([[autocmd CursorHold,CursorHoldI * silent! lua require'nvim-lightbulb'.update_lightbulb()]])
-
+			vim.cmd([[au CursorHold * lua vim.diagnostic.open_float(0,{scope = "cursor", focus = false})]])
 			-- require('lspsaga').init_lsp_saga()
 			require('plugins.config.lsp.setup')
 		end,

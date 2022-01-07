@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Feat
+- lsp diagnostic now is float based on scope cursor
 - set default color to catpuccin
 - moved to coq and chadtree
 - removed plenary from lazygit plugin
