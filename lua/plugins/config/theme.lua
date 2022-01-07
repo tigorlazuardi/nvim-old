@@ -11,7 +11,7 @@ return function(use)
 			_G.load_random_theme()
 		end, 100)
 	end
-	vim.cmd([[au DirChanged * lua _G.load_random_theme_delayed()]])
+	-- vim.cmd([[au DirChanged * lua _G.load_random_theme_delayed()]])
 	vim.cmd([[command! RandomColor lua _G.load_random_theme()]])
 
 	use({

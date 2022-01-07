@@ -12,6 +12,7 @@
 - **nvim-tree:** added `.git` to ignore list
 
 ### Revert
+- removed theme change on DirChanged
 - return to nvim tree because chadtree theme is ugly
 
 
