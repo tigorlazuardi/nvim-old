@@ -2,14 +2,15 @@
 ## [Unreleased]
 
 ### Feat
+- moved to coq and chadtree
 - update config for nvim-tree
 - added session manager
 - lsp diagnostic now is float based on scope cursor
+- update
 - set default color to catpuccin
-- moved to coq and chadtree
+- nvim_gomove instead of vim_move
 - removed plenary from lazygit plugin
 - changed lazygit to direct integration
-- update
 - **airline:** removed file icon in explorer tree in bottom right
 - **airline:** added support to show the tree plugin name
 - **nvim-tree:** nvim tree width size now 40
