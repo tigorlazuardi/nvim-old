@@ -49,8 +49,13 @@ local function run()
 		require('packer').loader('telescope-fzf-native.nvim')
 		telescope.load_extension('fzf')
 	end
+
+	require('session_manager').setup({
+		autoload_mode = require('session_manager.config').AutoloadMode.Disabled, -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
+	})
 	telescope.load_extension('file_browser')
 	telescope.load_extension('projects')
+	telescope.load_extension('sessions')
 	telescope.setup({
 		defaults = {
 			mappings = telescope_mappings,
@@ -80,6 +85,7 @@ return function(use)
 			},
 			{ 'nvim-telescope/telescope-file-browser.nvim' },
 			{ 'ahmedkhalf/project.nvim' },
+			{ 'Shatur/neovim-session-manager' },
 		},
 		config = run,
 	})

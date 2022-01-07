@@ -14,13 +14,21 @@ local function setup()
 		},
 		d = {
 			description = { '  Load Session         ' },
-			command = "lua require('session-lens').search_session()",
+			command = 'Telescope sessions',
 		},
 		e = {
+			description = { '  Load Last Session    ' },
+			command = 'LoadLastSession',
+		},
+		f = {
+			description = { '  Load Dir Session     ' },
+			command = 'LoadCurrentDirSession',
+		},
+		g = {
 			description = { '  Find Word            ' },
 			command = 'Telescope live_grep',
 		},
-		f = {
+		h = {
 			description = { 'ﳟ  Change Theme         ' },
 			command = "lua require('random-colors')()",
 		},
