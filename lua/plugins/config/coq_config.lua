@@ -12,19 +12,11 @@ return function(use)
 			{ 'windwp/nvim-autopairs' },
 		},
 		setup = function()
-			vim.g.coq_settings = { keymap = { recommended = false }, auto_start = true }
+			vim.g.coq_settings = { keymap = { recommended = false }, auto_start = 'shut-up' }
 		end,
 		config = function()
-			local packer = require('packer')
-
-			-- trigger coq side-effects
-			packer.loader('coq.thirdparty')
-			packer.loader('coq_nvim')
-			packer.loader('coq.artifacts')
 			require('coq')
 
-			-- Nvim Autopairs configuration
-			packer.loader('nvim-autopairs')
 			local remap = vim.api.nvim_set_keymap
 			local npairs = require('nvim-autopairs')
 

@@ -26,7 +26,7 @@ require('settings.nvr')
 -- require('settings.backup')
 
 vim.cmd('set nobackup nowritebackup noswapfile noundofile')
-vim.cmd([[set list listchars=tab:\›\ ,trail:-,extends:>,precedes:<,eol:¬,space:·]])
+-- vim.cmd([[set list listchars=tab:\›\ ,trail:-,extends:>,precedes:<,eol:¬,space:·]])
 
 -- Line break by words, not by characters
 c('set wrap linebreak')

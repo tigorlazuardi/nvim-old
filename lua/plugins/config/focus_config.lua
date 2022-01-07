@@ -11,6 +11,7 @@ return function(use)
 					'dapui_stacks',
 					'dapui_watches',
 					'dap-repl',
+					'CHADTree',
 				},
 			})
 		end,

@@ -10,7 +10,9 @@ if not null_ls then
 	return
 end
 
-local sources = { null_ls.builtins.completion.spell }
+local sources = { null_ls.builtins.completion.spell.with({
+	filetypes = { 'markdown', 'text' },
+}) }
 
 local function exist(bin)
 	return vim.fn.exepath(bin) ~= ''
