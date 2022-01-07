@@ -12,6 +12,9 @@
 - **nvim-tree:** nvim tree width size now 40
 - **nvim-tree:** added `.git` to ignore list
 
+### Fix
+- **which-key:** temporarily changed to zeertzjq fork To support latest neovim branch
+
 ### Revert
 - removed theme change on DirChanged
 - return to nvim tree because chadtree theme is ugly

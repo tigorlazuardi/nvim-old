@@ -1,6 +1,7 @@
 return function(use)
 	use({
-		'folke/which-key.nvim',
+		'zeertzjq/which-key.nvim',
+		branch = 'patch-1',
 		config = function()
 			local wk = require('which-key')
 			wk.setup({
