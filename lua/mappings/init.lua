@@ -13,5 +13,5 @@ remap('n', '[t', ':bp!<cr>', opts)
 remap('n', 'Q', 'q', opts)
 remap('n', 'q', '<nop>', opts)
 
-require('mappings.line_swap')
+-- require('mappings.line_swap')
 require('mappings.gx')

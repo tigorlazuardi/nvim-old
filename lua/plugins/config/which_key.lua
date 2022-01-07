@@ -16,8 +16,6 @@ return function(use)
 				L = { '$', 'Move to EOL' },
 				[']t'] = { '<cmd>bn!<cr>', 'Next Buffer' },
 				['[t'] = { '<cmd>bp!<cr>', 'Previous Buffer' },
-				['<A-J>'] = { '<cmd>m .+1<cr>==', 'Swap Line Upwards' },
-				['<A-K>'] = { '<cmd>m .-2<cr>==', 'Swap Line Downwards' },
 			})
 
 			wk.register({ ['?'] = { '<cmd>WhichKey<cr>', 'List Normal Mappings' } })
@@ -31,20 +29,6 @@ return function(use)
 					i = { "<cmd>WhichKey '' i<cr>", 'insert' },
 					x = { "<cmd>WhichKey '' x<cr>", 'selection' },
 				},
-			})
-
-			wk.register({
-				['<A-j>'] = { '<esc><cmd>m .+1<cr>==gi', 'Swap Line Upwards' },
-				['<A-k>'] = { '<esc><cmd>m .-2<cr>==gi', 'Swap Line Downwards' },
-			}, {
-				mode = 'i',
-			})
-
-			wk.register({
-				['<A-j>'] = { [[<cmd>m '>+1<cr>gv=gv]], 'Swap Line Upwards' },
-				['<A-k>'] = { [[<cmd>m '<-2<cr>gv=gv]], 'Swap Line Downwards' },
-			}, {
-				mode = 'v',
 			})
 
 			wk.register({

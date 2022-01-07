@@ -16,6 +16,7 @@
 - **nvim-tree:** added `.git` to ignore list
 
 ### Fix
+- **which-key:** removed conflicting mappings with which-key
 - **which-key:** temporarily changed to zeertzjq fork To support latest neovim branch
 
 ### Revert
