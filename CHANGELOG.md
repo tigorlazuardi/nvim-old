@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Fix
+- **tabout:** fix whichkey missing '>'
+
 
 <a name="v3.0.3"></a>
 ## [v3.0.3] - 2022-01-08

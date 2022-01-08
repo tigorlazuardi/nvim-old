@@ -24,7 +24,7 @@ local function configure()
 
 	wk.register({
 		['<tab>'] = { '<Plug>(Tabout)', 'Tabout' },
-		['<s-tab'] = { '<Plug>(TaboutBack)', 'Tabout Back' },
+		['<s-tab>'] = { '<Plug>(TaboutBack)', 'Tabout Back' },
 	}, {
 		mode = 'i',
 	})
