@@ -3,6 +3,7 @@
 
 ### Feat
 - **coq:** <c-h> now does not escape to normal mode first
+- **telescope:** added telescope env
 
 ### Fix
 - **tabout:** fix whichkey missing '>'
