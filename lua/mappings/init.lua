@@ -6,8 +6,8 @@ vim.cmd([[let mapleader = " "]])
 
 -- save all <c-s>
 remap('n', '<c-s>', ':wa<cr>', opts)
-remap('n', 'H', '^', opts)
-remap('n', 'L', '$', opts)
+remap('n', 'H', 'zc', opts)
+remap('n', 'L', 'zo', opts)
 remap('n', ']t', ':bn!<CR>', opts)
 remap('n', '[t', ':bp!<cr>', opts)
 remap('n', 'Q', 'q', opts)

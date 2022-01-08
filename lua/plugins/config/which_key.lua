@@ -12,8 +12,6 @@ return function(use)
 
 			wk.register({
 				['<c-s>'] = { '<cmd>wa<cr>', 'Save All Buffer' },
-				H = { '^', 'Move to First Real Character in Line' },
-				L = { '$', 'Move to EOL' },
 				[']t'] = { '<cmd>bn!<cr>', 'Next Buffer' },
 				['[t'] = { '<cmd>bp!<cr>', 'Previous Buffer' },
 			})
