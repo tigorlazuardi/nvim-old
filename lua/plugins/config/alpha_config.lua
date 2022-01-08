@@ -33,7 +33,7 @@ return function(use)
 				dashboard.button('d', '  Load Dir Session', ':LoadCurrentDirSession<cr>'),
 				dashboard.button('q', '  Quit NVIM', ':qa<CR>'),
 			}
-			if vim.fn.exepath('fortune') ~= 0 then
+			if vim.fn.executable('fortune') == 1 then
 				local handle = io.popen('fortune')
 				local fortune = handle:read('*a')
 				handle:close()
