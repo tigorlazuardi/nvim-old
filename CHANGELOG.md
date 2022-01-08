@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Feat
+- **alpha:** moved from dashboard to alpha
+
 
 <a name="v3.0.2"></a>
 ## [v3.0.2] - 2022-01-07
