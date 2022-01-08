@@ -25,6 +25,7 @@ return function(use)
 				dashboard.button('e', '  New Empty Buffer', ':ene <BAR> startinsert <CR>'),
 				dashboard.button('f', '  Find File', ':Telescope find_files<cr>'),
 				dashboard.button('g', '  Find Word', ':Telescope live_grep<cr>'),
+				dashboard.button('c', '  Change Directory', ':lua require("personal.telescope.cd")()<cr>'),
 				dashboard.button('o', '  Recently Opened Files', ':Telescope oldfiles<cr>'),
 				dashboard.button('p', '  Recent Projects', ':Telescope projects<cr>'),
 				dashboard.button('s', '  Load Session', ':Telescope sessions<cr>'),

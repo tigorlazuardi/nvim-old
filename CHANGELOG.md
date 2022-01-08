@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Feat
+- **alpha:** added Change Directory entry
 - **alpha:** moved from dashboard to alpha
 
 
