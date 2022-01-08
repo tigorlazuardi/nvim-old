@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Feat
+- **coq:** <c-h> now does not escape to normal mode first
+
 ### Fix
 - **tabout:** fix whichkey missing '>'
 
