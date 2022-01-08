@@ -90,6 +90,9 @@ local function run()
 			'vue',
 		},
 	})
+
+	vim.o.foldmethod = 'expr'
+	vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 end
 
 return function(use)
