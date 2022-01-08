@@ -5,6 +5,7 @@
 - **alpha:** fortune now only get if exist
 - **alpha:** added Change Directory entry
 - **alpha:** moved from dashboard to alpha
+- **nvim-tree:** auto open on startup
 
 
 <a name="v3.0.2"></a>

@@ -99,6 +99,9 @@ local function run()
 
 	vim.cmd([[hi! link NvimTreeGitDirty GitSignsChange]])
 	vim.cmd([[hi! link NvimTreeGitNew GitSignsAdd]])
+	vim.defer_fn(function()
+		require('nvim-tree.view').open({ focus_tree = false })
+	end, 100)
 end
 
 return function(use)
