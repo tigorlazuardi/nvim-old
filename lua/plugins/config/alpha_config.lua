@@ -33,10 +33,12 @@ return function(use)
 				dashboard.button('d', '  Load Dir Session', ':LoadCurrentDirSession<cr>'),
 				dashboard.button('q', '  Quit NVIM', ':qa<CR>'),
 			}
-			local handle = io.popen('fortune')
-			local fortune = handle:read('*a')
-			handle:close()
-			dashboard.section.footer.val = fortune
+			if vim.fn.exepath('fortune') ~= 0 then
+				local handle = io.popen('fortune')
+				local fortune = handle:read('*a')
+				handle:close()
+				dashboard.section.footer.val = fortune
+			end
 			dashboard.opts.opts.noautocmd = true
 			alpha.setup(dashboard.opts)
 		end,

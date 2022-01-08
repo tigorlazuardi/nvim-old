@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Feat
+- **alpha:** fortune now only get if exist
 - **alpha:** added Change Directory entry
 - **alpha:** moved from dashboard to alpha
 
