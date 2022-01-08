@@ -115,7 +115,12 @@ null_ls.setup({
 				name = 'quick',
 				f = { '<cmd>lua vim.lsp.buf.formatting_sync()<cr>', 'Format Current Buffer' },
 			},
-			K = { '<Cmd>lua vim.lsp.buf.hover()<CR>', '(LSP) Symbol Definition / Documentation' },
+			K = {
+				function()
+					require('personal.utils.with_fold_check')(vim.lsp.buf.hover)
+				end,
+				'(LSP) Symbol Definition / Documentation',
+			},
 		}, {
 			buffer = bufnr,
 		})

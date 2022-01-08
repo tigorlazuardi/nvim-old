@@ -7,7 +7,9 @@ local function rust_tools_config()
 				local wk = require('which-key')
 				wk.register({
 					K = {
-						"<cmd>lua require'rust-tools.hover_actions'.hover_actions()<cr>",
+						function()
+							require('personal.utils.with_fold_check')(require('rust-tools.hover_actions').hover_actions)
+						end,
 						'(LSP) Symbol Definition / Documentation',
 					},
 				}, { buffer = bufnr })

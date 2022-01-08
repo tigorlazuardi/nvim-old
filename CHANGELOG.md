@@ -3,6 +3,7 @@
 
 ### Feat
 - **coq:** <c-h> now does not escape to normal mode first
+- **pretty-fold:** added pretty fold
 - **settings:** H now moved to close fold, L to open fold
 - **telescope:** added telescope env
 - **treesitter:** foldexprt now to treesitter

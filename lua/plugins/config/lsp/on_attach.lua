@@ -8,7 +8,12 @@ return function(client, bufnr)
 
 	local wk = require('which-key')
 	wk.register({
-		['K'] = { '<Cmd>lua vim.lsp.buf.hover()<CR>', '(LSP) Symbol Definition / Documentation' },
+		K = {
+			function()
+				require('personal.utils.with_fold_check')(vim.lsp.buf.hover)
+			end,
+			'(LSP) Symbol Definition / Documentation',
+		},
 		['<leader>w'] = {
 			name = 'lsp_workspace',
 			a = { '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', 'Add Folder to Workspace' },
@@ -99,7 +104,12 @@ return function(client, bufnr)
 	local have_saga, _ = pcall(require, 'lspsaga')
 	if have_saga then
 		wk.register({
-			K = { [[<cmd>lua require('lspsaga.hover').render_hover_doc()<cr>]], 'Hover Documentation' },
+			K = {
+				function()
+					require('personal.utils.with_fold_check')(require('lspsapag.hover').render_hover_doc)
+				end,
+				'Hover Documentation',
+			},
 			['<c-d>'] = {
 				[[<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>]],
 				'Scroll Window or Documentation Down',
