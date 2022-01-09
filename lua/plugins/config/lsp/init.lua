@@ -1,5 +1,16 @@
 return function(use)
 	require('plugins.config.lsp.rust')(use)
+	local lsp_lines = 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
+	if vim.g.is_windows then
+		lsp_lines = '~/local/lsp_lines.nvim'
+	end
+
+	use({
+		lsp_lines,
+		config = function()
+			require('lsp_lines').register_lsp_virtual_lines()
+		end,
+	})
 	use({
 		'neovim/nvim-lspconfig',
 		requires = {
@@ -14,8 +25,10 @@ return function(use)
 		},
 		-- after = { 'telescope.nvim', 'which-key.nvim' },
 		setup = function()
+			if true then
+			end
 			vim.diagnostic.config({
-				virtual_text = true,
+				virtual_text = false,
 				signs = true,
 				float = { border = 'single' },
 			})
@@ -66,6 +79,7 @@ return function(use)
 			vim.cmd([[au CursorHold * lua vim.diagnostic.open_float(0,{scope = "cursor", focus = false})]])
 			-- require('lspsaga').init_lsp_saga()
 			require('plugins.config.lsp.setup')
+			require('lsp_lines').register_lsp_virtual_lines()
 		end,
 	})
 end

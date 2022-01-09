@@ -91,6 +91,7 @@ local function run()
 		},
 	})
 
+	vim.o.foldlevelstart = 1
 	vim.o.foldmethod = 'expr'
 	vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 end
