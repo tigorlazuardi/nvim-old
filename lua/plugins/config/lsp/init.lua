@@ -1,16 +1,5 @@
 return function(use)
 	require('plugins.config.lsp.rust')(use)
-	local lsp_lines = 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
-	if vim.g.is_windows then
-		lsp_lines = '~/local/lsp_lines.nvim'
-	end
-
-	use({
-		lsp_lines,
-		config = function()
-			require('lsp_lines').register_lsp_virtual_lines()
-		end,
-	})
 	use({
 		'neovim/nvim-lspconfig',
 		requires = {
@@ -20,10 +9,9 @@ return function(use)
 			'nvim-lua/lsp_extensions.nvim',
 			'b0o/schemastore.nvim',
 			'kosayoda/nvim-lightbulb',
-			-- 'tami5/lspsaga.nvim',
+			{ 'https://git.sr.ht/~whynothugo/lsp_lines.nvim', as = 'lsp_lines' },
 			{ 'jose-elias-alvarez/nvim-lsp-ts-utils', wants = { 'null-ls.nvim' } },
 		},
-		-- after = { 'telescope.nvim', 'which-key.nvim' },
 		setup = function()
 			vim.diagnostic.config({
 				virtual_text = false,
