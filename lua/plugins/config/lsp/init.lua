@@ -25,8 +25,6 @@ return function(use)
 		},
 		-- after = { 'telescope.nvim', 'which-key.nvim' },
 		setup = function()
-			if true then
-			end
 			vim.diagnostic.config({
 				virtual_text = false,
 				signs = true,
