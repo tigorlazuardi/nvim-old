@@ -20,10 +20,8 @@ return function(use)
 			'nvim-lua/lsp_extensions.nvim',
 			'b0o/schemastore.nvim',
 			'kosayoda/nvim-lightbulb',
-			-- 'tami5/lspsaga.nvim',
 			{ 'jose-elias-alvarez/nvim-lsp-ts-utils', wants = { 'null-ls.nvim' } },
 		},
-		-- after = { 'telescope.nvim', 'which-key.nvim' },
 		setup = function()
 			vim.diagnostic.config({
 				virtual_text = false,
@@ -75,7 +73,6 @@ return function(use)
 			})
 			vim.cmd([[autocmd CursorHold,CursorHoldI * silent! lua require'nvim-lightbulb'.update_lightbulb()]])
 			vim.cmd([[au CursorHold * lua vim.diagnostic.open_float(0,{scope = "cursor", focus = false})]])
-			-- require('lspsaga').init_lsp_saga()
 			require('plugins.config.lsp.setup')
 			require('lsp_lines').register_lsp_virtual_lines()
 		end,
