@@ -63,7 +63,6 @@ return function(use)
 			})
 			vim.cmd([[autocmd CursorHold,CursorHoldI * silent! lua require'nvim-lightbulb'.update_lightbulb()]])
 			vim.cmd([[au CursorHold * lua vim.diagnostic.open_float(0,{scope = "cursor", focus = false})]])
-			-- require('lspsaga').init_lsp_saga()
 			require('plugins.config.lsp.setup')
 			require('lsp_lines').register_lsp_virtual_lines()
 		end,

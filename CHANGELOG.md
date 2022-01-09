@@ -1,8 +1,14 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Chore
+- removed commented code
+- removed useless code block
+
 ### Feat
+- **alpha:** fortune only called if it exist
 - **coq:** <c-h> now does not escape to normal mode first
+- **lsp_lines:** added lsp_lines
 - **pretty-fold:** set fold next max to 1
 - **pretty-fold:** added pretty fold
 - **settings:** H now moved to close fold, L to open fold
