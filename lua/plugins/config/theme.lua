@@ -64,10 +64,25 @@ return function(use)
 			table.insert(_G.theme_list, 'catppuccin')
 		end,
 		config = function()
-			vim.cmd([[colo catppuccin]])
-			vim.defer_fn(function()
-				vim.cmd([[colo catppuccin]])
-			end, 100)
+			-- vim.cmd([[colo catppuccin]])
+			-- vim.defer_fn(function()
+			-- 	vim.cmd([[colo catppuccin]])
+			-- end, 100)
+			require('catppuccin').setup({
+				integrations = {
+					lsp_trouble = true,
+					which_key = true,
+					indent_blankline = {
+						enabled = true,
+						colored_indent_levels = true,
+					},
+					dashboard = false,
+					vim_sneak = true,
+					bufferline = true,
+					markdown = true,
+				},
+			})
+			require('catppuccin').load()
 		end,
 	})
 end
