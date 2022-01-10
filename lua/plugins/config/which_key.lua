@@ -39,6 +39,13 @@ return function(use)
 					S = { [[<cmd>PackerSync<cr>]], 'Sync Plugins' },
 					u = { [[<cmd>PackerUpdate<cr>]], 'Update Plugins' },
 					p = { [[<cmd>PackerProfile<cr>]], 'Packer Profile' },
+					R = {
+						function()
+							dofile(vim.fn.stdpath('config') .. '/init.lua')
+							print('Reloaded configurations')
+						end,
+						'Reload Config',
+					},
 				},
 			}, { silent = false })
 

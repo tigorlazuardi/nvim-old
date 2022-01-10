@@ -18,6 +18,7 @@
 - **settings:** H now moved to close fold, L to open fold
 - **telescope:** added telescope env
 - **treesitter:** foldexprt now to treesitter
+- **which-key:** added dofile on <leader>pR
 
 ### Fix
 - **tabout:** fix whichkey missing '>'
