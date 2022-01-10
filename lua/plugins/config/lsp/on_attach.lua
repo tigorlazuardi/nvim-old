@@ -4,7 +4,16 @@
 ---@param bufnr number
 return function(client, bufnr)
 	local wk_option = { buffer = bufnr }
-	require('lsp_signature').on_attach(client, bufnr)
+	require('lsp_signature').on_attach({
+		bind = true,
+		handler_opts = {
+			border = 'rounded',
+		},
+		floating_window = false,
+		hint_prefix = 'hint: ',
+		floating_window_above_cur_line = true,
+		toggle_key = '<m-x>',
+	}, bufnr)
 
 	local wk = require('which-key')
 	wk.register({

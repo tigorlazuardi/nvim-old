@@ -60,6 +60,14 @@ airline_colors.c = {
 	Command = { 'white', 'red_c' },
 }
 
+airline_colors.c_with_hint = vim.tbl_extend('force', airline_colors.c, {
+	NormalHint = { 'yellow', 'magenta_c' },
+	InsertHint = { 'yellow', 'green_c' },
+	VisualHint = { 'yellow', 'yellow_c' },
+	ReplaceHint = { 'yellow', 'blue_c' },
+	CommandHint = { 'yellow', 'red_c' },
+})
+
 basic.divider = { b_components.divider, hl_list.Normal }
 
 local width_breakpoint = 100
@@ -80,25 +88,25 @@ basic.section_a = {
 	end,
 }
 
-local get_git_branch = git_comps.git_branch()
+-- local get_git_branch = git_comps.git_branch()
+
+-- basic.section_b = {
+-- 	hl_colors = airline_colors.b,
+-- 	text = function(_, _, width)
+-- 		local branch_name = get_git_branch()
+-- 		if width > width_breakpoint and #branch_name > 1 then
+-- 			return {
+-- 				{ branch_name, state.mode[2] },
+-- 				{ ' ', state.mode[2] },
+-- 				{ sep.right_filled, state.mode[2] .. 'Sep' },
+-- 			}
+-- 		end
+-- 		return { { sep.right_filled, state.mode[2] .. 'Sep' } }
+-- 	end,
+-- }
 
 basic.section_b = {
 	hl_colors = airline_colors.b,
-	text = function(_, _, width)
-		local branch_name = get_git_branch()
-		if width > width_breakpoint and #branch_name > 1 then
-			return {
-				{ branch_name, state.mode[2] },
-				{ ' ', '' },
-				{ sep.right_filled, state.mode[2] .. 'Sep' },
-			}
-		end
-		return { { sep.right_filled, state.mode[2] .. 'Sep' } }
-	end,
-}
-
-basic.section_c = {
-	hl_colors = airline_colors.c,
 	text = function()
 		return {
 			{ ' ', state.mode[2] },
@@ -191,6 +199,24 @@ basic.lsp_status = {
 	end,
 }
 
+basic.lsp_signature = {
+	name = 'lsp_signature',
+	hl_colors = airline_colors.c_with_hint,
+	text = function(_, _, width)
+		local sig = require('lsp_signature').status_line(width)
+		if sig.label == '' then
+			return { { sep.right_filled, state.mode[2] .. 'Sep' } }
+		end
+
+		return {
+			{ ' ' .. sig.label .. ' ', state.mode[2] },
+			{ '|', state.mode[2] },
+			{ ' ' .. sig.hint .. ' ', state.mode[2] .. 'Hint' },
+			{ sep.right_filled, state.mode[2] .. 'Sep' },
+		}
+	end,
+}
+
 basic.git = {
 	name = 'git',
 	width = width_breakpoint,
@@ -277,6 +303,7 @@ local default = {
 		basic.section_a,
 		basic.section_b,
 		basic.section_c,
+		basic.lsp_signature,
 		basic.lsp_diagnos,
 		basic.lsp_status,
 		{ vim_components.search_count(), { 'cyan', 'NormalBg' } },
