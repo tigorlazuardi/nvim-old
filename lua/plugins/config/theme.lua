@@ -1,15 +1,8 @@
 return function(use)
 	_G.theme_list = {}
-	_G.loaded_theme = ''
 	_G.load_random_theme = function()
 		local theme_name = _G.theme_list[math.random(#_G.theme_list)]
-		_G.loaded_theme = theme_name
 		vim.cmd('colo ' .. theme_name)
-	end
-	_G.load_random_theme_delayed = function()
-		vim.defer_fn(function()
-			_G.load_random_theme()
-		end, 100)
 	end
 	-- vim.cmd([[au DirChanged * lua _G.load_random_theme_delayed()]])
 	vim.cmd([[command! RandomColor lua _G.load_random_theme()]])
