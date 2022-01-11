@@ -9,6 +9,7 @@ return function(use)
 			'nvim-lua/lsp_extensions.nvim',
 			'b0o/schemastore.nvim',
 			'kosayoda/nvim-lightbulb',
+			'williamboman/nvim-lsp-installer',
 			{ 'jose-elias-alvarez/nvim-lsp-ts-utils', wants = { 'null-ls.nvim' } },
 		},
 		setup = function()
@@ -62,7 +63,8 @@ return function(use)
 			})
 			vim.cmd([[autocmd CursorHold,CursorHoldI * silent! lua require'nvim-lightbulb'.update_lightbulb()]])
 			-- vim.cmd([[au CursorHold * lua vim.diagnostic.open_float(0,{scope = "cursor", focus = false})]])
-			require('plugins.config.lsp.setup')
+			-- require('plugins.config.lsp.setup')
+			require('plugins.config.lsp.installer_config')
 		end,
 	})
 end

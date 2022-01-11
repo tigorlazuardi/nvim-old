@@ -13,8 +13,9 @@
 - **lsp:** disabled open float in favor of lsp_lines
 - **lsp_lines:** changed packer declaration using as
 - **lsp_lines:** added lsp_lines
-- **pretty-fold:** added pretty fold
+- **nvim-lspinstall:** migrated to nvim lsp install
 - **pretty-fold:** set fold next max to 1
+- **pretty-fold:** added pretty fold
 - **scrollbar:** added scrollbar
 - **settings:** H now moved to close fold, L to open fold
 - **telescope:** added telescope env
