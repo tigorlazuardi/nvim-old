@@ -9,7 +9,7 @@ return function(client, bufnr)
 		handler_opts = {
 			border = 'rounded',
 		},
-		floating_window = false,
+		floating_window = true,
 		hint_prefix = 'hint: ',
 		floating_window_above_cur_line = true,
 		toggle_key = '<m-x>',
@@ -19,7 +19,8 @@ return function(client, bufnr)
 	wk.register({
 		K = {
 			function()
-				require('personal.utils.with_fold_check')(vim.lsp.buf.hover)
+				local open_hover = require('plugins.config.lsp.open_hover')
+				require('personal.utils.with_fold_check')(open_hover.open_hover)
 			end,
 			'(LSP) Symbol Definition / Documentation',
 		},
@@ -97,63 +98,17 @@ return function(client, bufnr)
 		lsp_status.on_attach(client)
 	end
 
+	vim.cmd([[au CursorHold <buffer> lua require('plugins.config.lsp.open_hover').open_diagnostic()]])
+	vim.cmd([[au CursorMoved <buffer> lua require('plugins.config.lsp.open_hover').clean_diagnostic()]])
+	vim.cmd([[au CursorMoved <buffer> lua require('plugins.config.lsp.open_hover').clean_hover()]])
+
+	if true then
+	end
+
 	local signs = { Error = ' ', Warn = ' ', Hint = ' ', Information = ' ' }
 
 	for type, icon in pairs(signs) do
 		local hl = 'DiagnosticSign' .. type
 		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
-	end
-
-	if packer_plugins['symbols-outline.nvim'] and packer_plugins['symbols-outline.nvim'].loaded then
-		wk.register({
-			gs = { '<cmd>SymbolsOutline<cr>', 'Symbol Outline' },
-		}, wk_option)
-	end
-
-	local have_saga, _ = pcall(require, 'lspsaga')
-	if have_saga then
-		wk.register({
-			K = {
-				function()
-					require('personal.utils.with_fold_check')(require('lspsapag.hover').render_hover_doc)
-				end,
-				'Hover Documentation',
-			},
-			['<c-d>'] = {
-				[[<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>]],
-				'Scroll Window or Documentation Down',
-			},
-			['<c-u>'] = {
-				[[<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>]],
-				'Scroll Window or Documentation Up',
-			},
-			['<F2>'] = {
-				[[<cmd>lua require('lspsaga.rename').rename()<CR>]],
-				'Rename Symbol',
-			},
-			gd = {
-				[[<cmd>lua require('lspsaga.provider').preview_definition()<cr>]],
-				'Preview Definition',
-			},
-			gD = {
-				"<cmd>lua require('telescope.builtin').lsp_definitions()<cr>",
-				'(LSP) Go to Symbol Definition',
-			},
-			gn = {
-				name = '+diagnostic',
-				n = {
-					[[<cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>]],
-					'Diagnostic (Current Line)',
-				},
-				p = {
-					[[<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>]],
-					'Diagnostic Previous',
-				},
-				e = {
-					[[<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>]],
-					'Diagnostic Next',
-				},
-			},
-		}, wk_option)
 	end
 end

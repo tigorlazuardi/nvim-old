@@ -9,12 +9,11 @@ return function(use)
 			'nvim-lua/lsp_extensions.nvim',
 			'b0o/schemastore.nvim',
 			'kosayoda/nvim-lightbulb',
-			{ 'https://git.sr.ht/~whynothugo/lsp_lines.nvim', as = 'lsp_lines' },
 			{ 'jose-elias-alvarez/nvim-lsp-ts-utils', wants = { 'null-ls.nvim' } },
 		},
 		setup = function()
 			vim.diagnostic.config({
-				virtual_text = false,
+				virtual_text = true,
 				signs = true,
 				float = { border = 'single' },
 			})
@@ -64,7 +63,6 @@ return function(use)
 			vim.cmd([[autocmd CursorHold,CursorHoldI * silent! lua require'nvim-lightbulb'.update_lightbulb()]])
 			-- vim.cmd([[au CursorHold * lua vim.diagnostic.open_float(0,{scope = "cursor", focus = false})]])
 			require('plugins.config.lsp.setup')
-			require('lsp_lines').register_lsp_virtual_lines()
 		end,
 	})
 end

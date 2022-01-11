@@ -26,6 +26,9 @@
 - **tabout:** fix whichkey missing '>'
 - **vim_sneak:** fixed load order to be after vim-cutlass
 
+### Revert
+- **lsp_lines:** removed lsp_lsplines
+
 
 <a name="v3.0.3"></a>
 ## [v3.0.3] - 2022-01-08
