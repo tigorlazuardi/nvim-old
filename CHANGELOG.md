@@ -10,9 +10,10 @@
 - **alpha:** fortune only called if it exist
 - **catppuccin:** load from setup now
 - **coq:** <c-h> now does not escape to normal mode first
+- **cutlass-substitute:** using modern alternative
 - **lsp:** disabled open float in favor of lsp_lines
-- **lsp_lines:** changed packer declaration using as
 - **lsp_lines:** added lsp_lines
+- **lsp_lines:** changed packer declaration using as
 - **nvim-lspinstall:** migrated to nvim lsp install
 - **pretty-fold:** set fold next max to 1
 - **pretty-fold:** added pretty fold
