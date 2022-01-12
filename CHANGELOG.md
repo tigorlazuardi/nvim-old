@@ -17,6 +17,7 @@
 - **pretty-fold:** set fold next max to 1
 - **pretty-fold:** added pretty fold
 - **scrollbar:** added scrollbar
+- **session:** conform to breaking changes
 - **settings:** H now moved to close fold, L to open fold
 - **telescope:** added telescope env
 - **treesitter:** foldexprt now to treesitter

@@ -55,8 +55,9 @@ local function run()
 	})
 	telescope.load_extension('file_browser')
 	telescope.load_extension('projects')
-	telescope.load_extension('sessions')
+	-- telescope.load_extension('sessions')
 	telescope.load_extension('env')
+	telescope.load_extension('file_browser')
 	telescope.setup({
 		defaults = {
 			mappings = telescope_mappings,
@@ -88,6 +89,7 @@ return function(use)
 			{ 'ahmedkhalf/project.nvim' },
 			{ 'Shatur/neovim-session-manager' },
 			{ 'LinArcX/telescope-env.nvim' },
+			{ 'nvim-telescope/telescope-file-browser.nvim' },
 		},
 		config = run,
 	})

@@ -28,9 +28,9 @@ return function(use)
 				dashboard.button('c', '  Change Directory', ':lua require("personal.telescope.cd")()<cr>'),
 				dashboard.button('o', '  Recently Opened Files', ':Telescope oldfiles<cr>'),
 				dashboard.button('p', '  Recent Projects', ':Telescope projects<cr>'),
-				dashboard.button('s', '  Load Session', ':Telescope sessions<cr>'),
-				dashboard.button('S', '  Load Last Session', ':LoadLastSession<cr>'),
-				dashboard.button('d', '  Load Dir Session', ':LoadCurrentDirSession<cr>'),
+				dashboard.button('s', '  Load Session', ':SessionManager load_session<cr>'),
+				dashboard.button('S', '  Load Last Session', ':SessionManager load_last_session<cr>'),
+				dashboard.button('d', '  Load Dir Session', ':SessionManager load_current_dir_session<cr>'),
 				dashboard.button('q', '  Quit NVIM', ':qa<CR>'),
 			}
 			if vim.fn.executable('fortune') == 1 then
