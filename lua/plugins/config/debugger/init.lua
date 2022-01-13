@@ -48,6 +48,7 @@ local function config()
 			j = { [[<cmd>lua require('dap').step_into()<cr>]], 'Step Into' },
 			r = { [[<cmd>lua require('dap').repl.open({}, 'vsplit')<cr>]], 'Open Repl' },
 			k = { [[<cmd>silent! lua _G.dapui_eval_twice()<cr>]], 'Debug Hover' },
+			K = { [[<cmd>silent! lua require('dap.ui.widgets').hover()<cr>]], 'Debug Hover (Native)' },
 			s = { [[<cmd>lua require('dap.ui.variables').scopes()<cr>]], 'Scope' },
 			S = { [[<cmd>lua _G.dap_close()<cr>]], 'Stop Debugger' },
 			B = { [[<cmd>lua require('telescope').extensions.dap.list_breakpoints({})<cr>]], 'List Breakpoints' },

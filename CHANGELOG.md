@@ -11,6 +11,7 @@
 - **catppuccin:** load from setup now
 - **coq:** <c-h> now does not escape to normal mode first
 - **cutlass-substitute:** using modern alternative
+- **dap:** added native widgets for debug hover
 - **lsp:** disabled open float in favor of lsp_lines
 - **lsp_lines:** added lsp_lines
 - **lsp_lines:** changed packer declaration using as
