@@ -26,6 +26,8 @@ lsp_installer.on_server_ready(function(server)
 		opts = require('plugins.config.lsp.installer_config.json')
 	elseif server.name == 'tsserver' then
 		opts = require('plugins.config.lsp.installer_config.typescript')
+	elseif server.name == 'yamlls' then
+		opts = require('plugins.config.lsp.installer_config.yaml')
 	end
 
 	server:setup(opts)

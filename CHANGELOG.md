@@ -13,8 +13,9 @@
 - **cutlass-substitute:** using modern alternative
 - **dap:** added native widgets for debug hover
 - **lsp:** disabled open float in favor of lsp_lines
-- **lsp_lines:** added lsp_lines
+- **lsp:** added yamlls custom schemas
 - **lsp_lines:** changed packer declaration using as
+- **lsp_lines:** added lsp_lines
 - **neovim-dap:** added command to easily debug neovim itself
 - **nvim-lspinstall:** migrated to nvim lsp install
 - **pretty-fold:** added pretty fold
