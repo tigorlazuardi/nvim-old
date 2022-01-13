@@ -31,9 +31,7 @@ packer.init({
 		end,
 		prompt_border = 'single',
 	},
-	git = {
-		clone_timeout = 3000,
-	},
+	max_jobs = 4,
 	auto_clean = true,
 	compile_on_sync = true,
 })
