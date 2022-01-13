@@ -14,9 +14,10 @@
 - **lsp:** disabled open float in favor of lsp_lines
 - **lsp_lines:** added lsp_lines
 - **lsp_lines:** changed packer declaration using as
+- **neovim-dap:** added command to easily debug neovim itself
 - **nvim-lspinstall:** migrated to nvim lsp install
-- **pretty-fold:** set fold next max to 1
 - **pretty-fold:** added pretty fold
+- **pretty-fold:** set fold next max to 1
 - **scrollbar:** added scrollbar
 - **session:** conform to breaking changes
 - **settings:** H now moved to close fold, L to open fold

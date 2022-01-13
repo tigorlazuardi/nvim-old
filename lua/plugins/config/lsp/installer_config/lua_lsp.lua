@@ -3,7 +3,10 @@ local on_attach = require('plugins.config.lsp.on_attach')
 
 local opts = {
 	capabilities = capabilities,
-	on_attach = on_attach,
+	on_attach = function(client, bufnr)
+		on_attach(client, bufnr)
+		vim.cmd([[command! DebugNeovim lua require('osv').run_this()]])
+	end,
 	settings = {
 		Lua = {
 			diagnostics = {
