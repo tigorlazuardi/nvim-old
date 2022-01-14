@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Chore
+- cleanup ^M
 - removed unused codes
 - removed commented code
 - removed useless code block

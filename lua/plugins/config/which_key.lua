@@ -53,7 +53,7 @@ return function(use)
 				'+quick',
 			} })
 
-			vim.cmd([[
+			vim.cmd([[
 				command! WhichKeyV WhichKey '' v
 				command! WhichKeyI WhichKey '' i
 			]])
