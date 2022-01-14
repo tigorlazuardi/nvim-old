@@ -1,7 +1,6 @@
 return function(use)
 	use({
-		'zeertzjq/which-key.nvim',
-		branch = 'patch-1',
+		'folke/which-key.nvim',
 		config = function()
 			local wk = require('which-key')
 			wk.setup({
@@ -55,8 +54,8 @@ return function(use)
 			} })
 
 			vim.cmd([[
-				command! WhichKeyV WhichKey '' v
-				command! WhichKeyI WhichKey '' i
+				command! WhichKeyV WhichKey '' v
+				command! WhichKeyI WhichKey '' i
 			]])
 		end,
 	})
