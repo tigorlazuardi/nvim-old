@@ -13,10 +13,10 @@
 - **coq:** <c-h> now does not escape to normal mode first
 - **cutlass-substitute:** using modern alternative
 - **dap:** added native widgets for debug hover
-- **lsp:** added yamlls custom schemas
 - **lsp:** disabled open float in favor of lsp_lines
-- **lsp_lines:** changed packer declaration using as
+- **lsp:** added yamlls custom schemas
 - **lsp_lines:** added lsp_lines
+- **lsp_lines:** changed packer declaration using as
 - **markdown-preview:** added markdown preview
 - **neovim-dap:** added command to easily debug neovim itself
 - **nvim-lspinstall:** migrated to nvim lsp install
@@ -28,8 +28,9 @@
 - **settings:** added scroll off value of 8
 - **telescope:** added telescope env
 - **treesitter:** foldexprt now to treesitter
-- **which-key:** return back to folke's version
 - **which-key:** added dofile on <leader>pR
+- **which-key:** return back to folke's version
+- **which-key:** shortcut to show mappings has changed from '?' to 'g?'
 - **windline:** added lsp signature
 
 ### Fix

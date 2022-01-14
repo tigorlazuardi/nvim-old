@@ -15,10 +15,8 @@ return function(use)
 				['[t'] = { '<cmd>bp!<cr>', 'Previous Buffer' },
 			})
 
-			wk.register({ ['?'] = { '<cmd>WhichKey<cr>', 'List Normal Mappings' } })
-
 			wk.register({
-				['?'] = {
+				['g?'] = {
 					name = 'mappings',
 					['?'] = { '<cmd>WhichKey<cr>', 'normal' },
 					n = { '<cmd>WhichKey<cr>', 'normal' },
