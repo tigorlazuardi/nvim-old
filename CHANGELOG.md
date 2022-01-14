@@ -38,6 +38,7 @@
 - **vim_sneak:** fixed load order to be after vim-cutlass
 
 ### Revert
+- diagnostic format returns to default
 - **lsp_lines:** removed lsp_lsplines
 
 

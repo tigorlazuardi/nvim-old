@@ -101,7 +101,6 @@ end
 
 null_ls.setup({
 	sources = sources,
-	diagnostics_format = '(#{s}) #{m}',
 	on_attach = function(client, bufnr)
 		-- client.resolved_capabilities.document_highlight = true
 		if client.resolved_capabilities.document_formatting then
