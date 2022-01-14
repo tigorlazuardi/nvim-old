@@ -8,3 +8,4 @@ c('set splitright')
 c('set splitbelow')
 
 c('set foldnestmax=1')
+c('set scrolloff=8')

@@ -12,22 +12,23 @@
 - **coq:** <c-h> now does not escape to normal mode first
 - **cutlass-substitute:** using modern alternative
 - **dap:** added native widgets for debug hover
-- **lsp:** disabled open float in favor of lsp_lines
 - **lsp:** added yamlls custom schemas
-- **lsp_lines:** added lsp_lines
+- **lsp:** disabled open float in favor of lsp_lines
 - **lsp_lines:** changed packer declaration using as
+- **lsp_lines:** added lsp_lines
 - **markdown-preview:** added markdown preview
 - **neovim-dap:** added command to easily debug neovim itself
 - **nvim-lspinstall:** migrated to nvim lsp install
-- **pretty-fold:** set fold next max to 1
 - **pretty-fold:** added pretty fold
+- **pretty-fold:** set fold next max to 1
 - **scrollbar:** added scrollbar
 - **session:** conform to breaking changes
 - **settings:** H now moved to close fold, L to open fold
+- **settings:** added scroll off value of 8
 - **telescope:** added telescope env
 - **treesitter:** foldexprt now to treesitter
-- **which-key:** added dofile on <leader>pR
 - **which-key:** return back to folke's version
+- **which-key:** added dofile on <leader>pR
 - **windline:** added lsp signature
 
 ### Fix
