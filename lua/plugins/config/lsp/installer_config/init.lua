@@ -11,6 +11,18 @@ lsp_installer.settings({
 
 local capabilities = require('plugins.config.lsp.capabilities')
 local on_attach = require('plugins.config.lsp.on_attach')
+local lsp_installer_servers = require('nvim-lsp-installer.servers')
+local server_available, requested_server = lsp_installer_servers.get_server('sumneko_lua')
+if server_available then
+	requested_server:on_ready(function()
+		local opts = require('plugins.config.lsp.installer_config.lua_lsp')
+		requested_server:setup(opts)
+	end)
+	if not requested_server:is_installed() then
+		-- Queue the server to be installed
+		requested_server:install()
+	end
+end
 
 lsp_installer.on_server_ready(function(server)
 	local opts = {
@@ -19,7 +31,8 @@ lsp_installer.on_server_ready(function(server)
 	}
 
 	if server.name == 'sumneko_lua' then
-		opts = require('plugins.config.lsp.installer_config.lua_lsp')
+		-- opts = require('plugins.config.lsp.installer_config.lua_lsp')
+		return
 	elseif server.name == 'gopls' then
 		opts = require('plugins.config.lsp.installer_config.golang')
 	elseif server.name == 'jsonls' then
@@ -28,6 +41,7 @@ lsp_installer.on_server_ready(function(server)
 		opts = require('plugins.config.lsp.installer_config.typescript')
 	elseif server.name == 'yamlls' then
 		opts = require('plugins.config.lsp.installer_config.yaml')
+	elseif server.name == 'eslint' then
 	end
 
 	server:setup(opts)
