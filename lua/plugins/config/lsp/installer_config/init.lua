@@ -42,6 +42,8 @@ lsp_installer.on_server_ready(function(server)
 	elseif server.name == 'yamlls' then
 		opts = require('plugins.config.lsp.installer_config.yaml')
 	elseif server.name == 'eslint' then
+		-- opts  = require('plugins')
+		opts = require('plugins.config.lsp.installer_config.eslint')
 	end
 
 	server:setup(opts)
