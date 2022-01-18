@@ -19,7 +19,6 @@ if server_available then
 		requested_server:setup(opts)
 	end)
 	if not requested_server:is_installed() then
-		-- Queue the server to be installed
 		requested_server:install()
 	end
 end
@@ -31,7 +30,6 @@ lsp_installer.on_server_ready(function(server)
 	}
 
 	if server.name == 'sumneko_lua' then
-		-- opts = require('plugins.config.lsp.installer_config.lua_lsp')
 		return
 	elseif server.name == 'gopls' then
 		opts = require('plugins.config.lsp.installer_config.golang')
@@ -42,7 +40,6 @@ lsp_installer.on_server_ready(function(server)
 	elseif server.name == 'yamlls' then
 		opts = require('plugins.config.lsp.installer_config.yaml')
 	elseif server.name == 'eslint' then
-		-- opts  = require('plugins')
 		opts = require('plugins.config.lsp.installer_config.eslint')
 	end
 
