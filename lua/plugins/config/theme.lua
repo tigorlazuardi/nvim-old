@@ -51,6 +51,10 @@ return function(use)
 	})
 
 	use({
+		'projekt0n/github-nvim-theme',
+	})
+
+	use({
 		'catppuccin/nvim',
 		as = 'catppuccin',
 		setup = function()

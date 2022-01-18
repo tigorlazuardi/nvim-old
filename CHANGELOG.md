@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Feat
+- **theme:** added github theme
+
 
 <a name="v3.1.0"></a>
 ## [v3.1.0] - 2022-01-18
