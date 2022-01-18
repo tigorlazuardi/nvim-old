@@ -7,10 +7,18 @@ vim.g.neovide_window_floating_opacity = 1
 vim.g.neovide_font_size_windows = 14
 vim.g.neovide_font_size_linux = 14
 
+local linux_font_name = [[JetBrainsMono\ Nerd\ Font\ Mono]]
+local windows_font_name = [[FiraCode\ NF]]
+
+local function set_font(font_name, font_size)
+	local cmd = string.format('set guifont=%s:h%d', font_name, font_size)
+	vim.cmd(cmd)
+end
+
 if vim.g.is_windows or vim.fn.has('wsl') == 1 then
-	vim.cmd([[set guifont=FiraCode\ NF:h]] .. tostring(vim.g.neovide_font_size_windows))
+	set_font(windows_font_name, vim.g.neovide_font_size_windows)
 else
-	vim.cmd([[set guifont=FiraCode\ Nerd\ Font\ Mono:h]] .. tostring(vim.g.neovide_font_size_linux))
+	set_font(linux_font_name, vim.g.neovide_font_size_linux)
 end
 
 _G.font_size = function(increase)
@@ -22,9 +30,9 @@ _G.font_size = function(increase)
 		vim.g.neovide_font_size_linux = vim.g.neovide_font_size_linux - 1
 	end
 	if vim.g.is_windows or vim.fn.has('wsl') == 1 then
-		vim.cmd([[set guifont=FiraCode\ NF:h]] .. tostring(vim.g.neovide_font_size_windows))
+		set_font(windows_font_name, vim.g.neovide_font_size_windows)
 	else
-		vim.cmd([[set guifont=FiraCode\ Nerd\ Font\ Mono:h]] .. tostring(vim.g.neovide_font_size_linux))
+		set_font(linux_font_name, vim.g.neovide_font_size_linux)
 	end
 end
 

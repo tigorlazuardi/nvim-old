@@ -4,6 +4,9 @@
 ### Feat
 - **theme:** added github theme
 
+### Refactor
+- **neovide:** refactor neovide font settings
+
 
 <a name="v3.1.0"></a>
 ## [v3.1.0] - 2022-01-18
