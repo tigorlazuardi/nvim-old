@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Docs
+- **neovide:** added params
+
 ### Feat
 - **theme:** added github theme
 
