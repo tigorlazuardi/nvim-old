@@ -5,8 +5,8 @@ return function(use)
 			vim.defer_fn(function()
 				local wk = require('which-key')
 				local mappings = {
-					s = '<Motion> Sneak Two Chars Forward',
-					S = '<Motion> Sneak Two Chars Backward',
+					-- s = '<Motion> Sneak Two Chars Forward',
+					-- S = '<Motion> Sneak Two Chars Backward',
 					f = { '<Plug>Sneak_f', 'Sneak One Char Forward' },
 					F = { '<Plug>Sneak_F', 'Sneak One Char Backward' },
 					t = { '<Plug>Sneak_t', 'Sneak (until) One Char Forward' },
