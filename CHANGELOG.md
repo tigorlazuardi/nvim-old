@@ -44,6 +44,7 @@
 ### Fix
 - **eslint:** fix installer config not called
 - **tabout:** fix whichkey missing '>'
+- **vim-sneak:** S mapping is now uncommented
 - **vim_sneak:** fixed load order to be after vim-cutlass
 
 ### Revert
