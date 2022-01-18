@@ -1,28 +1,19 @@
 local capabilities = require('plugins.config.lsp.capabilities')
 local on_attach = require('plugins.config.lsp.on_attach')
 
-local path = vim.split(package.path, ';')
-table.insert(path, 'lua/?.lua')
-table.insert(path, 'lua/?/init.lua')
+local path = require('plenary.path')
 
-local library = {}
-local function add(lib)
-	for _, p in pairs(vim.fn.expand(lib, false, true)) do
-		p = vim.loop.fs_realpath(p)
-		library[p] = true
-	end
-end
+local package_path = vim.split(package.path, ';')
+table.insert(package_path, 'lua/?.lua')
+table.insert(package_path, 'lua/?/init.lua')
 
--- add runtime
-add('$VIMRUNTIME')
-
--- add your config
-add('~/.config/nvim')
-
--- add plugins
--- if you're not using packer, then you might need to change the paths below
-add('~/.local/share/nvim/site/pack/packer/opt/*')
-add('~/.local/share/nvim/site/pack/packer/start/*')
+local data = vim.fn.stdpath('data')
+local library = {
+	[vim.fn.expand('$VIMRUNTIME')] = true,
+	[vim.fn.stdpath('config')] = true,
+	[path:new(data, 'site', 'pack', 'packer', 'opt', '*')] = true,
+	[path:new(data, 'site', 'pack', 'packer', 'start', '*')] = true,
+}
 
 local opts = {
 	capabilities = capabilities,
@@ -38,7 +29,7 @@ local opts = {
 		},
 		runtime = {
 			version = 'LuaJIT',
-			path = path,
+			path = package_path,
 		},
 		completion = { callSnippet = 'Both' },
 		workspace = {
