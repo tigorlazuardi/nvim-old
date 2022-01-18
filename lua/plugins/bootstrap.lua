@@ -31,7 +31,7 @@ packer.init({
 		end,
 		prompt_border = 'single',
 	},
-	max_jobs = 4,
+	max_jobs = 16,
 	auto_clean = true,
 	compile_on_sync = true,
 })

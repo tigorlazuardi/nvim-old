@@ -8,6 +8,9 @@
 - removed commented code
 - removed useless code block
 
+### Conf
+- **bootstrap:** changed max jobs to 16
+
 ### Feat
 - **alpha:** fortune only called if it exist
 - **catppuccin:** load from setup now
