@@ -1,7 +1,7 @@
 ---@return boolean
 vim.g.is_windows = vim.fn.has('win32') == 1 or vim.fn.has('win64') == 1
 
--- Set to false if godot is insalled but you don't plan to use neovim
+-- Set to false if godot is installed but you don't plan to use neovim
 vim.g.use_godot_lsp = true
 
 ---@return string

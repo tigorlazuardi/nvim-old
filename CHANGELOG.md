@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Chore
+- grammar fixes
 - cleanup ^M
 - removed unused codes
 - removed commented code
