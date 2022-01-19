@@ -102,9 +102,6 @@ return function(client, bufnr)
 	vim.cmd([[au CursorMoved <buffer> lua require('plugins.config.lsp.open_hover').clean_diagnostic()]])
 	vim.cmd([[au CursorMoved <buffer> lua require('plugins.config.lsp.open_hover').clean_hover()]])
 
-	if true then
-	end
-
 	local signs = { Error = ' ', Warn = ' ', Hint = ' ', Information = ' ' }
 
 	for type, icon in pairs(signs) do
