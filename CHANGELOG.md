@@ -18,6 +18,7 @@
 - **treesitter:** temporary fix until treesitter stabilizes
 
 ### Refactor
+- **golang:** separated golang from top level config
 - **golang:** golang now uses ray-x/go command to format or import and removed formatters from null-ls
 - **neovide:** refactor neovide font settings
 
