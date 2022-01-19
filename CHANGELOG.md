@@ -17,6 +17,7 @@
 - **treesitter:** change mappings for more intuitivemove
 
 ### Fix
+- **lua-lsp:** lsp is fixed by settings server version to v2.5.6
 - **treesitter:** temporary fix until treesitter stabilizes
 
 ### Refactor
