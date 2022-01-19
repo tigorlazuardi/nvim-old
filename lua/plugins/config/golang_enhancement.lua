@@ -2,8 +2,10 @@ return function(use)
 	if vim.fn.exepath('gopls') ~= '' then
 		use({
 			'ray-x/go.nvim',
+			requires = { 'ray-x/guihua.lua' },
 			config = function()
 				require('go').setup({
+					gofmt = 'gofumpt',
 					max_line_len = 120, -- max line length in goline format
 					tag_transform = false, -- tag_transfer  check gomodifytags for details
 					verbose = false, -- output loginf in messages

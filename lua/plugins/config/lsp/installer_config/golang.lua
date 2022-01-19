@@ -1,28 +1,12 @@
 local capabilities = require('plugins.config.lsp.capabilities')
 local on_attach = require('plugins.config.lsp.on_attach')
 
-_G.organize_imports = function(wait_ms)
-	local params = vim.lsp.util.make_range_params()
-	params.context = { only = { 'source.organizeImports' } }
-	local result = vim.lsp.buf_request_sync(0, 'textDocument/codeAction', params, wait_ms)
-	for _, res in pairs(result or {}) do
-		for _, r in pairs(res.result or {}) do
-			if r.edit then
-				vim.lsp.util.apply_workspace_edit(r.edit)
-			else
-				vim.lsp.buf.execute_command(r.command)
-			end
-		end
-	end
-	vim.lsp.buf.formatting_sync({}, wait_ms)
-end
-
 local opts = {
 	capabilities = capabilities,
 	on_attach = function(client, bufnr)
-		client.resolved_capabilities.document_formatting = false
+		client.resolved_capabilities.document_formatting = true
 		on_attach(client, bufnr)
-		vim.cmd([[autocmd BufWritePost <buffer> silent! lua _G.organize_imports(1000)]])
+		vim.cmd([[autocmd BufWritePre <buffer> lua require("go.format").goimport()]])
 		local wk = require('which-key')
 
 		wk.register({
