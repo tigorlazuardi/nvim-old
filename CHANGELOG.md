@@ -12,6 +12,9 @@
 - **theme:** added github theme
 - **treesitter:** change mappings for more intuitivemove
 
+### Fix
+- **treesitter:** temporary fix until treesitter stabilizes
+
 ### Refactor
 - **golang:** golang now uses ray-x/go command to format or import and removed formatters from null-ls
 - **neovide:** refactor neovide font settings
