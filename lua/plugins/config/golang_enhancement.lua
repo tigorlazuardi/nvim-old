@@ -4,6 +4,18 @@ return function(use)
 			'ray-x/go.nvim',
 			requires = { 'ray-x/guihua.lua' },
 			config = function()
+				local lsp_installer_servers = require('nvim-lsp-installer.servers')
+				local server_available, gopls = lsp_installer_servers.get_server('gopls')
+				if server_available then
+					gopls:on_ready(function()
+						local opts = require('plugins.config.lsp.installer_config.golang')
+						gopls:setup(opts)
+					end)
+
+					if not gopls:is_installed() then
+						gopls:install()
+					end
+				end
 				require('go').setup({
 					gofmt = 'gofumpt',
 					max_line_len = 120, -- max line length in goline format
