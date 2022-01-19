@@ -20,6 +20,7 @@
 ### Refactor
 - **golang:** separated golang from top level config
 - **golang:** golang now uses ray-x/go command to format or import and removed formatters from null-ls
+- **json_yaml:** added to separate configuration
 - **lua-lsp:** added to separate configuration
 - **neovide:** refactor neovide font settings
 
