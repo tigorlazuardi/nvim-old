@@ -23,14 +23,14 @@ local function run()
 				swap_previous = { ['<leader>A'] = '@parameter.inner' },
 			},
 			move = {
-				enable = false,
+				enable = true,
 				set_jumps = true, -- whether to set jumps in the jumplist
 				goto_next_start = {
-					[']]'] = '@function.outer',
+					[')'] = '@function.outer',
 					[']m'] = '@class.outer',
 				},
 				goto_next_end = {
-					[']['] = '@function.outer',
+					[']]'] = '@function.outer',
 					[']M'] = '@class.outer',
 				},
 				goto_previous_start = {
@@ -38,7 +38,7 @@ local function run()
 					['[m'] = '@class.outer',
 				},
 				goto_previous_end = {
-					['[]'] = '@function.outer',
+					['('] = '@function.outer',
 					['[m'] = '@class.outer',
 				},
 			},

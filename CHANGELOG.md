@@ -6,6 +6,7 @@
 
 ### Feat
 - **theme:** added github theme
+- **treesitter:** change mappings for more intuitivemove
 
 ### Refactor
 - **neovide:** refactor neovide font settings
