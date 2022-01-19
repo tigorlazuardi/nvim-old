@@ -2,7 +2,7 @@ local function run()
 	require('nvim-treesitter.configs').setup({
 		context_commentstring = { enable = true },
 		highlight = { enable = true },
-		indent = { enable = true },
+		indent = { enable = true, disable = { 'yaml' } },
 		autopairs = { enable = true },
 		textobjects = {
 			select = {

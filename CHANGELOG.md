@@ -19,6 +19,7 @@
 ### Fix
 - **lua-lsp:** lsp is fixed by settings server version to v2.5.6
 - **treesitter:** temporary fix until treesitter stabilizes
+- **treesitter-indent:** disabled on yaml files
 
 ### Refactor
 - **golang:** separated golang from top level config
