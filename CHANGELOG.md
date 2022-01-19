@@ -9,6 +9,7 @@
 
 ### Feat
 - **lua-lsp:** path handling is now handled by plenary
+- **rust:** having rust opened now auto install rust-analyzer
 - **theme:** added github theme
 - **treesitter:** change mappings for more intuitivemove
 
