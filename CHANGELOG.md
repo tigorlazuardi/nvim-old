@@ -33,6 +33,7 @@
 - removed headwind in favor of rustywind via null_ls
 
 ### Various Actions
+- removed unused plugins from codebase
 - merge
 - removed useless block
 
