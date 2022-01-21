@@ -53,7 +53,19 @@ end
 
 -- js, ts
 if exist('prettierd') then
-	table.insert(sources, null_ls.builtins.formatting.prettierd)
+	table.insert(
+		sources,
+		null_ls.builtins.formatting.prettierd.with({
+			prefer_local = 'node_modules/.bin',
+			env = {
+				PRETTIERD_DEFAULT_CONFIG = vim.fn.expand('~/.config/nvim/linter-config/.prettierrc.toml'),
+			},
+		})
+	)
+end
+
+if exist('rustywind') then
+	table.insert(sources, null_ls.builtins.formatting.rustywind)
 end
 
 if exist('eslint_d') then

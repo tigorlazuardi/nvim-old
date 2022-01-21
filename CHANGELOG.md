@@ -28,6 +28,9 @@
 - **lua-lsp:** added to separate configuration
 - **neovide:** refactor neovide font settings
 
+### Revert
+- removed headwind in favor of rustywind via null_ls
+
 
 <a name="v3.1.0"></a>
 ## [v3.1.0] - 2022-01-18
