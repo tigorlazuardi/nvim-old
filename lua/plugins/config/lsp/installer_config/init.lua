@@ -33,6 +33,8 @@ lsp_installer.on_server_ready(function(server)
 		return
 	elseif server.name == 'gopls' then
 		return
+	elseif server.name == 'rust-analyzer' then
+		return
 	elseif server.name == 'jsonls' then
 		opts = require('plugins.config.lsp.installer_config.json')
 	elseif server.name == 'tsserver' then
