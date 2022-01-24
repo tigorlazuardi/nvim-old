@@ -25,6 +25,7 @@
 - **languages:** registered lua
 - **lsp-installer:** now gopls waits for rayx go
 - **lua-lsp:** path handling is now handled by plenary
+- **prettier_d_slim:** try to use prettier_d_slim, falls back to prettierd
 - **rust:** having rust opened now auto install rust-analyzer
 - **rust-analyzer:** ignored on generic lsp installer config
 - **theme:** added github theme

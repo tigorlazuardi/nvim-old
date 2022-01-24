@@ -38,30 +38,65 @@ if exist('golangci-lint') then
 	table.insert(sources, null_ls.builtins.diagnostics.golangci_lint)
 end
 
--- if exist('gofmt') then
--- 	table.insert(sources, null_ls.builtins.formatting.gofmt)
--- end
-
--- if exist('goimports') then
--- 	table.insert(sources, null_ls.builtins.formatting.goimports)
--- end
-
 -- docker
 if exist('hadolint') then
 	table.insert(sources, null_ls.builtins.diagnostics.hadolint)
 end
 
 -- js, ts
-if exist('prettierd') then
+if exist('prettier_d_slim') and exist('prettierd') then
+	table.insert(
+		sources,
+		null_ls.builtins.formatting.prettier_d_slim.with({
+			condition = function(utils)
+				return utils.root_has_file({
+					'.prettierrc',
+					'.prettierrc.json',
+					'.prettierrc.yml',
+					'.prettierrc.yaml',
+					'.prettierrc.json5',
+					'.prettierrc.js',
+					'.prettierrc.cjs',
+					'prettier.config.js',
+					'prettier.config.cjs',
+					'.prettierrc.toml',
+				})
+			end,
+		})
+	)
 	table.insert(
 		sources,
 		null_ls.builtins.formatting.prettierd.with({
-			prefer_local = 'node_modules/.bin',
+			env = {
+				PRETTIERD_DEFAULT_CONFIG = vim.fn.expand('~/.config/nvim/linter-config/.prettierrc.toml'),
+			},
+			condition = function(utils)
+				return not utils.root_has_file({
+					'.prettierrc',
+					'.prettierrc.json',
+					'.prettierrc.yml',
+					'.prettierrc.yaml',
+					'.prettierrc.json5',
+					'.prettierrc.js',
+					'.prettierrc.cjs',
+					'prettier.config.js',
+					'prettier.config.cjs',
+					'.prettierrc.toml',
+				})
+			end,
+		})
+	)
+elseif exist('prettierd') and not exist('prettier_d_slim') then
+	table.insert(
+		sources,
+		null_ls.builtins.formatting.prettierd.with({
 			env = {
 				PRETTIERD_DEFAULT_CONFIG = vim.fn.expand('~/.config/nvim/linter-config/.prettierrc.toml'),
 			},
 		})
 	)
+elseif exist('prettier_d_slim') and not exist('prettierd') then
+	table.insert(sources, null_ls.builtins.formatting.prettier_d_slim)
 end
 
 if exist('rustywind') then
