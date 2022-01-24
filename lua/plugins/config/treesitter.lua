@@ -99,13 +99,12 @@ end
 return function(use)
 	use({
 		'nvim-treesitter/nvim-treesitter',
-		commit = '668de0951a36ef17016074f1120b6aacbe6c4515',
 		run = ':TSUpdate',
 		requires = {
-			-- 'nvim-treesitter/nvim-treesitter-textobjects',
+			'nvim-treesitter/nvim-treesitter-textobjects',
 			'nvim-treesitter/playground',
 			'lewis6991/spellsitter.nvim',
-			-- 'romgrk/nvim-treesitter-context',
+			'romgrk/nvim-treesitter-context',
 			'windwp/nvim-ts-autotag',
 		},
 		config = run,

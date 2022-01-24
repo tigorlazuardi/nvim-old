@@ -3,6 +3,7 @@
 
 ### Bug Fixes
 - **lua-lsp:** lsp is fixed by settings server version to v2.5.6
+- **treesitter:** removed themes that broke treesitter
 - **treesitter:** temporary fix until treesitter stabilizes
 - **treesitter-indent:** disabled on yaml files
 
