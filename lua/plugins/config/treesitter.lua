@@ -70,15 +70,16 @@ local function run()
 				node_decremental = '<S-TAB>',
 			},
 		},
+		rainbow = {
+			enable = true,
+			extended_mode = true,
+		},
 	})
 
 	require('spellsitter').setup({
 		hl = 'SpellBad',
 		captures = { 'comment' }, -- set to {} to spellcheck everything
 	})
-	-- require('treesitter-context').setup({
-	-- 	enable = true,
-	-- })
 	require('nvim-ts-autotag').setup({
 		filetypes = {
 			'html',
@@ -103,6 +104,7 @@ return function(use)
 		requires = {
 			'nvim-treesitter/nvim-treesitter-textobjects',
 			'nvim-treesitter/playground',
+			'p00f/nvim-ts-rainbow',
 			'lewis6991/spellsitter.nvim',
 			'romgrk/nvim-treesitter-context',
 			'windwp/nvim-ts-autotag',

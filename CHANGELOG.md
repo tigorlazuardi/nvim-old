@@ -28,6 +28,7 @@
 - **rust:** having rust opened now auto install rust-analyzer
 - **rust-analyzer:** ignored on generic lsp installer config
 - **theme:** added github theme
+- **treesitter:** added rainbow brackets
 - **treesitter:** change mappings for more intuitivemove
 
 ### Revert
