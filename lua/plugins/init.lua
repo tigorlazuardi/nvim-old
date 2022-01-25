@@ -1,7 +1,7 @@
 local packer, should_sync = require('plugins.bootstrap')
 
 return packer.startup(function(use)
-	use({ 'wbthomason/packer.nvim', opt = true })
+	use({ 'wbthomason/packer.nvim' })
 	use({ 'nvim-lua/plenary.nvim' })
 	use({ 'nvim-lua/popup.nvim' })
 	require('plugins.config.alpha_config')(use)
