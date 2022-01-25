@@ -34,6 +34,7 @@
 
 ### Revert
 - removed headwind in favor of rustywind via null_ls
+- **treesitter:** disabled indent by treesitter
 
 ### Various Actions
 - removed unused plugins from codebase
