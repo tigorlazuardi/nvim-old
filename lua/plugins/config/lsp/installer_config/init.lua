@@ -19,7 +19,7 @@ if server_available then
 		sumneko_lua:setup(opts)
 	end)
 	if not sumneko_lua:is_installed() then
-		sumneko_lua:install()
+		sumneko_lua:install('v2.5.6')
 	end
 end
 
