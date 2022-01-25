@@ -45,10 +45,7 @@ local function run()
 
 	local telescope = require('telescope')
 
-	if not vim.g.is_windows then
-		require('packer').loader('telescope-fzf-native.nvim')
-		telescope.load_extension('fzf')
-	end
+	telescope.load_extension('fzf')
 
 	require('session_manager').setup({
 		autoload_mode = require('session_manager.config').AutoloadMode.Disabled, -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
@@ -58,6 +55,7 @@ local function run()
 	-- telescope.load_extension('sessions')
 	telescope.load_extension('env')
 	telescope.load_extension('file_browser')
+	telescope.load_extension('ui-select')
 	telescope.setup({
 		defaults = {
 			mappings = telescope_mappings,
@@ -70,6 +68,9 @@ local function run()
 				case_mode = 'smart_case', -- or "ignore_case" or "respect_case"
 				-- the default case_mode is "smart_case"
 			},
+			['ui-select'] = {
+				require('telescope.themes').get_dropdown({}),
+			},
 		},
 	})
 end
@@ -81,15 +82,13 @@ return function(use)
 			{
 				'nvim-telescope/telescope-fzf-native.nvim',
 				run = 'make',
-				cond = function()
-					return not vim.g.is_windows
-				end,
 			},
 			{ 'nvim-telescope/telescope-file-browser.nvim' },
 			{ 'ahmedkhalf/project.nvim' },
 			{ 'Shatur/neovim-session-manager' },
 			{ 'LinArcX/telescope-env.nvim' },
 			{ 'nvim-telescope/telescope-file-browser.nvim' },
+			{ 'nvim-telescope/telescope-ui-select.nvim' },
 		},
 		config = run,
 	})
