@@ -1,4 +1,4 @@
-local packer, should_sync = require('plugins.bootstrap')
+local packer = require('plugins.bootstrap')
 
 return packer.startup(function(use)
 	use({ 'wbthomason/packer.nvim' })
@@ -47,7 +47,9 @@ return packer.startup(function(use)
 	require('plugins.config.vim_sneak')(use)
 	require('plugins.config.which_key')(use)
 
-	if should_sync then
+	local compiled_file_path = vim.fn.stdpath('config') .. '/plugin/packer_compiled.lua'
+
+	if vim.fn.filereadable(compiled_file_path) == 0 then
 		packer.sync()
 	end
 end)

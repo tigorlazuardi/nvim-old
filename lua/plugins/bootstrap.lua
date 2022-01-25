@@ -1,8 +1,6 @@
 local fn = vim.fn
 local cmd = vim.cmd
 
-local should_sync = false
-
 pcall(cmd, 'packadd packer.nvim')
 local present, packer = pcall(require, 'packer')
 
@@ -19,7 +17,6 @@ if not present then
 		error('Failed to clone packer to ' .. install_path .. ' reason: ', packer)
 		return
 	end
-	should_sync = true
 end
 
 packer.reset()
@@ -36,4 +33,4 @@ packer.init({
 	compile_on_sync = true,
 })
 
-return packer, should_sync
+return packer
