@@ -47,6 +47,9 @@ if vim.g.is_windows then
 end
 
 local extension_path = vim.fn.expand('$HOME/.vscode/extensions/vadimcn.vscode-lldb-1.6.10')
+if vim.fn.has('wsl') == 1 then
+	extension_path = vim.fn.expand('$HOME/.vscode-server/extensions/vadimcn.vscode-lldb-1.6.10')
+end
 local codelldb_path = path:new(extension_path, 'adapter', 'codelldb').filename
 local liblldb_path = path:new(extension_path, 'lldb', 'lib', 'liblldb.so').filename
 
