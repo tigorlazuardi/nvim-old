@@ -1,9 +1,4 @@
 local function cmp_config()
-	local prequire = require('personal.utils.prequire')
-	local packer = prequire('packer')
-	if not packer then
-		return
-	end
 	require('lspkind').init({
 		with_text = true,
 		preset = 'default',
@@ -26,7 +21,6 @@ local function cmp_config()
 				behavior = cmp.ConfirmBehavior.Insert,
 				select = true,
 			}),
-			-- ['<CR>'] = cmp.mapping.confirm({ select = true }),
 		},
 		snippet = {
 			expand = function(args)
@@ -67,48 +61,43 @@ local function cmp_config()
 		map_cr = true,
 	})
 
-	-- local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-	-- cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({ map_char = { tex = '' } }))
-
 	local wk = require('which-key')
 
-	wk.register({
-		['<c-j>'] = { '<Plug>luasnip-expand-or-jump', '(Snippet) Expand Snippet or Jump to Next Placeholder' },
-		['<c-k>'] = { '<Plug>luasnip-jump-prev', '(Snippet) Jump to Previous Placeholder' },
-	}, {
-		mode = 'i',
-	})
-
-	wk.register({
+	local luasnip = require('luasnip')
+	local mappings = {
 		['<c-j>'] = {
-			'<Plug>luasnip-expand-or-jump',
+			function()
+				local ok, neogen = pcall(require, 'neogen')
+				if not ok then
+					luasnip.expand_or_jump()
+				end
+				if neogen.jumpable() then
+					neogen.jump_next()
+					return
+				end
+				luasnip.expand_or_jump()
+			end,
 			'(Snippet) Expand Snippet or Jump to Next Placeholder',
 		},
-		['<c-k>'] = { '<Plug>luasnip-jump-prev', '(Snippet) Jump to Previous Placeholder' },
-	}, {
-		mode = 's',
-	})
+		['<c-k>'] = {
+			function()
+				local ok, neogen = pcall(require, 'neogen')
+				if not ok then
+					luasnip.jump(-1)
+				end
+				if neogen.jumpable(-1) then
+					neogen.jump_prev()
+					return
+				end
+				luasnip.jump(-1)
+			end,
+			'(Snippet) Jump to Previous Placeholder',
+		},
+	}
+	wk.register(mappings, { mode = 'i' })
+	wk.register(mappings, { mode = 's' })
 
 	require('snippets.luasnip')
-
-	-- vim.cmd([[
-	-- 	" gray
-	-- 	highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
-	-- 	" blue
-	-- 	highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
-	-- 	highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
-	-- 	" light blue
-	-- 	highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
-	-- 	highlight! CmpItemKindInterface guibg=NONE guifg=#9CDCFE
-	-- 	highlight! CmpItemKindText guibg=NONE guifg=#9CDCFE
-	-- 	" pink
-	-- 	highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
-	-- 	highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
-	-- 	" front
-	-- 	highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
-	-- 	highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
-	-- 	highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
-	-- ]])
 end
 
 return function(use)

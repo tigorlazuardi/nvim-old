@@ -91,6 +91,26 @@ local function run()
 			'vue',
 		},
 	})
+	require('neogen').setup({
+		enabled = true,
+		langages = {
+			lua = {
+				template = {
+					annotation_convention = 'emmylua',
+				},
+			},
+		},
+	})
+
+	require('which-key').register({
+		['<leader>a'] = {
+			name = 'annonate',
+			f = { [[<cmd>lua require('neogen').generate({type = "func"})<cr>]], 'Annonate Current Function' },
+			F = { [[<cmd>lua require('neogen').generate({type = "file"})<cr>]], 'Annonate Current File' },
+			c = { [[<cmd>lua require('neogen').generate({type = "class"})<cr>]], 'Annonate Current Class' },
+			t = { [[<cmd>lua require('neogen').generate({type = "type"})<cr>]], 'Annonate Current Type' },
+		},
+	})
 
 	vim.o.foldlevelstart = 1
 	vim.o.foldmethod = 'expr'
@@ -108,6 +128,7 @@ return function(use)
 			'lewis6991/spellsitter.nvim',
 			'romgrk/nvim-treesitter-context',
 			'windwp/nvim-ts-autotag',
+			'danymat/neogen',
 		},
 		config = run,
 	})
