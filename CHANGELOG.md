@@ -14,6 +14,7 @@
 - **json_yaml:** added to separate configuration
 - **lua-lsp:** added to separate configuration
 - **neovide:** refactor neovide font settings
+- **packer:** packer now automatically sync if packer_compiled.lua file is missing
 
 ### Configuration
 - **changelog:** added title mappings
@@ -22,17 +23,23 @@
 - **neovide:** added params
 
 ### Features
+- **eslint:** now moved to null_ls
 - **flutter:** flutter lsp now only runs if dart is installed
+- **fzf:** removed disabled requirement on windows
 - **languages:** registered lua
 - **lsp-installer:** now gopls waits for rayx go
 - **lua-lsp:** path handling is now handled by plenary
 - **neogen:** added neogen
+- **packer:** removed from opt
 - **prettier_d_slim:** try to use prettier_d_slim, falls back to prettierd
+- **rust:** separated rust config to another file
+- **rust:** added dap config
+- **rust:** dap config on wsl
 - **rust:** having rust opened now auto install rust-analyzer
 - **rust-analyzer:** ignored on generic lsp installer config
 - **theme:** added github theme
-- **treesitter:** added rainbow brackets
 - **treesitter:** change mappings for more intuitivemove
+- **treesitter:** added rainbow brackets
 
 ### Revert
 - removed headwind in favor of rustywind via null_ls

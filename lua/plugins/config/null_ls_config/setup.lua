@@ -105,7 +105,8 @@ end
 
 if exist('eslint_d') then
 	table.insert(sources, null_ls.builtins.formatting.eslint_d)
-	-- table.insert(sources, null_ls.builtins.diagnostics.eslint_d)
+	table.insert(sources, null_ls.builtins.code_actions.eslint_d)
+	table.insert(sources, null_ls.builtins.diagnostics.eslint_d)
 end
 
 -- lua
@@ -141,14 +142,6 @@ end
 if exist('proselint') then
 	table.insert(sources, null_ls.builtins.diagnostics.proselint)
 end
-
--- if exist('golines') then
--- 	table.insert(sources, null_ls.builtins.formatting.golines)
--- end
-
--- if exist('gofumpt') then
--- 	table.insert(sources, null_ls.builtins.formatting.gofumpt)
--- end
 
 null_ls.setup({
 	sources = sources,
