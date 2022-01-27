@@ -38,8 +38,9 @@
 - **rust:** having rust opened now auto install rust-analyzer
 - **rust-analyzer:** ignored on generic lsp installer config
 - **theme:** added github theme
-- **treesitter:** change mappings for more intuitivemove
 - **treesitter:** added rainbow brackets
+- **treesitter:** change mappings for more intuitivemove
+- **typescript:** config update
 
 ### Revert
 - removed headwind in favor of rustywind via null_ls

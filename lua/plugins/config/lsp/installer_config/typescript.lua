@@ -28,7 +28,7 @@ local opts = {
 			import_all_select_source = false,
 			-- update imports on file move
 			update_imports_on_move = true,
-			require_confirmation_on_move = false,
+			require_confirmation_on_move = true,
 			watch_dir = nil,
 		})
 
