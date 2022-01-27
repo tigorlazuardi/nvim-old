@@ -47,6 +47,7 @@
 - **treesitter:** disabled indent by treesitter
 
 ### Various Actions
+- grammar fixes
 - removed unused plugins from codebase
 - merge
 - removed useless block

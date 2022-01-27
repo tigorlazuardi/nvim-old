@@ -1,6 +1,6 @@
 local c = vim.api.nvim_command
 
-c('set nocompatible') -- disable compability with vi
+c('set nocompatible') -- disable compatibility with vi
 c('set mouse=va') -- mouse to paste middleclick ('v'), and select via click ('a')
 c('set cursorline') -- highlight cursors line
 
