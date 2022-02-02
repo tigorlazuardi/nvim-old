@@ -23,19 +23,31 @@ if server_available then
 	end
 end
 
+local blacklist = { 'sumneko_lua', 'gopls', 'rust_analyzer', 'dartls' }
+
+---check if blacklist
+---@param value string value to check against
+---@return boolean
+function blacklist:has(value)
+	for _, v in ipairs(self) do
+		if value == v then
+			return true
+		end
+	end
+	return false
+end
+
 lsp_installer.on_server_ready(function(server)
 	local opts = {
 		capabilities = capabilities,
 		on_attach = on_attach,
 	}
 
-	if server.name == 'sumneko_lua' then
+	if blacklist:has(server.name) then
 		return
-	elseif server.name == 'gopls' then
-		return
-	elseif server.name == 'rust-analyzer' then
-		return
-	elseif server.name == 'jsonls' then
+	end
+
+	if server.name == 'jsonls' then
 		opts = require('plugins.config.lsp.installer_config.json')
 	elseif server.name == 'tsserver' then
 		opts = require('plugins.config.lsp.installer_config.typescript')

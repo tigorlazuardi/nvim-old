@@ -12,6 +12,7 @@
 - **golang:** separated golang from top level config
 - **golang:** golang now uses ray-x/go command to format or import and removed formatters from null-ls
 - **json_yaml:** added to separate configuration
+- **lsp:** refactor code for more readability
 - **lua-lsp:** added to separate configuration
 - **neovide:** refactor neovide font settings
 - **packer:** packer now automatically sync if packer_compiled.lua file is missing
