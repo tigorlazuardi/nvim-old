@@ -23,18 +23,13 @@ if server_available then
 	end
 end
 
-local blacklist = { 'sumneko_lua', 'gopls', 'rust_analyzer', 'dartls' }
+local blacklist = { sumneko_lua = true, gopls = true, rust_analyzer = true, dartls = true }
 
 ---check if blacklist
 ---@param value string value to check against
 ---@return boolean
 function blacklist:has(value)
-	for _, v in ipairs(self) do
-		if value == v then
-			return true
-		end
-	end
-	return false
+	return blacklist[value] or false
 end
 
 lsp_installer.on_server_ready(function(server)

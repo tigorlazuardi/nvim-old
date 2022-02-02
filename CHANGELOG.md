@@ -9,10 +9,11 @@
 - **treesitter-indent:** disabled on yaml files
 
 ### Code Refactoring
-- **golang:** separated golang from top level config
 - **golang:** golang now uses ray-x/go command to format or import and removed formatters from null-ls
+- **golang:** separated golang from top level config
 - **json_yaml:** added to separate configuration
 - **lsp:** refactor code for more readability
+- **lsp:** uses accosiative table instead of numeric table to check available lsps
 - **lua-lsp:** added to separate configuration
 - **neovide:** refactor neovide font settings
 - **packer:** packer now automatically sync if packer_compiled.lua file is missing
