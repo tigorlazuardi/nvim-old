@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+
+<a name="v3.1.1"></a>
+## [v3.1.1] - 2022-02-04
 ### Bug Fixes
 - **lua-lsp:** lsp is fixed by settings server version to v2.5.6
 - **sumneko_lua-installer:** version is now frozen to v2.5.6
@@ -508,7 +511,8 @@
 - initial commit
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v3.1.0...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v3.1.1...HEAD
+[v3.1.1]: https://github.com/tigorlazuardi/nvim/compare/v3.1.0...v3.1.1
 [v3.1.0]: https://github.com/tigorlazuardi/nvim/compare/v3.0.3...v3.1.0
 [v3.0.3]: https://github.com/tigorlazuardi/nvim/compare/v3.0.2...v3.0.3
 [v3.0.2]: https://github.com/tigorlazuardi/nvim/compare/v3.0.1...v3.0.2
