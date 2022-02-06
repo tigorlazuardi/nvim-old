@@ -1,10 +1,4 @@
 local function cmp_config()
-	require('lspkind').init({
-		with_text = true,
-		preset = 'default',
-		symbol_map = { Field = '' },
-	})
-
 	local cmp = require('cmp')
 	cmp.setup({
 		mapping = {
@@ -28,20 +22,10 @@ local function cmp_config()
 			end,
 		},
 		formatting = {
-			format = function(entry, vim_item)
-				vim_item.kind = (require('lspkind').presets.default[vim_item.kind] or ' ') .. ' ' .. vim_item.kind
-				-- set a name for each source
-				vim_item.menu = ({
-					buffer = '[Buffer]',
-					nvim_lsp = '[LSP]',
-					luasnip = '[LuaSnip]',
-					nvim_lua = '[Lua]',
-					latex_symbols = '[Latex]',
-					path = '[Path]',
-					vsnip = '[VSnip]',
-				})[entry.source.name]
-				return vim_item
-			end,
+			format = require('lspkind').cmp_format({
+				mode = 'symbol_text',
+				preset = 'codicons',
+			}),
 		},
 		sources = {
 			{ name = 'nvim_lsp' },
@@ -115,6 +99,7 @@ return function(use)
 			'rafamadriz/friendly-snippets',
 			'saadparwaiz1/cmp_luasnip',
 			'windwp/nvim-autopairs',
+			'mortepau/codicons.nvim',
 		},
 		wants = { 'which-key.nvim' },
 		config = cmp_config,
