@@ -41,11 +41,11 @@ end
 
 local function modified()
 	if vim.bo.modified then
-		return '+'
+		return ''
 	elseif vim.bo.modifiable == false or vim.bo.readonly == true then
-		return '-'
+		return ''
 	end
-	return ''
+	return ''
 end
 
 local function lsp_status()
@@ -79,7 +79,7 @@ return {
 				diagnostics_color = { warn = { bg = colors.orange, fg = colors.white } },
 			},
 			{ 'filename', file_status = false, path = 1 },
-			{ modified, color = { bg = colors.red } },
+			{ modified, color = { bg = colors.gray0 } },
 			{
 				'%w',
 				cond = function()

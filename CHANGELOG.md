@@ -1,8 +1,15 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Code Refactoring
+- **neovide:** refactor neovide configurations
+
 ### Features
+- **cmp-lspkind:** update configuration
 - **lsp:** update lsp in insert mode disabled to increase peformance on slow lsps
+- **lualine:** better color for modified
+- **statusline:** revert to lualine from windline
+- **treesitter:** added endwise
 
 
 <a name="v3.1.1"></a>
