@@ -33,6 +33,11 @@ return function(use)
 			vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
 				border = 'single',
 			})
+
+			vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
+				vim.lsp.diagnostic.on_publish_diagnostics,
+				{ update_in_insert = false }
+			)
 		end,
 		config = function()
 			local wk = require('which-key')
