@@ -112,6 +112,12 @@ local function run()
 		},
 	})
 
+	require('nvim-treesitter.configs').setup({
+		endwise = {
+			enable = true,
+		},
+	})
+
 	vim.o.foldlevelstart = 1
 	vim.o.foldmethod = 'expr'
 	vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
@@ -129,6 +135,7 @@ return function(use)
 			'romgrk/nvim-treesitter-context',
 			'windwp/nvim-ts-autotag',
 			'danymat/neogen',
+			'RRethy/nvim-treesitter-endwise',
 		},
 		config = run,
 	})
