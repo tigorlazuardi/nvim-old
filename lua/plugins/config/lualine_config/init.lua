@@ -1,6 +1,6 @@
 return function(use)
 	use({
-		'windwp/windline.nvim',
+		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', 'nvim-lua/lsp-status.nvim' },
 		config = function()
 			local lsp_status = require('lsp-status')
@@ -10,11 +10,15 @@ return function(use)
 				indicator_info = '',
 				indicator_hint = '',
 				indicator_ok = '',
+				diagnostics = false,
+				show_filename = false,
+				status_symbol = ' ',
 			})
 			lsp_status.register_progress()
 			vim.cmd([[set cmdheight=1]])
 			vim.cmd([[set noshowmode]])
-			require('plugins.config.windline_config.airline')
+			local opts = require('plugins.config.lualine_config.slanted_gaps')
+			require('lualine').setup(opts)
 		end,
 	})
 end
