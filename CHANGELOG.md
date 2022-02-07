@@ -9,6 +9,7 @@
 - **lsp:** update lsp in insert mode disabled to increase peformance on slow lsps
 - **lualine:** better color for modified
 - **notify:** added nvim-notify
+- **notify:** added notify on installing sumneko lua server
 - **statusline:** revert to lualine from windline
 - **treesitter:** added endwise
 

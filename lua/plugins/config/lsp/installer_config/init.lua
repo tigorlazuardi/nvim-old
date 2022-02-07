@@ -19,6 +19,7 @@ if server_available then
 		sumneko_lua:setup(opts)
 	end)
 	if not sumneko_lua:is_installed() then
+		vim.notify('Installing sumneko lua v2.5.6 language server...')
 		sumneko_lua:install('v2.5.6')
 	end
 end
