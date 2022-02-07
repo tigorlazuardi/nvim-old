@@ -66,7 +66,7 @@ local function run()
 				error = '',
 			},
 		},
-		open_on_setup = true,
+		open_on_setup = false,
 		ignore_ft_on_setup = {},
 		git = {
 			enable = true,
@@ -100,9 +100,6 @@ local function run()
 
 	vim.cmd([[hi! link NvimTreeGitDirty GitSignsChange]])
 	vim.cmd([[hi! link NvimTreeGitNew GitSignsAdd]])
-	vim.defer_fn(function()
-		require('nvim-tree.view').open({ focus_tree = false })
-	end, 100)
 end
 
 return function(use)
