@@ -8,6 +8,7 @@
 - **cmp-lspkind:** update configuration
 - **lsp:** update lsp in insert mode disabled to increase peformance on slow lsps
 - **lualine:** better color for modified
+- **notify:** added nvim-notify
 - **statusline:** revert to lualine from windline
 - **treesitter:** added endwise
 
