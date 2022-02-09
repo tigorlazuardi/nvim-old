@@ -12,6 +12,7 @@
 - **notify:** added nvim-notify
 - **notify:** added notify on installing sumneko lua server
 - **statusline:** revert to lualine from windline
+- **tmux:** added tmux config
 - **treesitter:** added endwise
 
 ### Revert
