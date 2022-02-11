@@ -36,6 +36,7 @@ return packer.startup(function(use)
 	require('plugins.config.pounce_config')(use)
 	-- require('plugins.config.pretty_fold')(use)
 	require('plugins.config.scrollbar_config')(use)
+	require('plugins.config.smart_pairs')(use)
 	require('plugins.config.spectre_config')(use)
 	require('plugins.config.surround_config')(use)
 	require('plugins.config.tabout_config')(use)
@@ -49,7 +50,6 @@ return packer.startup(function(use)
 	require('plugins.config.trouble_config')(use)
 	require('plugins.config.vim_sneak')(use)
 	require('plugins.config.which_key')(use)
-
 	local compiled_file_path = vim.fn.stdpath('config') .. '/plugin/packer_compiled.lua'
 
 	if vim.fn.filereadable(compiled_file_path) == 0 then
