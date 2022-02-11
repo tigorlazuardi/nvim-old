@@ -6,6 +6,7 @@
 - **tmux:** removed resize default keybinding because conflict with line swap
 
 ### Code Refactoring
+- **golang:** removed unneeded configs
 - **neovide:** refactor config
 - **neovide:** refactor neovide configurations
 
