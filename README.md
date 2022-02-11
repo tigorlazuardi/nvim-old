@@ -21,3 +21,4 @@ Run `nvim` and run command `:PackerSync`.
 # Mappings
 
 After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:WhichKeyI` for Insert mode mappings. Run `:WhichKeyV` for visual mode mappings.
+
