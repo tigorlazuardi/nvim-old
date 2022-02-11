@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Bug Fixes
+- **tmux:** removed resize default keybinding because conflict with line swap
+
 ### Code Refactoring
 - **neovide:** refactor config
 - **neovide:** refactor neovide configurations
