@@ -7,6 +7,7 @@
 
 ### Code Refactoring
 - **golang:** removed unneeded configs
+- **lsp:** better readability syntax
 - **neovide:** refactor config
 - **neovide:** refactor neovide configurations
 

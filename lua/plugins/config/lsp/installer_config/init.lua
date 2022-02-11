@@ -26,6 +26,21 @@ end
 
 local blacklist = { sumneko_lua = true, gopls = true, rust_analyzer = true, dartls = true }
 
+local config_getter = {
+	jsonls = function()
+		return require('plugins.config.lsp.installer_config.json')
+	end,
+	tsserver = function()
+		return require('plugins.config.lsp.installer_config.typescript')
+	end,
+	yamlls = function()
+		return require('plugins.config.lsp.installer_config.yaml')
+	end,
+	eslint = function()
+		return require('plugins.config.lsp.installer_config.eslint')
+	end,
+}
+
 ---check if blacklist
 ---@param value string value to check against
 ---@return boolean
@@ -43,14 +58,9 @@ lsp_installer.on_server_ready(function(server)
 		return
 	end
 
-	if server.name == 'jsonls' then
-		opts = require('plugins.config.lsp.installer_config.json')
-	elseif server.name == 'tsserver' then
-		opts = require('plugins.config.lsp.installer_config.typescript')
-	elseif server.name == 'yamlls' then
-		opts = require('plugins.config.lsp.installer_config.yaml')
-	elseif server.name == 'eslint' then
-		opts = require('plugins.config.lsp.installer_config.eslint')
+	local config = config_getter[server.name]
+	if config ~= nil then
+		opts = config()
 	end
 
 	server:setup(opts)
