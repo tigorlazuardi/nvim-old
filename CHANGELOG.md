@@ -14,6 +14,7 @@
 - **lualine:** better color for modified
 - **notify:** added nvim-notify
 - **notify:** added notify on installing sumneko lua server
+- **null_ls:** revert to prettierd and eslint_d now only runs if eslintrc.json exist in root
 - **statusline:** revert to lualine from windline
 - **tmux:** added tmux config
 - **treesitter:** added endwise

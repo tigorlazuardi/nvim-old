@@ -43,8 +43,7 @@ if exist('hadolint') then
 	table.insert(sources, null_ls.builtins.diagnostics.hadolint)
 end
 
--- js, ts
-if exist('prettier_d_slim') and exist('prettierd') then
+if exist('prettierd') then
 	table.insert(
 		sources,
 		null_ls.builtins.formatting.prettier_d_slim.with({
@@ -86,17 +85,6 @@ if exist('prettier_d_slim') and exist('prettierd') then
 			end,
 		})
 	)
-elseif exist('prettierd') and not exist('prettier_d_slim') then
-	table.insert(
-		sources,
-		null_ls.builtins.formatting.prettierd.with({
-			env = {
-				PRETTIERD_DEFAULT_CONFIG = vim.fn.expand('~/.config/nvim/linter-config/.prettierrc.toml'),
-			},
-		})
-	)
-elseif exist('prettier_d_slim') and not exist('prettierd') then
-	table.insert(sources, null_ls.builtins.formatting.prettier_d_slim)
 end
 
 if exist('rustywind') then
@@ -104,9 +92,14 @@ if exist('rustywind') then
 end
 
 if exist('eslint_d') then
-	table.insert(sources, null_ls.builtins.formatting.eslint_d)
-	table.insert(sources, null_ls.builtins.code_actions.eslint_d)
-	table.insert(sources, null_ls.builtins.diagnostics.eslint_d)
+	local opts = {
+		condition = function(utils)
+			return utils.root_has_file({ '.eslintrc.json', '.eslintrc' })
+		end,
+	}
+	table.insert(sources, null_ls.builtins.formatting.eslint_d.with(opts))
+	table.insert(sources, null_ls.builtins.code_actions.eslint_d.with(opts))
+	table.insert(sources, null_ls.builtins.diagnostics.eslint_d.with(opts))
 end
 
 -- lua
