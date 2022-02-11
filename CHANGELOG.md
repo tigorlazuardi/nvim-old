@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Bug Fixes
+- **prettierd:** fix prettierd config for null_ls
 - **tmux:** removed resize default keybinding because conflict with line swap
 
 ### Code Refactoring

@@ -46,49 +46,23 @@ end
 if exist('prettierd') then
 	table.insert(
 		sources,
-		null_ls.builtins.formatting.prettier_d_slim.with({
-			condition = function(utils)
-				return utils.root_has_file({
-					'.prettierrc',
-					'.prettierrc.json',
-					'.prettierrc.yml',
-					'.prettierrc.yaml',
-					'.prettierrc.json5',
-					'.prettierrc.js',
-					'.prettierrc.cjs',
-					'prettier.config.js',
-					'prettier.config.cjs',
-					'.prettierrc.toml',
-				})
-			end,
-		})
-	)
-	table.insert(
-		sources,
 		null_ls.builtins.formatting.prettierd.with({
 			env = {
 				PRETTIERD_DEFAULT_CONFIG = vim.fn.expand('~/.config/nvim/linter-config/.prettierrc.toml'),
 			},
-			condition = function(utils)
-				return not utils.root_has_file({
-					'.prettierrc',
-					'.prettierrc.json',
-					'.prettierrc.yml',
-					'.prettierrc.yaml',
-					'.prettierrc.json5',
-					'.prettierrc.js',
-					'.prettierrc.cjs',
-					'prettier.config.js',
-					'prettier.config.cjs',
-					'.prettierrc.toml',
-				})
-			end,
 		})
 	)
 end
 
 if exist('rustywind') then
-	table.insert(sources, null_ls.builtins.formatting.rustywind)
+	table.insert(
+		sources,
+		null_ls.builtins.formatting.rustywind.with({
+			condition = function(utils)
+				return utils.root_has_file({ 'tailwind.config.json' })
+			end,
+		})
+	)
 end
 
 if exist('eslint_d') then
@@ -139,7 +113,6 @@ end
 null_ls.setup({
 	sources = sources,
 	on_attach = function(client, bufnr)
-		-- client.resolved_capabilities.document_highlight = true
 		if client.resolved_capabilities.document_formatting then
 			vim.cmd([[
 				au BufWritePre <buffer> silent! lua vim.lsp.buf.formatting_sync() 
