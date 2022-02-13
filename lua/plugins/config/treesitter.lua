@@ -117,7 +117,7 @@ local function run()
 			enable = true,
 		},
 	})
-
+	require('hlargs').setup()
 	vim.o.foldlevelstart = 1
 	vim.o.foldmethod = 'expr'
 	vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
@@ -136,6 +136,7 @@ return function(use)
 			'windwp/nvim-ts-autotag',
 			'danymat/neogen',
 			'RRethy/nvim-treesitter-endwise',
+			'm-demare/hlargs.nvim',
 		},
 		config = run,
 	})
