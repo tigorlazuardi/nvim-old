@@ -23,6 +23,7 @@
 - **pairs:** moved to smart pairs
 - **statusline:** revert to lualine from windline
 - **tmux:** added tmux config
+- **tmux:** disabled copy_sync to sync clipboard with system clipboard instead of tmux
 - **treesitter:** added endwise
 
 ### Revert
