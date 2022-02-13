@@ -15,16 +15,23 @@
 - **cmp-lspkind:** update configuration
 - **lsp:** update lsp in insert mode disabled to increase peformance on slow lsps
 - **lualine:** better color for modified
+- **mini:** disabled on some filetypes
+- **mini-indentscope:** added mini indentscope
 - **notify:** added nvim-notify
 - **notify:** added notify on installing sumneko lua server
 - **null_ls:** revert to prettierd and eslint_d now only runs if eslintrc.json exist in root
+- **pairs:** moved to smart pairs
 - **statusline:** revert to lualine from windline
 - **tmux:** added tmux config
+- **tmux:** disabled copy_sync to sync clipboard with system clipboard instead of tmux
 - **treesitter:** added endwise
 
 ### Revert
 - disabled pretty_fold in favor of tmux integration
 - **nvim-tree:** disabled open on new
+
+### Various Actions
+- format
 
 
 <a name="v3.1.1"></a>
