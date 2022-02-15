@@ -16,6 +16,7 @@
 - **cmp-lspkind:** update configuration
 - **hlargs:** added
 - **lsp:** update lsp in insert mode disabled to increase peformance on slow lsps
+- **lsp:** fix cursor jumpt to diagnostic window on goto_next
 - **lualine:** better color for modified
 - **mini:** disabled on some filetypes
 - **mini-indentscope:** added mini indentscope

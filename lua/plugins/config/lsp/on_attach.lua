@@ -56,11 +56,11 @@ return function(client, bufnr)
 				'(LSP) Show Workspace Diagnostics',
 			},
 			p = {
-				'<cmd>lua vim.diagnostic.goto_prev({ popup_opts = { border = "single" }})<CR>',
+				'<cmd>lua vim.diagnostic.goto_prev({ float = false })<CR>',
 				'(Diagnostics) Go to Previous Diagnostic',
 			},
 			e = {
-				'<cmd>lua vim.diagnostic.goto_next({ popup_opts = { border = "single" }})<CR>',
+				'<cmd>lua vim.diagnostic.goto_next({ float = false })<CR>',
 				'(Diagnostics) Go to Next Diagnostic',
 			},
 		},
