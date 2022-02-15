@@ -5,17 +5,35 @@ return function(use)
 			vim.g.sandwich_no_default_key_mappings = 1
 		end,
 		config = function()
-			local wk = require('which-key')
-			local mappings = {
-				q = {
-					name = 'quick',
-					a = { '<Plug>(operator-sandwich-add)', 'Operator Sandwich Add' },
-					d = { '<Plug>(operator-sandwich-delete)', 'Operator Sandwich Delete' },
-					r = { '<Plug>(operator-sandwich-replace)', 'Operator Sandwich Replace' },
-				},
-			}
-			wk.register(mappings)
-			wk.register(mappings, { mode = 'v' })
+			vim.cmd([[
+				" add
+				silent! nmap <unique> qa <Plug>(sandwich-add)
+				silent! xmap <unique> qa <Plug>(sandwich-add)
+				silent! omap <unique> qa <Plug>(sandwich-add)
+
+				" delete
+				silent! nmap <unique> qd <Plug>(sandwich-delete)
+				silent! xmap <unique> qd <Plug>(sandwich-delete)
+				silent! nmap <unique> qdb <Plug>(sandwich-delete-auto)
+
+				" replace
+				silent! nmap <unique> qr <Plug>(sandwich-replace)
+				silent! xmap <unique> qr <Plug>(sandwich-replace)
+				silent! nmap <unique> qrb <Plug>(sandwich-replace-auto)
+			]])
+			vim.cmd([[
+				" auto
+				silent! omap <unique> ib <Plug>(textobj-sandwich-auto-i)
+				silent! xmap <unique> ib <Plug>(textobj-sandwich-auto-i)
+				silent! omap <unique> ab <Plug>(textobj-sandwich-auto-a)
+				silent! xmap <unique> ab <Plug>(textobj-sandwich-auto-a)
+
+				" query
+				silent! omap <unique> is <Plug>(textobj-sandwich-query-i)
+				silent! xmap <unique> is <Plug>(textobj-sandwich-query-i)
+				silent! omap <unique> as <Plug>(textobj-sandwich-query-a)
+				silent! xmap <unique> as <Plug>(textobj-sandwich-query-a)
+			]])
 		end,
 	})
 end

@@ -16,8 +16,8 @@
 ### Features
 - **cmp-lspkind:** update configuration
 - **hlargs:** added
-- **lsp:** update lsp in insert mode disabled to increase peformance on slow lsps
 - **lsp:** fix cursor jumpt to diagnostic window on goto_next
+- **lsp:** update lsp in insert mode disabled to increase peformance on slow lsps
 - **lualine:** better color for modified
 - **mini:** disabled on some filetypes
 - **mini-indentscope:** added mini indentscope
@@ -25,6 +25,7 @@
 - **notify:** added nvim-notify
 - **null_ls:** revert to prettierd and eslint_d now only runs if eslintrc.json exist in root
 - **pairs:** moved to smart pairs
+- **sandwhich:** fix missing mappings
 - **sandwhich:** moved from surround.nvim to vim-sandwhich because dev account is deleted
 - **statusline:** revert to lualine from windline
 - **tmux:** disabled copy_sync to sync clipboard with system clipboard instead of tmux
