@@ -2,7 +2,7 @@ local function run()
 	require('nvim-treesitter.configs').setup({
 		context_commentstring = { enable = true },
 		highlight = { enable = true },
-		indent = { enable = true, disable = { 'yaml', 'dart' } },
+		indent = { enable = false, disable = { 'yaml', 'dart' } },
 		autopairs = { enable = true },
 		textobjects = {
 			select = {
@@ -117,7 +117,7 @@ local function run()
 			enable = true,
 		},
 	})
-	require('hlargs').setup()
+	-- require('hlargs').setup()
 	vim.o.foldlevelstart = 1
 	vim.o.foldmethod = 'expr'
 	vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
@@ -136,7 +136,7 @@ return function(use)
 			'windwp/nvim-ts-autotag',
 			'danymat/neogen',
 			'RRethy/nvim-treesitter-endwise',
-			'm-demare/hlargs.nvim',
+			-- 'm-demare/hlargs.nvim',
 		},
 		config = run,
 	})

@@ -31,6 +31,7 @@
 ### Revert
 - disabled pretty_fold in favor of tmux integration
 - **nvim-tree:** disabled open on new
+- **treesitter:** disabled indent and hlargs
 
 ### Various Actions
 - format
