@@ -49,10 +49,7 @@ local function modified()
 end
 
 local function lsp_status()
-	if #vim.lsp.buf_get_clients() > 0 then
-		return require('lsp-status').status(0)
-	end
-	return ''
+	return require('lsp-status').status(0)
 end
 
 return {
