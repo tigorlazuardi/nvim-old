@@ -3,6 +3,7 @@
 
 ### Bug Fixes
 - **lsp-status:** now lsp status line does not check buf get clients
+- **nvim-tree:** temporarily froze nvim tree version to latest stable commit
 - **prettierd:** fix prettierd config for null_ls
 - **tmux:** removed resize default keybinding because conflict with line swap
 
