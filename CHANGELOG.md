@@ -23,9 +23,10 @@
 - **notify:** added nvim-notify
 - **null_ls:** revert to prettierd and eslint_d now only runs if eslintrc.json exist in root
 - **pairs:** moved to smart pairs
+- **sandwhich:** moved from surround.nvim to vim-sandwhich because dev account is deleted
 - **statusline:** revert to lualine from windline
-- **tmux:** added tmux config
 - **tmux:** disabled copy_sync to sync clipboard with system clipboard instead of tmux
+- **tmux:** added tmux config
 - **treesitter:** added endwise
 
 ### Revert
