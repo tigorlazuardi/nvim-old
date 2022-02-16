@@ -48,7 +48,7 @@ local function run()
 	telescope.load_extension('fzf')
 
 	require('session_manager').setup({
-		autoload_mode = require('session_manager.config').AutoloadMode.Disabled, -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
+		autoload_mode = require('session_manager.config').AutoloadMode.CurrentDir, -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
 	})
 	telescope.load_extension('file_browser')
 	telescope.load_extension('projects')
