@@ -15,14 +15,15 @@
 
 ### Features
 - **cmp-lspkind:** update configuration
+- **golang:** update enhancement configuration
 - **hlargs:** added
 - **lsp:** fix cursor jumpt to diagnostic window on goto_next
 - **lsp:** update lsp in insert mode disabled to increase peformance on slow lsps
 - **lualine:** better color for modified
 - **mini:** disabled on some filetypes
 - **mini-indentscope:** added mini indentscope
-- **notify:** added notify on installing sumneko lua server
 - **notify:** added nvim-notify
+- **notify:** added notify on installing sumneko lua server
 - **null_ls:** revert to prettierd and eslint_d now only runs if eslintrc.json exist in root
 - **pairs:** moved to smart pairs
 - **sandwhich:** fix missing mappings

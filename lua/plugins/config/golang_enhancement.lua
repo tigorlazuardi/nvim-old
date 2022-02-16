@@ -19,6 +19,8 @@ return function(use)
 				end
 				require('go').setup({
 					gofmt = 'gofumpt',
+					test_runner = 'richgo',
+					run_in_floaterm = true,
 				})
 			end,
 			ft = { 'go' },
@@ -53,19 +55,6 @@ return function(use)
 					},
 				},
 			})
-		end,
-		ft = { 'go' },
-	})
-
-	use({
-		'edolphin-ydf/goimpl.nvim',
-		config = function()
-			local ok, telescope = pcall(require, 'telescope')
-			if not ok then
-				return
-			end
-
-			telescope.load_extension('goimpl')
 		end,
 		ft = { 'go' },
 	})
