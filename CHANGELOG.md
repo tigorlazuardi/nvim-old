@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+
+<a name="v3.1.2"></a>
+## [v3.1.2] - 2022-02-16
 ### Bug Fixes
 - **lsp-status:** now lsp status line does not check buf get clients
 - **nvim-tree:** temporarily froze nvim tree version to latest stable commit
@@ -633,7 +636,8 @@
 - initial commit
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v3.1.1...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v3.1.2...HEAD
+[v3.1.2]: https://github.com/tigorlazuardi/nvim/compare/v3.1.1...v3.1.2
 [v3.1.1]: https://github.com/tigorlazuardi/nvim/compare/v3.1.0...v3.1.1
 [v3.1.0]: https://github.com/tigorlazuardi/nvim/compare/v3.0.3...v3.1.0
 [v3.0.3]: https://github.com/tigorlazuardi/nvim/compare/v3.0.2...v3.0.3
