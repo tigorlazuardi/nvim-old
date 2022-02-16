@@ -12,25 +12,31 @@ local opts = {
 		wk.register({
 			['<leader>g'] = {
 				name = '+go',
-				f = {
-					function()
-						_G.organize_imports(1000)
-					end,
-					'Organize Imports',
+				f = { '<cmd>GoImport<cr>', 'Organize Imports' },
+				t = {
+					name = '+test',
+					f = { '<cmd>GoTestFunc<cr>', 'Test Function Relative to Cursor' },
+					F = { '<cmd>GoTestFile<cr>', 'Test Current File' },
+					p = { '<cmd>GoTestPkg<cr>', 'Test Current Package' },
+					t = { '<cmd>GoTest<cr>', 'Test All in Project' },
+					c = {
+						function()
+							for _, win in ipairs(vim.api.nvim_list_wins()) do
+								local config = vim.api.nvim_win_get_config(win)
+								if config.relative ~= '' then
+									vim.api.nvim_win_close(win, false)
+								end
+							end
+						end,
+						'Close Test Window',
+					},
+					a = { '<cmd>GoAddTest<cr>', 'Generate test for function' },
+					A = { '<cmd>GoAddAllTest<cr>', 'Generate test for functions in file' },
 				},
+				a = { '<cmd>GoAddTag<cr>', 'Generate Tag for Struct' },
+				c = { '<cmd>GoCmt<cr>', 'Generate comment for function or struct' },
 			},
 		}, { buffer = bufnr })
-
-		if packer_plugins['goimpl.nvim'] then
-			wk.register({
-				['<leader>gi'] = {
-					function()
-						require('telescope').extensions.goimpl.goimpl()
-					end,
-					'Generate Implementations',
-				},
-			}, { buffer = bufnr })
-		end
 	end,
 	settings = {
 		gopls = {
