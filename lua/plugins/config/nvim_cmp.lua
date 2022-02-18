@@ -34,6 +34,7 @@ local function cmp_config()
 			{ name = 'spell' },
 			{ name = 'emoji' },
 			{ name = 'luasnip' },
+			{ name = 'rg' },
 		},
 	})
 
@@ -94,6 +95,7 @@ return function(use)
 			'hrsh7th/cmp-emoji',
 			'hrsh7th/cmp-nvim-lsp',
 			'hrsh7th/cmp-path',
+			'lukas-reineke/cmp-rg',
 			'hrsh7th/cmp-nvim-lsp-signature-help',
 			'onsails/lspkind-nvim',
 			'rafamadriz/friendly-snippets',
