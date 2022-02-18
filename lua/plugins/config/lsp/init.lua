@@ -10,7 +10,8 @@ return function(use)
 			'b0o/schemastore.nvim',
 			'kosayoda/nvim-lightbulb',
 			'williamboman/nvim-lsp-installer',
-			{ 'jose-elias-alvarez/nvim-lsp-ts-utils', wants = { 'null-ls.nvim' } },
+			'j-hui/fidget.nvim',
+			'jose-elias-alvarez/nvim-lsp-ts-utils',
 		},
 		setup = function()
 			vim.diagnostic.config({
@@ -66,6 +67,7 @@ return function(use)
 				only_current_line = false,
 				enabled = { 'ChainingHint' },
 			})
+			require('fidget').setup({})
 			vim.cmd([[autocmd CursorHold,CursorHoldI * silent! lua require'nvim-lightbulb'.update_lightbulb()]])
 			-- vim.cmd([[au CursorHold * lua vim.diagnostic.open_float(0,{scope = "cursor", focus = false})]])
 			-- require('plugins.config.lsp.setup')

@@ -48,10 +48,6 @@ local function modified()
 	return ''
 end
 
-local function lsp_status()
-	return require('lsp-status').status(0)
-end
-
 return {
 	options = {
 		theme = 'catppuccin',
@@ -96,7 +92,7 @@ return {
 				end,
 			},
 		},
-		lualine_c = { { lsp_status } },
+		lualine_c = {},
 		lualine_x = {},
 		lualine_y = { search_result, 'filetype' },
 		lualine_z = { '%l:%c', '%p%%/%L' },
