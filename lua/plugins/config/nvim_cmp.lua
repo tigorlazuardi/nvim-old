@@ -37,13 +37,13 @@ local function cmp_config()
 		},
 	})
 
-	-- local npairs = require('nvim-autopairs')
-	--
-	-- npairs.setup({
-	-- 	disable_filetype = { 'TelescopePrompt' },
-	-- 	check_ts = true,
-	-- 	map_cr = true,
-	-- })
+	local npairs = require('nvim-autopairs')
+
+	npairs.setup({
+		disable_filetype = { 'TelescopePrompt' },
+		check_ts = true,
+		map_cr = true,
+	})
 
 	local wk = require('which-key')
 
@@ -98,7 +98,7 @@ return function(use)
 			'onsails/lspkind-nvim',
 			'rafamadriz/friendly-snippets',
 			'saadparwaiz1/cmp_luasnip',
-			-- 'windwp/nvim-autopairs',
+			'windwp/nvim-autopairs',
 			'mortepau/codicons.nvim',
 		},
 		wants = { 'which-key.nvim' },
