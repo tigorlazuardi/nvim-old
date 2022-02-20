@@ -53,7 +53,6 @@ function M.run(...)
 		direction = 'vertical',
 		close_on_exit = false,
 		on_open = function(t)
-			vim.cmd([[call feedkeys("\<c-\>\<c-n>")]])
 			local close = function()
 				t:close()
 			end
@@ -64,6 +63,7 @@ function M.run(...)
 			vim.keymap.set(modes, '<c-[>', close, opts)
 		end,
 		on_exit = function(_term, _job, exit_code)
+			vim.cmd([[call feedkeys("\<c-\>\<c-n>")]])
 			local test_name = ''
 			for _, str in ipairs(cmdTable) do
 				if str:find('%^Test') then
