@@ -11,6 +11,7 @@
 - move back to nvim autopairs
 
 ### Various Actions
+- removed coq and chadtree from nvim
 - removed commented surruond_config in init
 - removed surround config because dev is MIA
 - removed old windline config
