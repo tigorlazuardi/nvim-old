@@ -2,7 +2,7 @@ return function(use)
 	if vim.fn.exepath('gopls') ~= '' then
 		use({
 			'ray-x/go.nvim',
-			requires = { 'ray-x/guihua.lua' },
+			requires = { 'ray-x/guihua.lua', 'akinsho/nvim-toggleterm.lua' },
 			config = function()
 				local lsp_installer_servers = require('nvim-lsp-installer.servers')
 				local server_available, gopls = lsp_installer_servers.get_server('gopls')

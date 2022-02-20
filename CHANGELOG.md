@@ -3,6 +3,7 @@
 
 ### Features
 - **fidget:** moved to fidget nvim from lsp-status
+- **golang:** uses custom terminal to run go test function
 - **nvim-cmp:** added ripgrep source
 - **yabs:** added yabs nvim
 

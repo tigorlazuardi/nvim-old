@@ -15,7 +15,13 @@ local opts = {
 				f = { '<cmd>GoImport<cr>', 'Organize Imports' },
 				t = {
 					name = '+test',
-					f = { '<cmd>GoTestFunc<cr>', 'Test Function Relative to Cursor' },
+					-- f = { '<cmd>GoTestFunc<cr>', 'Test Function Relative to Cursor' },
+					f = {
+						function()
+							require('personal.external_commands.go.test_current_func').run()
+						end,
+						'Test Function Relative to Cursor',
+					},
 					F = { '<cmd>GoTestFile<cr>', 'Test Current File' },
 					p = { '<cmd>GoTestPkg<cr>', 'Test Current Package' },
 					t = { '<cmd>GoTest<cr>', 'Test All in Project' },
