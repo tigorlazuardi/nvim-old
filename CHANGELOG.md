@@ -1,6 +1,20 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Features
+- **fidget:** moved to fidget nvim from lsp-status
+- **nvim-cmp:** added ripgrep source
+- **yabs:** added yabs nvim
+
+### Revert
+- move to smart-pairs again
+- move back to nvim autopairs
+
+### Various Actions
+- removed commented surruond_config in init
+- removed surround config because dev is MIA
+- removed old windline config
+
 
 <a name="v3.1.2"></a>
 ## [v3.1.2] - 2022-02-16

@@ -11,13 +11,10 @@ return packer.startup(function(use)
 	require('plugins.config.lsp')(use)
 	require('plugins.config.lualine_config')(use)
 	require('plugins.config.null_ls_config')(use)
-	-- require('plugins.config.windline_config')(use)
 
 	require('plugins.config.bufdelete_config')(use)
 	require('plugins.config.bufferline_config')(use)
-	-- require('plugins.config.chadtree_config')(use)
 	require('plugins.config.comment_nvim')(use)
-	-- require('plugins.config.coq_config')(use)
 	require('plugins.config.discord')(use)
 	require('plugins.config.dressing_config')(use)
 	require('plugins.config.easy_align')(use)
@@ -51,6 +48,7 @@ return packer.startup(function(use)
 	require('plugins.config.trouble_config')(use)
 	require('plugins.config.vim_sneak')(use)
 	require('plugins.config.which_key')(use)
+	require('plugins.config.yabs_config')(use)
 	local compiled_file_path = vim.fn.stdpath('config') .. '/plugin/packer_compiled.lua'
 
 	if vim.fn.filereadable(compiled_file_path) == 0 then
