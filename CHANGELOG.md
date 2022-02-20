@@ -7,6 +7,7 @@
 - **yabs:** added yabs nvim
 
 ### Revert
+- removed yabs
 - move to smart-pairs again
 - move back to nvim autopairs
 

@@ -48,7 +48,6 @@ return packer.startup(function(use)
 	require('plugins.config.trouble_config')(use)
 	require('plugins.config.vim_sneak')(use)
 	require('plugins.config.which_key')(use)
-	require('plugins.config.yabs_config')(use)
 	local compiled_file_path = vim.fn.stdpath('config') .. '/plugin/packer_compiled.lua'
 
 	if vim.fn.filereadable(compiled_file_path) == 0 then
