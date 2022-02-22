@@ -22,14 +22,18 @@ local opts = {
 						'Test Function Relative to Cursor',
 					},
 					F = { '<cmd>GoTestFile<cr>', 'Test Current File' },
-					-- p = { '<cmd>GoTestPkg<cr>', 'Test Current Package' },
 					p = {
 						function()
 							require('personal.external_commands.go.test_current_package').run()
 						end,
 						'Test Current Package',
 					},
-					t = { '<cmd>GoTest<cr>', 'Test All in Project' },
+					t = {
+						function()
+							require('personal.external_commands.go.test_current_workspace').run()
+						end,
+						'Test All in Project',
+					},
 					c = {
 						function()
 							for _, win in ipairs(vim.api.nvim_list_wins()) do
