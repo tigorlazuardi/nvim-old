@@ -104,7 +104,7 @@ return function(use)
 		run = ':TSUpdate',
 		requires = {
 			'nvim-treesitter/nvim-treesitter-textobjects',
-			{ 'p00f/nvim-ts-rainbow', commit = '7e1af3e61b8f529031b54369fd54936c2a288e1b' },
+			'p00f/nvim-ts-rainbow',
 			'lewis6991/spellsitter.nvim',
 			'romgrk/nvim-treesitter-context',
 			'windwp/nvim-ts-autotag',

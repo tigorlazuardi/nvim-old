@@ -4,6 +4,9 @@
 ### Bug Fixes
 - **nvim-ts-rainbow:** froze to commit until problem is fixed
 
+### Revert
+- updating neovim fixed the issue
+
 
 <a name="v3.1.4"></a>
 ## [v3.1.4] - 2022-02-24
