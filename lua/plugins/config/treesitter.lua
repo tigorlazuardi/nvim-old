@@ -51,6 +51,9 @@ local function run()
 			enable = true,
 			extended_mode = true,
 		},
+		endwise = {
+			enable = true,
+		},
 	})
 
 	require('spellsitter').setup({
@@ -89,11 +92,6 @@ local function run()
 		},
 	})
 
-	require('nvim-treesitter.configs').setup({
-		endwise = {
-			enable = true,
-		},
-	})
 	-- require('hlargs').setup()
 	vim.o.foldlevelstart = 1
 	vim.o.foldmethod = 'expr'
@@ -106,7 +104,7 @@ return function(use)
 		run = ':TSUpdate',
 		requires = {
 			'nvim-treesitter/nvim-treesitter-textobjects',
-			'p00f/nvim-ts-rainbow',
+			{ 'p00f/nvim-ts-rainbow', commit = '7e1af3e61b8f529031b54369fd54936c2a288e1b' },
 			'lewis6991/spellsitter.nvim',
 			'romgrk/nvim-treesitter-context',
 			'windwp/nvim-ts-autotag',
