@@ -8,6 +8,7 @@
 - **golang:** call feedkeys moved to on_exit
 - **golang:** uses custom terminal to run go test function
 - **nvim-cmp:** added ripgrep source
+- **nvim-tree:** removed frozen commit
 - **yabs:** added yabs nvim
 
 ### Revert

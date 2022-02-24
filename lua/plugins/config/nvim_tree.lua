@@ -106,7 +106,7 @@ return function(use)
 	use({
 		'kyazdani42/nvim-tree.lua',
 		requires = 'kyazdani42/nvim-web-devicons',
-		commit = '3f4ed9b6c2598ab8304186486a0',
+		-- commit = '3f4ed9b6c2598ab8304186486a0',
 		setup = setup,
 		config = run,
 		wants = { 'which-key.nvim' },
