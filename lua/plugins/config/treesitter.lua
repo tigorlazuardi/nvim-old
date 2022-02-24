@@ -2,7 +2,7 @@ local function run()
 	require('nvim-treesitter.configs').setup({
 		context_commentstring = { enable = true },
 		highlight = { enable = true },
-		indent = { enable = false, disable = { 'yaml', 'dart' } },
+		-- indent = { enable = false, disable = { 'yaml', 'dart' } },
 		autopairs = { enable = true },
 		textobjects = {
 			select = {
@@ -16,11 +16,6 @@ local function run()
 					['ac'] = '@class.outer',
 					['ic'] = '@class.inner',
 				},
-			},
-			swap = {
-				enable = false,
-				swap_next = { ['<leader>a'] = '@parameter.inner' },
-				swap_previous = { ['<leader>A'] = '@parameter.inner' },
 			},
 			move = {
 				enable = true,
@@ -41,24 +36,6 @@ local function run()
 					['('] = '@function.outer',
 					['[m'] = '@class.outer',
 				},
-			},
-		},
-		playground = {
-			enable = true,
-			disable = {},
-			updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-			persist_queries = false, -- Whether the query persists across vim sessions
-			keybindings = {
-				toggle_query_editor = 'o',
-				toggle_hl_groups = 'i',
-				toggle_injected_languages = 't',
-				toggle_anonymous_nodes = 'a',
-				toggle_language_display = 'I',
-				focus_language = 'f',
-				unfocus_language = 'F',
-				update = 'R',
-				goto_node = '<cr>',
-				show_help = '?',
 			},
 		},
 		incremental_selection = {
@@ -129,14 +106,12 @@ return function(use)
 		run = ':TSUpdate',
 		requires = {
 			'nvim-treesitter/nvim-treesitter-textobjects',
-			'nvim-treesitter/playground',
 			'p00f/nvim-ts-rainbow',
 			'lewis6991/spellsitter.nvim',
 			'romgrk/nvim-treesitter-context',
 			'windwp/nvim-ts-autotag',
 			'danymat/neogen',
 			'RRethy/nvim-treesitter-endwise',
-			-- 'm-demare/hlargs.nvim',
 		},
 		config = run,
 	})
