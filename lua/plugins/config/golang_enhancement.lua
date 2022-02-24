@@ -23,6 +23,7 @@ return function(use)
 				gofmt = 'gofumpt',
 				test_runner = 'richgo',
 				run_in_floaterm = true,
+				textobjects = false,
 			})
 		end,
 		ft = { 'go' },
