@@ -1,6 +1,22 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Features
+- **golang:** change mappings for nvim goc
+
+
+<a name="v3.1.4"></a>
+## [v3.1.4] - 2022-02-24
+### Bug Fixes
+- **golang:** textobjects now false to ignore shitty error on start
+- **golang:** ray-x/go.nvim now always runs and never depends on if gopls is installed first
+
+### Documentation
+- added reason to ignore textobject option from go.nvim
+
+### Revert
+- removed treesitter playground since it's mostly unused
+
 
 <a name="v3.1.3"></a>
 ## [v3.1.3] - 2022-02-24
@@ -660,7 +676,8 @@
 - initial commit
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v3.1.3...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v3.1.4...HEAD
+[v3.1.4]: https://github.com/tigorlazuardi/nvim/compare/v3.1.3...v3.1.4
 [v3.1.3]: https://github.com/tigorlazuardi/nvim/compare/v3.1.2...v3.1.3
 [v3.1.2]: https://github.com/tigorlazuardi/nvim/compare/v3.1.1...v3.1.2
 [v3.1.1]: https://github.com/tigorlazuardi/nvim/compare/v3.1.0...v3.1.1

@@ -36,14 +36,21 @@ local opts = {
 					},
 					c = {
 						function()
-							for _, win in ipairs(vim.api.nvim_list_wins()) do
-								local config = vim.api.nvim_win_get_config(win)
-								if config.relative ~= '' then
-									vim.api.nvim_win_close(win, false)
-								end
-							end
+							require('nvim-goc').ClearCoverage()
 						end,
-						'Close Test Window',
+						'Clear Coverage',
+					},
+					r = {
+						function()
+							require('nvim-goc').Coverage()
+						end,
+						'Coverage',
+					},
+					R = {
+						function()
+							require('nvim-goc').CoverageFunc()
+						end,
+						'Coverage Func',
 					},
 					a = { '<cmd>GoAddTest<cr>', 'Generate test for function' },
 					A = { '<cmd>GoAddAllTest<cr>', 'Generate test for functions in file' },

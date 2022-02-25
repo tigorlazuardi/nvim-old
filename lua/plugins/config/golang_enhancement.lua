@@ -31,30 +31,6 @@ return function(use)
 		'rafaelsq/nvim-goc.lua',
 		config = function()
 			require('nvim-goc').setup({})
-
-			require('which-key').register({
-				['<leader>g'] = {
-					name = '+go',
-					c = {
-						function()
-							require('nvim-goc').ClearCoverage()
-						end,
-						'Clear Coverage',
-					},
-					r = {
-						function()
-							require('nvim-goc').Coverage()
-						end,
-						'Coverage',
-					},
-					t = {
-						function()
-							require('nvim-goc').CoverageFunc()
-						end,
-						'Coverage Func',
-					},
-				},
-			})
 		end,
 		ft = { 'go' },
 	})
