@@ -1,8 +1,14 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Bug Fixes
+- **nvim-ts-rainbow:** froze to commit until problem is fixed
+
 ### Features
 - **golang:** change mappings for nvim goc
+
+### Revert
+- updating neovim fixed the issue
 
 
 <a name="v3.1.4"></a>
