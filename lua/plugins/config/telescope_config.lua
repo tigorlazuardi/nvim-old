@@ -49,6 +49,20 @@ local function run()
 
 	require('session_manager').setup({
 		autoload_mode = require('session_manager.config').AutoloadMode.CurrentDir, -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
+		autosave_ignore_filetypes = {
+			'packer',
+			'qf',
+			'Trouble',
+			'TelescopePrompt',
+			'Outline',
+			'dapui_scopes',
+			'dapui_breakpoints',
+			'dapui_stacks',
+			'dapui_watches',
+			'dapui_repl',
+			'dap_repl',
+			'notify',
+		},
 	})
 	telescope.load_extension('file_browser')
 	telescope.load_extension('projects')

@@ -16,6 +16,7 @@ local function setup()
 			'dapui_watches',
 			'dapui_repl',
 			'dap_repl',
+			'notify',
 		},
 		buftype = { 'terminal' },
 	}

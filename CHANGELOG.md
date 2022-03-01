@@ -10,6 +10,7 @@
 ### Features
 - **go:** test function now never cache
 - **golang:** change mappings for nvim goc
+- **nvim-tree:** ignore notify window
 
 ### Revert
 - updating neovim fixed the issue
