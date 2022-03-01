@@ -18,7 +18,7 @@ function M.get_cmd(...)
 	end
 
 	local tags, args2 = get_build_tags(args)
-	local cmd = { 'go', 'test', '-v' }
+	local cmd = { 'go', 'test', '-v', '-count=1' }
 	if not empty(tags) then
 		cmd = vim.list_extend(cmd, tags)
 	end

@@ -5,6 +5,7 @@
 - **nvim-ts-rainbow:** froze to commit until problem is fixed
 
 ### Features
+- **go:** test function now never cache
 - **golang:** change mappings for nvim goc
 
 ### Revert
