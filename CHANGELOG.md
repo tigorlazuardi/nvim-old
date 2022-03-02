@@ -3,6 +3,7 @@
 
 ### Bug Fixes
 - **focus:** disabled temporarily until work nice with nvim-tree
+- **golang:** test regex now include end $ sign
 - **nvim-ts-rainbow:** froze to commit until problem is fixed
 
 ### Code Refactoring

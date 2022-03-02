@@ -32,7 +32,7 @@ function M.get_cmd(...)
 	end
 
 	table.insert(cmd, '-run')
-	table.insert(cmd, [[^]] .. ns.name)
+	table.insert(cmd, [[^]] .. ns.name .. [[$]])
 
 	table.insert(cmd, fpath)
 	return cmd
