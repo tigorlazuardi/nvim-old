@@ -2,6 +2,7 @@
 ## [Unreleased]
 
 ### Bug Fixes
+- **focus:** disabled temporarily until work nice with nvim-tree
 - **nvim-ts-rainbow:** froze to commit until problem is fixed
 
 ### Code Refactoring

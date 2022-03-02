@@ -16,6 +16,7 @@ return function(use)
 					'symboltree',
 					'filetree',
 				},
+				compatible_filetrees = { 'NvimTree' },
 			})
 		end,
 	})
