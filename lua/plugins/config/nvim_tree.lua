@@ -3,23 +3,6 @@ local function setup()
 	-- vim.g.nvim_tree_follow = 1
 	vim.g.nvim_tree_git_hl = 1
 	-- vim.g.nvim_tree_ignore = { '.git', 'node_modules', '.cache' }
-	vim.g.nvim_tree_window_picker_exclude = {
-		filetype = {
-			'packer',
-			'qf',
-			'Trouble',
-			'TelescopePrompt',
-			'Outline',
-			'dapui_scopes',
-			'dapui_breakpoints',
-			'dapui_stacks',
-			'dapui_watches',
-			'dapui_repl',
-			'dap_repl',
-			'notify',
-		},
-		buftype = { 'terminal' },
-	}
 	vim.g.nvim_tree_highlight_opened_files = 3
 
 	vim.g.nvim_tree_icons = {
@@ -85,6 +68,30 @@ local function run()
 			width = 40,
 			hide_root_folder = true,
 			auto_resize = true,
+		},
+		actions = {
+			open_file = {
+				window_picker = {
+					enable = true,
+					exclude = {
+						filetype = {
+							'packer',
+							'qf',
+							'Trouble',
+							'TelescopePrompt',
+							'Outline',
+							'dapui_scopes',
+							'dapui_breakpoints',
+							'dapui_stacks',
+							'dapui_watches',
+							'dapui_repl',
+							'dap_repl',
+							'notify',
+						},
+						buftype = { 'terminal' },
+					},
+				},
+			},
 		},
 	})
 
