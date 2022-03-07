@@ -55,4 +55,23 @@ function M.run(...)
 	require('personal.external_commands.go.spawn_terminal')(cmdTable, test_name)
 end
 
+function M.debug()
+	local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+	local ns = require('go.ts.go').get_func_method_node_at_pos(row, col)
+	if empty(ns) then
+		return
+	end
+
+	local args = { '-test.run', '^' .. ns.name .. '$' }
+
+	local restore = require('personal.external_commands.go.run_debug')(
+		'Debug ' .. ns.name,
+		'test',
+		'./${relativeFileDirname}',
+		args
+	)
+
+	restore()
+end
+
 return M

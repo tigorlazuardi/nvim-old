@@ -13,13 +13,22 @@ local opts = {
 			['<leader>g'] = {
 				name = '+go',
 				f = { '<cmd>GoImport<cr>', 'Organize Imports' },
+				d = {
+					name = '+debug',
+					f = {
+						function()
+							require('personal.external_commands.go.test_current_func').debug()
+						end,
+						'Debug Current Function',
+					},
+				},
 				t = {
 					name = '+test',
 					f = {
 						function()
 							require('personal.external_commands.go.test_current_func').run()
 						end,
-						'Test Function Relative to Cursor',
+						'Test Current Function',
 					},
 					F = { '<cmd>GoTestFile<cr>', 'Test Current File' },
 					p = {
