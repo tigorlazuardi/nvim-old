@@ -30,6 +30,7 @@ local function run()
 			c = { require('personal.telescope.cd'), 'Change Directory' },
 			o = { "<cmd>lua require('telescope.builtin').oldfiles()<cr>", 'List Recent Files' },
 		},
+		M = { '<cmd>Telescope marks<cr>', 'Show Marks' },
 	})
 
 	local telescope_mappings = {

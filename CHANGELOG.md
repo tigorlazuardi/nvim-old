@@ -13,6 +13,7 @@
 - **go:** test function now never cache
 - **golang:** added debug current function
 - **golang:** change mappings for nvim goc
+- **marks:** update various marks file
 - **nvim-tree:** update config
 - **nvim-tree:** ignore notify window
 
