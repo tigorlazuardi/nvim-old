@@ -1,14 +1,14 @@
-local c = vim.api.nvim_command
+vim.cmd('set nocompatible') -- disable compatibility with vi
+vim.cmd('set mouse=va') -- mouse to paste middleclick ('v'), and select via click ('a')
+vim.cmd('set cursorline') -- highlight cursors line
+vim.cmd('set nu') -- line numbers
+vim.cmd('set completeopt=menuone,noinsert,noselect')
+vim.cmd('set shortmess+=c')
+vim.cmd([[
+	autocmd filetype lua,go,javascript,typescript setlocal colorcolumn=120
+]])
 
-c('set nocompatible') -- disable compatibility with vi
-c('set mouse=va') -- mouse to paste middleclick ('v'), and select via click ('a')
-c('set cursorline') -- highlight cursors line
-
-c('set nu') -- line numbers
-c('set completeopt=menuone,noinsert,noselect')
-c('set shortmess+=c')
-
-c('set title')
+vim.cmd('set title')
 vim.cmd([[
 	augroup titlestringer
 		au!
@@ -29,13 +29,15 @@ vim.cmd('set nobackup nowritebackup noswapfile noundofile')
 -- vim.cmd([[set list listchars=tab:\›\ ,trail:-,extends:>,precedes:<,eol:¬,space:·]])
 
 -- Line break by words, not by characters
-c('set wrap linebreak')
+vim.cmd('set wrap linebreak')
 
-c([[
-	" trigger `autoread` when files changes on disk
-      set autoread
-      autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
-    " notification after file change
-      autocmd FileChangedShellPost *
-        \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+-- trigger autoread when file changes on disk
+vim.cmd([[set autoread]])
+-- trigger autoread when files changes on disk
+vim.cmd([[
+	autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+]])
+-- notification after file change
+vim.cmd([[
+	autocmd FileChangedShellPost * lua vim.notify("File Reloaded", "warn", {title = "Buffer Reload", timeout = 500})
 ]])

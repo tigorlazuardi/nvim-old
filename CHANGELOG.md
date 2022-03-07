@@ -8,6 +8,7 @@
 
 ### Code Refactoring
 - **debugger-go:** dryer code
+- **init:** refactor settings/init.lua
 
 ### Features
 - **go:** test function now never cache
