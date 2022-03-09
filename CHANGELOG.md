@@ -11,6 +11,7 @@
 - **init:** refactor settings/init.lua
 
 ### Features
+- **focus:** reenabled focus config
 - **go:** test function now never cache
 - **golang:** added debug current function
 - **golang:** change mappings for nvim goc
