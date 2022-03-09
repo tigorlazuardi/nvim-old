@@ -6,5 +6,10 @@ local remap = vim.api.nvim_set_keymap
 if not vim.g.is_windows then
 	remap('n', 'gx', '<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v:true})<CR>', opts)
 else
-	remap('n', 'gx', '<Cmd>lua print("Error: gx is not supported on this OS!")<CR>', opts)
+	remap(
+		'n',
+		'gx',
+		'<Cmd>lua vim.notify("gx shortcut is not supported", "error", {title = "Not Supported on this OS!"})<CR>',
+		opts
+	)
 end

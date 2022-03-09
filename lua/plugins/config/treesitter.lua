@@ -48,7 +48,7 @@ local function run()
 			},
 		},
 		rainbow = {
-			enable = true,
+			enable = not vim.g.is_windows,
 			extended_mode = true,
 		},
 		endwise = {
