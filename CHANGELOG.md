@@ -13,6 +13,7 @@
 ### Features
 - **focus:** reenabled focus config
 - **go:** test function now never cache
+- **golang:** set golines limit to 200
 - **golang:** disabled golines and golangci-lint on nullls
 - **golang:** change mappings for nvim goc
 - **golang:** added debug current function
