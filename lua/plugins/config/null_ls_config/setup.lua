@@ -34,9 +34,9 @@ if exist('shfmt') then
 end
 
 -- golang
-if exist('golangci-lint') then
-	table.insert(sources, null_ls.builtins.diagnostics.golangci_lint)
-end
+-- if exist('golangci-lint') then
+-- 	table.insert(sources, null_ls.builtins.diagnostics.golangci_lint)
+-- end
 
 -- docker
 if exist('hadolint') then
