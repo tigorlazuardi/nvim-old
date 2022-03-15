@@ -14,13 +14,14 @@
 - hide changelog into spoiler
 
 > Features
+- **dap-go:** added feature to restore original dap config
 - **filetype:** added certain filetype auto detect
 - **focus:** reenabled focus config
 - **go:** test function now never cache
-- **golang:** change mappings for nvim goc
+- **golang:** added debug current function
 - **golang:** set golines limit to 200
 - **golang:** disabled golines and golangci-lint on nullls
-- **golang:** added debug current function
+- **golang:** change mappings for nvim goc
 - **markdown-pp:** added markdown pp
 - **marks:** update various marks file
 - **nvim:** max_line_lne set to 150

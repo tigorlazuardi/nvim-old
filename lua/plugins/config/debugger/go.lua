@@ -66,3 +66,10 @@ dap.configurations.go = {
 		dlvToolPath = vim.fn.exepath('dlv'),
 	},
 }
+
+_G.__dap_config = {}
+_G.__dap_config.go = dap.configurations.go
+
+vim.cmd([[
+	command! DapRestoreGo lua require('dap').configurations.go = _G.__dap_config.go
+]])
