@@ -24,4 +24,8 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 
 ## Changelog
 
+<details>
+<summary>Changelog</summary>
+
 !INCLUDE "CHANGELOG.md" 
+</details>
