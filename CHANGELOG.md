@@ -1,6 +1,10 @@
 <a name="unreleased"></a>
 ### [Unreleased]
 
+
+<a name="v3.1.5"></a>
+### [v3.1.5] - 2022-03-18
+
 > Bug Fixes
 - **focus:** disabled temporarily until work nice with nvim-tree
 - **golang:** test regex now include end $ sign
@@ -643,7 +647,8 @@
 - initial commit
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v3.1.4...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v3.1.5...HEAD
+[v3.1.5]: https://github.com/tigorlazuardi/nvim/compare/v3.1.4...v3.1.5
 [v3.1.4]: https://github.com/tigorlazuardi/nvim/compare/v3.1.2...v3.1.4
 [v3.1.2]: https://github.com/tigorlazuardi/nvim/compare/v3.1.1...v3.1.2
 [v3.1.1]: https://github.com/tigorlazuardi/nvim/compare/v3.1.0...v3.1.1
