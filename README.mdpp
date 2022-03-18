@@ -6,6 +6,9 @@ Neovim Configuration
 
 Always Nightly Neovim. (Latest edit from this readme.md requires neovim 0.7+)
 
+1. Rust (Cargo).
+2. Pandoc (Haskell Binary) (Get Binary only version if possible).
+
 ## Installation
 
 Clone this repo to `~/.config/nvim`.
