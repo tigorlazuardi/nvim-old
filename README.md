@@ -30,6 +30,9 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 <a name="unreleased"></a>
 ### [Unreleased]
 
+> Features
+- **markdown-composer:** added markdown composer
+
 > Revert
 - global status
 

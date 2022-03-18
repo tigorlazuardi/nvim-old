@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ### [Unreleased]
 
+> Features
+- **markdown-composer:** added markdown composer
+
 > Revert
 - global status
 
