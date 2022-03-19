@@ -4,6 +4,9 @@
 > Bug Fixes
 - **snippet:** fix insert regex golang
 
+> Configuration
+- update commitlint
+
 > Features
 - **snippet:** added rust snippet creating fn
 - **snippet:** added snippet for generating markdown table

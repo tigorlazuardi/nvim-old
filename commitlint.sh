@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 
 types="build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|conf|breaking"
 
