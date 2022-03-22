@@ -37,6 +37,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - update readme.md for dependencies
 
 > Features
+- **markdown-composer:** autostart disbled
 - **markdown-composer:** added markdown composer
 
 > Revert
