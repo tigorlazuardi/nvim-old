@@ -49,6 +49,12 @@ local function cmp_config()
 	local wk = require('which-key')
 
 	local luasnip = require('luasnip')
+	luasnip.config.set_config({
+		history = true,
+		update_events = 'TextChanged,TextChangedI',
+		delete_check_events = 'TextChanged',
+		enable_autosnippets = true,
+	})
 	local mappings = {
 		['<c-j>'] = {
 			function()
