@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ### [Unreleased]
 
+> Bug Fixes
+- **luasnip:** update configuration
+
 > Documentation
 - update readme.md for dependencies
 

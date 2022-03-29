@@ -33,6 +33,9 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 <a name="unreleased"></a>
 ### [Unreleased]
 
+> Bug Fixes
+- **luasnip:** update configuration
+
 > Documentation
 - update readme.md for dependencies
 
