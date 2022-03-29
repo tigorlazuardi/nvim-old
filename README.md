@@ -42,10 +42,11 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 > Features
 - **fold:** start with fold now
 - **luasnip:** enabled autosnippets
-- **markdown-composer:** autostart disbled
 - **markdown-composer:** added markdown composer
+- **markdown-composer:** autostart disbled
 - **snippet:** added msi regex
 - **snippet:** update golang snippet apm:span to auto
+- **treesitter:** enabled playground
 
 > Revert
 - move back to nvim-autopairs

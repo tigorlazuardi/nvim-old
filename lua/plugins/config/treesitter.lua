@@ -54,6 +54,9 @@ local function run()
 		endwise = {
 			enable = true,
 		},
+		playground = {
+			enable = true,
+		},
 	})
 
 	require('spellsitter').setup({
@@ -110,6 +113,7 @@ return function(use)
 			'windwp/nvim-ts-autotag',
 			'danymat/neogen',
 			'RRethy/nvim-treesitter-endwise',
+			'nvim-treesitter/playground',
 		},
 		config = run,
 	})
