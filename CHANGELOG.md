@@ -12,6 +12,7 @@
 - **luasnip:** enabled autosnippets
 - **markdown-composer:** autostart disbled
 - **markdown-composer:** added markdown composer
+- **snippet:** added msi regex
 - **snippet:** update golang snippet apm:span to auto
 
 > Revert

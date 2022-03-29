@@ -38,17 +38,35 @@ local map_string_interface_insert = s(
 	}
 )
 
-local map_string_interface_insert_regex = s(
-	{ trig = 'msi(%d)', name = 'map[string]interface{}{}', dscr = 'map string interface with insert', regTrig = true },
-	{
-		t({ 'map[string]interface{}{', '"' }),
-		i(1, 'key'),
-		t({ '":' }),
-		i(2, 'value'),
-		t({ ',', '}' }),
-		i(0),
-	}
-)
+local map_string_interface_insert_regex = s({
+	trig = 'msi(%d)',
+	name = 'dynamic map[string]interface{} generation',
+	dscr = 'map string interface with insert regex',
+	regTrig = true,
+}, {
+	d(1, function(_args, snip)
+		local count = tonumber(snip.captures[1]) or 0
+		if count == 0 then
+			return sn(nil, { t('map[string]interface{}{}') })
+		end
+		local nodes = { t({ 'map[string]interface{}{', '' }) }
+
+		local nodeIdx = 0
+		for idx = 1, count do
+			nodeIdx = nodeIdx + 1
+			table.insert(nodes, t('\t"'))
+			table.insert(nodes, i(nodeIdx, string.format('key%d', idx)))
+			table.insert(nodes, t('": '))
+			nodeIdx = nodeIdx + 1
+			table.insert(nodes, i(nodeIdx, string.format('value%d', idx)))
+			table.insert(nodes, t({ ',', '' }))
+		end
+
+		table.insert(nodes, t('}'))
+		return sn(nil, nodes)
+	end),
+	i(0),
+})
 
 local map_key_value = s({ trig = 'map', name = 'map[<key>]<value>', dscr = 'map short hand' }, {
 	t({ 'map[' }),
@@ -59,4 +77,4 @@ local map_key_value = s({ trig = 'map', name = 'map[<key>]<value>', dscr = 'map 
 })
 
 ls.add_snippets('go', { apm_span, map_string_interface, map_string_interface_insert, map_key_value })
-ls.add_snippets('go', { apm_span }, { type = 'autosnippets' })
+ls.add_snippets('go', { apm_span, map_string_interface_insert_regex }, { type = 'autosnippets' })
