@@ -93,7 +93,7 @@ local function run()
 	})
 
 	-- require('hlargs').setup()
-	vim.o.foldlevelstart = 1
+	-- vim.o.foldlevelstart = 1
 	vim.o.foldmethod = 'expr'
 	vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 end

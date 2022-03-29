@@ -8,6 +8,7 @@
 - update readme.md for dependencies
 
 > Features
+- **fold:** start with fold now
 - **luasnip:** enabled autosnippets
 - **markdown-composer:** autostart disbled
 - **markdown-composer:** added markdown composer
