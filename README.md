@@ -44,6 +44,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **luasnip:** enabled autosnippets
 - **markdown-composer:** autostart disbled
 - **markdown-composer:** added markdown composer
+- **snippet:** update golang snippet apm:span to auto
 
 > Revert
 - move back to nvim-autopairs

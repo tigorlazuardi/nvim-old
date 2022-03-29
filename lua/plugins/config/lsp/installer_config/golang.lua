@@ -80,9 +80,9 @@ local opts = {
 			usePlaceholders = false,
 			completeUnimported = true,
 			staticcheck = false, -- in favor of golangci lint
-			matcher = 'fuzzy',
+			matcher = 'Fuzzy',
 			diagnosticsDelay = '500ms',
-			symbolMatcher = 'fuzzy',
+			symbolMatcher = 'FastFuzzy',
 			gofumpt = false, -- depending on your projects, you may want this on.
 		},
 	},

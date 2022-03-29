@@ -28,14 +28,15 @@ local function cmp_config()
 			}),
 		},
 		sources = {
-			{ name = 'nvim_lsp' },
+			{ name = 'luasnip' },
 			{ name = 'path' },
+			{ name = 'nvim_lsp' },
 			{ name = 'buffer' },
+			{ name = 'rg' },
 			{ name = 'spell' },
 			{ name = 'emoji' },
-			{ name = 'luasnip' },
-			{ name = 'rg' },
 		},
+		preselect = cmp.PreselectMode.Item,
 	})
 
 	local npairs = require('nvim-autopairs')

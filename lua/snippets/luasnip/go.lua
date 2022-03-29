@@ -38,6 +38,18 @@ local map_string_interface_insert = s(
 	}
 )
 
+local map_string_interface_insert_regex = s(
+	{ trig = 'msi(%d)', name = 'map[string]interface{}{}', dscr = 'map string interface with insert', regTrig = true },
+	{
+		t({ 'map[string]interface{}{', '"' }),
+		i(1, 'key'),
+		t({ '":' }),
+		i(2, 'value'),
+		t({ ',', '}' }),
+		i(0),
+	}
+)
+
 local map_key_value = s({ trig = 'map', name = 'map[<key>]<value>', dscr = 'map short hand' }, {
 	t({ 'map[' }),
 	i(1, 'key'),
@@ -46,9 +58,5 @@ local map_key_value = s({ trig = 'map', name = 'map[<key>]<value>', dscr = 'map 
 	i(0),
 })
 
-return {
-	apm_span,
-	map_string_interface,
-	map_string_interface_insert,
-	map_key_value,
-}
+ls.add_snippets('go', { apm_span, map_string_interface, map_string_interface_insert, map_key_value })
+ls.add_snippets('go', { apm_span }, { type = 'autosnippets' })
