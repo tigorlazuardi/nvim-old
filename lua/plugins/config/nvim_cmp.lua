@@ -49,8 +49,8 @@ local function cmp_config()
 
 	local wk = require('which-key')
 
-	local luasnip = require('luasnip')
-	luasnip.config.set_config({
+	local ls = require('luasnip')
+	ls.config.set_config({
 		history = true,
 		update_events = 'TextChanged,TextChangedI',
 		delete_check_events = 'TextChanged',
@@ -61,13 +61,13 @@ local function cmp_config()
 			function()
 				local ok, neogen = pcall(require, 'neogen')
 				if not ok then
-					luasnip.expand_or_jump()
+					ls.expand_or_jump()
 				end
 				if neogen.jumpable() then
 					neogen.jump_next()
 					return
 				end
-				luasnip.expand_or_jump()
+				ls.expand_or_jump()
 			end,
 			'(Snippet) Expand Snippet or Jump to Next Placeholder',
 		},
@@ -75,15 +75,31 @@ local function cmp_config()
 			function()
 				local ok, neogen = pcall(require, 'neogen')
 				if not ok then
-					luasnip.jump(-1)
+					ls.jump(-1)
 				end
 				if neogen.jumpable(-1) then
 					neogen.jump_prev()
 					return
 				end
-				luasnip.jump(-1)
+				ls.jump(-1)
 			end,
 			'(Snippet) Jump to Previous Placeholder',
+		},
+		['<c-l>'] = {
+			function()
+				if ls.choice_active() then
+					ls.change_choice(1)
+				end
+			end,
+			'(Snippet) Next Choice',
+		},
+		['<c-h>'] = {
+			function()
+				if ls.choice_active() then
+					ls.change_choice(-1)
+				end
+			end,
+			'(Snippet) Prev Choice',
 		},
 	}
 	wk.register(mappings, { mode = 'i' })

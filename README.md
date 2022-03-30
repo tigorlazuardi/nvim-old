@@ -45,6 +45,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 
 > Features
 - **fold:** start with fold now
+- **luasnip:** added mapping for choices
 - **luasnip:** enabled autosnippets
 - **markdown-composer:** autostart disbled
 - **markdown-composer:** added markdown composer
