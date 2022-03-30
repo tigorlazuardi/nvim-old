@@ -50,6 +50,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **markdown-composer:** added markdown composer
 - **snippet:** added msi regex
 - **snippet:** update golang snippet apm:span to auto
+- **snippet:** added lua snippets
 - **snippet:** added map_key_type auto
 - **snippet:** huge apm:span golang snippet improvement
 - **treesitter:** enabled playground
