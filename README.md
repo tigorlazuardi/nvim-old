@@ -35,6 +35,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 
 > Bug Fixes
 - **luasnip:** update configuration
+- **snippter:** apm:span func query capture fix
 
 > Documentation
 - update readme.md for dependencies

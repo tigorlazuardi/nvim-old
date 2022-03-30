@@ -3,6 +3,7 @@
 
 > Bug Fixes
 - **luasnip:** update configuration
+- **snippter:** apm:span func query capture fix
 
 > Documentation
 - update readme.md for dependencies

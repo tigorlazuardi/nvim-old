@@ -192,7 +192,7 @@ function get_func_or_method_declaration_on_cursor()
 					struct_name = '',
 				},
 				func = {
-					name = q.get_node_text(captures[3], bufnr),
+					name = q.get_node_text(captures[1], bufnr),
 				},
 			}
 		end
