@@ -35,6 +35,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 
 > Bug Fixes
 - **luasnip:** update configuration
+- **snippet:** fixed lua snipped for pack module
 - **snippter:** apm:span func query capture fix
 
 > Code Refactoring
