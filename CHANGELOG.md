@@ -5,6 +5,9 @@
 - **luasnip:** update configuration
 - **snippter:** apm:span func query capture fix
 
+> Code Refactoring
+- **snippet:** moved actual snippet to below utility functions
+
 > Documentation
 - update readme.md for dependencies
 
