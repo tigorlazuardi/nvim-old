@@ -48,6 +48,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **luasnip:** enabled autosnippets
 - **markdown-composer:** autostart disbled
 - **markdown-composer:** added markdown composer
+- **notify:** registered to telescope
 - **snippet:** added msi regex
 - **snippet:** update golang snippet apm:span to auto
 - **snippet:** added lua snippets
