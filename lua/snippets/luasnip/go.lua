@@ -1,41 +1,29 @@
 local ls = require('luasnip')
 local s = ls.snippet
 local sn = ls.snippet_node
--- local isn = ls.indent_snippet_node
 local t = ls.text_node
 local i = ls.insert_node
--- local f = ls.function_node
--- local c = ls.choice_node
 local d = ls.dynamic_node
--- local events = require('luasnip.util.events')
+local fmt = require('luasnip.extras.fmt').fmt
 local fmta = require('luasnip.extras.fmt').fmta
+local util = require('snippets.luasnip.go_utils')
+local rep = require('luasnip.extras').rep
 
 local ts_utils = require('nvim-treesitter.ts_utils')
 local ts_locals = require('nvim-treesitter.locals')
 
-function is_in_function() --{{{
-	local current_node = ts_utils.get_node_at_cursor()
-	if not current_node then
-		return false
-	end
-	local expr = current_node
-
-	while expr do
-		if expr:type() == 'function_declaration' or expr:type() == 'method_declaration' then
-			return true
-		end
-		expr = expr:parent()
-	end
-	return false
-end --}}}
-
 function not_in_function()
-	return not is_in_function()
+	return not util.is_in_function()
 end
 
 local not_in_func = {
 	show_condition = not_in_function,
 	condition = not_in_function,
+}
+
+local in_func = {
+	show_condition = util.is_in_function,
+	condition = util.is_in_function,
 }
 
 local apm_span = s({ trig = 'apm:span', name = 'apm span', dscr = 'creates apm span from context' }, {
@@ -145,5 +133,66 @@ local main = s(
 	not_in_func
 )
 
-ls.add_snippets('go', { apm_span, map_string_interface, map_string_interface_insert, map_key_type, main })
-ls.add_snippets('go', { map_string_interface_insert_regex, apm_span, map_key_type_auto }, { type = 'autosnippets' })
+local if_err = ls.s(
+	{ trig = 'ife', name = 'If error', dscr = 'If error, return wrapped' },
+	fmt('if {} != nil {{\n\treturn {}\n}}\n{}', {
+		ls.i(1, 'err'),
+		ls.d(2, util.make_return_nodes, { 1 }),
+		ls.i(0),
+	}),
+	in_func
+)
+
+local if_call = ls.s(
+	{ trig = 'ifcall', name = 'IF CALL', dscr = 'Call a function and check the error' },
+	fmta(
+		[[
+		<>, <> := <>(<>)
+		if <> != nil {
+			return <>
+		}
+		<>
+		]],
+		{
+			ls.i(1, { 'val' }),
+			ls.i(2, { 'err' }),
+			ls.i(3, { 'Func' }),
+			ls.i(4),
+			rep(2),
+			ls.d(5, util.make_return_nodes, { 2 }),
+			ls.i(0),
+		}
+	),
+	in_func
+)
+
+local make = ls.s(
+	{ trig = 'make', name = 'Make', dscr = 'Allocate map or slice' },
+	fmt('{} {}= make({})\n{}', {
+		ls.i(1, 'name'),
+		ls.i(2),
+		ls.c(3, {
+			fmt('[]{}, {}', { ls.i(1, 'type'), ls.i(2, 'len') }),
+			fmt('[]{}, 0, {}', { ls.i(1, 'type'), ls.i(2, 'len') }),
+			fmt('map[{}]{}, {}', { ls.i(1, 'keys'), ls.i(2, 'values'), ls.i(3, 'len') }),
+		}),
+		ls.i(0),
+	}),
+	in_func
+)
+
+ls.add_snippets('go', {
+	apm_span,
+	map_string_interface,
+	map_string_interface_insert,
+	map_key_type,
+	main,
+	if_err,
+	make,
+	if_call,
+})
+ls.add_snippets('go', {
+	map_string_interface_insert_regex,
+	apm_span,
+	map_key_type_auto,
+}, { type = 'autosnippets' })

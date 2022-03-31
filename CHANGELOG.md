@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ### [Unreleased]
 
+> Features
+- **snippet:** more snippet for go
+
 
 <a name="v3.1.6"></a>
 ### [v3.1.6] - 2022-03-31
