@@ -132,19 +132,11 @@ local map_string_interface_insert_regex = s({
 })
 
 local map_key_type = s({ trig = 'map', name = 'map[<key>]<value>', dscr = 'map short hand' }, {
-	t({ 'map[' }),
-	i(1, 'key'),
-	t({ ']' }),
-	i(2, 'value'),
-	i(0),
+	sn(1, fmta('map[<key>]<type>', { key = i(1, 'key'), type = i(2, 'type') })),
 })
 
 local map_key_type_auto = s({ trig = 'map[', name = 'auto-map', dscr = 'quick map' }, {
-	t('map['),
-	i(1, 'key'),
-	t(']'),
-	i(2, 'type'),
-	i(0),
+	sn(1, fmta('map[<key>]<type>', { key = i(1, 'key'), type = i(2, 'type') })),
 })
 
 local main = s(

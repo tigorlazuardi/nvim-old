@@ -39,6 +39,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **snippter:** apm:span func query capture fix
 
 > Code Refactoring
+- **snippet:** more readable snippet
 - **snippet:** better treesitter handling
 - **snippet:** moved actual snippet to below utility functions
 
