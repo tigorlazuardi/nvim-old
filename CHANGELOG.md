@@ -2,6 +2,7 @@
 ### [Unreleased]
 
 > Features
+- **snippet:** added prequire snippet lua
 - **snippet:** more snippet for go
 
 

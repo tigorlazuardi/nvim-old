@@ -1,5 +1,6 @@
 local ls = require('luasnip')
 local fmta = require('luasnip.extras.fmt').fmta
+local rep = require('luasnip.extras').rep
 
 local s = ls.snippet
 local isn = ls.indent_snippet_node
@@ -32,9 +33,28 @@ local packmod = s(
 	)
 )
 
+local prequire = s(
+	{ trig = 'preq', name = 'Protected Require', dscr = 'Protected call' },
+	fmta(
+		[[
+	local <ok1>, <mod> = pcall(require, "<target>")
+	if not <ok2> then
+		<ret>
+	end
+	<e>
+	]],
+		{
+			ok1 = i(1, 'ok'),
+			mod = i(2, 'mod'),
+			ok2 = rep(1),
+			target = i(3, 'target'),
+			ret = i(4, 'return'),
+			e = i(0),
+		}
+	)
+)
+
 ls.add_snippets('lua', {
 	packmod,
-	s('isn2', {
-		isn(1, ls.t({ 'This is', 'A multiline', 'comment' }), '$PARENT_INDENT\t'),
-	}),
+	prequire,
 })
