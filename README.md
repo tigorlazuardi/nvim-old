@@ -50,14 +50,15 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **fold:** start with fold now
 - **luasnip:** added mapping for choices
 - **luasnip:** enabled autosnippets
-- **markdown-composer:** autostart disbled
 - **markdown-composer:** added markdown composer
+- **markdown-composer:** autostart disbled
 - **notify:** registered to telescope
+- **pounce:** pounce now only run in visual mode, not both visual and select
 - **snippet:** added msi regex
 - **snippet:** update golang snippet apm:span to auto
-- **snippet:** added lua snippets
-- **snippet:** added map_key_type auto
 - **snippet:** huge apm:span golang snippet improvement
+- **snippet:** added map_key_type auto
+- **snippet:** added lua snippets
 - **treesitter:** enabled playground
 
 > Revert

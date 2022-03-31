@@ -10,7 +10,7 @@ return function(use)
 				}
 
 				wk.register(mappings)
-				wk.register(mappings, { mode = 'v' })
+				wk.register(mappings, { mode = 'x' })
 				wk.register({ gs = { '<cmd>Pounce<cr>', 'Pounce' } }, { mode = 'o' })
 			end, 300)
 		end,
