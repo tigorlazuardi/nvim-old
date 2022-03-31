@@ -1,6 +1,10 @@
 <a name="unreleased"></a>
 ### [Unreleased]
 
+
+<a name="v3.1.6"></a>
+### [v3.1.6] - 2022-03-31
+
 > Bug Fixes
 - **luasnip:** update configuration
 - **snippet:** fixed lua snipped for pack module
@@ -778,7 +782,8 @@
 - initial commit
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v3.1.5...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v3.1.6...HEAD
+[v3.1.6]: https://github.com/tigorlazuardi/nvim/compare/v3.1.5...v3.1.6
 [v3.1.5]: https://github.com/tigorlazuardi/nvim/compare/v3.1.4...v3.1.5
 [v3.1.4]: https://github.com/tigorlazuardi/nvim/compare/v3.1.3...v3.1.4
 [v3.1.3]: https://github.com/tigorlazuardi/nvim/compare/v3.1.2...v3.1.3
