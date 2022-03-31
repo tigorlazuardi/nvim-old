@@ -1,145 +1,82 @@
 local ls = require('luasnip')
 local s = ls.snippet
 local sn = ls.snippet_node
-local isn = ls.indent_snippet_node
+-- local isn = ls.indent_snippet_node
 local t = ls.text_node
 local i = ls.insert_node
-local f = ls.function_node
-local c = ls.choice_node
+-- local f = ls.function_node
+-- local c = ls.choice_node
 local d = ls.dynamic_node
-local events = require('luasnip.util.events')
+-- local events = require('luasnip.util.events')
+local fmta = require('luasnip.extras.fmt').fmta
 
------ Treesitter snippets helper
+local ts_utils = require('nvim-treesitter.ts_utils')
+local ts_locals = require('nvim-treesitter.locals')
 
-local q = require('vim.treesitter.query')
-
-local ts_query_method = [[
-((method_declaration
-	receiver: (parameter_list
-		(parameter_declaration
-			type: (type_identifier) @receiver.type))
-	name: (field_identifier) @method.name
-) @method.body (#offset! @method.body)) 
-]]
-
-local ts_query_method_pointer = [[
-((method_declaration
-	receiver: (parameter_list
-		(parameter_declaration
-			type: (pointer_type (type_identifier) @method.type) @method.type.pointer))
- 	name: (field_identifier) @method.name
-) @method.body (#offset! @method.body))
-]]
-
-local ts_query_function = [[
-((function_declaration
-	name: (identifier) @func.name
-) @full.func (#offset! @full.func))
-]]
-
-local function pos_inside_metadata(row, metadata)
-	if metadata == nil then
+function is_in_function() --{{{
+	local current_node = ts_utils.get_node_at_cursor()
+	if not current_node then
 		return false
 	end
-	local m = metadata.content[1]
-	if m == nil then
-		return false
+	local expr = current_node
+
+	while expr do
+		if expr:type() == 'function_declaration' or expr:type() == 'method_declaration' then
+			return true
+		end
+		expr = expr:parent()
 	end
-	local rowStart, _, rowEnd, _ = unpack(m)
-	rowStart = tonumber(rowStart)
-	rowEnd = tonumber(rowEnd)
-	return row >= rowStart and row <= rowEnd
+	return false
+end --}}}
+
+function not_in_function()
+	return not is_in_function()
 end
 
-function get_func_or_method_declaration_on_cursor()
-	if vim.bo.filetype ~= 'go' then
-		return
-	end
-	local bufnr = vim.api.nvim_get_current_buf()
-	local lang_tree = vim.treesitter.get_parser(bufnr, 'go')
-	local syntax_tree = lang_tree:parse()
-	local r = syntax_tree[1]
-	local root = r:root()
-	local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-	row, col = row - 1, col
-
-	-- search for method which has receiver of non pointer
-	local cursor = vim.treesitter.parse_query('go', ts_query_method)
-	for _, captures, metadata in cursor:iter_matches(root, bufnr) do
-		if pos_inside_metadata(row, metadata) then
-			return {
-				receiver = {
-					type = q.get_node_text(captures[1], bufnr),
-					struct_name = q.get_node_text(captures[1], bufnr),
-				},
-				func = {
-					name = q.get_node_text(captures[2], bufnr),
-				},
-			}
-		end
-	end
-
-	-- search for method which has receiver of type pointer
-	cursor = vim.treesitter.parse_query('go', ts_query_method_pointer)
-
-	for _, captures, metadata in cursor:iter_matches(root, bufnr) do
-		if pos_inside_metadata(row, metadata) then
-			return {
-				receiver = {
-					type = q.get_node_text(captures[2], bufnr),
-					struct_name = q.get_node_text(captures[1], bufnr),
-				},
-				func = {
-					name = q.get_node_text(captures[3], bufnr),
-				},
-			}
-		end
-	end
-
-	-- search for functions
-	cursor = vim.treesitter.parse_query('go', ts_query_function)
-
-	for _, captures, metadata in cursor:iter_matches(root, bufnr) do
-		if pos_inside_metadata(row, metadata) then
-			return {
-				receiver = {
-					type = '',
-					struct_name = '',
-				},
-				func = {
-					name = q.get_node_text(captures[1], bufnr),
-				},
-			}
-		end
-	end
-
-	return nil
-end
-
--- actual snippets
+local not_in_func = {
+	show_condition = not_in_function,
+	condition = not_in_function,
+}
 
 local apm_span = s({ trig = 'apm:span', name = 'apm span', dscr = 'creates apm span from context' }, {
 	d(1, function(_args, _snip)
-		local def = get_func_or_method_declaration_on_cursor()
-		if def == nil then
-			vim.notify('apm:span snippet is not run inside a function or method', 'error')
+		local cursor_node = ts_utils.get_node_at_cursor()
+		local scope_tree = ts_locals.get_scope_tree(cursor_node, 0)
+		local fn_node
+		for _, scope in ipairs(scope_tree) do
+			if scope:type() == 'function_declaration' or scope:type() == 'method_declaration' then
+				fn_node = scope
+				break
+			end
+		end
+		if not fn_node then
+			vim.notify('snippet requires cursor inside a function or method', 'error', { title = 'Snippet Error' })
 			return sn(nil, {})
 		end
-		local name, span_type
-		name = def.func.name
-		if def.receiver.struct_name == '' then
-			span_type = def.func.name
-		else
-			span_type = def.receiver.struct_name
-		end
 
-		return sn(nil, {
-			t({ [[span, ctx := apm.StartSpan(ctx, "]] }),
-			i(1, name),
-			t({ [[", "]] }),
-			i(2, span_type),
-			t({ '")', 'defer span.End()' }),
-		})
+		local name, span_type
+		local fn_name_node = fn_node:field('name')[1]
+		name = ts_utils.get_node_text(fn_name_node)[1]
+		if fn_node:type() == 'function_declaration' then
+			span_type = name
+		else
+			local fn_receiver_node = fn_node:field('receiver')[1]:child(1)
+			local fn_receiver_type_node = fn_receiver_node:field('type')[1]
+			if fn_receiver_type_node:type() == 'pointer_type' then
+				fn_receiver_type_node = fn_receiver_type_node:child(1)
+			end
+			span_type = ts_utils.get_node_text(fn_receiver_type_node)[1]
+		end
+		return sn(
+			nil,
+			fmta(
+				[[
+				span, ctx := apm.StartSpan(ctx, "<name>", "<span_type>")
+				defer span.End()
+				]],
+				{ name = i(1, name), span_type = i(2, span_type) }
+			)
+		)
 	end),
 	i(0),
 })
@@ -210,5 +147,11 @@ local map_key_type_auto = s({ trig = 'map[', name = 'auto-map', dscr = 'quick ma
 	i(0),
 })
 
-ls.add_snippets('go', { apm_span, map_string_interface, map_string_interface_insert, map_key_type })
+local main = s(
+	{ trig = 'main', name = 'Main', dscr = 'Create a main function' },
+	sn(1, fmta('func main() {\n\t<>\n}', i(1))),
+	not_in_func
+)
+
+ls.add_snippets('go', { apm_span, map_string_interface, map_string_interface_insert, map_key_type, main })
 ls.add_snippets('go', { map_string_interface_insert_regex, apm_span, map_key_type_auto }, { type = 'autosnippets' })
