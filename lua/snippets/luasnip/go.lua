@@ -167,14 +167,20 @@ local if_call = ls.s(
 )
 
 local make = ls.s(
-	{ trig = 'make', name = 'Make', dscr = 'Allocate map or slice' },
+	{ trig = 'make', name = 'Make Alloc', dscr = 'Allocate map or slice' },
 	fmt('{} {}= make({})\n{}', {
 		ls.i(1, 'name'),
 		ls.i(2),
 		ls.c(3, {
-			fmt('[]{}, {}', { ls.i(1, 'type'), ls.i(2, 'len') }),
-			fmt('[]{}, 0, {}', { ls.i(1, 'type'), ls.i(2, 'len') }),
-			fmt('map[{}]{}, {}', { ls.i(1, 'keys'), ls.i(2, 'values'), ls.i(3, 'len') }),
+			fmt('[]{}, {}', { ls.i(1, 'type'), ls.i(2, 'cap') }, {
+				node_ext_opts = { active = { virt_text = { { 'Slice filled with zero value until capacity' } } } },
+			}),
+			fmt('[]{}, 0, {}', { ls.i(1, 'type'), ls.i(2, 'cap') }, {
+				node_ext_opts = { active = { virt_text = { { 'Empty slice with custom capacity' } } } },
+			}),
+			fmt('map[{}]{}, {}', { ls.i(1, 'cap'), ls.i(2, 'values'), ls.i(3, 'len') }, {
+				node_ext_opts = { active = { virt_text = { { 'Map with custom capacity' } } } },
+			}),
 		}),
 		ls.i(0),
 	}),

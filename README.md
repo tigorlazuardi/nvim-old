@@ -41,6 +41,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **mappings:** moved q to <leader>q
 - **snippet:** added table generating snippets markdown lua
 - **snippet:** added dynamic req snippet
+- **snippet:** added description to make snippet golang
 - **snippet:** added prequire snippet lua
 - **snippet:** more snippet for go
 - **snippets:** added dynamic preq snippet
