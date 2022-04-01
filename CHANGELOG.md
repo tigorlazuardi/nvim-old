@@ -5,6 +5,7 @@
 - **snippet:** readable neogen / luasnip jump handling
 
 > Features
+- **luasnip:** added virtual text on choice nodes
 - **mappings:** moved q to <leader>q
 - **snippet:** added dynamic req snippet
 - **snippet:** added prequire snippet lua

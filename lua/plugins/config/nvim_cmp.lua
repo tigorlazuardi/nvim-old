@@ -50,12 +50,21 @@ local function cmp_config()
 	local wk = require('which-key')
 
 	local ls = require('luasnip')
+	local types = require('luasnip.util.types')
 	ls.config.set_config({
 		history = true,
 		update_events = 'TextChanged,TextChangedI',
 		delete_check_events = 'TextChanged',
 		enable_autosnippets = true,
+		ext_opts = {
+			[types.choiceNode] = {
+				active = {
+					virt_text = { { '<- Choice' } },
+				},
+			},
+		},
 	})
+
 	local mappings = {
 		['<c-j>'] = {
 			function()
