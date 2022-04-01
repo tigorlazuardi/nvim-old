@@ -46,7 +46,7 @@ return function(use)
 				},
 			}, { silent = false })
 
-			wk.register({ q = {
+			wk.register({ ['<leader>q'] = {
 				'<cmd>WhichKey q<cr>',
 				'+quick',
 			} })

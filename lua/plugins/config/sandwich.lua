@@ -7,19 +7,19 @@ return function(use)
 		config = function()
 			vim.cmd([[
 				" add
-				silent! nmap <unique> qa <Plug>(sandwich-add)
-				silent! xmap <unique> qa <Plug>(sandwich-add)
-				silent! omap <unique> qa <Plug>(sandwich-add)
+				silent! nmap <unique> <leader>qa <Plug>(sandwich-add)
+				silent! xmap <unique> <leader>qa <Plug>(sandwich-add)
+				silent! omap <unique> <leader>qa <Plug>(sandwich-add)
 
 				" delete
-				silent! nmap <unique> qd <Plug>(sandwich-delete)
-				silent! xmap <unique> qd <Plug>(sandwich-delete)
-				silent! nmap <unique> qdb <Plug>(sandwich-delete-auto)
+				silent! nmap <unique> <leader>qd <Plug>(sandwich-delete)
+				silent! xmap <unique> <leader>qd <Plug>(sandwich-delete)
+				silent! nmap <unique> <leader>qdb <Plug>(sandwich-delete-auto)
 
 				" replace
-				silent! nmap <unique> qr <Plug>(sandwich-replace)
-				silent! xmap <unique> qr <Plug>(sandwich-replace)
-				silent! nmap <unique> qrb <Plug>(sandwich-replace-auto)
+				silent! nmap <unique> <leader>qr <Plug>(sandwich-replace)
+				silent! xmap <unique> <leader>qr <Plug>(sandwich-replace)
+				silent! nmap <unique> <leader>qrb <Plug>(sandwich-replace-auto)
 			]])
 			vim.cmd([[
 				" auto

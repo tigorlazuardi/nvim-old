@@ -5,6 +5,7 @@
 - **snippet:** readable neogen / luasnip jump handling
 
 > Features
+- **mappings:** moved q to <leader>q
 - **snippet:** added prequire snippet lua
 - **snippet:** more snippet for go
 

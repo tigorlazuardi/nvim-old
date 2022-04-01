@@ -120,7 +120,7 @@ null_ls.setup({
 		end
 		local wk = require('which-key')
 		wk.register({
-			q = {
+			['<leader>q'] = {
 				name = 'quick',
 				f = { '<cmd>lua vim.lsp.buf.formatting_sync()<cr>', 'Format Current Buffer' },
 			},
