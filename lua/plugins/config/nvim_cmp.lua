@@ -60,10 +60,7 @@ local function cmp_config()
 		['<c-j>'] = {
 			function()
 				local ok, neogen = pcall(require, 'neogen')
-				if not ok then
-					ls.expand_or_jump()
-				end
-				if neogen.jumpable() then
+				if ok and neogen.jumpable() then
 					neogen.jump_next()
 					return
 				end
@@ -74,10 +71,7 @@ local function cmp_config()
 		['<c-k>'] = {
 			function()
 				local ok, neogen = pcall(require, 'neogen')
-				if not ok then
-					ls.jump(-1)
-				end
-				if neogen.jumpable(-1) then
+				if ok and neogen.jumpable(-1) then
 					neogen.jump_prev()
 					return
 				end

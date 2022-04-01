@@ -33,6 +33,9 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 <a name="unreleased"></a>
 ### [Unreleased]
 
+> Code Refactoring
+- **snippet:** readable neogen / luasnip jump handling
+
 > Features
 - **snippet:** added prequire snippet lua
 - **snippet:** more snippet for go
