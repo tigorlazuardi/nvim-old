@@ -33,17 +33,6 @@ local packmod = s(
 	)
 )
 
-local function split(inputstr, sep)
-	if sep == nil then
-		sep = '%s'
-	end
-	local t = {}
-	for str in string.gmatch(inputstr, '([^' .. sep .. ']+)') do
-		table.insert(t, str)
-	end
-	return t
-end
-
 local prequire = s(
 	{ trig = 'preq', name = 'Protected Require', dscr = 'Protected call' },
 	fmta(
@@ -58,8 +47,8 @@ local prequire = s(
 			ok1 = i(1, 'ok'),
 			mod = ls.f(function(arg)
 				local content = arg[1][1]
-				local str = split(content, '.')
-				local last = str[#str]
+				local str = vim.split(content, '.', true)
+				local last = str[#str] or ''
 				last = last:gsub('-', '_')
 				return last
 			end, { 2 }),
@@ -67,6 +56,27 @@ local prequire = s(
 			target = i(2, 'target'),
 			ret = i(3, 'return'),
 			e = i(0),
+		}
+	)
+)
+
+local req = s(
+	{ trig = 'req', name = 'require module', dscr = 'require module' },
+	fmta(
+		[[
+		local <> = require('<>')
+		<>
+		]],
+		{
+			ls.f(function(arg)
+				local content = arg[1][1]
+				local str = vim.split(content, '.', true)
+				local last = str[#str] or ''
+				last = last:gsub('-', '_')
+				return last
+			end, { 1 }),
+			i(1, 'target'),
+			i(0),
 		}
 	)
 )
@@ -140,4 +150,5 @@ ls.add_snippets('lua', {
 	local_f,
 	local_t,
 	todo,
+	req,
 })
