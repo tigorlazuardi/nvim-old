@@ -44,6 +44,9 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **snippets:** added dynamic preq snippet
 - **snippets:** added more lua snippets
 
+> Revert
+- **snippet:** removed apm_span from auto. prefer to use <c-j> expansion instead
+
 > Various Actions
 - removed print
 

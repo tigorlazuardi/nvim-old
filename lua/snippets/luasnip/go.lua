@@ -193,6 +193,5 @@ ls.add_snippets('go', {
 })
 ls.add_snippets('go', {
 	map_string_interface_insert_regex,
-	apm_span,
 	map_key_type_auto,
 }, { type = 'autosnippets' })
