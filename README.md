@@ -43,6 +43,9 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **snippets:** added dynamic preq snippet
 - **snippets:** added more lua snippets
 
+> Various Actions
+- removed print
+
 
 <a name="v3.1.6"></a>
 ### [v3.1.6] - 2022-03-31

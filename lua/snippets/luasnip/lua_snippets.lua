@@ -59,7 +59,6 @@ local prequire = s(
 			mod = ls.f(function(arg)
 				local content = arg[1][1]
 				local str = split(content, '.')
-				print(vim.inspect(str))
 				local last = str[#str]
 				last = last:gsub('-', '_')
 				return last
