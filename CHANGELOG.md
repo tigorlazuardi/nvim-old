@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ### [Unreleased]
 
+> Features
+- **snippet:** added snippet for generating markdown table
+
 
 <a name="v3.1.7"></a>
 ### [v3.1.7] - 2022-04-01

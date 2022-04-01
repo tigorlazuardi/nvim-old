@@ -72,3 +72,17 @@ local table_regex = ls.s({
 ls.add_snippets('markdown', {
 	table_regex,
 }, { type = 'autosnippets' })
+
+local tab_dscr = [[Creates table dynamically. With maximum of 9 (col) x 9 (row) table.
+
+To actually use it type "tbl(n)(n)" literally, change (n)(n) to numbers e.g. "tab23"
+to create 2 (col) x 3 (row) table.
+
+This snippet does nothing.]]
+ls.add_snippets('markdown', {
+	ls.s({
+		trig = 'tab',
+		name = 'Dynamic Table Creation by (col)x(row)',
+		dscr = tab_dscr,
+	}, {}),
+})
