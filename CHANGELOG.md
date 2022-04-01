@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ### [Unreleased]
 
+> Bug Fixes
+- **snippet:** fix placeholder
+
 > Code Refactoring
 - **snippet:** readable neogen / luasnip jump handling
 

@@ -178,7 +178,7 @@ local make = ls.s(
 			fmt('[]{}, 0, {}', { ls.i(1, 'type'), ls.i(2, 'cap') }, {
 				node_ext_opts = { active = { virt_text = { { 'Empty slice with custom capacity' } } } },
 			}),
-			fmt('map[{}]{}, {}', { ls.i(1, 'cap'), ls.i(2, 'values'), ls.i(3, 'len') }, {
+			fmt('map[{}]{}, {}', { ls.i(1, 'key'), ls.i(2, 'value'), ls.i(3, 'cap') }, {
 				node_ext_opts = { active = { virt_text = { { 'Map with custom capacity' } } } },
 			}),
 		}),
