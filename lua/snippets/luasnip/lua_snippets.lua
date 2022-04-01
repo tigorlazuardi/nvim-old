@@ -33,6 +33,17 @@ local packmod = s(
 	)
 )
 
+local function split(inputstr, sep)
+	if sep == nil then
+		sep = '%s'
+	end
+	local t = {}
+	for str in string.gmatch(inputstr, '([^' .. sep .. ']+)') do
+		table.insert(t, str)
+	end
+	return t
+end
+
 local prequire = s(
 	{ trig = 'preq', name = 'Protected Require', dscr = 'Protected call' },
 	fmta(
@@ -45,10 +56,17 @@ local prequire = s(
 	]],
 		{
 			ok1 = i(1, 'ok'),
-			mod = i(2, 'mod'),
+			mod = ls.f(function(arg)
+				local content = arg[1][1]
+				local str = split(content, '.')
+				print(vim.inspect(str))
+				local last = str[#str]
+				last = last:gsub('-', '_')
+				return last
+			end, { 2 }),
 			ok2 = rep(1),
-			target = i(3, 'target'),
-			ret = i(4, 'return'),
+			target = i(2, 'target'),
+			ret = i(3, 'return'),
 			e = i(0),
 		}
 	)
@@ -89,13 +107,31 @@ local local_f = s(
 	{ trig = 'lf', name = 'local function', dscr = 'local function declaration' },
 	fmta(
 		[[
+		---<>
 		local function <>(<>)
 			<>
 		end
 	]],
-		{ i(1, 'name'), i(2), i(0) }
+		{ i(3), i(1, 'name'), i(2), i(0) }
 	)
 )
+
+local local_t = s(
+	{ trig = 'lt', name = 'local table', dscr = 'declare new table' },
+	fmta(
+		[[
+		local <> = {<>}
+		]],
+		{ i(1, 'name'), i(0) }
+	)
+)
+
+local todo = s({ trig = 'todo', name = 'Todo Note', dscr = 'create a todo comment' }, {
+	c(1, {
+		ls.sn(nil, fmta('-- TODO: <>', { i(1) })),
+		ls.sn(nil, fmta('-- TODO(<>): <>', { i(1, 'person'), i(2) })),
+	}),
+})
 
 ls.add_snippets('lua', {
 	packmod,
@@ -103,4 +139,6 @@ ls.add_snippets('lua', {
 	m_snip,
 	meth,
 	local_f,
+	local_t,
+	todo,
 })

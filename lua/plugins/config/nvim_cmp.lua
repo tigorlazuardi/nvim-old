@@ -96,6 +96,26 @@ local function cmp_config()
 			'(Snippet) Prev Choice',
 		},
 	}
+	wk.register({
+		['<leader>qs'] = {
+			function()
+				local dir = [[$HOME/.config/nvim/lua/snippets/luasnip/]]
+				local files = io.popen(string.format([[ls -a "%s"]], dir))
+				local filenames = {}
+				for filename in files:lines() do
+					table.insert(filenames, filename)
+				end
+				for i, filename in ipairs(filenames) do
+					if i ~= 1 and i ~= 2 then
+						local str = string.format([[source "%s%s"]], dir, filename)
+						vim.cmd(str)
+					end
+				end
+				vim.notify('Snippet reloaded', 'info', { title = 'System' })
+			end,
+			'(Snippet) Reload',
+		},
+	})
 	wk.register(mappings, { mode = 'i' })
 	wk.register(mappings, { mode = 's' })
 

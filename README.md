@@ -40,6 +40,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **mappings:** moved q to <leader>q
 - **snippet:** added prequire snippet lua
 - **snippet:** more snippet for go
+- **snippets:** added dynamic preq snippet
 - **snippets:** added more lua snippets
 
 
