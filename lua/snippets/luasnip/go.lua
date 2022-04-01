@@ -89,35 +89,38 @@ local map_string_interface_insert = s(
 	}
 )
 
-local map_string_interface_insert_regex = s({
-	trig = 'msi(%d)',
-	name = 'dynamic map[string]interface{} generation',
-	dscr = 'map string interface with insert regex',
-	regTrig = true,
-}, {
-	d(1, function(_args, snip)
-		local count = tonumber(snip.captures[1]) or 0
-		if count == 0 then
-			return sn(nil, { t('map[string]interface{}{}') })
-		end
-		local nodes = { t({ 'map[string]interface{}{', '' }) }
+---easily create map[string]interface{} using multiple trig keys
+local function map_string_interface_regex(trig)
+	return s({
+		trig = trig,
+		name = 'dynamic map[string]interface{} generation',
+		dscr = 'map string interface with insert regex',
+		regTrig = true,
+	}, {
+		d(1, function(_args, snip)
+			local count = tonumber(snip.captures[1]) or 0
+			if count == 0 then
+				return sn(nil, { t('map[string]interface{}{}') })
+			end
+			local nodes = { t({ 'map[string]interface{}{', '' }) }
 
-		local nodeIdx = 0
-		for idx = 1, count do
-			nodeIdx = nodeIdx + 1
-			table.insert(nodes, t('\t"'))
-			table.insert(nodes, i(nodeIdx, string.format('key%d', idx)))
-			table.insert(nodes, t('": '))
-			nodeIdx = nodeIdx + 1
-			table.insert(nodes, i(nodeIdx, string.format('value%d', idx)))
-			table.insert(nodes, t({ ',', '' }))
-		end
+			local nodeIdx = 0
+			for idx = 1, count do
+				nodeIdx = nodeIdx + 1
+				table.insert(nodes, t('\t"'))
+				table.insert(nodes, i(nodeIdx, string.format('key%d', idx)))
+				table.insert(nodes, t('": '))
+				nodeIdx = nodeIdx + 1
+				table.insert(nodes, i(nodeIdx, string.format('value%d', idx)))
+				table.insert(nodes, t({ ',', '' }))
+			end
 
-		table.insert(nodes, t('}'))
-		return sn(nil, nodes)
-	end),
-	i(0),
-})
+			table.insert(nodes, t('}'))
+			return sn(nil, nodes)
+		end),
+		i(0),
+	}, in_func)
+end
 
 local map_key_type = s({ trig = 'map', name = 'map[<key>]<value>', dscr = 'map short hand' }, {
 	sn(1, fmta('map[<key>]<type>', { key = i(1, 'key'), type = i(2, 'type') })),
@@ -198,6 +201,7 @@ ls.add_snippets('go', {
 	if_call,
 })
 ls.add_snippets('go', {
-	map_string_interface_insert_regex,
+	map_string_interface_regex('msi(%d)'),
+	map_string_interface_regex('map(%d)'),
 	map_key_type_auto,
 }, { type = 'autosnippets' })

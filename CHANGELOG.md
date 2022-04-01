@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ### [Unreleased]
 
+> Bug Fixes
+- **snippet:** fix insert regex golang
+
 > Features
 - **snippet:** added snippet for generating markdown table
 
