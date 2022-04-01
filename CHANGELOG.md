@@ -1,6 +1,10 @@
 <a name="unreleased"></a>
 ### [Unreleased]
 
+
+<a name="v3.1.7"></a>
+### [v3.1.7] - 2022-04-01
+
 > Bug Fixes
 - **snippet:** fix placeholder
 
@@ -805,7 +809,8 @@
 - initial commit
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v3.1.6...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v3.1.7...HEAD
+[v3.1.7]: https://github.com/tigorlazuardi/nvim/compare/v3.1.6...v3.1.7
 [v3.1.6]: https://github.com/tigorlazuardi/nvim/compare/v3.1.5...v3.1.6
 [v3.1.5]: https://github.com/tigorlazuardi/nvim/compare/v3.1.4...v3.1.5
 [v3.1.4]: https://github.com/tigorlazuardi/nvim/compare/v3.1.3...v3.1.4
