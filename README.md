@@ -39,6 +39,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 > Features
 - **luasnip:** added virtual text on choice nodes
 - **mappings:** moved q to <leader>q
+- **snippet:** added table generating snippets markdown lua
 - **snippet:** added dynamic req snippet
 - **snippet:** added prequire snippet lua
 - **snippet:** more snippet for go
