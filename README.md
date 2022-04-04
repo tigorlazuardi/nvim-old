@@ -40,6 +40,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - update commitlint
 
 > Features
+- **markdown_preview:** set config to setup
 - **markdown_preview:** autostart disabled
 - **snippet:** added rust snippet creating fn
 - **snippet:** added snippet for generating markdown table
