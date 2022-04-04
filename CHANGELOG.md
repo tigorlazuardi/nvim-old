@@ -8,6 +8,7 @@
 - update commitlint
 
 > Features
+- **markdown_preview:** autostart disabled
 - **snippet:** added rust snippet creating fn
 - **snippet:** added snippet for generating markdown table
 
