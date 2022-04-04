@@ -86,6 +86,19 @@ local if_err = ls.s(
 	in_func
 )
 
+---Creates responder_if_err node
+local function responder_if_err(trig)
+	return ls.s(
+		{ trig = trig, name = 'Responder if err', dscr = 'If error, return error wrapped in responder' },
+		fmta('if <> != nil {\n\treturn <>\n}\n<>', {
+			ls.i(1, 'err'),
+			ls.d(2, util.make_return_nodes_responder, { 1 }),
+			ls.i(0),
+		}),
+		in_func
+	)
+end
+
 local if_call = ls.s(
 	{ trig = 'ifcall', name = 'IF CALL', dscr = 'Call a function and check the error' },
 	fmta(
@@ -177,4 +190,7 @@ ls.add_snippets('go', {
 	if_err,
 	make,
 	if_call,
+	responder_if_err('resp'),
+	responder_if_err('respif'),
+	responder_if_err('ifr'),
 })

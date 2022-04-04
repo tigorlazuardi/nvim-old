@@ -14,6 +14,7 @@
 > Features
 - **markdown_preview:** set config to setup
 - **markdown_preview:** autostart disabled
+- **snippet:** added responder golang snippet
 - **snippet:** added rust snippet creating fn
 - **snippet:** added snippet for generating markdown table
 

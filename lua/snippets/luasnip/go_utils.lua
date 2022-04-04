@@ -1,11 +1,129 @@
 -- Requires {{{
 local ls = require('luasnip')
 local fmt = require('luasnip.extras.fmt').fmt
+local fmta = require('luasnip.extras.fmt').fmta
 local ts_utils = require('nvim-treesitter.ts_utils')
 local ts_locals = require('nvim-treesitter.locals')
 local rep = require('luasnip.extras').rep
 local ai = require('luasnip.nodes.absolute_indexer')
 --}}}
+
+local error_nodes = function(info)
+	local wraps = {
+		'WrapInternalServerError',
+		'WrapBadRequestError',
+		'WrapNotFoundError',
+		'WrapServiceUnavailableError',
+		'WrapBadDependencyError',
+		'WrapNotAcceptableError',
+		'WrapUnauthorizedError',
+		'WrapForbiddenError',
+		'WrapTooManyRequestsError',
+		'WrapNotImplementedError',
+	}
+	local nodes = {}
+	for _, w in ipairs(wraps) do
+		table.insert(
+			nodes,
+			ls.sn(
+				nil,
+				fmta([[responder.<wrap>(<err>, "<msg>"<comma><extra>)]], {
+					wrap = ls.t(w),
+					err = ls.t(info.err_name),
+					msg = ls.i(1, 'message'),
+					comma = ls.f(function(args)
+						if args[1][1] == '' then
+							return ''
+						end
+						return ', '
+					end, { 2 }),
+					extra = ls.i(2),
+				})
+			)
+		)
+	end
+	table.insert(
+		nodes,
+		ls.sn(
+			nil,
+			fmta([[responder.WrapError(<err>, "<msg>", <code>, "<label>"<comma><extra>)]], {
+				err = ls.t(info.err_name),
+				msg = ls.i(1, 'message'),
+				code = ls.i(2, '5500'),
+				label = ls.i(3, 'label'),
+				comma = ls.f(function(args)
+					if args[1][1] == '' then
+						return ''
+					end
+					return ', '
+				end, { 4 }),
+				extra = ls.i(4),
+			})
+		)
+	)
+	table.insert(nodes, ls.t(info.err_name))
+	return nodes
+end
+
+---Transform makes a node from the given text.
+local function transform_responder(text, info) --{{{
+	local string_sn = function(template, default)
+		info.index = info.index + 1
+		return ls.sn(info.index, fmt(template, ls.i(1, default)))
+	end
+	local new_sn = function(default)
+		return string_sn('{}', default)
+	end
+
+	-- cutting the name if exists.
+	if text:find([[^[^\[]*string$]]) then
+		text = 'string'
+	elseif text:find('^[^%[]*map%[[^%]]+') then
+		text = 'map'
+	elseif text:find('%[%]') then
+		text = 'slice'
+	elseif text:find([[ ?chan +[%a%d]+]]) then
+		return ls.t('nil')
+	end
+
+	-- separating the type from the name if exists.
+	local type = text:match([[^[%a%d]+ ([%a%d]+)$]])
+	if type then
+		text = type
+	end
+
+	if text == 'int' or text == 'int64' or text == 'int32' then
+		return new_sn('0')
+	elseif text == 'float32' or text == 'float64' then
+		return new_sn('0')
+	elseif text == 'error' then
+		if not info then
+			return ls.t('err')
+		end
+
+		info.index = info.index + 1
+		return ls.c(info.index, error_nodes(info))
+	elseif text == 'bool' then
+		info.index = info.index + 1
+		return ls.c(info.index, { ls.i(1, 'false'), ls.i(2, 'true') })
+	elseif text == 'string' then
+		return string_sn('"{}"', '')
+	elseif text == 'map' or text == 'slice' then
+		return ls.t('nil')
+	elseif string.find(text, '*', 1, true) then
+		return new_sn('nil')
+	end
+
+	text = text:match('[^ ]+$')
+	if text == 'context.Context' then
+		text = 'context.Background()'
+	else
+		-- when the type is concrete
+		text = text .. '{}'
+	end
+
+	return ls.t(text)
+end --}}}
 
 ---Transform makes a node from the given text.
 local function transform(text, info) --{{{
@@ -103,6 +221,27 @@ local handlers = { --{{{
 	end,
 } --}}}
 
+local handlers_responder = {
+	parameter_list = function(node, info)
+		local result = {}
+
+		local count = node:named_child_count()
+		for idx = 0, count - 1 do
+			table.insert(result, transform_responder(get_node_text(node:named_child(idx), 0), info))
+			if idx ~= count - 1 then
+				table.insert(result, ls.t({ ', ' }))
+			end
+		end
+
+		return result
+	end,
+
+	type_identifier = function(node, info)
+		local text = get_node_text(node, 0)
+		return { transform_responder(text, info) }
+	end,
+}
+
 vim.treesitter.set_query( --{{{
 	'go',
 	'LuaSnip_Result',
@@ -143,6 +282,34 @@ local function return_value_nodes(info) --{{{
 	end
 end --}}}
 
+local function return_value_nodes_responder(info) --{{{
+	local cursor_node = ts_utils.get_node_at_cursor()
+	local scope_tree = ts_locals.get_scope_tree(cursor_node, 0)
+
+	local function_node
+	for _, scope in ipairs(scope_tree) do
+		if
+			scope:type() == 'function_declaration'
+			or scope:type() == 'method_declaration'
+			or scope:type() == 'func_literal'
+		then
+			function_node = scope
+			break
+		end
+	end
+
+	if not function_node then
+		return
+	end
+
+	local query = vim.treesitter.get_query('go', 'LuaSnip_Result')
+	for _, node in query:iter_captures(function_node, 0) do
+		if handlers_responder[node:type()] then
+			return handlers_responder[node:type()](node, info)
+		end
+	end
+end --}}}
+
 local M = {}
 
 ---Transforms the given arguments into nodes wrapped in a snippet node.
@@ -150,6 +317,11 @@ M.make_return_nodes = function(args) --{{{
 	local info = { index = 0, err_name = args[1][1] }
 	return ls.sn(nil, return_value_nodes(info))
 end --}}}
+
+M.make_return_nodes_responder = function(args)
+	local info = { index = 0, err_name = args[1][1] }
+	return ls.sn(nil, return_value_nodes_responder(info))
+end
 
 ---Runs the command in shell.
 -- @param command string
@@ -279,5 +451,3 @@ M.mirror_t_run_funcs = function(args) --{{{
 end --}}}
 
 return M
-
--- vim: fdm=marker fdl=0
