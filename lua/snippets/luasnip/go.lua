@@ -190,6 +190,7 @@ ls.add_snippets('go', {
 	if_err,
 	make,
 	if_call,
+	responder_if_err('iferr'),
 	responder_if_err('resp'),
 	responder_if_err('respif'),
 	responder_if_err('ifr'),
