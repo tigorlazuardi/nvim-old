@@ -55,7 +55,7 @@ local function cmp_config()
 		history = true,
 		update_events = 'TextChanged,TextChangedI',
 		delete_check_events = 'TextChanged',
-		enable_autosnippets = true,
+		enable_autosnippets = false,
 		ext_opts = {
 			[types.choiceNode] = {
 				active = {

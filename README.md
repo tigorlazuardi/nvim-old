@@ -37,6 +37,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **snippet:** fix insert regex golang
 
 > Code Refactoring
+- **snippet:** removed autosnippet because it's mostly unused
 - **snippet:** reduce map snippets
 
 > Configuration

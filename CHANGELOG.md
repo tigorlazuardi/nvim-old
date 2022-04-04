@@ -5,6 +5,7 @@
 - **snippet:** fix insert regex golang
 
 > Code Refactoring
+- **snippet:** removed autosnippet because it's mostly unused
 - **snippet:** reduce map snippets
 
 > Configuration
