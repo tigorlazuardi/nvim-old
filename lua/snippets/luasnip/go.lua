@@ -5,6 +5,7 @@ local t = ls.text_node
 local i = ls.insert_node
 local d = ls.dynamic_node
 local c = ls.choice_node
+local isn = ls.indent_snippet_node
 local fmt = require('luasnip.extras.fmt').fmt
 local fmta = require('luasnip.extras.fmt').fmta
 local util = require('snippets.luasnip.go_utils')
@@ -183,6 +184,67 @@ local dynamic_map = s({ trig = 'map', dscr = 'Dynamic mapping', name = 'dynamic 
 	}),
 })
 
+local cobra_command = s(
+	{ trig = 'cobra', dscr = 'Create Cobra command', name = 'Cobra Command' },
+	fmta(
+		[[
+var <command> = &cobra.Command{
+	Use:   "<use>",
+	Short: "<short>",
+	Long: `<long>`,<run>
+}
+	]],
+		{
+			command = i(1, 'cmd'),
+			use = i(2, 'use'),
+			short = i(3, 'Short Description'),
+			long = i(4, 'Long Description'),
+			run = c(5, {
+				sn(nil, {
+					t({ '', '\t' }),
+					isn(
+						1,
+						fmta(
+							[[
+							SilenceErrors: true,
+							SilenceUsage:  true,
+							RunE: func(cmd *cobra.Command, _args []string) error {
+								ctx := cmd.Context()
+
+								<>
+
+								return nil
+							},
+							]],
+							{ i(1) }
+						),
+						'$PARENT_INDENT\t'
+					),
+				}),
+				sn(nil, {
+					t({ '', '\t' }),
+					isn(
+						1,
+						fmta(
+							[[
+							Run: func(cmd *cobra.Command, _args []string) {
+								ctx := cmd.Context()
+
+								<>
+							},
+							]],
+							{ i(1) }
+						),
+						'$PARENT_INDENT\t'
+					),
+				}),
+				t(''),
+			}),
+		}
+	),
+	not_in_func
+)
+
 ls.add_snippets('go', {
 	apm_span,
 	dynamic_map,
@@ -190,6 +252,7 @@ ls.add_snippets('go', {
 	if_err,
 	make,
 	if_call,
+	cobra_command,
 	responder_if_err('iferr'),
 	responder_if_err('resp'),
 	responder_if_err('respif'),
