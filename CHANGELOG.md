@@ -14,6 +14,7 @@
 > Features
 - **markdown_preview:** set config to setup
 - **markdown_preview:** autostart disabled
+- **null_ls:** removed taplo in favor of lspinstall version
 - **snippet:** added cobra snippet golang
 - **snippet:** added iferr responder
 - **snippet:** added responder golang snippet

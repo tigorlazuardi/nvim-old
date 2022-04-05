@@ -81,10 +81,6 @@ if exist('selene') then
 	table.insert(sources, null_ls.builtins.diagnostics.selene)
 end
 
-if exist('taplo') then
-	table.insert(sources, null_ls.builtins.formatting.taplo)
-end
-
 if exist('sqlformat') then
 	table.insert(sources, null_ls.builtins.formatting.sqlformat)
 end
