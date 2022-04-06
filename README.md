@@ -44,6 +44,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - update commitlint
 
 > Features
+- **copilot:** added copilot to nvim-cmp
 - **markdown_preview:** set config to setup
 - **markdown_preview:** autostart disabled
 - **null_ls:** removed taplo in favor of lspinstall version

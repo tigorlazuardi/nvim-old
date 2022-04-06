@@ -28,6 +28,7 @@ local function cmp_config()
 			}),
 		},
 		sources = {
+			{ name = 'copilot' },
 			{ name = 'luasnip' },
 			{ name = 'path' },
 			{ name = 'nvim_lsp' },
@@ -37,6 +38,14 @@ local function cmp_config()
 			{ name = 'emoji' },
 		},
 		preselect = cmp.PreselectMode.Item,
+	})
+
+	cmp.setup.cmdline(':', {
+		sources = cmp.config.sources({
+			{ name = 'path' },
+		}, {
+			{ name = 'cmdline' },
+		}),
 	})
 
 	local npairs = require('nvim-autopairs')
@@ -148,8 +157,25 @@ return function(use)
 			'saadparwaiz1/cmp_luasnip',
 			'windwp/nvim-autopairs',
 			'mortepau/codicons.nvim',
+			'hrsh7th/cmp-cmdline',
 		},
 		wants = { 'which-key.nvim' },
 		config = cmp_config,
+	})
+
+	-- copilot
+	use({
+		'zbirenbaum/copilot.lua',
+		event = 'InsertEnter',
+		config = function()
+			vim.schedule(function()
+				require('copilot').setup()
+			end)
+		end,
+	})
+
+	use({
+		'zbirenbaum/copilot-cmp',
+		after = { 'copilot.lua', 'nvim-cmp' },
 	})
 end
