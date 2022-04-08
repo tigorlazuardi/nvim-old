@@ -132,6 +132,10 @@ local function run()
 			[[<cmd>Telescope buffers<cr>]],
 			'Buffer Picker',
 		},
+		['<c-f>'] = {
+			[[<cmd>Telescope find_files<cr>]],
+			'File Picker',
+		},
 	})
 end
 
