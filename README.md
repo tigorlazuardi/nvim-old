@@ -54,6 +54,9 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **snippet:** added rust snippet creating fn
 - **snippet:** added snippet for generating markdown table
 
+> Revert
+- disabled mini indentline
+
 
 <a name="v3.1.7"></a>
 ### [v3.1.7] - 2022-04-01
