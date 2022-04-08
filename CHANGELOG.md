@@ -4,10 +4,27 @@
 > Bug Fixes
 - **snippet:** fix insert regex golang
 
+> Code Refactoring
+- **snippet:** removed autosnippet because it's mostly unused
+- **snippet:** reduce map snippets
+
+> Configuration
+- update commitlint
+
 > Features
+- **copilot:** added copilot to nvim-cmp
+- **markdown_preview:** set config to setup
+- **markdown_preview:** autostart disabled
+- **null_ls:** removed taplo in favor of lspinstall version
 - **rust-lsp:** check on save is now clippy
+- **snippet:** added cobra snippet golang
+- **snippet:** added iferr responder
+- **snippet:** added responder golang snippet
 - **snippet:** added rust snippet creating fn
 - **snippet:** added snippet for generating markdown table
+
+> Revert
+- disabled mini indentline
 
 
 <a name="v3.1.7"></a>

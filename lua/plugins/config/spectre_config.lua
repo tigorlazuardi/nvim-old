@@ -12,7 +12,7 @@ local function config()
 
 	-- wk.register({
 	-- 	['<leader>fr'] = { [[<cmd>lua require('spectre').open_visual()<cr>]], 'Open Find and Replace' },
-	-- 	{ mode = 'v' },
+	-- 	{ mode = 'x' },
 	-- })
 end
 

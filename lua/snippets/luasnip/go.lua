@@ -4,6 +4,8 @@ local sn = ls.snippet_node
 local t = ls.text_node
 local i = ls.insert_node
 local d = ls.dynamic_node
+local c = ls.choice_node
+local isn = ls.indent_snippet_node
 local fmt = require('luasnip.extras.fmt').fmt
 local fmta = require('luasnip.extras.fmt').fmta
 local util = require('snippets.luasnip.go_utils')
@@ -69,67 +71,6 @@ local apm_span = s({ trig = 'apm:span', name = 'apm span', dscr = 'creates apm s
 	i(0),
 })
 
-local map_string_interface = s(
-	{ trig = 'msi', name = 'map[string]interface{}', dscr = 'map string interface definition shorthand' },
-	{
-		t({ 'map[string]interface{}' }),
-		i(0),
-	}
-)
-
-local map_string_interface_insert = s(
-	{ trig = 'msi', name = 'map[string]interface{}{}', dscr = 'map string interface with insert' },
-	{
-		t({ 'map[string]interface{}{', '"' }),
-		i(1, 'key'),
-		t({ '":' }),
-		i(2, 'value'),
-		t({ ',', '}' }),
-		i(0),
-	}
-)
-
----easily create map[string]interface{} using multiple trig keys
-local function map_string_interface_regex(trig)
-	return s({
-		trig = trig,
-		name = 'dynamic map[string]interface{} generation',
-		dscr = 'map string interface with insert regex',
-		regTrig = true,
-	}, {
-		d(1, function(_args, snip)
-			local count = tonumber(snip.captures[1]) or 0
-			if count == 0 then
-				return sn(nil, { t('map[string]interface{}{}') })
-			end
-			local nodes = { t({ 'map[string]interface{}{', '' }) }
-
-			local nodeIdx = 0
-			for idx = 1, count do
-				nodeIdx = nodeIdx + 1
-				table.insert(nodes, t('\t"'))
-				table.insert(nodes, i(nodeIdx, string.format('key%d', idx)))
-				table.insert(nodes, t('": '))
-				nodeIdx = nodeIdx + 1
-				table.insert(nodes, i(nodeIdx, string.format('value%d', idx)))
-				table.insert(nodes, t({ ',', '' }))
-			end
-
-			table.insert(nodes, t('}'))
-			return sn(nil, nodes)
-		end),
-		i(0),
-	}, in_func)
-end
-
-local map_key_type = s({ trig = 'map', name = 'map[<key>]<value>', dscr = 'map short hand' }, {
-	sn(1, fmta('map[<key>]<type>', { key = i(1, 'key'), type = i(2, 'type') })),
-})
-
-local map_key_type_auto = s({ trig = 'map[', name = 'auto-map', dscr = 'quick map' }, {
-	sn(1, fmta('map[<key>]<type>', { key = i(1, 'key'), type = i(2, 'type') })),
-})
-
 local main = s(
 	{ trig = 'main', name = 'Main', dscr = 'Create a main function' },
 	sn(1, fmta('func main() {\n\t<>\n}', i(1))),
@@ -145,6 +86,19 @@ local if_err = ls.s(
 	}),
 	in_func
 )
+
+---Creates responder_if_err node
+local function responder_if_err(trig)
+	return ls.s(
+		{ trig = trig, name = 'Responder if err', dscr = 'If error, return error wrapped in responder' },
+		fmta('if <> != nil {\n\treturn <>\n}\n<>', {
+			ls.i(1, 'err'),
+			ls.d(2, util.make_return_nodes_responder, { 1 }),
+			ls.i(0),
+		}),
+		in_func
+	)
+end
 
 local if_call = ls.s(
 	{ trig = 'ifcall', name = 'IF CALL', dscr = 'Call a function and check the error' },
@@ -190,18 +144,117 @@ local make = ls.s(
 	in_func
 )
 
+---recursive choice or more fields
+local function dynamic_msi()
+	return sn(nil, {
+		t([["]]),
+		i(1, 'key'),
+		t([[": ]]),
+		i(2, 'value'),
+		t(','),
+		c(3, {
+			t('', {
+				node_ext_opts = { active = { virt_text = { { 'Select next choice to insert more lines' } } } },
+			}),
+			sn(1, {
+				t({ '', '\t' }),
+				d(1, dynamic_msi),
+			}),
+		}),
+	})
+end
+
+local dynamic_map = s({ trig = 'map', dscr = 'Dynamic mapping', name = 'dynamic map' }, {
+	c(1, {
+		sn(
+			nil,
+			fmta(
+				[[
+			map[string]interface{}{<>
+				<>
+			}]],
+				{
+					i(1),
+					d(2, dynamic_msi),
+				}
+			)
+		),
+		sn(nil, fmta([[map[string]interface{}<>]], { i(1) })),
+		sn(nil, fmta([[map[<>]<>]], { i(1, 'key'), i(2, 'type') })),
+	}),
+})
+
+local cobra_command = s(
+	{ trig = 'cobra', dscr = 'Create Cobra command', name = 'Cobra Command' },
+	fmta(
+		[[
+var <command> = &cobra.Command{
+	Use:   "<use>",
+	Short: "<short>",
+	Long: `<long>`,<run>
+}
+	]],
+		{
+			command = i(1, 'cmd'),
+			use = i(2, 'use'),
+			short = i(3, 'Short Description'),
+			long = i(4, 'Long Description'),
+			run = c(5, {
+				sn(nil, {
+					t({ '', '\t' }),
+					isn(
+						1,
+						fmta(
+							[[
+							SilenceErrors: true,
+							SilenceUsage:  true,
+							RunE: func(cmd *cobra.Command, _args []string) error {
+								ctx := cmd.Context()
+
+								<>
+
+								return nil
+							},
+							]],
+							{ i(1) }
+						),
+						'$PARENT_INDENT\t'
+					),
+				}),
+				sn(nil, {
+					t({ '', '\t' }),
+					isn(
+						1,
+						fmta(
+							[[
+							Run: func(cmd *cobra.Command, _args []string) {
+								ctx := cmd.Context()
+
+								<>
+							},
+							]],
+							{ i(1) }
+						),
+						'$PARENT_INDENT\t'
+					),
+				}),
+				t(''),
+			}),
+		}
+	),
+	not_in_func
+)
+
 ls.add_snippets('go', {
 	apm_span,
-	map_string_interface,
-	map_string_interface_insert,
-	map_key_type,
+	dynamic_map,
 	main,
 	if_err,
 	make,
 	if_call,
+	cobra_command,
+	responder_if_err('iferr'),
+	responder_if_err('resp'),
+	responder_if_err('respif'),
+	responder_if_err('ifr'),
 })
-ls.add_snippets('go', {
-	map_string_interface_regex('msi(%d)'),
-	map_string_interface_regex('map(%d)'),
-	map_key_type_auto,
-}, { type = 'autosnippets' })
