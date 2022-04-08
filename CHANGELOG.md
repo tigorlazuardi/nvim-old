@@ -14,6 +14,7 @@
 > Features
 - **copilot:** added copilot vim to prepare copilot
 - **copilot:** added copilot to nvim-cmp
+- **file-tree:** moved from nvim tree to telescope file browser
 - **markdown_preview:** set config to setup
 - **markdown_preview:** autostart disabled
 - **null_ls:** removed taplo in favor of lspinstall version
