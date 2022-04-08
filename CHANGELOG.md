@@ -5,6 +5,7 @@
 - **snippet:** fix insert regex golang
 
 > Features
+- **rust-lsp:** check on save is now clippy
 - **snippet:** added rust snippet creating fn
 - **snippet:** added snippet for generating markdown table
 

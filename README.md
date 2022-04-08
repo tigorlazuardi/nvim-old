@@ -37,6 +37,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **snippet:** fix insert regex golang
 
 > Features
+- **rust-lsp:** check on save is now clippy
 - **snippet:** added rust snippet creating fn
 - **snippet:** added snippet for generating markdown table
 

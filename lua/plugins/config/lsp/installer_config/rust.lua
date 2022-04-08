@@ -25,6 +25,7 @@ local server_configuration = {
 			},
 			checkOnSave = {
 				enable = true,
+				command = 'clippy',
 			},
 			cargo = {
 				loadOutDirsFromCheck = true,
