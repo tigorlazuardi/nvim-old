@@ -133,7 +133,7 @@ local function run()
 			'Buffer Picker',
 		},
 		['<c-f>'] = {
-			[[<cmd>Telescope find_files<cr>]],
+			[[<cmd>Telescope find_files hidden=true<cr>]],
 			'File Picker',
 		},
 	})

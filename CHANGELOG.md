@@ -20,11 +20,12 @@
 - **null_ls:** removed taplo in favor of lspinstall version
 - **rust-lsp:** check on save is now clippy
 - **snippet:** added snippet for generating markdown table
-- **snippet:** added responder golang snippet
 - **snippet:** added iferr responder
+- **snippet:** added responder golang snippet
 - **snippet:** added cobra snippet golang
 - **snippet:** added rust snippet creating fn
 - **telescope:** <c-f> mapping now mapped to find file picker
+- **telescope:** find files hidden true
 
 > Revert
 - disabled mini indentline
