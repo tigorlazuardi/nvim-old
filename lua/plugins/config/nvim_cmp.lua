@@ -163,6 +163,8 @@ return function(use)
 		config = cmp_config,
 	})
 
+	use({ 'github/copilot.vim' })
+
 	-- copilot
 	use({
 		'zbirenbaum/copilot.lua',
