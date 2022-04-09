@@ -33,16 +33,7 @@ local function run()
 		M = { '<cmd>Telescope marks<cr>', 'Show Marks' },
 	})
 
-	local telescope_mappings = {
-		i = {},
-		n = {},
-	}
-
-	local present, trouble = pcall(require, 'trouble.providers.telescope')
-	if present then
-		telescope_mappings['i']['<c-t>'] = trouble.open_with_trouble
-		telescope_mappings['n']['<c-t>'] = trouble.open_with_trouble
-	end
+	local trouble = require('trouble.providers.telescope')
 
 	local telescope = require('telescope')
 
@@ -63,10 +54,14 @@ local function run()
 			'notify',
 		},
 	})
+
 	local fb_actions = require('telescope').extensions.file_browser.actions
 	telescope.setup({
 		defaults = {
-			mappings = telescope_mappings,
+			mappings = {
+				['i'] = { ['<c-t>'] = trouble.open_with_trouble },
+				['n'] = { ['<c-t>'] = trouble.open_with_trouble },
+			},
 		},
 		extensions = {
 			fzf = {
@@ -97,7 +92,7 @@ local function run()
 						['<c-h>'] = fb_actions.goto_parent_dir,
 						['b'] = fb_actions.create,
 						['f'] = fb_actions.toggle_browser,
-						['i'] = fb_actions.rename,
+						['<c-i>'] = fb_actions.rename,
 						['x'] = fb_actions.move,
 						['y'] = fb_actions.copy,
 						['r'] = fb_actions.remove,
@@ -114,11 +109,10 @@ local function run()
 
 	telescope.load_extension('ui-select')
 	telescope.load_extension('fzf')
-	telescope.load_extension('file_browser')
 
 	local fb_open = require('telescope').extensions.file_browser.file_browser
 	wk.register({
-		['<leader>e'] = {
+		['<c-e>'] = {
 			function()
 				fb_open({
 					path = '%:p:h',
@@ -126,9 +120,13 @@ local function run()
 					select_buffer = true,
 				})
 			end,
-			'Open File Picker',
+			'Open File Browser',
 		},
 		['<c-t>'] = {
+			[[<cmd>Telescope live_grep<cr>]],
+			'Live Grep (Word Search)',
+		},
+		['<c-b>'] = {
 			[[<cmd>Telescope buffers<cr>]],
 			'Buffer Picker',
 		},
@@ -136,6 +134,7 @@ local function run()
 			[[<cmd>Telescope find_files hidden=true<cr>]],
 			'File Picker',
 		},
+		['<leader>fe'] = { '<cmd>Telescope env<cr>', 'Find Environment Variables' },
 	})
 end
 

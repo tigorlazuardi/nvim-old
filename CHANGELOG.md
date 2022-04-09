@@ -12,21 +12,22 @@
 - update commitlint
 
 > Features
-- **copilot:** added copilot to nvim-cmp
 - **copilot:** added copilot vim to prepare copilot
+- **copilot:** added copilot to nvim-cmp
 - **file-tree:** moved from nvim tree to telescope file browser
-- **markdown_preview:** autostart disabled
 - **markdown_preview:** set config to setup
+- **markdown_preview:** autostart disabled
 - **null_ls:** removed taplo in favor of lspinstall version
 - **rust-lsp:** check on save is now clippy
-- **snippet:** added snippet for generating markdown table
+- **snippet:** added responder golang snippet
+- **snippet:** added iferr responder
 - **snippet:** added rust snippet creating fn
 - **snippet:** added cobra snippet golang
-- **snippet:** added iferr responder
-- **snippet:** added responder golang snippet
+- **snippet:** added snippet for generating markdown table
 - **sqls:** added config to sqls
 - **telescope:** <c-f> mapping now mapped to find file picker
 - **telescope:** find files hidden true
+- **telescope:** move explorer mapping to <c-e> and other used telescope pickers
 - **telescope-fb:** move mappings
 
 > Revert
