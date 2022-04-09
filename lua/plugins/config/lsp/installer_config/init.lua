@@ -39,6 +39,9 @@ local config_getter = {
 	eslint = function()
 		return require('plugins.config.lsp.installer_config.eslint')
 	end,
+	sqls = function()
+		return require('plugins.config.lsp.installer_config.sqls')
+	end,
 }
 
 ---check if blacklist
