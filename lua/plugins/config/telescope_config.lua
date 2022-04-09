@@ -82,9 +82,9 @@ local function run()
 			file_browser = {
 				mappings = {
 					['i'] = {
-						['<c-h>'] = fb_actions.goto_cwd,
-						['<c-g>'] = fb_actions.goto_parent_dir,
-						['<c-e>'] = fb_actions.create,
+						['<c-g>'] = fb_actions.goto_cwd,
+						['<c-h>'] = fb_actions.goto_parent_dir,
+						['<c-b>'] = fb_actions.create,
 						['<c-f>'] = fb_actions.toggle_browser,
 						['<c-i>'] = fb_actions.rename,
 						['<c-x>'] = fb_actions.move,
@@ -93,9 +93,9 @@ local function run()
 						['<c-l>'] = fb_actions.toggle_hidden,
 					},
 					['n'] = {
-						['<c-h>'] = fb_actions.goto_cwd,
-						['g'] = fb_actions.goto_parent_dir,
-						['e'] = fb_actions.create,
+						['g'] = fb_actions.goto_cwd,
+						['<c-h>'] = fb_actions.goto_parent_dir,
+						['b'] = fb_actions.create,
 						['f'] = fb_actions.toggle_browser,
 						['i'] = fb_actions.rename,
 						['x'] = fb_actions.move,

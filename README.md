@@ -47,18 +47,19 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **copilot:** added copilot to nvim-cmp
 - **copilot:** added copilot vim to prepare copilot
 - **file-tree:** moved from nvim tree to telescope file browser
-- **markdown_preview:** set config to setup
 - **markdown_preview:** autostart disabled
+- **markdown_preview:** set config to setup
 - **null_ls:** removed taplo in favor of lspinstall version
 - **rust-lsp:** check on save is now clippy
 - **snippet:** added snippet for generating markdown table
+- **snippet:** added rust snippet creating fn
 - **snippet:** added cobra snippet golang
 - **snippet:** added iferr responder
 - **snippet:** added responder golang snippet
-- **snippet:** added rust snippet creating fn
 - **sqls:** added config to sqls
 - **telescope:** <c-f> mapping now mapped to find file picker
 - **telescope:** find files hidden true
+- **telescope-fb:** move mappings
 
 > Revert
 - disabled mini indentline
