@@ -163,7 +163,11 @@ return function(use)
 		config = cmp_config,
 	})
 
-	use({ 'github/copilot.vim' })
+	-- Required for registering token to github
+	use({
+		'github/copilot.vim',
+		disable = vim.fn.filereadable(vim.fn.expand('$HOME/.config/github-copilot/hosts.json')) == 1,
+	})
 
 	-- copilot
 	use({
