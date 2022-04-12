@@ -50,17 +50,18 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **file-tree:** moved from nvim tree to telescope file browser
 - **markdown_preview:** autostart disabled
 - **markdown_preview:** set config to setup
+- **neotree:** moved from nvim-tree to neotree
 - **null_ls:** removed taplo in favor of lspinstall version
 - **rust-lsp:** check on save is now clippy
-- **snippet:** added iferr responder
-- **snippet:** added responder golang snippet
 - **snippet:** added rust snippet creating fn
 - **snippet:** added cobra snippet golang
+- **snippet:** added iferr responder
+- **snippet:** added responder golang snippet
 - **snippet:** added snippet for generating markdown table
 - **sqls:** added config to sqls
-- **telescope:** move explorer mapping to <c-e> and other used telescope pickers
 - **telescope:** <c-f> mapping now mapped to find file picker
 - **telescope:** find files hidden true
+- **telescope:** move explorer mapping to <c-e> and other used telescope pickers
 - **telescope-fb:** move mappings
 
 > Revert
