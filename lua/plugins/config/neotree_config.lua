@@ -110,7 +110,7 @@ return function(use)
 				},
 				window = {
 					position = 'float',
-					width = 80,
+					width = '80%',
 					mapping_options = {
 						noremap = true,
 						nowait = true,
@@ -142,6 +142,7 @@ return function(use)
 						['m'] = 'move', -- takes text input for destination
 						['q'] = 'close_window',
 						['<c-e>'] = 'close_window',
+						['<c-c>'] = 'close_window',
 						['<c-\\>'] = 'close_window',
 						['R'] = 'refresh',
 					},

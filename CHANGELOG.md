@@ -19,6 +19,7 @@
 - **markdown_preview:** autostart disabled
 - **markdown_preview:** set config to setup
 - **neotree:** moved from nvim-tree to neotree
+- **neotree:** update config
 - **null_ls:** removed taplo in favor of lspinstall version
 - **rust-lsp:** check on save is now clippy
 - **snippet:** added rust snippet creating fn
