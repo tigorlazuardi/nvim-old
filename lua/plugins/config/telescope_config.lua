@@ -74,54 +74,54 @@ local function run()
 			['ui-select'] = {
 				require('telescope.themes').get_dropdown({}),
 			},
-			file_browser = {
-				mappings = {
-					['i'] = {
-						['<c-g>'] = fb_actions.goto_cwd,
-						['<c-h>'] = fb_actions.goto_parent_dir,
-						['<c-b>'] = fb_actions.create,
-						['<c-f>'] = fb_actions.toggle_browser,
-						['<c-i>'] = fb_actions.rename,
-						['<c-x>'] = fb_actions.move,
-						['<c-y>'] = fb_actions.copy,
-						['<c-r>'] = fb_actions.remove,
-						['<c-l>'] = fb_actions.toggle_hidden,
-					},
-					['n'] = {
-						['g'] = fb_actions.goto_cwd,
-						['<c-h>'] = fb_actions.goto_parent_dir,
-						['b'] = fb_actions.create,
-						['f'] = fb_actions.toggle_browser,
-						['<c-i>'] = fb_actions.rename,
-						['x'] = fb_actions.move,
-						['y'] = fb_actions.copy,
-						['r'] = fb_actions.remove,
-						['<c-l>'] = fb_actions.toggle_hidden,
-					},
-				},
-			},
+			-- file_browser = {
+			-- 	mappings = {
+			-- 		['i'] = {
+			-- 			['<c-g>'] = fb_actions.goto_cwd,
+			-- 			['<c-h>'] = fb_actions.goto_parent_dir,
+			-- 			['<c-b>'] = fb_actions.create,
+			-- 			['<c-f>'] = fb_actions.toggle_browser,
+			-- 			['<c-i>'] = fb_actions.rename,
+			-- 			['<c-x>'] = fb_actions.move,
+			-- 			['<c-y>'] = fb_actions.copy,
+			-- 			['<c-r>'] = fb_actions.remove,
+			-- 			['<c-l>'] = fb_actions.toggle_hidden,
+			-- 		},
+			-- 		['n'] = {
+			-- 			['g'] = fb_actions.goto_cwd,
+			-- 			['<c-h>'] = fb_actions.goto_parent_dir,
+			-- 			['b'] = fb_actions.create,
+			-- 			['f'] = fb_actions.toggle_browser,
+			-- 			['<c-i>'] = fb_actions.rename,
+			-- 			['x'] = fb_actions.move,
+			-- 			['y'] = fb_actions.copy,
+			-- 			['r'] = fb_actions.remove,
+			-- 			['<c-l>'] = fb_actions.toggle_hidden,
+			-- 		},
+			-- 	},
+			-- },
 		},
 	})
 	telescope.load_extension('projects')
 	-- telescope.load_extension('sessions')
 	telescope.load_extension('env')
-	telescope.load_extension('file_browser')
+	-- telescope.load_extension('file_browser')
 
 	telescope.load_extension('ui-select')
 	telescope.load_extension('fzf')
 
-	local fb_open = require('telescope').extensions.file_browser.file_browser
+	-- local fb_open = require('telescope').extensions.file_browser.file_browser
 	wk.register({
-		['<c-e>'] = {
-			function()
-				fb_open({
-					path = '%:p:h',
-					hidden = true,
-					select_buffer = true,
-				})
-			end,
-			'Open File Browser',
-		},
+		-- ['<c-e>'] = {
+		-- 	function()
+		-- 		fb_open({
+		-- 			path = '%:p:h',
+		-- 			hidden = true,
+		-- 			select_buffer = true,
+		-- 		})
+		-- 	end,
+		-- 	'Open File Browser',
+		-- },
 		['<c-t>'] = {
 			[[<cmd>Telescope live_grep<cr>]],
 			'Live Grep (Word Search)',
@@ -146,7 +146,7 @@ return function(use)
 				'nvim-telescope/telescope-fzf-native.nvim',
 				run = 'make',
 			},
-			{ 'nvim-telescope/telescope-file-browser.nvim' },
+			-- { 'nvim-telescope/telescope-file-browser.nvim' },
 			{ 'ahmedkhalf/project.nvim' },
 			{ 'Shatur/neovim-session-manager' },
 			{ 'LinArcX/telescope-env.nvim' },

@@ -1,8 +1,5 @@
 local function setup()
-	vim.g.nvim_tree_indent_markers = 1
-	-- vim.g.nvim_tree_follow = 1
 	vim.g.nvim_tree_git_hl = 1
-	-- vim.g.nvim_tree_ignore = { '.git', 'node_modules', '.cache' }
 	vim.g.nvim_tree_highlight_opened_files = 3
 
 	vim.g.nvim_tree_icons = {
@@ -50,7 +47,7 @@ local function run()
 				error = '',
 			},
 		},
-		open_on_setup = false,
+		open_on_tab = true,
 		ignore_ft_on_setup = {},
 		git = {
 			enable = true,
@@ -68,6 +65,11 @@ local function run()
 			width = 40,
 			hide_root_folder = true,
 			auto_resize = true,
+			mappings = {
+				list = {
+					{ key = '<C-e>', action = 'close' },
+				},
+			},
 		},
 		actions = {
 			open_file = {
@@ -93,6 +95,9 @@ local function run()
 				},
 			},
 		},
+		renderer = {
+			indent_markers = { enable = true },
+		},
 	})
 
 	local wk = require('which-key')
@@ -104,6 +109,7 @@ local function run()
 			tr = { '<cmd>NvimTreeRefresh<cr>', 'Refresh Explorer Window' },
 			tn = { '<cmd>NvimTreeFindFile<cr>', 'Find File in Explorer' },
 		},
+		['<c-e>'] = { '<cmd>NvimTreeToggle<cr>', 'Toggle Explorer' },
 	})
 
 	vim.cmd([[hi! link NvimTreeGitDirty GitSignsChange]])

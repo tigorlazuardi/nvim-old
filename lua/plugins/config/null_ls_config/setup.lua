@@ -65,7 +65,12 @@ if exist('rustywind') then
 	)
 end
 
-if exist('eslint_d') then
+if exist('sqlfluff') then
+	-- table.insert(sources, null_ls.builtins.diagnostics.sqlfluff)
+	table.insert(sources, null_ls.builtins.formatting.sqlfluff)
+end
+
+if exist('eslint = falpg_fore_d') then
 	local opts = {
 		condition = function(utils)
 			return utils.root_has_file({ '.eslintrc.json', '.eslintrc' })
