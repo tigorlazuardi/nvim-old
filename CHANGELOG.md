@@ -14,8 +14,8 @@
 > Features
 - disabled nvim-filebrowser, enabled nvim-tree, added sqls to nullls
 - **cmp:** improve compare and sort
-- **copilot:** added copilot to nvim-cmp
 - **copilot:** added copilot vim to prepare copilot
+- **copilot:** added copilot to nvim-cmp
 - **file-tree:** moved from nvim tree to telescope file browser
 - **markdown_preview:** autostart disabled
 - **markdown_preview:** set config to setup
@@ -23,12 +23,13 @@
 - **neotree:** update config
 - **null_ls:** removed taplo in favor of lspinstall version
 - **rust-lsp:** check on save is now clippy
-- **snippet:** added responder golang snippet
 - **snippet:** added iferr responder
+- **snippet:** added responder golang snippet
 - **snippet:** added rust snippet creating fn
 - **snippet:** added cobra snippet golang
 - **snippet:** added snippet for generating markdown table
 - **sqls:** added config to sqls
+- **syntax-tree-surfer:** added syntax tree surper
 - **telescope:** <c-f> mapping now mapped to find file picker
 - **telescope:** find files hidden true
 - **telescope:** move explorer mapping to <c-e> and other used telescope pickers
