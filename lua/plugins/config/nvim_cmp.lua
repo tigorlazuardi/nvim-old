@@ -1,5 +1,7 @@
 local function cmp_config()
 	local cmp = require('cmp')
+
+	local compare = require('cmp.config.compare')
 	cmp.setup({
 		mapping = {
 			['<C-p>'] = cmp.mapping.select_prev_item(),
@@ -28,18 +30,27 @@ local function cmp_config()
 			}),
 		},
 		sources = {
-			{ name = 'copilot' },
-			{ name = 'luasnip' },
-			{ name = 'path' },
-			{ name = 'nvim_lsp' },
-			{ name = 'buffer' },
-			{ name = 'rg' },
-			{ name = 'spell' },
-			{ name = 'emoji' },
+			{ name = 'copilot', priority = 8 },
+			{ name = 'nvim_lsp', priority = 8 },
+			{ name = 'luasnip', priority = 7 },
+			{ name = 'buffer', priority = 7 },
+			{ name = 'path', priority = 6 },
+			{ name = 'rg', priority = 5 },
+			{ name = 'spell', priority = 4 },
+			{ name = 'emoji', priority = 3 },
 		},
-		preselect = cmp.PreselectMode.Item,
+		preselect = cmp.PreselectMode.None,
+		sorting = {
+			priority_weight = 1.0,
+			comparators = {
+				compare.locality,
+				compare.recently_used,
+				compare.score,
+				compare.offset,
+				compare.order,
+			},
+		},
 	})
-
 	cmp.setup.cmdline(':', {
 		sources = cmp.config.sources({
 			{ name = 'path' },
