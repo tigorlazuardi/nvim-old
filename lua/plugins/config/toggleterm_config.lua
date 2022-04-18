@@ -32,17 +32,17 @@ local function run()
 		},
 	})
 
-	-- local term = require('toggleterm.terminal').Terminal
-	-- local lazygit = term:new({ cmd = 'lazygit', hidden = true })
-	--
-	-- ---@diagnostic disable-next-line
-	-- function _lazygit_toggle()
-	-- 	lazygit:toggle()
-	-- end
-	--
-	-- local wk = require('which-key')
-	--
-	-- wk.register({ ['<leader>z'] = { '<cmd>lua _lazygit_toggle()<CR>', 'Lazygit' } })
+	local term = require('toggleterm.terminal').Terminal
+	local lazygit = term:new({ cmd = 'lazygit', hidden = true })
+
+	---@diagnostic disable-next-line
+	function _lazygit_toggle()
+		lazygit:toggle()
+	end
+
+	local wk = require('which-key')
+
+	wk.register({ ['<leader>z'] = { '<cmd>lua _lazygit_toggle()<CR>', 'Lazygit' } })
 end
 
 return function(use)
