@@ -86,7 +86,7 @@ return function(client, bufnr)
 		['<F2>'] = { '<cmd>lua vim.lsp.buf.rename()<CR>', '(LSP) Rename Symbol' },
 	}, wk_option)
 
-	if client.resolved_capabilities.document_highlight then
+	if client.server_capabilities.documentHighlightProvider then
 		vim.cmd([[
 			autocmd CursorHold <buffer> silent! lua vim.lsp.buf.document_highlight()
 			autocmd CursorMoved <buffer> silent! lua vim.lsp.buf.clear_references()

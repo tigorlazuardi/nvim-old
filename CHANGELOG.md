@@ -1,6 +1,13 @@
 <a name="unreleased"></a>
 ### [Unreleased]
 
+> Features
+- **migration:** migration to 0.8
+
+
+<a name="v3.1.8"></a>
+### [v3.1.8] - 2022-04-18
+
 > Bug Fixes
 - **snippet:** fix insert regex golang
 
@@ -847,7 +854,8 @@
 - initial commit
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v3.1.7...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v3.1.8...HEAD
+[v3.1.8]: https://github.com/tigorlazuardi/nvim/compare/v3.1.7...v3.1.8
 [v3.1.7]: https://github.com/tigorlazuardi/nvim/compare/v3.1.6...v3.1.7
 [v3.1.6]: https://github.com/tigorlazuardi/nvim/compare/v3.1.5...v3.1.6
 [v3.1.5]: https://github.com/tigorlazuardi/nvim/compare/v3.1.4...v3.1.5

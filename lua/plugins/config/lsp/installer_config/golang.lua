@@ -4,7 +4,7 @@ local on_attach = require('plugins.config.lsp.on_attach')
 local opts = {
 	capabilities = capabilities,
 	on_attach = function(client, bufnr)
-		client.resolved_capabilities.document_formatting = true
+		client.server_capabilities.documentFormattingProvider = true
 		on_attach(client, bufnr)
 		vim.cmd([[autocmd BufWritePre <buffer> lua require("go.format").goimport()]])
 		local wk = require('which-key')
