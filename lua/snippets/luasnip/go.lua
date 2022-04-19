@@ -46,7 +46,7 @@ local apm_span = s({ trig = 'apm:span', name = 'apm span', dscr = 'creates apm s
 
 		local name, span_type
 		local fn_name_node = fn_node:field('name')[1]
-		name = ts_utils.get_node_text(fn_name_node)[1]
+		name = vim.treesitter.query.get_node_text(fn_name_node)[1]
 		if fn_node:type() == 'function_declaration' then
 			span_type = name
 		else
@@ -55,7 +55,7 @@ local apm_span = s({ trig = 'apm:span', name = 'apm span', dscr = 'creates apm s
 			if fn_receiver_type_node:type() == 'pointer_type' then
 				fn_receiver_type_node = fn_receiver_type_node:child(1)
 			end
-			span_type = ts_utils.get_node_text(fn_receiver_type_node)[1]
+			span_type = vim.treesitter.query.get_node_text(fn_receiver_type_node)[1]
 		end
 		return sn(
 			nil,

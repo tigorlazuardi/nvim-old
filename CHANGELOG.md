@@ -1,6 +1,13 @@
 <a name="unreleased"></a>
 ### [Unreleased]
 
+> Bug Fixes
+- **treesitter:** finish mapping ts_utils.get_node_text to vim.treesitter.query.get_node_text
+
+
+<a name="v4.0.0"></a>
+### [v4.0.0] - 2022-04-19
+
 > Features
 - **migration:** migration to 0.8
 
@@ -854,7 +861,8 @@
 - initial commit
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v3.1.8...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v4.0.0...HEAD
+[v4.0.0]: https://github.com/tigorlazuardi/nvim/compare/v3.1.8...v4.0.0
 [v3.1.8]: https://github.com/tigorlazuardi/nvim/compare/v3.1.7...v3.1.8
 [v3.1.7]: https://github.com/tigorlazuardi/nvim/compare/v3.1.6...v3.1.7
 [v3.1.6]: https://github.com/tigorlazuardi/nvim/compare/v3.1.5...v3.1.6
