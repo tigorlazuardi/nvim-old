@@ -4,6 +4,9 @@
 > Bug Fixes
 - **treesitter:** finish mapping ts_utils.get_node_text to vim.treesitter.query.get_node_text
 
+> Features
+- **go:** changed from ray-x-go to personal custom one
+
 
 <a name="v4.0.0"></a>
 ### [v4.0.0] - 2022-04-19

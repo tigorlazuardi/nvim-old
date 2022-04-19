@@ -1,6 +1,6 @@
 return function(use)
 	use({
-		'ray-x/go.nvim',
+		'tigorlazuardi/go.nvim',
 		requires = { 'ray-x/guihua.lua', 'akinsho/nvim-toggleterm.lua' },
 		config = function()
 			local lsp_installer_servers = require('nvim-lsp-installer.servers')
