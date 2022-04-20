@@ -21,11 +21,11 @@ return function(use)
 				['<c-n>'] = { [[<cmd>lua require('syntax-tree-surfer').surf("child", "visual")<cr>]], 'Surf Child' },
 
 				-- Swapping
-				[';'] = {
+				['<c-h>'] = {
 					[[<cmd>lua require('syntax-tree-surfer').surf("prev", "visual", true)<cr>]],
 					'Swap Previous',
 				},
-				["'"] = {
+				['<c-l>'] = {
 					[[<cmd>lua require('syntax-tree-surfer').surf("next", "visual", true)<cr>]],
 					'Swap Next',
 				},

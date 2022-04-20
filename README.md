@@ -38,6 +38,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 
 > Features
 - **go:** changed from ray-x-go to personal custom one
+- **surfer:** more sane keybinding
 
 
 <a name="v4.0.0"></a>
