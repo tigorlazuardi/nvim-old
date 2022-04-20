@@ -31,22 +31,23 @@ local in_func = {
 local apm_span = s({ trig = 'apm:span', name = 'apm span', dscr = 'creates apm span from context' }, {
 	d(1, function(_args, _snip)
 		local cursor_node = ts_utils.get_node_at_cursor()
-		local scope_tree = ts_locals.get_scope_tree(cursor_node, 0)
+		local parent = cursor_node:parent()
 		local fn_node
-		for _, scope in ipairs(scope_tree) do
-			if scope:type() == 'function_declaration' or scope:type() == 'method_declaration' then
-				fn_node = scope
+		while parent do
+			if parent:type() == 'function_declaration' or parent:type() == 'method_declaration' then
+				fn_node = parent
 				break
 			end
+			parent = parent:parent()
 		end
 		if not fn_node then
-			vim.notify('snippet requires cursor inside a function or method', 'error', { title = 'Snippet Error' })
+			vim.notify('cursor is not inside a function or method', 'error', { title = 'Snippet Error' })
 			return sn(nil, {})
 		end
 
 		local name, span_type
 		local fn_name_node = fn_node:field('name')[1]
-		name = vim.treesitter.query.get_node_text(fn_name_node)[1]
+		name = vim.treesitter.query.get_node_text(fn_name_node, 0)
 		if fn_node:type() == 'function_declaration' then
 			span_type = name
 		else
@@ -55,7 +56,7 @@ local apm_span = s({ trig = 'apm:span', name = 'apm span', dscr = 'creates apm s
 			if fn_receiver_type_node:type() == 'pointer_type' then
 				fn_receiver_type_node = fn_receiver_type_node:child(1)
 			end
-			span_type = vim.treesitter.query.get_node_text(fn_receiver_type_node)[1]
+			span_type = vim.treesitter.query.get_node_text(fn_receiver_type_node, 0)
 		end
 		return sn(
 			nil,

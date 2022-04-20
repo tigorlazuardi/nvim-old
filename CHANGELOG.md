@@ -2,6 +2,7 @@
 ### [Unreleased]
 
 > Bug Fixes
+- **apm-span-snippet:** fix treesitter query
 - **treesitter:** finish mapping ts_utils.get_node_text to vim.treesitter.query.get_node_text
 
 > Features
