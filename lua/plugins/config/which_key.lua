@@ -10,7 +10,6 @@ return function(use)
 			})
 
 			wk.register({
-				['<c-s>'] = { '<cmd>wa<cr>', 'Save All Buffer' },
 				[']t'] = { '<cmd>bn!<cr>', 'Next Buffer' },
 				['[t'] = { '<cmd>bp!<cr>', 'Previous Buffer' },
 			})

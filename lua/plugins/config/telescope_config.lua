@@ -55,7 +55,7 @@ local function run()
 		},
 	})
 
-	local fb_actions = require('telescope').extensions.file_browser.actions
+	-- local fb_actions = require('telescope').extensions.file_browser.actions
 	telescope.setup({
 		defaults = {
 			mappings = {
@@ -146,11 +146,9 @@ return function(use)
 				'nvim-telescope/telescope-fzf-native.nvim',
 				run = 'make',
 			},
-			-- { 'nvim-telescope/telescope-file-browser.nvim' },
 			{ 'ahmedkhalf/project.nvim' },
 			{ 'Shatur/neovim-session-manager' },
 			{ 'LinArcX/telescope-env.nvim' },
-			{ 'nvim-telescope/telescope-file-browser.nvim' },
 			{ 'nvim-telescope/telescope-ui-select.nvim' },
 		},
 		config = run,

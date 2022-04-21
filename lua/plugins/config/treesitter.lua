@@ -41,10 +41,10 @@ local function run()
 		incremental_selection = {
 			enable = true,
 			keymaps = {
-				init_selection = '<CR>',
-				scope_incremental = '<CR>',
-				node_incremental = '<TAB>',
-				node_decremental = '<S-TAB>',
+				init_selection = '<cr>',
+				scope_incremental = '<TAB>',
+				node_incremental = '<cr>',
+				node_decremental = '<s-cr>',
 			},
 		},
 		rainbow = {
