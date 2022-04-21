@@ -8,6 +8,7 @@
 > Features
 - **go:** changed from ray-x-go to personal custom one
 - **iswap:** added iswap
+- **settings:** moved to lua
 - **surfer:** more sane keybinding
 
 > Various Actions
@@ -174,13 +175,6 @@
 > Documentation
 - added reason to ignore textobject option from go.nvim
 
-> Revert
-- removed treesitter playground since it's mostly unused
-
-
-<a name="v3.1.3"></a>
-### [v3.1.3] - 2022-02-24
-
 > Features
 - **fidget:** moved to fidget nvim from lsp-status
 - **golang:** added go test workspace
@@ -192,6 +186,7 @@
 - **yabs:** added yabs nvim
 
 > Revert
+- removed treesitter playground since it's mostly unused
 - removed yabs
 - move to smart-pairs again
 - move back to nvim autopairs
@@ -438,10 +433,18 @@
 
 > Bug Fixes
 - **commitlint:** skip on pull
+- **lsp:** Stopping hotkey now stops ALL lsp server instead of only one
 - **neovide:** opacity
+- **null_ls:** removed generic on attach from null_ls
+- **on_attach:** open float diagnostic is now line wise
 - **project:** fix project loader
-- **theme:** fix theme
 - **theme:** disabled catpuccin and sonokai on windows
+- **theme:** fix theme
+- **treesitter:** textobjects and various treesitter plugins now loaded manually using packer loader
+
+> Code Refactoring
+- **nvim-cmp:** <cr> now does not select selection
+- **nvim-goc:** change mapping group to <leader>g
 
 > Configuration
 - **focus:** excluded filetypes now includes dapui
@@ -451,44 +454,18 @@
 - **dap:** dap dlv now listens on both stdout and stderr
 - **dap:** load vs code config now appends dlvToolPath
 - **debugger:** added dapui open on success booting dap
-- **lsp-server:** schemas now using schemastore
-- **telescope:** include oldfiles in code
-
-> Revert
-- **lsp:** return back to dressing and disabled lsp saga
-- **lspsaga:** removed lsp saga
-
-
-<a name="v2.5.0"></a>
-### [v2.5.0] - 2021-12-25
-
-> Bug Fixes
-- **lsp:** Stopping hotkey now stops ALL lsp server instead of only one
-- **null_ls:** removed generic on attach from null_ls
-
-> Features
-- **lspsaga:** added lspsaga
-
-
-<a name="v2.4.1"></a>
-### [v2.4.1] - 2021-12-22
-
-> Bug Fixes
-- **on_attach:** open float diagnostic is now line wise
-- **treesitter:** textobjects and various treesitter plugins now loaded manually using packer loader
-
-> Code Refactoring
-- **nvim-cmp:** <cr> now does not select selection
-- **nvim-goc:** change mapping group to <leader>g
-
-> Features
-- **golang:** reenabled goimports
 - **golang:** commented null_ls goimports gofumpt golines
 - **golang:** null_ls added golines
+- **golang:** reenabled goimports
+- **lsp-server:** schemas now using schemastore
+- **lspsaga:** added lspsaga
+- **telescope:** include oldfiles in code
 - **vim_move:** added vim move
 
 > Revert
 - return back to nvim_cmp because coq crashes too often
+- **lsp:** return back to dressing and disabled lsp saga
+- **lspsaga:** removed lsp saga
 
 
 <a name="v2.4.0"></a>
@@ -538,6 +515,18 @@
 <a name="v2.2.0"></a>
 ### [v2.2.0] - 2021-12-18
 
+> Features
+- **golang:** added go coverage and go impl telescope
+- **theme:** added random color loader
+- **treesitter-context:** added support for tree sitter context
+
+> Various Actions
+- removed kommentary
+
+
+<a name="v2.1.0"></a>
+### [v2.1.0] - 2021-12-16
+
 > Bug Fixes
 - **code-action:** removed code-action-menu because it does not get updated to neovim nightly
 - **settings:** fix wsl check not checking the integer value
@@ -562,25 +551,33 @@
 - **comment.nvim:** removed kommentary in favor of comment.nvim
 - **coq_nvim:** added coq_nvim
 - **dressing.nvim:** added dressing.nvim plugin
-- **golang:** added go coverage and go impl telescope
 - **lsp-display:** lsp display now shows borders
 - **null-ls:** added integration to curl and proselint
 - **telescope:** added custom picker to cwd to given folder
-- **theme:** added random color loader
-- **treesitter-context:** added support for tree sitter context
 
 > Various Actions
-- removed kommentary
 - format
 
 
 <a name="v2.0.3"></a>
 ### [v2.0.3] - 2021-12-13
 
+> Bug Fixes
+- **bug-empty-file:** fixed bug empty file on open
+- **neoclip:** changed neoclip open to ge from <c-r>
+- **rust_lsp:** proper path handling on require
+- **tailwind-lsp:** autostart set back to true but depends on filetypes
+- **vscode-compability:** packerload moved to packer.loader
+
+> Config
+- **textobjects:** textobject is now loaded by vim-texobj-user
+- **trouble:** trouble now calls the function directly instead of via command
+
 > Configuration
 - **autogroups:** removed augroup from buffer scoped autocmds
 - **neovide:** set neovide transparency to 1
 - **null_ls:** update configuration for null_ls
+- **nvim-tree:** nvim tree highlight set to 3
 - **whichkey:** pressing q and do nothing now shows the subkeylist for it
 
 > Documentation
@@ -588,56 +585,18 @@
 
 > Features
 - **clang-format:** removed extra args in favor of .clang-format instead
-- **settings:** now show enter chars
-
-
-<a name="v2.1.0"></a>
-### [v2.1.0] - 2021-12-08
-
-> Features
 - **clang-format:** added clang-format to null_ls
+- **commitlint:** commitlint changed from nodejs to pure bash
+- **lsp-lua:** added lsp lua config for windows
+- **neovim:** all plugins are lazyloaded
+- **settings:** now show enter chars
+- **settings:** enabled set title so neovide can show different filesnames
+- **taplo-lsp:** added lsp support for taplo
+- **titlestring:** title string changed to cwd upon VimEnter and DirChanged
 - **titlestring:** changed from only getcwd to prefixed with `nvim -`
 
 > Various Actions
 - format
-
-
-<a name="v2.0.2"></a>
-### [v2.0.2] - 2021-12-08
-
-> Config
-- **textobjects:** textobject is now loaded by vim-texobj-user
-- **trouble:** trouble now calls the function directly instead of via command
-
-> Configuration
-- **nvim-tree:** nvim tree highlight set to 3
-
-> Features
-- **commitlint:** commitlint changed from nodejs to pure bash
-- **settings:** enabled set title so neovide can show different filesnames
-- **titlestring:** title string changed to cwd upon VimEnter and DirChanged
-
-
-<a name="v2.0.1"></a>
-### [v2.0.1] - 2021-12-05
-
-> Bug Fixes
-- **bug-empty-file:** fixed bug empty file on open
-- **vscode-compability:** packerload moved to packer.loader
-
-
-<a name="v2.0.0"></a>
-### [v2.0.0] - 2021-12-05
-
-> Bug Fixes
-- **neoclip:** changed neoclip open to ge from <c-r>
-- **rust_lsp:** proper path handling on require
-- **tailwind-lsp:** autostart set back to true but depends on filetypes
-
-> Features
-- **lsp-lua:** added lsp lua config for windows
-- **neovim:** all plugins are lazyloaded
-- **taplo-lsp:** added lsp support for taplo
 
 
 <a name="v1.3.1"></a>
@@ -703,9 +662,20 @@
 
 > Bug Fixes
 - **lefthook:** removed double changelog running
+- **lsp_status:** fix lsp status on airline not showing messages
+- **package_info:** fix package_info yelling error on recompiling
+- **selene:** fix vim global not set
+- **telescope:** now fzf and frecency is loaded properly after telescope
+- **treesitter:** fix plugins failed to load
 
 > Config
+- **godot:** added global option to disable godot lsp if godot is installed but don't plan to use neovim for coding
+- **headwind:** surpressed headwind error message on sorting
+- **neovide:** disable blur for multigrid mode
+- **null-ls:** mappings now always possible whenever null_ls is loaded
 - **null_ls:** enabled autostart
+- **package-info:** package info now is limited to filetype json
+- **settings:** added linebreak by words not character settings
 
 > Configuration
 - **lefthook:** reword pipe names
@@ -713,8 +683,15 @@
 > Doc
 - change changelog template
 
+> Features
+- **codeactionmenu:** added new plugin code action menu
+- **tailwind-headwind:** added tailwind and headwind support
+
 > Mappings
 - **diagnostic:** gn now shows line diagnostic, gN show workspace. gnn show next. gnp show previous
+- **gitsigns:** added mappings to controls hunks
+- **lsp:** added mappings for lsp formatting
+- **packer:** added packer command mappings
 
 > Various Actions
 - format lua files
@@ -729,122 +706,48 @@
 - conf(lefthook): reword pipe names
 
 
-<a name="v1.0.9"></a>
-### [v1.0.9] - 2021-11-16
-
-> Bug Fixes
-- **selene:** fix vim global not set
-
-> Config
-- **settings:** added linebreak by words not character settings
-
-
-<a name="v1.0.8"></a>
-### [v1.0.8] - 2021-11-16
-
-> Config
-- **headwind:** surpressed headwind error message on sorting
-- **neovide:** disable blur for multigrid mode
-
-> Features
-- **codeactionmenu:** added new plugin code action menu
-
-
-<a name="v1.0.7"></a>
-### [v1.0.7] - 2021-11-15
-
-> Bug Fixes
-- **treesitter:** fix plugins failed to load
-
-> Config
-- **godot:** added global option to disable godot lsp if godot is installed but don't plan to use neovim for coding
-- **null-ls:** mappings now always possible whenever null_ls is loaded
-- **package-info:** package info now is limited to filetype json
-
-
-<a name="v1.0.6"></a>
-### [v1.0.6] - 2021-11-15
-
-> Bug Fixes
-- **lsp_status:** fix lsp status on airline not showing messages
-- **package_info:** fix package_info yelling error on recompiling
-
-> Features
-- **tailwind-headwind:** added tailwind and headwind support
-
-> Mappings
-- **gitsigns:** added mappings to controls hunks
-- **lsp:** added mappings for lsp formatting
-- **packer:** added packer command mappings
-
-
-<a name="v1.0.5"></a>
-### [v1.0.5] - 2021-11-15
-
-> Bug Fixes
-- **telescope:** now fzf and frecency is loaded properly after telescope
-
-
 <a name="v1.0.4"></a>
 ### [v1.0.4] - 2021-11-15
 
-> Features
-- **lsp:** added godot lsp setting
-- **lspconfig:** added support for godot and tailwindcss
-
-> Settings
-- added backup settings
-- added nvr integration
-- added noswapfile noundofile
-
-> Various Actions
-- format
-
-> Reverts
-- feat(lsp): added godot lsp setting
-
-
-<a name="v1.0.3"></a>
-### [v1.0.3] - 2021-11-10
-
 > Bug Fixes
+- **lsp:** fix lsp status not initialized, and typescript lsp config not called
+- **packer-init-nvim:** clone timeout raised from 600 to 3000
 - **windows:** more compability codes
+- **windows:** disabled some plugins and settings that are incompatible in windows
 
 > Code Refactoring
 - **globals:** changed from using _G to vim.g
 
 > Config
 - **focus.nvim:** sign column now won't disappear on not focused windows
+- **yoink:** added configuration
 
 > Features
 - **clipboard:** reenable cutlass, registers and subversibe, but removed yoink
 - **focus.nvim:** added focus nvim
-- **windline:** added lsp status integration to airline
-- **windline:** moved from sample to local airline config
-
-> Settings
-- no backup files in writing files
-
-
-<a name="v1.0.2"></a>
-### [v1.0.2] - 2021-11-05
-
-> Bug Fixes
-- **lsp:** fix lsp status not initialized, and typescript lsp config not called
-- **packer-init-nvim:** clone timeout raised from 600 to 3000
-- **windows:** disabled some plugins and settings that are incompatible in windows
-
-> Config
-- **yoink:** added configuration
-
-> Features
+- **lsp:** added godot lsp setting
+- **lspconfig:** added support for godot and tailwindcss
 - **neoclip:** moved clipboard management to neoclip
 - **neoclip:** moved clipboard management to neoclip
 - **treesitter:** treesitter now not running on vscode
 - **vscode:** mappings for vscode
+- **windline:** added lsp status integration to airline
+- **windline:** moved from sample to local airline config
 
 > Linter
 - **golangci:** disabled auto fix for compability reason
+
+> Settings
+- added backup settings
+- added nvr integration
+- added noswapfile noundofile
+- no backup files in writing files
+
+> Various Actions
+- format
+
+> Reverts
+- feat(lsp): added godot lsp setting
 
 
 <a name="v1.0.1"></a>
@@ -876,8 +779,7 @@
 [v3.1.7]: https://github.com/tigorlazuardi/nvim/compare/v3.1.6...v3.1.7
 [v3.1.6]: https://github.com/tigorlazuardi/nvim/compare/v3.1.5...v3.1.6
 [v3.1.5]: https://github.com/tigorlazuardi/nvim/compare/v3.1.4...v3.1.5
-[v3.1.4]: https://github.com/tigorlazuardi/nvim/compare/v3.1.3...v3.1.4
-[v3.1.3]: https://github.com/tigorlazuardi/nvim/compare/v3.1.2...v3.1.3
+[v3.1.4]: https://github.com/tigorlazuardi/nvim/compare/v3.1.2...v3.1.4
 [v3.1.2]: https://github.com/tigorlazuardi/nvim/compare/v3.1.1...v3.1.2
 [v3.1.1]: https://github.com/tigorlazuardi/nvim/compare/v3.1.0...v3.1.1
 [v3.1.0]: https://github.com/tigorlazuardi/nvim/compare/v3.0.3...v3.1.0
@@ -885,28 +787,16 @@
 [v3.0.2]: https://github.com/tigorlazuardi/nvim/compare/v3.0.1...v3.0.2
 [v3.0.1]: https://github.com/tigorlazuardi/nvim/compare/v3.0.0...v3.0.1
 [v3.0.0]: https://github.com/tigorlazuardi/nvim/compare/v2.6.0...v3.0.0
-[v2.6.0]: https://github.com/tigorlazuardi/nvim/compare/v2.5.0...v2.6.0
-[v2.5.0]: https://github.com/tigorlazuardi/nvim/compare/v2.4.1...v2.5.0
-[v2.4.1]: https://github.com/tigorlazuardi/nvim/compare/v2.4.0...v2.4.1
+[v2.6.0]: https://github.com/tigorlazuardi/nvim/compare/v2.4.0...v2.6.0
 [v2.4.0]: https://github.com/tigorlazuardi/nvim/compare/v2.3.1...v2.4.0
 [v2.3.1]: https://github.com/tigorlazuardi/nvim/compare/v2.3.0...v2.3.1
 [v2.3.0]: https://github.com/tigorlazuardi/nvim/compare/v2.2.0...v2.3.0
-[v2.2.0]: https://github.com/tigorlazuardi/nvim/compare/v2.0.3...v2.2.0
-[v2.0.3]: https://github.com/tigorlazuardi/nvim/compare/v2.1.0...v2.0.3
-[v2.1.0]: https://github.com/tigorlazuardi/nvim/compare/v2.0.2...v2.1.0
-[v2.0.2]: https://github.com/tigorlazuardi/nvim/compare/v2.0.1...v2.0.2
-[v2.0.1]: https://github.com/tigorlazuardi/nvim/compare/v2.0.0...v2.0.1
-[v2.0.0]: https://github.com/tigorlazuardi/nvim/compare/v1.3.1...v2.0.0
+[v2.2.0]: https://github.com/tigorlazuardi/nvim/compare/v2.1.0...v2.2.0
+[v2.1.0]: https://github.com/tigorlazuardi/nvim/compare/v2.0.3...v2.1.0
+[v2.0.3]: https://github.com/tigorlazuardi/nvim/compare/v1.3.1...v2.0.3
 [v1.3.1]: https://github.com/tigorlazuardi/nvim/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/tigorlazuardi/nvim/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/tigorlazuardi/nvim/compare/v1.1.0...v1.2.0
-[v1.1.0]: https://github.com/tigorlazuardi/nvim/compare/v1.0.9...v1.1.0
-[v1.0.9]: https://github.com/tigorlazuardi/nvim/compare/v1.0.8...v1.0.9
-[v1.0.8]: https://github.com/tigorlazuardi/nvim/compare/v1.0.7...v1.0.8
-[v1.0.7]: https://github.com/tigorlazuardi/nvim/compare/v1.0.6...v1.0.7
-[v1.0.6]: https://github.com/tigorlazuardi/nvim/compare/v1.0.5...v1.0.6
-[v1.0.5]: https://github.com/tigorlazuardi/nvim/compare/v1.0.4...v1.0.5
-[v1.0.4]: https://github.com/tigorlazuardi/nvim/compare/v1.0.3...v1.0.4
-[v1.0.3]: https://github.com/tigorlazuardi/nvim/compare/v1.0.2...v1.0.3
-[v1.0.2]: https://github.com/tigorlazuardi/nvim/compare/v1.0.1...v1.0.2
+[v1.1.0]: https://github.com/tigorlazuardi/nvim/compare/v1.0.4...v1.1.0
+[v1.0.4]: https://github.com/tigorlazuardi/nvim/compare/v1.0.1...v1.0.4
 [v1.0.1]: https://github.com/tigorlazuardi/nvim/compare/v1.0.0...v1.0.1
