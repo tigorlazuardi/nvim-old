@@ -40,6 +40,8 @@ vim.o.linebreak = true
 -- trigger autoread when file changes on disk
 vim.o.autoread = true
 -- trigger autoread when files changes on disk
+
+local reread_group = vim.api.nvim_create_augroup('force_reread', { clear = true })
 vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'CursorHold', 'CursorHoldI' }, {
 	pattern = '*',
 	callback = function()
@@ -48,6 +50,7 @@ vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'CursorHold', 'CursorHo
 		end
 	end,
 	desc = 'Trigger autoread when files changes on disk',
+	group = reread_group,
 })
 
 vim.api.nvim_create_autocmd({ 'FileChangedShellPost' }, {
@@ -56,4 +59,5 @@ vim.api.nvim_create_autocmd({ 'FileChangedShellPost' }, {
 		vim.notify('File Reloaded', 'warn', { title = 'Buffer Reload', timeout = 500 })
 	end,
 	desc = 'Reload buffer when file changes on disk',
+	group = reread_group,
 })

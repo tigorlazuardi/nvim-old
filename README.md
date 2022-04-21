@@ -37,6 +37,9 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **apm-span-snippet:** fix treesitter query
 - **treesitter:** finish mapping ts_utils.get_node_text to vim.treesitter.query.get_node_text
 
+> Code Refactoring
+- **settings:** reread now placed under force_reread augroup
+
 > Features
 - **go:** changed from ray-x-go to personal custom one
 - **iswap:** added iswap
