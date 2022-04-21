@@ -12,7 +12,6 @@ local util = require('snippets.luasnip.go_utils')
 local rep = require('luasnip.extras').rep
 
 local ts_utils = require('nvim-treesitter.ts_utils')
-local ts_locals = require('nvim-treesitter.locals')
 
 function not_in_function()
 	return not util.is_in_function()

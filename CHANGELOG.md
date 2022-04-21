@@ -9,6 +9,9 @@
 - **go:** changed from ray-x-go to personal custom one
 - **surfer:** more sane keybinding
 
+> Various Actions
+- removed unused codes
+
 
 <a name="v4.0.0"></a>
 ### [v4.0.0] - 2022-04-19
