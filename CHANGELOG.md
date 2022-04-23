@@ -9,6 +9,9 @@
 - **clipboard:** moved to lua completely
 - **settings:** reread now placed under force_reread augroup
 
+> Documentation
+- better grammar desc on TextYankPost
+
 > Features
 - **go:** changed from ray-x-go to personal custom one
 - **iswap:** added iswap

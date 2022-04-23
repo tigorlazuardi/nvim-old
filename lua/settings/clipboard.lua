@@ -6,6 +6,6 @@ vim.api.nvim_create_autocmd({ 'TextYankPost' }, {
 	callback = function()
 		require('vim.highlight').on_yank()
 	end,
-	desc = 'Creates highlight on highlighted content when yanking',
+	desc = 'Triggers highlight on yanked content briefly',
 	group = highlight_yank,
 })
