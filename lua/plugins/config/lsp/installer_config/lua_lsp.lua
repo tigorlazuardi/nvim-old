@@ -16,7 +16,11 @@ local opts = {
 	},
 }
 
-return require('lua-dev').setup({
-	library = { vimruntime = true, types = true, plugins = true },
-	lspconfig = opts,
-})
+if vim.startswith(vim.fn.getcwd(0), vim.fn.stdpath('config')) then
+	return require('lua-dev').setup({
+		library = { vimruntime = true, types = true, plugins = true },
+		lspconfig = opts,
+	})
+end
+
+return opts
