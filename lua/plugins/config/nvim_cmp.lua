@@ -27,6 +27,17 @@ local function cmp_config()
 			format = require('lspkind').cmp_format({
 				mode = 'symbol_text',
 				preset = 'codicons',
+				menu = {
+					buffer = '[Buffer]',
+					nvim_lsp = '[LSP]',
+					nvim_lua = '[API]',
+					path = '[Path]',
+					luasnip = '[Luasnip]',
+					rg = '[Rip Grep]',
+					spell = '[Spell]',
+					copilot = '[Copilot]',
+					emoji = '[Emoji]',
+				},
 			}),
 		},
 		sources = {
