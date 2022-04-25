@@ -115,9 +115,13 @@ null_ls.setup({
 	sources = sources,
 	on_attach = function(client, bufnr)
 		if client.server_capabilities.documentFormattingProvider then
-			vim.cmd([[
-				au BufWritePre <buffer> silent! lua vim.lsp.buf.formatting_sync() 
-			]])
+			vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+				buffer = bufnr,
+				desc = 'Format buffer on save',
+				callback = function()
+					vim.lsp.buf.formatting_sync()
+				end,
+			})
 		end
 		local wk = require('which-key')
 		wk.register({

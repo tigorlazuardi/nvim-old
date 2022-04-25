@@ -6,6 +6,7 @@
 - **treesitter:** finish mapping ts_utils.get_node_text to vim.treesitter.query.get_node_text
 
 > Code Refactoring
+- moved to lua from autocmd vim
 - **clipboard:** moved to lua completely
 - **settings:** reread now placed under force_reread augroup
 
