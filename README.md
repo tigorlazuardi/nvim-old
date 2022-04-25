@@ -38,6 +38,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **treesitter:** finish mapping ts_utils.get_node_text to vim.treesitter.query.get_node_text
 
 > Code Refactoring
+- checktime now is silent!
 - moved to lua from autocmd vim
 - **clipboard:** moved to lua completely
 - **settings:** reread now placed under force_reread augroup

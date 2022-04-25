@@ -46,7 +46,7 @@ vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'CursorHold', 'CursorHo
 	pattern = '*',
 	callback = function()
 		if vim.fn.mode() ~= 'c' then
-			vim.cmd('checktime')
+			vim.cmd('silent! checktime')
 		end
 	end,
 	desc = 'Trigger autoread when files changes on disk',
