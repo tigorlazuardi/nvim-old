@@ -71,9 +71,9 @@ local function run()
 				case_mode = 'smart_case', -- or "ignore_case" or "respect_case"
 				-- the default case_mode is "smart_case"
 			},
-			['ui-select'] = {
-				require('telescope.themes').get_dropdown({}),
-			},
+			-- ['ui-select'] = {
+			-- 	require('telescope.themes').get_dropdown({}),
+			-- },
 			-- file_browser = {
 			-- 	mappings = {
 			-- 		['i'] = {
@@ -107,7 +107,7 @@ local function run()
 	telescope.load_extension('env')
 	-- telescope.load_extension('file_browser')
 
-	telescope.load_extension('ui-select')
+	-- telescope.load_extension('ui-select')
 	telescope.load_extension('fzf')
 
 	-- local fb_open = require('telescope').extensions.file_browser.file_browser
@@ -149,7 +149,7 @@ return function(use)
 			{ 'ahmedkhalf/project.nvim' },
 			{ 'Shatur/neovim-session-manager' },
 			{ 'LinArcX/telescope-env.nvim' },
-			{ 'nvim-telescope/telescope-ui-select.nvim' },
+			-- { 'nvim-telescope/telescope-ui-select.nvim' },
 		},
 		config = run,
 	})

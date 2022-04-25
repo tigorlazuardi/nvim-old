@@ -31,6 +31,7 @@ local function cmp_config()
 		},
 		sources = {
 			{ name = 'copilot', priority = 8 },
+			{ name = 'nvim_lua', priority = 8 },
 			{ name = 'nvim_lsp', priority = 8 },
 			{ name = 'luasnip', priority = 7 },
 			{ name = 'buffer', priority = 7 },
@@ -161,6 +162,7 @@ return function(use)
 			'hrsh7th/cmp-emoji',
 			'hrsh7th/cmp-nvim-lsp',
 			'hrsh7th/cmp-path',
+			'hrsh7th/cmp-nvim-lua',
 			'lukas-reineke/cmp-rg',
 			'hrsh7th/cmp-nvim-lsp-signature-help',
 			'onsails/lspkind-nvim',

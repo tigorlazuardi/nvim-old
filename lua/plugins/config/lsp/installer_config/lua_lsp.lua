@@ -5,6 +5,8 @@ local opts = {
 	capabilities = capabilities,
 	on_attach = function(client, bufnr)
 		on_attach(client, bufnr)
+		client.server_capabilities.documentFormattingProvider = false
+		client.resolved_capabilities.document_formatting = false
 		vim.cmd([[command! DebugNeovim lua require('osv').run_this()]])
 	end,
 	settings = {
@@ -15,12 +17,5 @@ local opts = {
 		},
 	},
 }
-
-if vim.startswith(vim.fn.getcwd(0), vim.fn.stdpath('config')) then
-	return require('lua-dev').setup({
-		library = { vimruntime = true, types = true, plugins = true },
-		lspconfig = opts,
-	})
-end
 
 return opts
