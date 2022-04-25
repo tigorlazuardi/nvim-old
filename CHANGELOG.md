@@ -17,6 +17,7 @@
 > Features
 - **go:** changed from ray-x-go to personal custom one
 - **iswap:** added iswap
+- **nvim-cmp:** add limit on many source hits like buffer, rg, spell
 - **settings:** moved to lua
 - **sumneko:** removed lua-dev in favor of cmp-nvim-lua and removed buggy ui-select from telescope
 - **sumneko:** lua-dev only runs on neovim config path
