@@ -124,7 +124,7 @@ return function(use)
 						['<2-LeftMouse>'] = 'open',
 						['<cr>'] = 'open',
 						['S'] = 'open_split',
-						['<c-x>'] = 'open_split',
+						['<c-s>'] = 'open_split',
 						['s'] = 'open_vsplit',
 						['<c-v>'] = 'open_vsplit',
 						['t'] = 'open_tabnew',

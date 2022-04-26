@@ -51,6 +51,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **debug-neovim:** move command to lua
 - **go:** changed from ray-x-go to personal custom one
 - **iswap:** added iswap
+- **neotree:** added <c-s> to split horizontally
 - **neovide:** changed font to comic code liagures
 - **nvim-cmp:** add limit on many source hits like buffer, rg, spell
 - **settings:** moved to lua
