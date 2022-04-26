@@ -7,7 +7,9 @@ local opts = {
 		on_attach(client, bufnr)
 		client.server_capabilities.documentFormattingProvider = false
 		client.resolved_capabilities.document_formatting = false
-		vim.cmd([[command! DebugNeovim lua require('osv').run_this()]])
+		vim.api.nvim_create_user_command('DebugNeovim', function()
+			require('osv').run_this()
+		end, { bang = true })
 	end,
 	settings = {
 		Lua = {
