@@ -3,6 +3,7 @@
 
 > Bug Fixes
 - **apm-span-snippet:** fix treesitter query
+- **bufferline:** now config for bufferline runs properly
 - **treesitter:** finish mapping ts_utils.get_node_text to vim.treesitter.query.get_node_text
 - **which-key:** fix wtf mapping for buffer
 
