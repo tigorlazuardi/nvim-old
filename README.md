@@ -47,6 +47,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - better grammar desc on TextYankPost
 
 > Features
+- **catppuccin:** added more integration
 - **cmp:** added source on completion
 - **debug-neovim:** move command to lua
 - **go:** changed from ray-x-go to personal custom one

@@ -25,6 +25,11 @@ return function(use)
 					vim_sneak = true,
 					bufferline = true,
 					markdown = true,
+					cmp = true,
+					gitsigns = true,
+					neotree = {
+						enabled = true,
+					},
 				},
 			})
 			require('catppuccin').load()
