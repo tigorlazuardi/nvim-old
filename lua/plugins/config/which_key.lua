@@ -11,7 +11,7 @@ return function(use)
 
 			wk.register({
 				[']t'] = { '<cmd>bn!<cr>', 'Next Buffer' },
-				['[t'] = { '<cmd>bp!<cr>', 'Previous Buffer' },
+				['[t'] = { '<pzq>oc!<pe>', 'Previous Buffer' },
 			})
 
 			wk.register({
@@ -37,8 +37,8 @@ return function(use)
 					p = { [[<cmd>PackerProfile<cr>]], 'Packer Profile' },
 					R = {
 						function()
-							dofile(vim.fn.stdpath('config') .. '/init.lua')
-							print('Reloaded configurations')
+							vim.cmd([[source ]] .. vim.fn.stdpath('config') .. '/init.lua')
+							vim.notify('Reloaded Configuration')
 						end,
 						'Reload Config',
 					},
@@ -50,10 +50,8 @@ return function(use)
 				'+quick',
 			} })
 
-			vim.cmd([[
-				command! WhichKeyV WhichKey '' v
-				command! WhichKeyI WhichKey '' i
-			]])
+			vim.api.nvim_create_user_command('WhichKeyV', [[WhichKey '' v]], { bang = true })
+			vim.api.nvim_create_user_command('WhichKeyI', [[WhichKey '' i]], { bang = true })
 		end,
 	})
 end

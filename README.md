@@ -56,6 +56,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **sumneko:** removed lua-dev in favor of cmp-nvim-lua and removed buggy ui-select from telescope
 - **sumneko:** lua-dev only runs on neovim config path
 - **surfer:** more sane keybinding
+- **whichkey:** moved command to lua and fix source init lua
 
 > Revert
 - **neogen:** removed neogen
