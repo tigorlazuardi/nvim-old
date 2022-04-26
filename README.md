@@ -63,6 +63,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **neogen:** removed neogen
 
 > Various Actions
+- removed unused plugins
 - removed unused codes
 
 

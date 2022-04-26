@@ -31,6 +31,7 @@
 - **neogen:** removed neogen
 
 > Various Actions
+- removed unused plugins
 - removed unused codes
 
 
