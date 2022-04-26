@@ -11,7 +11,7 @@ return function(use)
 
 			wk.register({
 				[']t'] = { '<cmd>bn!<cr>', 'Next Buffer' },
-				['[t'] = { '<pzq>oc!<pe>', 'Previous Buffer' },
+				['[t'] = { '<cmd>bp!<cr>', 'Previous Buffer' },
 			})
 
 			wk.register({

@@ -36,6 +36,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 > Bug Fixes
 - **apm-span-snippet:** fix treesitter query
 - **treesitter:** finish mapping ts_utils.get_node_text to vim.treesitter.query.get_node_text
+- **which-key:** fix wtf mapping for buffer
 
 > Code Refactoring
 - checktime now is silent!
