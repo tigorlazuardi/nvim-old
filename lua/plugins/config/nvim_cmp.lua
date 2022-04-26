@@ -100,22 +100,12 @@ local function cmp_config()
 	local mappings = {
 		['<c-j>'] = {
 			function()
-				local ok, neogen = pcall(require, 'neogen')
-				if ok and neogen.jumpable() then
-					neogen.jump_next()
-					return
-				end
 				ls.expand_or_jump()
 			end,
 			'(Snippet) Expand Snippet or Jump to Next Placeholder',
 		},
 		['<c-k>'] = {
 			function()
-				local ok, neogen = pcall(require, 'neogen')
-				if ok and neogen.jumpable(-1) then
-					neogen.jump_prev()
-					return
-				end
 				ls.jump(-1)
 			end,
 			'(Snippet) Jump to Previous Placeholder',

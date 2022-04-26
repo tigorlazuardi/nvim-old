@@ -25,6 +25,9 @@
 - **sumneko:** lua-dev only runs on neovim config path
 - **surfer:** more sane keybinding
 
+> Revert
+- **neogen:** removed neogen
+
 > Various Actions
 - removed unused codes
 
