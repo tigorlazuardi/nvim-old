@@ -34,6 +34,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 ### [Unreleased]
 
 > Features
+- **lsp-golang:** added guard to check if executables are in path
 - **which-key:** <?> now used to show normal mapping
 
 

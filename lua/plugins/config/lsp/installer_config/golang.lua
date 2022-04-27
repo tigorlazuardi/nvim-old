@@ -88,6 +88,12 @@ local opts = {
 	},
 }
 
-require('lspconfig').gopls.setup(opts)
+if vim.fn.exepath('gopls') ~= '' then
+	require('lspconfig').gopls.setup(opts)
+end
+
+if vim.fn.exepath('golangci-lint-langserver') ~= '' and vim.fn.exepath('golangci-lint') ~= '' then
+	require('lspconfig').golangci_lint_ls.setup({})
+end
 
 return opts
