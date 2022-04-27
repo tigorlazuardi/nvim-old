@@ -33,6 +33,13 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 <a name="unreleased"></a>
 ### [Unreleased]
 
+> Revert
+- **golang:** revert server config to use normal gopls because gopls in lsp install does not support go1.18
+
+
+<a name="v4.0.1"></a>
+### [v4.0.1] - 2022-04-26
+
 > Bug Fixes
 - **apm-span-snippet:** fix treesitter query
 - **bufferline:** now config for bufferline runs properly
@@ -927,7 +934,8 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - initial commit
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v4.0.0...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v4.0.1...HEAD
+[v4.0.1]: https://github.com/tigorlazuardi/nvim/compare/v4.0.0...v4.0.1
 [v4.0.0]: https://github.com/tigorlazuardi/nvim/compare/v3.1.8...v4.0.0
 [v3.1.8]: https://github.com/tigorlazuardi/nvim/compare/v3.1.7...v3.1.8
 [v3.1.7]: https://github.com/tigorlazuardi/nvim/compare/v3.1.6...v3.1.7

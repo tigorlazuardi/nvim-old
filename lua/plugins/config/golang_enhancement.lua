@@ -3,23 +3,25 @@ return function(use)
 		'tigorlazuardi/go.nvim',
 		requires = { 'ray-x/guihua.lua', 'akinsho/nvim-toggleterm.lua' },
 		config = function()
-			local lsp_installer_servers = require('nvim-lsp-installer.servers')
-			local server_available, gopls = lsp_installer_servers.get_server('gopls')
-			local path = require('nvim-lsp-installer.path')
-			local install_root_dir = path.concat({ vim.fn.stdpath('data'), 'lsp_servers' })
-			if server_available then
-				gopls:on_ready(function()
-					local opts = require('plugins.config.lsp.installer_config.golang')
-					gopls:setup(opts)
-				end)
-
-				if not gopls:is_installed() then
-					vim.notify('installing gopls...')
-					gopls:install()
-				end
-			end
+			-- local lsp_installer_servers = require('nvim-lsp-installer.servers')
+			-- local server_available, gopls = lsp_installer_servers.get_server('gopls')
+			-- local path = require('nvim-lsp-installer.path')
+			-- local install_root_dir = path.concat({ vim.fn.stdpath('data'), 'lsp_servers' })
+			-- if server_available then
+			-- 	gopls:on_ready(function()
+			-- 		local opts = require('plugins.config.lsp.installer_config.golang')
+			-- 		gopls:setup(opts)
+			-- 	end)
+			--
+			-- 	if not gopls:is_installed() then
+			-- 		vim.notify('installing gopls...')
+			-- 		gopls:install()
+			-- 	end
+			-- end
+			require('plugins.config.lsp.installer_config.golang')
 			require('go').setup({
-				gopls_cmd = { install_root_dir .. '/go/gopls' },
+				-- gopls_cmd = { install_root_dir .. '/go/gopls' },
+				gopls_cmd = { vim.fn.expand('$HOME') .. '/go/bin/gopls' },
 				gofmt = 'gofumpt',
 				test_runner = 'richgo',
 				run_in_floaterm = true,

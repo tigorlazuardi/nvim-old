@@ -88,4 +88,6 @@ local opts = {
 	},
 }
 
+require('lspconfig').gopls.setup(opts)
+
 return opts
