@@ -26,6 +26,10 @@ return function(use)
 			})
 
 			wk.register({
+				['?'] = { '<cmd>WhichKey<cr>', 'mappings' },
+			})
+
+			wk.register({
 				['<leader>p'] = {
 					name = 'plugins',
 					C = { [[<cmd>PackerClean<cr>]], 'Clean Plugins' },

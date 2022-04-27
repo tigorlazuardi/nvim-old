@@ -33,6 +33,13 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 <a name="unreleased"></a>
 ### [Unreleased]
 
+> Features
+- **which-key:** <?> now used to show normal mapping
+
+
+<a name="v4.0.2"></a>
+### [v4.0.2] - 2022-04-27
+
 > Revert
 - **golang:** revert server config to use normal gopls because gopls in lsp install does not support go1.18
 
@@ -934,7 +941,8 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - initial commit
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v4.0.1...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v4.0.2...HEAD
+[v4.0.2]: https://github.com/tigorlazuardi/nvim/compare/v4.0.1...v4.0.2
 [v4.0.1]: https://github.com/tigorlazuardi/nvim/compare/v4.0.0...v4.0.1
 [v4.0.0]: https://github.com/tigorlazuardi/nvim/compare/v3.1.8...v4.0.0
 [v3.1.8]: https://github.com/tigorlazuardi/nvim/compare/v3.1.7...v3.1.8
