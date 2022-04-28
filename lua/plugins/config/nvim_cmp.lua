@@ -28,7 +28,7 @@ local function cmp_config()
 				mode = 'symbol_text',
 				preset = 'codicons',
 				menu = {
-					buffer = '[Buffer]',
+					-- buffer = '[Buffer]',
 					nvim_lsp = '[LSP]',
 					nvim_lua = '[API]',
 					path = '[Path]',
@@ -45,10 +45,10 @@ local function cmp_config()
 			{ name = 'nvim_lua', priority = 8 },
 			{ name = 'nvim_lsp', priority = 8, max_item_count = 20 },
 			{ name = 'luasnip', priority = 7, max_item_count = 5, keyword_length = 1 },
-			{ name = 'buffer', priority = 7, max_item_count = 3, keyword_length = 5 },
+			-- { name = 'buffer', priority = 7, max_item_count = 3, keyword_length = 3 },
 			{ name = 'path', priority = 6 },
-			{ name = 'rg', priority = 5, max_item_count = 5, keyword_length = 5 },
-			{ name = 'spell', priority = 4, max_item_count = 5, keyword_length = 5 },
+			{ name = 'rg', priority = 5, max_item_count = 5, keyword_length = 3 },
+			{ name = 'spell', priority = 4, max_item_count = 5, keyword_length = 3 },
 			{ name = 'emoji', priority = 3, max_item_count = 5 },
 		},
 		preselect = cmp.PreselectMode.None,
@@ -64,11 +64,17 @@ local function cmp_config()
 		},
 	})
 	cmp.setup.cmdline(':', {
-		sources = cmp.config.sources({
+		mapping = cmp.mapping.preset.cmdline(),
+		sources = {
 			{ name = 'path' },
-		}, {
 			{ name = 'cmdline' },
-		}),
+		},
+	})
+	cmp.setup.cmdline('/', {
+		mapping = cmp.mapping.preset.cmdline(),
+		sources = {
+			{ name = 'buffer' },
+		},
 	})
 
 	local npairs = require('nvim-autopairs')

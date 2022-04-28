@@ -35,6 +35,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 
 > Features
 - **lsp-golang:** added guard to check if executables are in path
+- **nvim-cmp:** removed buffer from normal source and update mapping for commandline and search
 - **nvim-cmp:** add item limit on luasnip, nvim_lsp, emoji
 - **which-key:** <?> now used to show normal mapping
 
