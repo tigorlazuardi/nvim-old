@@ -5,7 +5,7 @@ vim.g.neovide_floating_blur = 1
 vim.g.neovide_window_floating_opacity = 1
 
 local font_name = [[Comic\ Code\ Ligatures]]
-if vim.g.is_windows then
+if vim.g.is_windows or vim.fn.has('wsl') == 1 then
 	font_name = [[ComicCodeLigatures\ Nerd\ Font\ Mono]]
 end
 local font_size = 14
