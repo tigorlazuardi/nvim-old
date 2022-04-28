@@ -187,9 +187,13 @@ return function(use)
 	})
 
 	-- Required for registering token to github
+	local copilot_file_location = '$HOME/.config/github-copilot/hosts.json'
+	if vim.g.is_windows then
+		copilot_file_location = '$HOME/AppData/Local/github-copilot/hosts.json'
+	end
 	use({
 		'github/copilot.vim',
-		disable = vim.fn.filereadable(vim.fn.expand('$HOME/.config/github-copilot/hosts.json')) == 1,
+		disable = vim.fn.filereadable(vim.fn.expand(copilot_file_location)) == 1,
 	})
 
 	-- copilot
