@@ -94,8 +94,5 @@ return function(use)
 	use({
 		'lewis6991/gitsigns.nvim',
 		config = signs_config,
-		cond = function()
-			return not vim.g.is_windows
-		end,
 	})
 end
