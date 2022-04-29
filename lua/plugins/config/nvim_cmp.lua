@@ -2,6 +2,22 @@ local function cmp_config()
 	local cmp = require('cmp')
 
 	local compare = require('cmp.config.compare')
+	local sources = {
+		{ name = 'copilot', priority = 8 },
+		{ name = 'nvim_lua', priority = 8 },
+		{ name = 'nvim_lsp', priority = 8, max_item_count = 20 },
+		{ name = 'luasnip', priority = 7, max_item_count = 5, keyword_length = 1 },
+		{ name = 'treesitter', priority = 7, max_item_count = 5, keyword_length = 3 },
+		{ name = 'buffer', priority = 6, max_item_count = 3, keyword_length = 3 },
+		{ name = 'path', priority = 6 },
+		{ name = 'rg', priority = 5, max_item_count = 5, keyword_length = 3 },
+		{ name = 'spell', priority = 4, max_item_count = 5, keyword_length = 3 },
+		{ name = 'emoji', priority = 3, max_item_count = 5 },
+	}
+
+	if not vim.g.is_windows then
+		sources = vim.list_extend(sources, { name = 'copilot', priority = 8 })
+	end
 	cmp.setup({
 		mapping = {
 			['<C-p>'] = cmp.mapping.select_prev_item(),
@@ -41,18 +57,7 @@ local function cmp_config()
 				},
 			}),
 		},
-		sources = {
-			{ name = 'copilot', priority = 8 },
-			{ name = 'nvim_lua', priority = 8 },
-			{ name = 'nvim_lsp', priority = 8, max_item_count = 20 },
-			{ name = 'luasnip', priority = 7, max_item_count = 5, keyword_length = 1 },
-			{ name = 'treesitter', priority = 7, max_item_count = 5, keyword_length = 3 },
-			{ name = 'buffer', priority = 6, max_item_count = 3, keyword_length = 3 },
-			{ name = 'path', priority = 6 },
-			{ name = 'rg', priority = 5, max_item_count = 5, keyword_length = 3 },
-			{ name = 'spell', priority = 4, max_item_count = 5, keyword_length = 3 },
-			{ name = 'emoji', priority = 3, max_item_count = 5 },
-		},
+		sources = sources,
 		preselect = cmp.PreselectMode.None,
 		sorting = {
 			priority_weight = 1.0,
@@ -211,5 +216,6 @@ return function(use)
 	use({
 		'zbirenbaum/copilot-cmp',
 		after = { 'copilot.lua', 'nvim-cmp' },
+		disable = vim.g.is_windows,
 	})
 end
