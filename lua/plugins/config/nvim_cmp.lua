@@ -193,7 +193,7 @@ return function(use)
 	end
 	use({
 		'github/copilot.vim',
-		disable = vim.fn.filereadable(vim.fn.expand(copilot_file_location)) == 1,
+		disable = vim.g.is_windows or vim.fn.filereadable(vim.fn.expand(copilot_file_location)) == 1,
 	})
 
 	-- copilot
@@ -205,6 +205,7 @@ return function(use)
 				require('copilot').setup()
 			end)
 		end,
+		disable = vim.g.is_windows,
 	})
 
 	use({
