@@ -8,14 +8,17 @@ local server_configuration = {
 		wk.register({
 			K = {
 				function()
-					require('personal.utils.with_fold_check')(require('rust-tools.hover_actions').hover_actions)
+					require('rust-tools.hover_actions').hover_actions()
 				end,
 				'(LSP) Symbol Definition / Documentation',
 			},
 		}, { buffer = bufnr })
-		vim.cmd([[
-					au BufWritePre <buffer> silent! lua vim.lsp.buf.formatting_sync() 
-				]])
+		vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+			callback = function()
+				pcall(vim.lsp.buf.format)
+			end,
+			buffer = bufnr,
+		})
 	end,
 	settings = {
 		['rust-analyzer'] = {

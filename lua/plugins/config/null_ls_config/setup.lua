@@ -119,7 +119,7 @@ null_ls.setup({
 				buffer = bufnr,
 				desc = 'Format buffer on save',
 				callback = function()
-					vim.lsp.buf.formatting_sync()
+					pcall(vim.lsp.buf.format)
 				end,
 			})
 		end
@@ -127,11 +127,16 @@ null_ls.setup({
 		wk.register({
 			['<leader>q'] = {
 				name = 'quick',
-				f = { '<cmd>lua vim.lsp.buf.formatting_sync()<cr>', 'Format Current Buffer' },
+				f = {
+					function()
+						vim.lsp.buf.format()
+					end,
+					'Format Current Buffer',
+				},
 			},
 			K = {
 				function()
-					require('personal.utils.with_fold_check')(vim.lsp.buf.hover)
+					vim.lsp.buf.hover()
 				end,
 				'(LSP) Symbol Definition / Documentation',
 			},

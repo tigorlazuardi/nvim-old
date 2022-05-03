@@ -2,9 +2,12 @@
 ### [Unreleased]
 
 > Bug Fixes
+- fold check mapping removed and modernized buf format
+- **copilot:** fix disabling on windows
 - **neovide:** wsl font now has same font as windows font
 
 > Features
+- **copilot:** disabled on windows
 - **copilot:** added file location check for windows
 - **gitsigns:** enabled on windows
 - **lsp-golang:** added guard to check if executables are in path

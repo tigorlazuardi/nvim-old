@@ -20,7 +20,7 @@ return function(client, bufnr)
 		K = {
 			function()
 				local open_hover = require('plugins.config.lsp.open_hover')
-				require('personal.utils.with_fold_check')(open_hover.open_hover)
+				open_hover.open_hover()
 			end,
 			'(LSP) Symbol Definition / Documentation',
 		},
