@@ -3,6 +3,7 @@ local on_attach = require('plugins.config.lsp.on_attach')
 
 local opts = {
 	capabilities = capabilities,
+	init_options = require('nvim-lsp-ts-utils').init_options,
 	on_attach = function(client, bufnr)
 		if client.config.flags then
 			client.config.flags.allow_incremental_sync = true
@@ -18,6 +19,7 @@ local opts = {
 
 			-- import all
 			import_all_timeout = 5000, -- ms
+			auto_inlay_hints = true,
 			import_all_priorities = {
 				buffers = 4, -- loaded buffer names
 				buffer_content = 3, -- loaded buffer content
@@ -30,6 +32,27 @@ local opts = {
 			update_imports_on_move = true,
 			require_confirmation_on_move = true,
 			watch_dir = nil,
+			inlay_hints_format = { -- format options for individual hint kind
+				Parameter = {
+					highlight = 'Comment',
+					text = function(_text)
+						return ''
+					end,
+				},
+				Enum = {
+					highlight = 'Comment',
+					text = function(_text)
+						return ''
+					end,
+				},
+				-- Example format customization for `Type` kind:
+				Type = {
+					highlight = 'Comment',
+					text = function(text)
+						return '<-' .. text:sub(2)
+					end,
+				},
+			},
 		})
 
 		-- required to fix code action ranges
