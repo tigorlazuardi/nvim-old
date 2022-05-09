@@ -42,14 +42,15 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **autocmd:** move to lua
 - **copilot:** disabled on windows
 - **copilot:** added file location check for windows
+- **filetype:** added filetype.nvim plugin to detect custom filetypes
 - **gitsigns:** enabled on windows
 - **lsp-golang:** added guard to check if executables are in path
-- **neovide:** font settings is updated to use Nerd Font Mono version
-- **neovide:** update fonts to comic code ligatures
 - **neovide:** added mappings to increase gui font size
+- **neovide:** update fonts to comic code ligatures
+- **neovide:** font settings is updated to use Nerd Font Mono version
+- **nvim-cmp:** add item limit on luasnip, nvim_lsp, emoji
 - **nvim-cmp:** added source for treesitter
 - **nvim-cmp:** removed buffer from normal source and update mapping for commandline and search
-- **nvim-cmp:** add item limit on luasnip, nvim_lsp, emoji
 - **tsserver:** added inlay hints
 - **which-key:** <?> now used to show normal mapping
 
