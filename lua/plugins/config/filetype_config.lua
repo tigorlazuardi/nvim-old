@@ -5,6 +5,9 @@ return function(use)
 			-- config opts: https://github.com/nathom/filetype.nvim#customization
 			require('filetype').setup({
 				overrides = {
+					extensions = {
+						mdpp = 'markdown',
+					},
 					literal = {
 						['tsconfig.json'] = 'jsonc',
 						['jsconfig.json'] = 'jsonc',
