@@ -46,6 +46,8 @@ local function cmp_config()
 		sources = vim.list_extend(sources, { name = 'copilot', priority = 8 })
 	end
 
+	local persistent_kind_length = 0
+
 	local source_mapping = {
 		buffer = 'Buffer',
 		nvim_lsp = 'LSP',
@@ -104,7 +106,12 @@ local function cmp_config()
 		formatting = {
 			fields = { 'kind', 'abbr', 'menu' },
 			format = function(entry, vim_item)
-				local appended_menu = vim_item.kind .. string.rep(' ', 12 - vim_item.kind:len())
+				local kind_length = vim_item.kind:len()
+				if persistent_kind_length < vim_item.kind:len() then
+					persistent_kind_length, entry.context.len_repeat = kind_length, kind_length
+				end
+
+				local appended_menu = vim_item.kind .. string.rep(' ', 1 + persistent_kind_length - kind_length)
 				local source = source_mapping[entry.source.name] or entry.source.name
 				vim_item.menu = appended_menu .. '[' .. source .. ']'
 				vim_item.kind = icons[vim_item.kind] or icons['Text']
@@ -138,6 +145,13 @@ local function cmp_config()
 			{ name = 'buffer' },
 		},
 	})
+
+	local view = require('cmp.view')
+	view.original_close = view.close
+	view.close = function(self)
+		persistent_kind_length = 0
+		view.original_close(self)
+	end
 
 	local npairs = require('nvim-autopairs')
 

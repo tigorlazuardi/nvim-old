@@ -1,17 +1,7 @@
-local theme_list = {}
-
-vim.api.nvim_create_user_command('RandomColor', function()
-	local theme_name = theme_list[math.random(#theme_list)]
-	vim.cmd('colo' .. theme_name)
-end, { desc = 'selects random theme color' })
-
 return function(use)
 	use({
 		'catppuccin/nvim',
 		as = 'catppuccin',
-		setup = function()
-			table.insert(theme_list, 'catppuccin')
-		end,
 		config = function()
 			require('catppuccin').setup({
 				integrations = {
@@ -38,9 +28,6 @@ return function(use)
 
 	use({
 		'rmehri01/onenord.nvim',
-		setup = function()
-			table.insert(theme_list, 'onenord')
-		end,
 		config = function()
 			local _M = {}
 

@@ -2,6 +2,7 @@
 ### [Unreleased]
 
 > Features
+- **cmd:** experimental to handle persistent kind length
 - **cmp:** modified how menu appears
 - **theme:** mvoed to one nord
 
