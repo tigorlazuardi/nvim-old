@@ -1,6 +1,13 @@
 <a name="unreleased"></a>
 ### [Unreleased]
 
+> Features
+- **theme:** mvoed to one nord
+
+
+<a name="v4.0.3"></a>
+### [v4.0.3] - 2022-05-09
+
 > Bug Fixes
 - fold check mapping removed and modernized buf format
 - **copilot:** fix disabling on windows
@@ -931,7 +938,8 @@
 - initial commit
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v4.0.2...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v4.0.3...HEAD
+[v4.0.3]: https://github.com/tigorlazuardi/nvim/compare/v4.0.2...v4.0.3
 [v4.0.2]: https://github.com/tigorlazuardi/nvim/compare/v4.0.1...v4.0.2
 [v4.0.1]: https://github.com/tigorlazuardi/nvim/compare/v4.0.0...v4.0.1
 [v4.0.0]: https://github.com/tigorlazuardi/nvim/compare/v3.1.8...v4.0.0
