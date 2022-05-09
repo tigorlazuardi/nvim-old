@@ -6,7 +6,12 @@ local opts = {
 	on_attach = function(client, bufnr)
 		client.server_capabilities.documentFormattingProvider = true
 		on_attach(client, bufnr)
-		vim.cmd([[autocmd BufWritePre <buffer> lua require("go.format").goimport()]])
+		vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+			callback = function()
+				require('go.format').goimport()
+			end,
+			buffer = bufnr,
+		})
 		local wk = require('which-key')
 
 		wk.register({
