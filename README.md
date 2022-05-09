@@ -34,6 +34,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 ### [Unreleased]
 
 > Features
+- **cmp:** modified how menu appears
 - **theme:** mvoed to one nord
 
 

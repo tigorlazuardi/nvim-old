@@ -1,5 +1,32 @@
 local function cmp_config()
 	local cmp = require('cmp')
+	local icons = {
+		Text = '',
+		Method = '',
+		Function = '',
+		Constructor = '⌘',
+		Field = 'ﰠ',
+		Variable = '',
+		Class = 'ﴯ',
+		Interface = '',
+		Module = '',
+		Property = 'ﰠ',
+		Unit = '塞',
+		Value = '',
+		Enum = '',
+		Keyword = '廓',
+		Snippet = '',
+		Color = '',
+		File = '',
+		Reference = '',
+		Folder = '',
+		EnumMember = '',
+		Constant = '',
+		Struct = 'פּ',
+		Event = '',
+		Operator = '',
+		TypeParameter = '',
+	}
 
 	local compare = require('cmp.config.compare')
 	local sources = {
@@ -18,7 +45,24 @@ local function cmp_config()
 	if not vim.g.is_windows then
 		sources = vim.list_extend(sources, { name = 'copilot', priority = 8 })
 	end
+
+	local source_mapping = {
+		buffer = 'Buffer',
+		nvim_lsp = 'LSP',
+		nvim_lua = 'API',
+		path = 'Path',
+		luasnip = 'Luasnip',
+		rg = 'Rip Grep',
+		spell = 'Spell',
+		copilot = 'Copilot',
+		emoji = 'Emoji',
+		treesitter = 'Treesitter',
+	}
 	cmp.setup({
+		experimental = {
+			native_menu = false,
+			ghost_text = false,
+		},
 		mapping = {
 			['<C-p>'] = cmp.mapping.select_prev_item(),
 			['<C-n>'] = cmp.mapping.select_next_item(),
@@ -39,23 +83,34 @@ local function cmp_config()
 				require('luasnip').lsp_expand(args.body)
 			end,
 		},
+		-- formatting = {
+		-- 	format = require('lspkind').cmp_format({
+		-- 		mode = 'symbol_text',
+		-- 		preset = 'codicons',
+		-- 		menu = {
+		-- 			buffer = '[Buffer]',
+		-- 			nvim_lsp = '[LSP]',
+		-- 			nvim_lua = '[API]',
+		-- 			path = '[Path]',
+		-- 			luasnip = '[Luasnip]',
+		-- 			rg = '[Rip Grep]',
+		-- 			spell = '[Spell]',
+		-- 			copilot = '[Copilot]',
+		-- 			emoji = '[Emoji]',
+		-- 			treesitter = '[Treesitter]',
+		-- 		},
+		-- 	}),
+		-- },
 		formatting = {
-			format = require('lspkind').cmp_format({
-				mode = 'symbol_text',
-				preset = 'codicons',
-				menu = {
-					buffer = '[Buffer]',
-					nvim_lsp = '[LSP]',
-					nvim_lua = '[API]',
-					path = '[Path]',
-					luasnip = '[Luasnip]',
-					rg = '[Rip Grep]',
-					spell = '[Spell]',
-					copilot = '[Copilot]',
-					emoji = '[Emoji]',
-					treesitter = '[Treesitter]',
-				},
-			}),
+			fields = { 'kind', 'abbr', 'menu' },
+			format = function(entry, vim_item)
+				local appended_menu = vim_item.kind .. string.rep(' ', 12 - vim_item.kind:len())
+				local source = source_mapping[entry.source.name] or entry.source.name
+				vim_item.menu = appended_menu .. '[' .. source .. ']'
+				vim_item.kind = icons[vim_item.kind] or icons['Text']
+
+				return vim_item
+			end,
 		},
 		sources = sources,
 		preselect = cmp.PreselectMode.None,

@@ -2,6 +2,7 @@
 ### [Unreleased]
 
 > Features
+- **cmp:** modified how menu appears
 - **theme:** mvoed to one nord
 
 
