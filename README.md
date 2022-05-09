@@ -46,8 +46,9 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **lsp-golang:** added guard to check if executables are in path
 - **neovide:** font settings is updated to use Nerd Font Mono version
 - **neovide:** update fonts to comic code ligatures
-- **nvim-cmp:** removed buffer from normal source and update mapping for commandline and search
+- **neovide:** added mappings to increase gui font size
 - **nvim-cmp:** added source for treesitter
+- **nvim-cmp:** removed buffer from normal source and update mapping for commandline and search
 - **nvim-cmp:** add item limit on luasnip, nvim_lsp, emoji
 - **tsserver:** added inlay hints
 - **which-key:** <?> now used to show normal mapping

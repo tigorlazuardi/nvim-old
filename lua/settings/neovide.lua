@@ -21,9 +21,9 @@ local function set_font_size(increase)
 	vim.cmd(cmd)
 end
 
-vim.keymap.set('n', 'g-', function()
-	set_font_size(true)
-end, { silent = true })
 vim.keymap.set('n', 'g=', function()
+	set_font_size(true)
+end, { silent = true, desc = 'Increase GUI font size' })
+vim.keymap.set('n', 'g-', function()
 	set_font_size(false)
-end, { silent = true })
+end, { silent = true, desc = 'Decrease GUI font size' })
