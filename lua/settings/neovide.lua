@@ -4,10 +4,8 @@ vim.g.neovide_cursor_vfx_mode = 'wireframe'
 vim.g.neovide_floating_blur = 1
 vim.g.neovide_window_floating_opacity = 1
 
-local font_name = [[Comic\ Code\ Ligatures]]
-if vim.g.is_windows or vim.fn.has('wsl') == 1 then
-	font_name = [[ComicCodeLigatures\ Nerd\ Font\ Mono]]
-end
+local font_name = [[ComicCodeLigatures\ Nerd\ Font\ Mono]]
+
 local font_size = 14
 vim.cmd(string.format('set guifont=%s:h%d', font_name, font_size))
 

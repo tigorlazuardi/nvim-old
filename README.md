@@ -44,6 +44,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **copilot:** added file location check for windows
 - **gitsigns:** enabled on windows
 - **lsp-golang:** added guard to check if executables are in path
+- **neovide:** font settings is updated to use Nerd Font Mono version
 - **neovide:** update fonts to comic code ligatures
 - **nvim-cmp:** removed buffer from normal source and update mapping for commandline and search
 - **nvim-cmp:** added source for treesitter
