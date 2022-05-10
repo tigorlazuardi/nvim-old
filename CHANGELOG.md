@@ -4,6 +4,7 @@
 > Features
 - **cmd:** experimental to handle persistent kind length
 - **cmp:** modified how menu appears
+- **hls-lens:** moved mapping to lua
 - **theme:** mvoed to one nord
 
 

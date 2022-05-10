@@ -3,19 +3,47 @@ return function(use)
 		'petertriho/nvim-scrollbar',
 		requires = { 'kevinhwang91/nvim-hlslens', 'folke/tokyonight.nvim' },
 		config = function()
-			vim.cmd([[
-				noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
-							\<Cmd>lua require('hlslens').start()<CR>
-				noremap <silent> N <Cmd>execute('normal! ' . v:count1 . 'N')<CR>
-							\<Cmd>lua require('hlslens').start()<CR>
-				noremap * *<Cmd>lua require('hlslens').start()<CR>
-				noremap # #<Cmd>lua require('hlslens').start()<CR>
-				noremap g* g*<Cmd>lua require('hlslens').start()<CR>
-				noremap g# g#<Cmd>lua require('hlslens').start()<CR>
+			vim.keymap.set(
+				'n',
+				'n',
+				[[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
+				{ desc = 'Next Search Item' }
+			)
+			vim.keymap.set(
+				'n',
+				'N',
+				[[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
+				{ desc = 'Previous Search Item' }
+			)
+			vim.keymap.set(
+				'n',
+				'*',
+				[[*<Cmd>lua require('hlslens').start()<CR>]],
+				{ desc = 'Search downward word under cursor (strict)' }
+			)
+			vim.keymap.set(
+				'n',
+				'g*',
+				[[g*<Cmd>lua require('hlslens').start()<CR>]],
+				{ desc = 'Search downward word under cursor' }
+			)
+			vim.keymap.set(
+				'n',
+				'#',
+				[[#<Cmd>lua require('hlslens').start()<CR>]],
+				{ desc = 'Search upward word under cursor (strict)' }
+			)
+			vim.keymap.set(
+				'n',
+				'g#',
+				[[g#<Cmd>lua require('hlslens').start()<CR>]],
+				{ desc = 'Search upward word under cursor' }
+			)
+			vim.keymap.set('n', '<leader>L', ':nohlsearch<cr>', { desc = 'remove highlight' })
 
-				" use : instead of <Cmd>
-				nnoremap <silent> <leader>l :noh<CR>
-			]])
+			require('hlslens').setup({
+				calm_down = true,
+			})
 
 			local colors = require('tokyonight.colors').setup()
 			require('scrollbar').setup({
