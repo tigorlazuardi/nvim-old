@@ -146,13 +146,6 @@ local function cmp_config()
 		},
 	})
 
-	local view = require('cmp.view')
-	view.original_close = view.close
-	view.close = function(self)
-		persistent_kind_length = 0
-		view.original_close(self)
-	end
-
 	local npairs = require('nvim-autopairs')
 
 	npairs.setup({
@@ -233,6 +226,16 @@ local function cmp_config()
 	wk.register(mappings, { mode = 's' })
 
 	require('snippets.luasnip')
+
+	-- reset spacing on [source] handling
+	local view = require('cmp.view')
+	if view.original_close == nil then
+		view.original_close = view.close
+	end
+	view.close = function(self)
+		persistent_kind_length = 0
+		view.original_close(self)
+	end
 end
 
 return function(use)

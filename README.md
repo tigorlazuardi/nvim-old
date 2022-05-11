@@ -33,6 +33,9 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 <a name="unreleased"></a>
 ### [Unreleased]
 
+> Bug Fixes
+- **cmp:** fix stack overflow on view.close handler when re-compile or resync packer
+
 > Features
 - **cmd:** experimental to handle persistent kind length
 - **cmp:** modified how menu appears
