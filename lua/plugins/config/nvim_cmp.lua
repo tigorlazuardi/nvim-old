@@ -108,7 +108,7 @@ local function cmp_config()
 			format = function(entry, vim_item)
 				local kind_length = vim_item.kind:len()
 				if persistent_kind_length < vim_item.kind:len() then
-					persistent_kind_length, entry.context.len_repeat = kind_length, kind_length
+					persistent_kind_length = kind_length
 				end
 
 				local appended_menu = vim_item.kind .. string.rep(' ', 1 + persistent_kind_length - kind_length)

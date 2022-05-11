@@ -42,6 +42,9 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **hls-lens:** moved mapping to lua
 - **theme:** mvoed to one nord
 
+> Various Actions
+- **cmp:** removed unused variable
+
 
 <a name="v4.0.3"></a>
 ### [v4.0.3] - 2022-05-09
