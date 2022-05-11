@@ -282,12 +282,12 @@ return function(use)
 				require('copilot').setup()
 			end)
 		end,
-		disable = vim.g.is_windows,
+		disable = vim.g.is_windows or vim.fn.filereadable(vim.fn.expand(copilot_file_location)) == 0,
 	})
 
 	use({
 		'zbirenbaum/copilot-cmp',
 		after = { 'copilot.lua', 'nvim-cmp' },
-		disable = vim.g.is_windows,
+		disable = vim.g.is_windows or vim.fn.filereadable(vim.fn.expand(copilot_file_location)) == 0,
 	})
 end

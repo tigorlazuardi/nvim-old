@@ -42,6 +42,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 > Features
 - **cmd:** experimental to handle persistent kind length
 - **cmp:** modified how menu appears
+- **copilot:** disabled copilot lua if copilot vim is not initialized yet
 - **hls-lens:** moved mapping to lua
 - **theme:** mvoed to one nord
 
