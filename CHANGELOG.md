@@ -4,6 +4,9 @@
 > Bug Fixes
 - **cmp:** fix stack overflow on view.close handler when re-compile or resync packer
 
+> Code Refactoring
+- **cmp:** better readable
+
 > Features
 - **cmd:** experimental to handle persistent kind length
 - **cmp:** modified how menu appears

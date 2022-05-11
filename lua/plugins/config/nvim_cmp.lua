@@ -107,7 +107,7 @@ local function cmp_config()
 			fields = { 'kind', 'abbr', 'menu' },
 			format = function(entry, vim_item)
 				local kind_length = vim_item.kind:len()
-				if persistent_kind_length < vim_item.kind:len() then
+				if persistent_kind_length < kind_length then
 					persistent_kind_length = kind_length
 				end
 
