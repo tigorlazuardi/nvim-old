@@ -13,6 +13,9 @@
 - **hls-lens:** moved mapping to lua
 - **theme:** mvoed to one nord
 
+> Revert
+- **lspkind:** commented lspkind because it's currently unused
+
 > Various Actions
 - **cmp:** removed unused variable
 

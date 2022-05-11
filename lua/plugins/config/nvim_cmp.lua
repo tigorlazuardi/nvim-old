@@ -252,7 +252,7 @@ return function(use)
 			'hrsh7th/cmp-nvim-lua',
 			'lukas-reineke/cmp-rg',
 			'hrsh7th/cmp-nvim-lsp-signature-help',
-			'onsails/lspkind-nvim',
+			-- 'onsails/lspkind-nvim',
 			'rafamadriz/friendly-snippets',
 			'saadparwaiz1/cmp_luasnip',
 			'windwp/nvim-autopairs',
