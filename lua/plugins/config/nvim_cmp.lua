@@ -263,31 +263,37 @@ return function(use)
 		config = cmp_config,
 	})
 
-	-- Required for registering token to github
-	local copilot_file_location = '$HOME/.config/github-copilot/hosts.json'
-	if vim.g.is_windows then
-		copilot_file_location = '$HOME/AppData/Local/github-copilot/hosts.json'
-	end
 	use({
 		'github/copilot.vim',
-		disable = vim.g.is_windows or vim.fn.filereadable(vim.fn.expand(copilot_file_location)) == 1,
+		disable = vim.g.is_windows,
+		cond = function()
+			local copilot_file_location = '$HOME/.config/github-copilot/hosts.json'
+			if vim.g.is_windows then
+				copilot_file_location = '$HOME/AppData/Local/github-copilot/hosts.json'
+			end
+			return vim.fn.filereadable(vim.fn.expand(copilot_file_location)) == 0
+		end,
 	})
 
-	-- copilot
 	use({
-		'zbirenbaum/copilot.lua',
+		'zbirenbaum/copilot-cmp',
+		requires = {
+			'zbirenbaum/copilot.lua',
+		},
+		after = { 'nvim-cmp' },
 		event = 'InsertEnter',
+		disable = vim.g.is_windows,
 		config = function()
 			vim.schedule(function()
 				require('copilot').setup()
 			end)
 		end,
-		disable = vim.g.is_windows or vim.fn.filereadable(vim.fn.expand(copilot_file_location)) == 0,
-	})
-
-	use({
-		'zbirenbaum/copilot-cmp',
-		after = { 'copilot.lua', 'nvim-cmp' },
-		disable = vim.g.is_windows or vim.fn.filereadable(vim.fn.expand(copilot_file_location)) == 0,
+		cond = function()
+			local copilot_file_location = '$HOME/.config/github-copilot/hosts.json'
+			if vim.g.is_windows then
+				copilot_file_location = '$HOME/AppData/Local/github-copilot/hosts.json'
+			end
+			return vim.fn.filereadable(vim.fn.expand(copilot_file_location)) == 1
+		end,
 	})
 end

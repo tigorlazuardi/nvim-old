@@ -10,6 +10,7 @@
 > Features
 - **cmd:** experimental to handle persistent kind length
 - **cmp:** modified how menu appears
+- **copilot:** copilot now not loaded if there's no config
 - **copilot:** disabled copilot lua if copilot vim is not initialized yet
 - **hls-lens:** moved mapping to lua
 - **theme:** mvoed to one nord
