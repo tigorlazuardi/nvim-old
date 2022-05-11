@@ -16,6 +16,7 @@
 - **theme:** mvoed to one nord
 
 > Revert
+- **codicons:** commented because unused
 - **lspkind:** commented lspkind because it's currently unused
 
 > Various Actions

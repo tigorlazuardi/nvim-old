@@ -256,7 +256,7 @@ return function(use)
 			'rafamadriz/friendly-snippets',
 			'saadparwaiz1/cmp_luasnip',
 			'windwp/nvim-autopairs',
-			'mortepau/codicons.nvim',
+			-- 'mortepau/codicons.nvim',
 			'hrsh7th/cmp-cmdline',
 		},
 		wants = { 'which-key.nvim' },
