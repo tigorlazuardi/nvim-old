@@ -7,7 +7,10 @@ vim.g.neovide_window_floating_opacity = 1
 local font_name = [[ComicCodeLigatures\ Nerd\ Font\ Mono]]
 
 local font_size = 14
-vim.cmd(string.format('set guifont=%s:h%d', font_name, font_size))
+vim.api.nvim_cmd({
+	cmd = 'set',
+	args = { string.format('guifont=%s:h%d', font_name, font_size) },
+}, {})
 
 ---set font size
 ---@param increase boolean
@@ -17,8 +20,10 @@ local function set_font_size(increase)
 	else
 		font_size = font_size - 1
 	end
-	local cmd = string.format('set guifont=%s:h%d', font_name, font_size)
-	vim.cmd(cmd)
+	vim.api.nvim_cmd({
+		cmd = 'set',
+		args = { string.format('guifont=%s:h%d', font_name, font_size) },
+	}, {})
 end
 
 vim.keymap.set('n', 'g=', function()

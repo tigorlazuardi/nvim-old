@@ -45,6 +45,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **copilot:** copilot now not loaded if there's no config
 - **copilot:** disabled copilot lua if copilot vim is not initialized yet
 - **hls-lens:** moved mapping to lua
+- **settings:** update setting to use nvim_cmd instead of vim string
 - **theme:** mvoed to one nord
 
 > Revert
