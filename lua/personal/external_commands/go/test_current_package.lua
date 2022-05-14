@@ -28,6 +28,6 @@ function M.run(...)
 		return
 	end
 	local test_name = vim.fn.expand('%:p:h:t')
-	require('personal.external_commands.go.spawn_terminal')(cmdTable, test_name)
+	require('personal.external_commands.go.spawn_win')(cmdTable, test_name)
 end
 return M

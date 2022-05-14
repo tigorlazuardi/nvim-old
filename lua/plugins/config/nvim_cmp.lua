@@ -217,6 +217,7 @@ local function cmp_config()
 						vim.cmd(str)
 					end
 				end
+				files:close()
 				vim.notify('Snippet reloaded', 'info', { title = 'System' })
 			end,
 			'(Snippet) Reload',
