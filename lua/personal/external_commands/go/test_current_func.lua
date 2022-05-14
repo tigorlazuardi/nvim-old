@@ -52,7 +52,7 @@ function M.run(...)
 			break
 		end
 	end
-	require('personal.external_commands.go.spawn_win')(cmdTable, test_name)
+	require('personal.external_commands.go.spawn_split')(cmdTable, test_name)
 end
 
 function M.debug()

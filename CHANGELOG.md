@@ -1,6 +1,13 @@
 <a name="unreleased"></a>
 ### [Unreleased]
 
+> Features
+- **golang:** uses nui to split window
+
+
+<a name="v4.1.0"></a>
+### [v4.1.0] - 2022-05-14
+
 > Bug Fixes
 - **cmp:** fix stack overflow on view.close handler when re-compile or resync packer
 
@@ -854,7 +861,8 @@
 - initial commit
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v4.0.3...HEAD
+[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v4.1.0...HEAD
+[v4.1.0]: https://github.com/tigorlazuardi/nvim/compare/v4.0.3...v4.1.0
 [v4.0.3]: https://github.com/tigorlazuardi/nvim/compare/v4.0.2...v4.0.3
 [v4.0.2]: https://github.com/tigorlazuardi/nvim/compare/v4.0.0...v4.0.2
 [v4.0.0]: https://github.com/tigorlazuardi/nvim/compare/v3.1.8...v4.0.0

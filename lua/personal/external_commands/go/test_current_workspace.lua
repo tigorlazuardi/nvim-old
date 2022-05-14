@@ -30,6 +30,6 @@ function M.run(...)
 
 	local workfolder = utils.work_path()
 	local test_name = vim.fn.fnamemodify(workfolder, ':t')
-	require('personal.external_commands.go.spawn_win')(cmdTable, test_name)
+	require('personal.external_commands.go.spawn_split')(cmdTable, test_name)
 end
 return M
