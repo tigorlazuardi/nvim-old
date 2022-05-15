@@ -55,6 +55,8 @@ return packer.startup(function(use)
 	local compiled_file_path = vim.fn.stdpath('config') .. '/plugin/packer_compiled.lua'
 
 	if vim.fn.filereadable(compiled_file_path) == 0 then
-		packer.sync()
+		packer.install()
+		packer.compile()
+		packer.snapshot('latest.json')
 	end
 end)
