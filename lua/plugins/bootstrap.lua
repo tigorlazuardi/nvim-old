@@ -69,12 +69,8 @@ vim.api.nvim_create_autocmd('User', {
 
 		--- only support 10 snapshots
 		if #files > 11 then
-			table.sort(files, function(a, b)
-				--- ensure latest.json is always first with oldest file on second index
-				return a > b
-			end)
-			--- remove oldest file
-			os.remove(util.join_paths(snapshot_path, files[2]))
+			--- remove oldest not 'latest.json' file
+			os.remove(util.join_paths(snapshot_path, files[#files - 1]))
 		end
 
 		packer.snapshot(current_day_snapshot)

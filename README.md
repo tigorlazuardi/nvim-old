@@ -33,6 +33,9 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 <a name="latest"></a>
 ### [Latest]
 
+> Code Refactoring
+- **packer:** removed sort on snapshots list
+
 > Various Actions
 - removed commented codes
 

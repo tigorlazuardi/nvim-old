@@ -1,6 +1,9 @@
 <a name="latest"></a>
 ### [Latest]
 
+> Code Refactoring
+- **packer:** removed sort on snapshots list
+
 > Various Actions
 - removed commented codes
 
