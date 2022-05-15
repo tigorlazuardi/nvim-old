@@ -30,8 +30,15 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 <details>
 <summary>Changelog</summary>
 
-<a name="unreleased"></a>
-### [Unreleased]
+<a name="latest"></a>
+### [Latest]
+
+> Configuration
+- **changelog:** update changelog format
+
+
+<a name="v4.3.0"></a>
+### [v4.3.0] - 2022-05-15
 
 > Bug Fixes
 - **packer:** proper run snapshot
@@ -910,7 +917,8 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - initial commit
 
 
-[Unreleased]: https://github.com/tigorlazuardi/nvim/compare/v4.2.1...HEAD
+[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.3.0...HEAD
+[v4.3.0]: https://github.com/tigorlazuardi/nvim/compare/v4.2.1...v4.3.0
 [v4.2.1]: https://github.com/tigorlazuardi/nvim/compare/v4.2.0...v4.2.1
 [v4.2.0]: https://github.com/tigorlazuardi/nvim/compare/v4.1.0...v4.2.0
 [v4.1.0]: https://github.com/tigorlazuardi/nvim/compare/v4.0.3...v4.1.0

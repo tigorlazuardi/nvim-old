@@ -1,6 +1,6 @@
 {{ if .Versions -}}
-<a name="unreleased"></a>
-### [Unreleased]
+<a name="latest"></a>
+### [Latest]
 
 {{ if .Unreleased.CommitGroups -}}
 {{ range .Unreleased.CommitGroups -}}
@@ -48,7 +48,7 @@
 {{ end -}}
 
 {{- if .Versions }}
-[Unreleased]: {{ .Info.RepositoryURL }}/compare/{{ $latest := index .Versions 0 }}{{ $latest.Tag.Name }}...HEAD
+[Latest]: {{ .Info.RepositoryURL }}/compare/{{ $latest := index .Versions 0 }}{{ $latest.Tag.Name }}...HEAD
 {{ range .Versions -}}
 {{ if .Tag.Previous -}}
 [{{ .Tag.Name }}]: {{ $.Info.RepositoryURL }}/compare/{{ .Tag.Previous.Name }}...{{ .Tag.Name }}
