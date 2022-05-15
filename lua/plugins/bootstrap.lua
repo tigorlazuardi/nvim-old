@@ -68,7 +68,7 @@ vim.api.nvim_create_autocmd('User', {
 		end
 
 		--- only support 10 snapshots
-		if #files > 10 then
+		if #files > 11 then
 			table.sort(files, function(a, b)
 				--- ensure latest.json is always first with oldest file on second index
 				return a > b
@@ -81,8 +81,5 @@ vim.api.nvim_create_autocmd('User', {
 		packer.snapshot('latest.json')
 	end,
 })
-
--- vim.keymap.set('n', '<leader>pU', rolling_snapshot, { desc = 'Update and Roll Snapshot' })
--- vim.api.nvim_create_user_command('PackerRollingSnapshot', rolling_snapshot, {})
 
 return packer

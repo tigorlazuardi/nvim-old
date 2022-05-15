@@ -33,6 +33,13 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 <a name="latest"></a>
 ### [Latest]
 
+> Various Actions
+- removed commented codes
+
+
+<a name="v4.3.1"></a>
+### [v4.3.1] - 2022-05-15
+
 > Configuration
 - **changelog:** update changelog format
 
@@ -917,7 +924,8 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - initial commit
 
 
-[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.3.0...HEAD
+[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.3.1...HEAD
+[v4.3.1]: https://github.com/tigorlazuardi/nvim/compare/v4.3.0...v4.3.1
 [v4.3.0]: https://github.com/tigorlazuardi/nvim/compare/v4.2.1...v4.3.0
 [v4.2.1]: https://github.com/tigorlazuardi/nvim/compare/v4.2.0...v4.2.1
 [v4.2.0]: https://github.com/tigorlazuardi/nvim/compare/v4.1.0...v4.2.0
