@@ -33,6 +33,9 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 <a name="unreleased"></a>
 ### [Unreleased]
 
+> Bug Fixes
+- **packer:** proper run snapshot
+
 > Features
 - **packer:** added packer rolling snapshot
 

@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ### [Unreleased]
 
+> Bug Fixes
+- **packer:** proper run snapshot
+
 > Features
 - **packer:** added packer rolling snapshot
 
