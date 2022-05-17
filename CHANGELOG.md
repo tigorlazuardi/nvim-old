@@ -4,6 +4,9 @@
 > Code Refactoring
 - **packer:** removed sort on snapshots list
 
+> Features
+- **snapshot:** update snapshot
+
 > Various Actions
 - removed commented codes
 
