@@ -5,6 +5,7 @@
 - **packer:** removed sort on snapshots list
 
 > Features
+- **libuv:** added learning code
 - **snapshot:** update snapshot
 
 > Various Actions
