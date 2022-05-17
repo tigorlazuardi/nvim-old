@@ -3,6 +3,7 @@
 
 > Features
 - **learning:** added learning section for personal use
+- **snapshot:** update snapshot
 
 
 <a name="v4.3.2"></a>

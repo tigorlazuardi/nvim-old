@@ -35,6 +35,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 
 > Features
 - **learning:** added learning section for personal use
+- **snapshot:** update snapshot
 
 
 <a name="v4.3.2"></a>
