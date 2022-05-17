@@ -1,21 +1,26 @@
-vim.keymap.set('n', '<leader>pU', function()
+vim.keymap.set('n', '<leader>vu', function()
 	local uv = vim.loop
 	local stdout = uv.new_pipe()
+
+	---@type string[]
 	local result = {}
 	local handle
-	handle = uv.spawn('/usr/bin/ls', {
+	handle = uv.spawn('ls', {
 		stdio = { nil, stdout, nil },
-		args = { '/home/tigor/.config/nvim/.snapshots' },
+		args = { vim.fn.stdpath('config') .. '/.snapshots' },
 	}, function(code, _signal)
-		if code > 0 then
-			vim.notify(string.format('process exited with %d code', 'error', { title = 'libuv' }))
-		end
 		stdout:read_stop()
 		stdout:close()
 		handle:close()
-		result = table.concat(result, '')
-		result = require('personal.utils.strings').split(result, '\n')
-		vim.notify(vim.inspect(result))
+
+		if code > 0 then
+			vim.notify(string.format('process exited with %d code', 'error', { title = 'libuv' }))
+			return
+		end
+		local strings = require('personal.utils.strings')
+		local str = table.concat(result, '')
+		result = strings.split(str, '\n')
+		vim.notify(vim.inspect(result), 'info', { title = 'libuv' })
 	end)
 
 	uv.read_start(stdout, function(err, data)
