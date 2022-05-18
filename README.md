@@ -33,6 +33,13 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 <a name="latest"></a>
 ### [Latest]
 
+> Patch
+- **commitlint:** added patch support
+
+
+<a name="v4.4.1"></a>
+### [v4.4.1] - 2022-05-18
+
 > Bug Fixes
 - **packer:** packer snapshot only runs on every new compile
 
@@ -946,7 +953,8 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - initial commit
 
 
-[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.4.0...HEAD
+[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.4.1...HEAD
+[v4.4.1]: https://github.com/tigorlazuardi/nvim/compare/v4.4.0...v4.4.1
 [v4.4.0]: https://github.com/tigorlazuardi/nvim/compare/v4.3.2...v4.4.0
 [v4.3.2]: https://github.com/tigorlazuardi/nvim/compare/v4.3.1...v4.3.2
 [v4.3.1]: https://github.com/tigorlazuardi/nvim/compare/v4.3.0...v4.3.1

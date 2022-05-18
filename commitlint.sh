@@ -1,6 +1,6 @@
 #!/bin/env bash
 
-types="build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|conf|breaking"
+types="build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|conf|breaking|patch"
 
 # Create a regex for a conventional commit.
 convetional_commit_regex="^($types)(\(.+\))?!?: .+$"
