@@ -4,6 +4,7 @@
 > Patch
 - **commitlint:** added patch support
 - **fzf:** added live grep current buffer `<c-y>`
+- **neotree:** Neotree Reveal map now uses vim.keymap.set
 
 
 <a name="v4.4.1"></a>

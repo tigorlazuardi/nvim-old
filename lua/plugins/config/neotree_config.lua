@@ -209,9 +209,7 @@ return function(use)
 				},
 			})
 
-			require('which-key').register({
-				['<c-e>'] = { '<cmd>Neotree reveal<cr>', 'Open Neotree' },
-			})
+			vim.keymap.set('n', '<c-e>', '<cmd>Neotree reveal<cr>', { desc = 'Open Neotree' })
 		end,
 	})
 end
