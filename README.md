@@ -36,6 +36,9 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 > Bug Fixes
 - **packer:** packer snapshot only runs on every new compile
 
+> Features
+- **fzf:** prefer to use sk instead of fzf
+
 
 <a name="v4.4.0"></a>
 ### [v4.4.0] - 2022-05-18

@@ -4,7 +4,11 @@ return function(use)
 		requires = {
 			-- optional for icon support
 			{ 'kyazdani42/nvim-web-devicons' },
-			{ 'junegunn/fzf', run = './install --bin', disable = vim.fn.exepath('fzf') ~= '' },
+			{
+				'junegunn/fzf',
+				run = './install --bin',
+				disable = vim.fn.exepath('sk') ~= '' or vim.fn.exepath('fzf') ~= '',
+			},
 		},
 		after = { 'telescope.nvim' },
 		config = function()
