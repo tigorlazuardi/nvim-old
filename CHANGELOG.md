@@ -1,6 +1,13 @@
 <a name="latest"></a>
 ### [Latest]
 
+> Bug Fixes
+- **packer:** packer snapshot only runs on every new compile
+
+
+<a name="v4.4.0"></a>
+### [v4.4.0] - 2022-05-18
+
 > Features
 - **fzf-lua:** added fzf lua and migrate options from telescope to fzf lua
 - **learning:** added learning section for personal use
@@ -904,7 +911,8 @@
 - initial commit
 
 
-[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.3.2...HEAD
+[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.4.0...HEAD
+[v4.4.0]: https://github.com/tigorlazuardi/nvim/compare/v4.3.2...v4.4.0
 [v4.3.2]: https://github.com/tigorlazuardi/nvim/compare/v4.3.1...v4.3.2
 [v4.3.1]: https://github.com/tigorlazuardi/nvim/compare/v4.3.0...v4.3.1
 [v4.3.0]: https://github.com/tigorlazuardi/nvim/compare/v4.2.1...v4.3.0

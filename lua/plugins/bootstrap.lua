@@ -36,7 +36,7 @@ packer.init({
 })
 
 vim.api.nvim_create_autocmd('User', {
-	pattern = { 'PackerComplete' },
+	pattern = { 'PackerCompileDone' },
 	desc = 'Roll snapshot upon packer sync',
 	callback = function()
 		local util = require('packer.util')
