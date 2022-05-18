@@ -28,6 +28,9 @@ local M = {
 	definitions = function()
 		vim.notify('no plugins support for go to definitions', 'error', opts)
 	end,
+	type_definitions = function()
+		vim.notify('no plugins support for go to type definitions', 'error', opts)
+	end,
 }
 
 return M

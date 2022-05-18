@@ -2,6 +2,13 @@
 ### [Latest]
 
 > Patch
+- **fzf:** added go to type definition
+
+
+<a name="v4.4.2"></a>
+### [v4.4.2] - 2022-05-18
+
+> Patch
 - **commitlint:** added patch support
 - **fzf:** added live grep current buffer `<c-y>`
 - **neotree:** Neotree Reveal map now uses vim.keymap.set
@@ -926,7 +933,8 @@
 - initial commit
 
 
-[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.4.1...HEAD
+[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.4.2...HEAD
+[v4.4.2]: https://github.com/tigorlazuardi/nvim/compare/v4.4.1...v4.4.2
 [v4.4.1]: https://github.com/tigorlazuardi/nvim/compare/v4.4.0...v4.4.1
 [v4.4.0]: https://github.com/tigorlazuardi/nvim/compare/v4.3.2...v4.4.0
 [v4.3.2]: https://github.com/tigorlazuardi/nvim/compare/v4.3.1...v4.3.2

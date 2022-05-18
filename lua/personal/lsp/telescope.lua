@@ -25,6 +25,9 @@ local M = {
 	definitions = function()
 		telescope.lsp_definitions()
 	end,
+	type_definitions = function()
+		telescope.lsp_type_definitions()
+	end,
 }
 
 return M

@@ -52,6 +52,12 @@ return function(client, bufnr)
 			end,
 			'(LSP) Search Workspace Symbols',
 		},
+		gO = {
+			function()
+				lsp_mappings.type_definitions()
+			end,
+			'(LSP) Go to Type Definition',
+		},
 		gn = {
 			name = '+diagnostic',
 			n = {

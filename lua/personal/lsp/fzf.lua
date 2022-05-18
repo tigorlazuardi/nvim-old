@@ -25,6 +25,9 @@ local M = {
 	definitions = function()
 		fzf_lua.lsp_definitions()
 	end,
+	type_definitions = function()
+		fzf_lua.lsp_typedefs()
+	end,
 }
 
 return M
