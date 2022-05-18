@@ -3,7 +3,11 @@ return function(use)
 		'akinsho/flutter-tools.nvim',
 		wants = { 'plenary.nvim', 'nvim-lspconfig', 'telescope.nvim', 'nvim-dap' },
 		config = function()
-			require('telescope').load_extension('flutter')
+			local ok, telescope = pcall(require, 'telescope')
+			if ok then
+				telescope.load_extension('flutter')
+			end
+
 			local lsp_installer_servers = require('nvim-lsp-installer.servers')
 			local server_available, dartls = lsp_installer_servers.get_server('dartls')
 			if server_available then

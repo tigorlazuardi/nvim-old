@@ -15,6 +15,7 @@ return function(client, bufnr)
 		toggle_key = '<m-x>',
 	}, bufnr)
 
+	local lsp_mappings = require('personal.lsp.mappings')
 	local wk = require('which-key')
 	wk.register({
 		K = {
@@ -34,15 +35,21 @@ return function(client, bufnr)
 			},
 		},
 		gi = {
-			"<cmd>lua require('telescope.builtin').lsp_implementations()<cr>",
+			function()
+				lsp_mappings.implementations()
+			end,
 			'(LSP) Go to Symbol Implementations',
 		},
 		gs = {
-			"<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>",
+			function()
+				lsp_mappings.document_symbols()
+			end,
 			'(LSP) List Symbols (Current Buffer)',
 		},
 		gS = {
-			"<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>",
+			function()
+				lsp_mappings.live_workspace_symbols()
+			end,
 			'(LSP) Search Workspace Symbols',
 		},
 		gn = {
@@ -69,11 +76,15 @@ return function(client, bufnr)
 			'(LSP) Code Actions',
 		},
 		gr = {
-			"<cmd>lua require('telescope.builtin').lsp_references()<cr>",
+			function()
+				lsp_mappings.references()
+			end,
 			'(LSP) Symbol References',
 		},
 		gd = {
-			"<cmd>lua require('telescope.builtin').lsp_definitions()<cr>",
+			function()
+				lsp_mappings.definitions()
+			end,
 			'(LSP) Go to Symbol Definition',
 		},
 		gD = {

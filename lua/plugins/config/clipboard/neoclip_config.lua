@@ -33,7 +33,11 @@ return function(use)
 					},
 				},
 			})
-			require('telescope').load_extension('neoclip')
+
+			local ok, telescope = pcall(require, 'telescope')
+			if ok then
+				telescope.load_extension('neoclip')
+			end
 
 			local wk = require('which-key')
 			wk.register({

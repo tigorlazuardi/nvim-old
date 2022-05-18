@@ -13,7 +13,10 @@ local function config()
 	require('plugins.config.debugger.node_js')
 	require('plugins.config.debugger.nvim')
 
-	require('telescope').load_extension('dap')
+	local ok, telescope = pcall(require, 'telescope')
+	if ok then
+		telescope.load_extension('dap')
+	end
 
 	local wk = require('which-key')
 
