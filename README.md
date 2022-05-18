@@ -35,6 +35,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 
 > Patch
 - **commitlint:** added patch support
+- **fzf:** added live grep current buffer `<c-y>`
 
 
 <a name="v4.4.1"></a>

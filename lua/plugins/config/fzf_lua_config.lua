@@ -27,6 +27,9 @@ return function(use)
 			nmap('<c-t>', function()
 				fzf_lua.live_grep_native()
 			end)
+			nmap('<c-y>', function()
+				fzf_lua.lgrep_curbuf()
+			end)
 
 			fzf_lua.setup({
 				fzf_bin = vim.fn.exepath('sk') ~= '' and 'sk' or 'fzf',
