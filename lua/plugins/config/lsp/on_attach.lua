@@ -65,7 +65,9 @@ return function(client, bufnr)
 				'(LSP) Show Line Diagnostic',
 			},
 			N = {
-				"<cmd>lua require('telescope.builtin').diagnostics()<cr>",
+				function()
+					lsp_mappings.workspace_diagnostics()
+				end,
 				'(LSP) Show Workspace Diagnostics',
 			},
 			p = {

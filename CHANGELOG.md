@@ -2,6 +2,13 @@
 ### [Latest]
 
 > Minor Update
+- **lsp:** calling diagnostic list now uses lsp_mappings
+
+
+<a name="v4.5.2"></a>
+### [v4.5.2] - 2022-05-19
+
+> Minor Update
 - **lsp:** added support for Incoming Calls
 
 
@@ -1064,7 +1071,8 @@
 - initial commit
 
 
-[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.5.1...HEAD
+[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.5.2...HEAD
+[v4.5.2]: https://github.com/tigorlazuardi/nvim/compare/v4.5.1...v4.5.2
 [v4.5.1]: https://github.com/tigorlazuardi/nvim/compare/v4.5.0...v4.5.1
 [v4.5.0]: https://github.com/tigorlazuardi/nvim/compare/v4.4.3...v4.5.0
 [v4.4.3]: https://github.com/tigorlazuardi/nvim/compare/v4.4.2...v4.4.3
