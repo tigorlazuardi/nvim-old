@@ -34,6 +34,13 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 ### [Latest]
 
 > Minor Update
+- **lsp:** added support for Incoming Calls
+
+
+<a name="v4.5.1"></a>
+### [v4.5.1] - 2022-05-19
+
+> Minor Update
 - **nvim-gps:** added small space in front so it's prettier to look at
 
 > Revert
@@ -1089,7 +1096,8 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - initial commit
 
 
-[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.5.0...HEAD
+[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.5.1...HEAD
+[v4.5.1]: https://github.com/tigorlazuardi/nvim/compare/v4.5.0...v4.5.1
 [v4.5.0]: https://github.com/tigorlazuardi/nvim/compare/v4.4.3...v4.5.0
 [v4.4.3]: https://github.com/tigorlazuardi/nvim/compare/v4.4.2...v4.4.3
 [v4.4.2]: https://github.com/tigorlazuardi/nvim/compare/v4.4.1...v4.4.2

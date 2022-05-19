@@ -87,6 +87,12 @@ return function(client, bufnr)
 			end,
 			'(LSP) Symbol References',
 		},
+		gR = {
+			function()
+				lsp_mappings.incoming_calls()
+			end,
+			'(LSP) Incoming Calls',
+		},
 		gd = {
 			function()
 				lsp_mappings.definitions()

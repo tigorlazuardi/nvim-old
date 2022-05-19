@@ -25,6 +25,9 @@ local M = {
 	references = function()
 		vim.notify('no plugins support for go to references', 'error', opts)
 	end,
+	incoming_calls = function()
+		vim.notify('no plugins support for go to incoming calls', 'error', opts)
+	end,
 	definitions = function()
 		vim.notify('no plugins support for go to definitions', 'error', opts)
 	end,

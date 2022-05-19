@@ -22,6 +22,9 @@ local M = {
 	references = function()
 		telescope.lsp_references()
 	end,
+	incoming_calls = function()
+		telescope.lsp_references()
+	end,
 	definitions = function()
 		telescope.lsp_definitions()
 	end,

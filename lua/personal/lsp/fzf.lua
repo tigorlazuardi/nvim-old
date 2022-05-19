@@ -22,6 +22,9 @@ local M = {
 	references = function()
 		fzf_lua.lsp_references()
 	end,
+	incoming_calls = function()
+		fzf_lua.lsp_incoming_calls()
+	end,
 	definitions = function()
 		fzf_lua.lsp_definitions()
 	end,
