@@ -1,6 +1,9 @@
 <a name="latest"></a>
 ### [Latest]
 
+> Features
+- **gps:** added nvim-gps
+
 > Various Actions
 - update snapshot
 
