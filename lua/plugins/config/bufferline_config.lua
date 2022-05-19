@@ -39,7 +39,7 @@ return function(use)
 							groups.builtin.ungrouped,
 							{
 								name = 'Tests', -- Mandatory
-								auto_close = true,
+								auto_close = false,
 								icon = '', -- Optional
 								matcher = function(buf) -- Mandatory
 									return buf.name:match('%_test') or buf.name:match('%_spec')

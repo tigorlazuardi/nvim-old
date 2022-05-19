@@ -1,6 +1,13 @@
 <a name="latest"></a>
 ### [Latest]
 
+> Minor Update
+- **bufferline:** tests group now not auto_close
+
+
+<a name="v4.6.0"></a>
+### [v4.6.0] - 2022-05-19
+
 > Features
 - **bufferline:** added group support
 
@@ -1084,7 +1091,8 @@
 - initial commit
 
 
-[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.5.3...HEAD
+[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.6.0...HEAD
+[v4.6.0]: https://github.com/tigorlazuardi/nvim/compare/v4.5.3...v4.6.0
 [v4.5.3]: https://github.com/tigorlazuardi/nvim/compare/v4.5.2...v4.5.3
 [v4.5.2]: https://github.com/tigorlazuardi/nvim/compare/v4.5.1...v4.5.2
 [v4.5.1]: https://github.com/tigorlazuardi/nvim/compare/v4.5.0...v4.5.1
