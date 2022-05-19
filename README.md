@@ -33,6 +33,13 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 <a name="latest"></a>
 ### [Latest]
 
+> Performance Improvements
+- **lsp:** split and go to definition is now set on schedule to prevent too fast movements
+
+
+<a name="v4.5.3"></a>
+### [v4.5.3] - 2022-05-19
+
 > Minor Update
 - **lsp:** calling diagnostic list now uses lsp_mappings
 
@@ -1103,7 +1110,8 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - initial commit
 
 
-[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.5.2...HEAD
+[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.5.3...HEAD
+[v4.5.3]: https://github.com/tigorlazuardi/nvim/compare/v4.5.2...v4.5.3
 [v4.5.2]: https://github.com/tigorlazuardi/nvim/compare/v4.5.1...v4.5.2
 [v4.5.1]: https://github.com/tigorlazuardi/nvim/compare/v4.5.0...v4.5.1
 [v4.5.0]: https://github.com/tigorlazuardi/nvim/compare/v4.4.3...v4.5.0

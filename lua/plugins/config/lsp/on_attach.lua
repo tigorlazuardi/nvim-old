@@ -104,7 +104,7 @@ return function(client, bufnr)
 		gD = {
 			function()
 				vim.cmd('vsplit')
-				vim.lsp.buf.definition()
+				vim.schedule(vim.lsp.buf.definition)
 			end,
 			'(LSP) Go To Definitions (V-Split)',
 		},
