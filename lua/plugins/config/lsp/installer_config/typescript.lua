@@ -72,4 +72,4 @@ local opts = {
 	end,
 }
 
-return opts
+require('lspconfig').tsserver.setup(opts)

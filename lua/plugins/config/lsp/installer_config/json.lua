@@ -18,7 +18,11 @@ local opts = {
 		json = {
 			schemas = require('schemastore').json.schemas(),
 		},
+		yaml = {
+			schemas = require('schemastore').json.schemas(),
+		},
 	},
 }
 
-return opts
+require('lspconfig').yamlls.setup(opts)
+require('lspconfig').jsonls.setup(opts)

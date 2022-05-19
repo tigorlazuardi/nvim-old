@@ -12,6 +12,7 @@ return function(use)
 			'williamboman/nvim-lsp-installer',
 			'j-hui/fidget.nvim',
 			'jose-elias-alvarez/nvim-lsp-ts-utils',
+			'b0o/schemastore.nvim',
 		},
 		setup = function()
 			vim.diagnostic.config({
@@ -41,6 +42,9 @@ return function(use)
 			)
 		end,
 		config = function()
+			require('nvim-lsp-installer').setup({
+				automatic_installation = true,
+			})
 			local wk = require('which-key')
 
 			wk.register({
@@ -50,7 +54,7 @@ return function(use)
 					r = { '<cmd>LspRestart<cr>', 'LSP Restart' },
 					S = {
 						function()
-							for _, client in pairs(vim.lsp.buf_get_clients()) do
+							for _, client in pairs(vim.lsp.get_active_clients()) do
 								client.stop()
 							end
 						end,

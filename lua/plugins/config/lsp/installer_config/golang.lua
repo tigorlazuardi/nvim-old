@@ -1,6 +1,5 @@
 local capabilities = require('plugins.config.lsp.capabilities')
 local on_attach = require('plugins.config.lsp.on_attach')
-
 local opts = {
 	capabilities = capabilities,
 	on_attach = function(client, bufnr)
@@ -93,12 +92,5 @@ local opts = {
 	},
 }
 
-if vim.fn.exepath('gopls') ~= '' then
-	require('lspconfig').gopls.setup(opts)
-end
-
-if vim.fn.exepath('golangci-lint-langserver') ~= '' and vim.fn.exepath('golangci-lint') ~= '' then
-	require('lspconfig').golangci_lint_ls.setup({})
-end
-
-return opts
+require('lspconfig').gopls.setup(opts)
+require('lspconfig').golangci_lint_ls.setup({})

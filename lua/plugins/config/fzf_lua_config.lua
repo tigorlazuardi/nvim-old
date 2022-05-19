@@ -10,6 +10,7 @@ return function(use)
 				disable = vim.fn.exepath('sk') ~= '' or vim.fn.exepath('fzf') ~= '',
 			},
 		},
+		disable = vim.g.is_windows,
 		after = { 'telescope.nvim' },
 		config = function()
 			local fzf_lua = require('fzf-lua')

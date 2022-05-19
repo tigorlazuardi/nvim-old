@@ -19,19 +19,19 @@ local function run()
 		silent_chdir = true,
 	})
 
-	-- local wk = require('which-key')
-	-- wk.register({
-	-- 	['<leader>f'] = {
-	-- 		name = '+find',
-	-- 		f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", 'Find File' },
-	-- 		g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", 'Live Grep (Word Search)' },
-	-- 		b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", 'Find Buffer' },
-	-- 		h = { "<cmd>lua require('telescope.builtin').help_tags()<cr>", 'List Help Tags' },
-	-- 		c = { require('personal.telescope.cd'), 'Change Directory' },
-	-- 		o = { "<cmd>lua require('telescope.builtin').oldfiles()<cr>", 'List Recent Files' },
-	-- 	},
-	-- 	M = { '<cmd>Telescope marks<cr>', 'Show Marks' },
-	-- })
+	local wk = require('which-key')
+	wk.register({
+		['<leader>f'] = {
+			name = '+find',
+			f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", 'Find File' },
+			g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", 'Live Grep (Word Search)' },
+			b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", 'Find Buffer' },
+			h = { "<cmd>lua require('telescope.builtin').help_tags()<cr>", 'List Help Tags' },
+			c = { require('personal.telescope.cd'), 'Change Directory' },
+			o = { "<cmd>lua require('telescope.builtin').oldfiles()<cr>", 'List Recent Files' },
+		},
+		M = { '<cmd>Telescope marks<cr>', 'Show Marks' },
+	})
 
 	local trouble = require('trouble.providers.telescope')
 
@@ -111,31 +111,31 @@ local function run()
 	telescope.load_extension('fzf')
 
 	-- local fb_open = require('telescope').extensions.file_browser.file_browser
-	-- wk.register({
-	-- 	-- ['<c-e>'] = {
-	-- 	-- 	function()
-	-- 	-- 		fb_open({
-	-- 	-- 			path = '%:p:h',
-	-- 	-- 			hidden = true,
-	-- 	-- 			select_buffer = true,
-	-- 	-- 		})
-	-- 	-- 	end,
-	-- 	-- 	'Open File Browser',
-	-- 	-- },
-	-- 	['<c-t>'] = {
-	-- 		[[<cmd>Telescope live_grep<cr>]],
-	-- 		'Live Grep (Word Search)',
-	-- 	},
-	-- 	['<c-b>'] = {
-	-- 		[[<cmd>Telescope buffers<cr>]],
-	-- 		'Buffer Picker',
-	-- 	},
-	-- 	['<c-f>'] = {
-	-- 		[[<cmd>Telescope find_files hidden=true<cr>]],
-	-- 		'File Picker',
-	-- 	},
-	-- 	['<leader>fe'] = { '<cmd>Telescope env<cr>', 'Find Environment Variables' },
-	-- })
+	wk.register({
+		-- ['<c-e>'] = {
+		-- 	function()
+		-- 		fb_open({
+		-- 			path = '%:p:h',
+		-- 			hidden = true,
+		-- 			select_buffer = true,
+		-- 		})
+		-- 	end,
+		-- 	'Open File Browser',
+		-- },
+		['<c-t>'] = {
+			[[<cmd>Telescope live_grep<cr>]],
+			'Live Grep (Word Search)',
+		},
+		['<c-b>'] = {
+			[[<cmd>Telescope buffers<cr>]],
+			'Buffer Picker',
+		},
+		['<c-f>'] = {
+			[[<cmd>Telescope find_files hidden=true<cr>]],
+			'File Picker',
+		},
+		['<leader>fe'] = { '<cmd>Telescope env<cr>', 'Find Environment Variables' },
+	})
 end
 
 return function(use)
