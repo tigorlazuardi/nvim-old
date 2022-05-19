@@ -33,6 +33,13 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 <a name="latest"></a>
 ### [Latest]
 
+> Revert
+- **nvim-treesitter-context:** removed in favor of nvim-gps and winbar
+
+
+<a name="v4.5.0"></a>
+### [v4.5.0] - 2022-05-19
+
 > Features
 - **gps:** added nvim-gps
 
@@ -1079,7 +1086,8 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - initial commit
 
 
-[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.4.3...HEAD
+[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.5.0...HEAD
+[v4.5.0]: https://github.com/tigorlazuardi/nvim/compare/v4.4.3...v4.5.0
 [v4.4.3]: https://github.com/tigorlazuardi/nvim/compare/v4.4.2...v4.4.3
 [v4.4.2]: https://github.com/tigorlazuardi/nvim/compare/v4.4.1...v4.4.2
 [v4.4.1]: https://github.com/tigorlazuardi/nvim/compare/v4.4.0...v4.4.1

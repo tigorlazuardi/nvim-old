@@ -89,7 +89,7 @@ return function(use)
 			'nvim-treesitter/nvim-treesitter-textobjects',
 			'p00f/nvim-ts-rainbow',
 			'lewis6991/spellsitter.nvim',
-			'romgrk/nvim-treesitter-context',
+			-- 'romgrk/nvim-treesitter-context',
 			'windwp/nvim-ts-autotag',
 			'RRethy/nvim-treesitter-endwise',
 			'nvim-treesitter/playground',
