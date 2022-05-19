@@ -7,9 +7,10 @@ return function(use)
 			vim.opt.termguicolors = true
 		end,
 		config = function()
+			local groups = require('bufferline.groups')
 			require('bufferline').setup({
 				options = {
-					numbers = 'buffer_id',
+					numbers = 'none',
 					custom_filter = function(bufnr)
 						if vim.bo[bufnr].filetype ~= 'dashboard' then
 							return true
@@ -22,7 +23,6 @@ return function(use)
 						end
 					end,
 					diagnostics = 'nvim_lsp',
-					separator_style = 'thin',
 					diagnostics_indicator = function(_count, _level, diagnostics_dict, _context)
 						local s = ' '
 						for e, n in pairs(diagnostics_dict) do
@@ -31,40 +31,34 @@ return function(use)
 						end
 						return s
 					end,
-					-- TODO: Enable later after it has been fixed
-					-- groups = {
-					-- 	options = {
-					-- 		toggle_hidden_on_enter = true, -- when you re-enter a hidden group this options re-opens that group so the buffer is visible
-					-- 	},
-					-- 	items = {
-					-- 		{
-					-- 			name = 'Tests', -- Mandatory
-					-- 			highlight = { gui = 'underline', guisp = 'blue' }, -- Optional
-					-- 			priority = 2, -- determines where it will appear relative to other groups (Optional)
-					-- 			icon = '', -- Optional
-					-- 			matcher = function(buf) -- Mandatory
-					-- 				return buf.name:match('%_test') or buf.name:match('%_spec')
-					-- 			end,
-					-- 		},
-					-- 		{
-					-- 			name = 'Docs',
-					-- 			highlight = { gui = 'undercurl', guisp = 'green' },
-					-- 			auto_close = false, -- whether or not close this group if it doesn't contain the current buffer
-					-- 			matcher = function(buf)
-					-- 				return buf.name:match('%.md') or buf.name:match('%.txt')
-					-- 			end,
-					-- 			separator = { -- Optional
-					-- 				style = require('bufferline.groups').separator.tab,
-					-- 			},
-					-- 		},
-					-- 	},
-					-- },
+					groups = {
+						options = {
+							toggle_hidden_on_enter = true, -- when you re-enter a hidden group this options re-opens that group so the buffer is visible
+						},
+						items = {
+							groups.builtin.ungrouped,
+							{
+								name = 'Tests', -- Mandatory
+								auto_close = true,
+								icon = '', -- Optional
+								matcher = function(buf) -- Mandatory
+									return buf.name:match('%_test') or buf.name:match('%_spec')
+								end,
+							},
+							{
+								name = 'Docs',
+								auto_close = true, -- whether or not close this group if it doesn't contain the current buffer
+								icon = '', -- Optional
+								matcher = function(buf)
+									return buf.name:match('%.md') or buf.name:match('%.txt')
+								end,
+							},
+						},
+					},
 				},
 			})
-			require('which-key').register({
-				['[t'] = { '<cmd>BufferLineCyclePrev<cr>', 'Previous Buffer' },
-				[']t'] = { '<cmd>BufferLineCycleNext<cr>', 'Next Buffer' },
-			})
+			vim.keymap.set('n', '[t', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Previous Buffer' })
+			vim.keymap.set('n', ']t', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next Buffer' })
 		end,
 	})
 end

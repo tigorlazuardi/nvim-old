@@ -9,10 +9,10 @@ return function(use)
 				},
 			})
 
-			wk.register({
-				[']t'] = { '<cmd>bn!<cr>', 'Next Buffer' },
-				['[t'] = { '<cmd>bp!<cr>', 'Previous Buffer' },
-			})
+			-- wk.register({
+			-- 	[']t'] = { '<cmd>bn!<cr>', 'Next Buffer' },
+			-- 	['[t'] = { '<cmd>bp!<cr>', 'Previous Buffer' },
+			-- })
 
 			wk.register({
 				['g?'] = {

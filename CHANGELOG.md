@@ -1,6 +1,9 @@
 <a name="latest"></a>
 ### [Latest]
 
+> Features
+- **bufferline:** added group support
+
 > Performance Improvements
 - **lsp:** split and go to definition is now set on schedule to prevent too fast movements
 
