@@ -1,6 +1,9 @@
 <a name="latest"></a>
 ### [Latest]
 
+> Minor Update
+- **nvim-gps:** added small space in front so it's prettier to look at
+
 > Revert
 - **nvim-treesitter-context:** removed in favor of nvim-gps and winbar
 
@@ -18,14 +21,14 @@
 <a name="v4.4.3"></a>
 ### [v4.4.3] - 2022-05-18
 
-> Patch
+> Minor Update
 - **fzf:** added go to type definition
 
 
 <a name="v4.4.2"></a>
 ### [v4.4.2] - 2022-05-18
 
-> Patch
+> Minor Update
 - **commitlint:** added patch support
 - **fzf:** added live grep current buffer `<c-y>`
 - **neotree:** Neotree Reveal map now uses vim.keymap.set

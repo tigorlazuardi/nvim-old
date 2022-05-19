@@ -20,6 +20,7 @@ options:
             conf: Configuration
             docs: Documentation
             chore: Various Actions
+            patch: Minor Update
     header:
         pattern: "^(\\w*)(?:\\(([\\w\\$\\.\\-\\*\\s]*)\\))?\\:\\s(.*)$"
         pattern_maps:
