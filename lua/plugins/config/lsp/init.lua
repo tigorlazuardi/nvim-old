@@ -1,5 +1,4 @@
 return function(use)
-	require('plugins.config.lsp.rust')(use)
 	use({
 		'neovim/nvim-lspconfig',
 		requires = {
@@ -13,6 +12,7 @@ return function(use)
 			'j-hui/fidget.nvim',
 			'jose-elias-alvarez/nvim-lsp-ts-utils',
 			'b0o/schemastore.nvim',
+			'simrat39/rust-tools.nvim',
 		},
 		setup = function()
 			vim.diagnostic.config({
