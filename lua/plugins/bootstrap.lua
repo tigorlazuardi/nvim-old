@@ -37,7 +37,7 @@ packer.init({
 
 vim.api.nvim_create_autocmd('User', {
 	pattern = { 'PackerCompileDone' },
-	desc = 'Roll snapshot upon packer sync',
+	desc = 'Create snapshot upon packer compile when snapshot does not exist',
 	callback = function()
 		local util = require('packer.util')
 		local snapshot_path = util.join_paths(vim.fn.stdpath('config'), '.snapshots')
@@ -53,29 +53,51 @@ vim.api.nvim_create_autocmd('User', {
 
 		file_iterator:close()
 
-		if vim.fn.filereadable(latest_snapshot_path) == 1 then
-			os.remove(latest_snapshot_path)
-		end
-
-		if vim.fn.filereadable(current_day_snapshot_path) == 1 then
-			os.remove(current_day_snapshot_path)
-		end
-
-		if #files == 0 then
-			packer.snapshot(current_day_snapshot)
+		if vim.fn.filereadable(latest_snapshot_path) == 0 then
 			packer.snapshot('latest.json')
-			return
 		end
 
-		--- only support 10 snapshots
-		if #files > 11 then
-			--- remove oldest not 'latest.json' file
-			os.remove(util.join_paths(snapshot_path, files[#files - 1]))
+		if vim.fn.filereadable(current_day_snapshot_path) == 0 then
+			packer.snapshot(current_day_snapshot)
 		end
-
-		packer.snapshot(current_day_snapshot)
-		packer.snapshot('latest.json')
 	end,
 })
+
+local function update_and_roll()
+	local util = require('packer.util')
+	local snapshot_path = util.join_paths(vim.fn.stdpath('config'), '.snapshots')
+	local latest_snapshot_path = util.join_paths(snapshot_path, 'latest.json')
+	local file_iterator = io.popen('ls ' .. snapshot_path)
+	local files = {}
+	local current_day_snapshot = os.date('%Y-%m-%d') .. '.json'
+	local current_day_snapshot_path = util.join_paths(snapshot_path, current_day_snapshot)
+
+	for file in file_iterator:lines() do
+		table.insert(files, file)
+	end
+
+	file_iterator:close()
+
+	if vim.fn.filereadable(latest_snapshot_path) == 1 then
+		os.remove(latest_snapshot_path)
+	end
+
+	if vim.fn.filereadable(current_day_snapshot_path) == 1 then
+		os.remove(current_day_snapshot_path)
+	end
+
+	--- only support 10 snapshots
+	if #files > 11 then
+		--- remove oldest not 'latest.json' file
+		os.remove(util.join_paths(snapshot_path, files[#files - 1]))
+	end
+
+	packer.sync()
+end
+
+local desc = { desc = 'Update and Roll snapshot upon packer sync' }
+
+vim.keymap.set('n', '<leader>pU', update_and_roll, desc)
+vim.api.nvim_create_user_command('PackerUpdateAndRoll', update_and_roll, desc)
 
 return packer
