@@ -4,6 +4,9 @@
 > Performance Improvements
 - **lsp:** split and go to definition is now set on schedule to prevent too fast movements
 
+> Revert
+- **theme:** revert to catpuccin
+
 
 <a name="v4.5.3"></a>
 ### [v4.5.3] - 2022-05-19
