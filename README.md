@@ -37,6 +37,9 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **lsp:** rust tools move to top
 - **packer:** added check if ls failed
 
+> Various Actions
+- **snapshot:** update
+
 
 <a name="v4.7.0"></a>
 ### [v4.7.0] - 2022-05-19
