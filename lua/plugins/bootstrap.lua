@@ -43,6 +43,10 @@ vim.api.nvim_create_autocmd('User', {
 		local snapshot_path = util.join_paths(vim.fn.stdpath('config'), '.snapshots')
 		local latest_snapshot_path = util.join_paths(snapshot_path, 'latest.json')
 		local file_iterator = io.popen('ls ' .. snapshot_path)
+		if not file_iterator then
+			vim.notify('Failed to run "ls" command', 'error')
+			return
+		end
 		local files = {}
 		local current_day_snapshot = os.date('%Y-%m-%d') .. '.json'
 		local current_day_snapshot_path = util.join_paths(snapshot_path, current_day_snapshot)

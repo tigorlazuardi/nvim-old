@@ -34,6 +34,15 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 ### [Latest]
 
 > Features
+- **lsp:** rust tools move to top
+- **packer:** added check if ls failed
+
+
+<a name="v4.7.0"></a>
+### [v4.7.0] - 2022-05-19
+
+> Features
+- **lsp:** windows compability reasons
 - **packer:** snapshot only created when using PackerUpdateAndRoll
 
 
@@ -1026,7 +1035,8 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - initial commit
 
 
-[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.6.1...HEAD
+[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.7.0...HEAD
+[v4.7.0]: https://github.com/tigorlazuardi/nvim/compare/v4.6.1...v4.7.0
 [v4.6.1]: https://github.com/tigorlazuardi/nvim/compare/v4.6.0...v4.6.1
 [v4.6.0]: https://github.com/tigorlazuardi/nvim/compare/v4.5.3...v4.6.0
 [v4.5.3]: https://github.com/tigorlazuardi/nvim/compare/v4.5.2...v4.5.3
