@@ -6,6 +6,7 @@
 - **packer:** added check if ls failed
 
 > Various Actions
+- **snapshot:** update dependencies
 - **snapshot:** update
 
 

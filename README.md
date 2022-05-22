@@ -38,6 +38,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **packer:** added check if ls failed
 
 > Various Actions
+- **snapshot:** update dependencies
 - **snapshot:** update
 
 
