@@ -48,7 +48,6 @@ local function run()
 		},
 	})
 
-	-- local fb_actions = require('telescope').extensions.file_browser.actions
 	telescope.setup({
 		defaults = {
 			mappings = {
@@ -64,46 +63,12 @@ local function run()
 				case_mode = 'smart_case', -- or "ignore_case" or "respect_case"
 				-- the default case_mode is "smart_case"
 			},
-			-- ['ui-select'] = {
-			-- 	require('telescope.themes').get_dropdown({}),
-			-- },
-			-- file_browser = {
-			-- 	mappings = {
-			-- 		['i'] = {
-			-- 			['<c-g>'] = fb_actions.goto_cwd,
-			-- 			['<c-h>'] = fb_actions.goto_parent_dir,
-			-- 			['<c-b>'] = fb_actions.create,
-			-- 			['<c-f>'] = fb_actions.toggle_browser,
-			-- 			['<c-i>'] = fb_actions.rename,
-			-- 			['<c-x>'] = fb_actions.move,
-			-- 			['<c-y>'] = fb_actions.copy,
-			-- 			['<c-r>'] = fb_actions.remove,
-			-- 			['<c-l>'] = fb_actions.toggle_hidden,
-			-- 		},
-			-- 		['n'] = {
-			-- 			['g'] = fb_actions.goto_cwd,
-			-- 			['<c-h>'] = fb_actions.goto_parent_dir,
-			-- 			['b'] = fb_actions.create,
-			-- 			['f'] = fb_actions.toggle_browser,
-			-- 			['<c-i>'] = fb_actions.rename,
-			-- 			['x'] = fb_actions.move,
-			-- 			['y'] = fb_actions.copy,
-			-- 			['r'] = fb_actions.remove,
-			-- 			['<c-l>'] = fb_actions.toggle_hidden,
-			-- 		},
-			-- 	},
-			-- },
 		},
 	})
 	telescope.load_extension('projects')
-	-- telescope.load_extension('sessions')
 	telescope.load_extension('env')
-	-- telescope.load_extension('file_browser')
-
-	-- telescope.load_extension('ui-select')
 	telescope.load_extension('fzf')
 
-	-- local fb_open = require('telescope').extensions.file_browser.file_browser
 	vim.keymap.set('n', '<c-t>', '<cmd>Telescope live_grep<cr>', { desc = 'Live Grep (Word Search)' })
 	vim.keymap.set('n', '<c-b>', '<cmd>Telescope buffers<cr>', { desc = 'Buffer Picker' })
 	vim.keymap.set('n', '<c-f>', '<cmd>Telescope find_files hidden=true<cr>', { desc = 'File Picker' })
@@ -121,7 +86,6 @@ return function(use)
 			{ 'ahmedkhalf/project.nvim' },
 			{ 'Shatur/neovim-session-manager' },
 			{ 'LinArcX/telescope-env.nvim' },
-			-- { 'nvim-telescope/telescope-ui-select.nvim' },
 		},
 		config = run,
 	})

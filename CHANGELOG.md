@@ -10,6 +10,7 @@
 - **snapshot:** update snapshot
 - **snapshot:** update dependencies
 - **snapshot:** update
+- **telescope:** code cleanup
 
 
 <a name="v4.7.0"></a>
