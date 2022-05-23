@@ -33,6 +33,13 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 <a name="latest"></a>
 ### [Latest]
 
+> Features
+- **fzf-lua:** added description to mappings
+
+
+<a name="v4.8.0"></a>
+### [v4.8.0] - 2022-05-23
+
 > Code Refactoring
 - **flutter:** removed pcall
 - **flutter:** refactor flutter tools plugin config
@@ -1151,7 +1158,8 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - initial commit
 
 
-[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.7.0...HEAD
+[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.8.0...HEAD
+[v4.8.0]: https://github.com/tigorlazuardi/nvim/compare/v4.7.0...v4.8.0
 [v4.7.0]: https://github.com/tigorlazuardi/nvim/compare/v4.6.1...v4.7.0
 [v4.6.1]: https://github.com/tigorlazuardi/nvim/compare/v4.6.0...v4.6.1
 [v4.6.0]: https://github.com/tigorlazuardi/nvim/compare/v4.5.3...v4.6.0

@@ -21,16 +21,16 @@ return function(use)
 			end
 			nmap('<c-f>', function()
 				fzf_lua.files()
-			end)
+			end, { desc = 'Files Picker' })
 			nmap('<c-b>', function()
 				fzf_lua.buffers()
-			end)
+			end, { desc = 'Buffer Picker' })
 			nmap('<c-t>', function()
 				fzf_lua.live_grep_native()
-			end)
+			end, 'Live Grep (Workspace)')
 			nmap('<c-y>', function()
 				fzf_lua.lgrep_curbuf()
-			end)
+			end, { desc = 'Live Grep (Current Buffer)' })
 
 			fzf_lua.setup({
 				fzf_bin = vim.fn.exepath('sk') ~= '' and 'sk' or 'fzf',
