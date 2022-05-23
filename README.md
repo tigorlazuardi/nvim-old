@@ -36,6 +36,9 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 > Bug Fixes
 - **fzf:** fix <c-y> mapping not loaded
 
+> Code Refactoring
+- **fzf:** refactor mappings
+
 > Features
 - **fzf:** mappings moved to a special location
 - **fzf-lua:** added description to mappings
