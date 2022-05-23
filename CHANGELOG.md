@@ -9,6 +9,7 @@
 - **lsp:** rust tools move to top
 - **packer:** added check if ls failed
 - **telescope:** mappings changed from using which-key to vim.keymap.set
+- **treesitter:** on config now ensure_installed is set to all
 
 > Various Actions
 - **snapshot:** update snapshot

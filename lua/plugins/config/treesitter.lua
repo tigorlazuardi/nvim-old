@@ -1,7 +1,8 @@
 local function run()
 	require('nvim-treesitter.configs').setup({
+		ensure_installed = 'all',
 		context_commentstring = { enable = true },
-		highlight = { enable = true },
+		highlight = { enable = true, additional_vim_regex_highlighting = false },
 		-- indent = { enable = false, disable = { 'yaml', 'dart' } },
 		autopairs = { enable = true },
 		textobjects = {
