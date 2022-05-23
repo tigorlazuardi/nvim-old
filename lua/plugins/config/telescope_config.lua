@@ -68,11 +68,8 @@ local function run()
 	telescope.load_extension('projects')
 	telescope.load_extension('env')
 	telescope.load_extension('fzf')
-
-	vim.keymap.set('n', '<c-t>', '<cmd>Telescope live_grep<cr>', { desc = 'Live Grep (Word Search)' })
-	vim.keymap.set('n', '<c-b>', '<cmd>Telescope buffers<cr>', { desc = 'Buffer Picker' })
-	vim.keymap.set('n', '<c-f>', '<cmd>Telescope find_files hidden=true<cr>', { desc = 'File Picker' })
 	vim.keymap.set('n', '<leader>fe', '<cmd>Telescope env<cr>', { desc = 'Find Environment Variables' })
+	require('mappings.pickers')
 end
 
 return function(use)
