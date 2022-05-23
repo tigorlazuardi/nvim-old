@@ -22,7 +22,9 @@ return function(use)
 					},
 				},
 			})
-
+			vim.keymap.set('n', '<c-y>', function()
+				fzf_lua.lgrep_curbuf()
+			end, { desc = 'Live Grep (Current Buffer)' })
 			require('mappings.pickers')
 		end,
 	})

@@ -14,9 +14,6 @@ if ok_fzf then
 	nmap('<c-t>', function()
 		fzf_lua.live_grep_native()
 	end, 'Live Grep (Workspace)')
-	nmap('<c-y>', function()
-		fzf_lua.lgrep_curbuf()
-	end, { desc = 'Live Grep (Current Buffer)' })
 	return
 end
 

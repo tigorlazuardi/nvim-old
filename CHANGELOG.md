@@ -1,6 +1,9 @@
 <a name="latest"></a>
 ### [Latest]
 
+> Bug Fixes
+- **fzf:** fix <c-y> mapping not loaded
+
 > Features
 - **fzf:** mappings moved to a special location
 - **fzf-lua:** added description to mappings
