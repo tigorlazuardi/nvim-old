@@ -2,6 +2,7 @@
 ### [Latest]
 
 > Code Refactoring
+- **flutter:** removed pcall
 - **flutter:** refactor flutter tools plugin config
 
 > Features

@@ -34,6 +34,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 ### [Latest]
 
 > Code Refactoring
+- **flutter:** removed pcall
 - **flutter:** refactor flutter tools plugin config
 
 > Features

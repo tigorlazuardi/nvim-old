@@ -8,10 +8,8 @@ return function(use)
 			'nvim-lua/plenary.nvim',
 		},
 		config = function()
-			local ok, telescope = pcall(require, 'telescope')
-			if ok then
-				telescope.load_extension('flutter')
-			end
+			local telescope = require('telescope')
+			telescope.load_extension('flutter')
 
 			require('flutter-tools').setup({
 				debugger = {
