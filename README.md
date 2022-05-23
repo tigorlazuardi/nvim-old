@@ -33,6 +33,9 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 <a name="latest"></a>
 ### [Latest]
 
+> Code Refactoring
+- **flutter:** refactor flutter tools plugin config
+
 > Features
 - **lsp:** rust tools move to top
 - **packer:** added check if ls failed
