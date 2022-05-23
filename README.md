@@ -36,6 +36,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 > Features
 - **lsp:** rust tools move to top
 - **packer:** added check if ls failed
+- **telescope:** mappings changed from using which-key to vim.keymap.set
 
 > Various Actions
 - **snapshot:** update snapshot
