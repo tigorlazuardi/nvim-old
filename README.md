@@ -43,6 +43,9 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - **fzf:** mappings moved to a special location
 - **fzf-lua:** added description to mappings
 
+> Various Actions
+- update snapshot
+
 
 <a name="v4.8.0"></a>
 ### [v4.8.0] - 2022-05-23
