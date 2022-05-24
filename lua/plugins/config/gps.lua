@@ -19,7 +19,11 @@ return function(use)
 					if gps.is_available() then
 						vim.api.nvim_win_set_option(0, 'winbar', '%m %f | ' .. gps.get_location())
 					else
-						vim.api.nvim_win_set_option(0, 'winbar', '%m %f')
+						if vim.bo.modifiable and not vim.bo.readonly then
+							vim.api.nvim_win_set_option(0, 'winbar', '%m %f')
+						else
+							vim.api.nvim_win_set_option(0, 'winbar', '')
+						end
 					end
 				end,
 				desc = 'Update Nvim GPS on move',
