@@ -17,9 +17,9 @@ return function(use)
 				pattern = { '*' },
 				callback = function()
 					if gps.is_available() then
-						vim.api.nvim_win_set_option(0, 'winbar', ' ' .. gps.get_location())
+						vim.api.nvim_win_set_option(0, 'winbar', '%m %f | ' .. gps.get_location())
 					else
-						vim.api.nvim_win_set_option(0, 'winbar', '')
+						vim.api.nvim_win_set_option(0, 'winbar', '%m %f')
 					end
 				end,
 				desc = 'Update Nvim GPS on move',

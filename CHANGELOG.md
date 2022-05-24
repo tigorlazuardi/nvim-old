@@ -11,6 +11,7 @@
 - **fzf:** mappings moved to a special location
 - **fzf-lua:** added description to mappings
 - **lualine:** set global status on
+- **winbar:** now added modified and current file name
 
 > Various Actions
 - update snapshot
