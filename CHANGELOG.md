@@ -2,6 +2,13 @@
 ### [Latest]
 
 > Bug Fixes
+- **winbar:** empty gps now not add | symbol
+
+
+<a name="v4.9.1"></a>
+### [v4.9.1] - 2022-05-24
+
+> Bug Fixes
 - **winbar:** fix winbar appearing on non modify-able buffers
 
 
@@ -1045,7 +1052,8 @@
 - initial commit
 
 
-[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.9.0...HEAD
+[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.9.1...HEAD
+[v4.9.1]: https://github.com/tigorlazuardi/nvim/compare/v4.9.0...v4.9.1
 [v4.9.0]: https://github.com/tigorlazuardi/nvim/compare/v4.8.0...v4.9.0
 [v4.8.0]: https://github.com/tigorlazuardi/nvim/compare/v4.7.0...v4.8.0
 [v4.7.0]: https://github.com/tigorlazuardi/nvim/compare/v4.6.1...v4.7.0

@@ -17,7 +17,12 @@ return function(use)
 				pattern = { '*' },
 				callback = function()
 					if gps.is_available() then
-						vim.api.nvim_win_set_option(0, 'winbar', '%m %f | ' .. gps.get_location())
+						local g = gps.get_location()
+						if g ~= '' then
+							vim.api.nvim_win_set_option(0, 'winbar', '%m %f | ' .. g)
+						else
+							vim.api.nvim_win_set_option(0, 'winbar', '%m %f')
+						end
 					else
 						if vim.bo.modifiable and not vim.bo.readonly then
 							vim.api.nvim_win_set_option(0, 'winbar', '%m %f')
