@@ -42,6 +42,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 > Features
 - **fzf:** mappings moved to a special location
 - **fzf-lua:** added description to mappings
+- **lualine:** set global status on
 
 > Various Actions
 - update snapshot

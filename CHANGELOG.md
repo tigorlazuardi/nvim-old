@@ -10,6 +10,7 @@
 > Features
 - **fzf:** mappings moved to a special location
 - **fzf-lua:** added description to mappings
+- **lualine:** set global status on
 
 > Various Actions
 - update snapshot
