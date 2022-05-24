@@ -24,11 +24,7 @@ return function(use)
 							vim.api.nvim_win_set_option(0, 'winbar', '%m %f')
 						end
 					else
-						if vim.bo.modifiable and not vim.bo.readonly then
-							vim.api.nvim_win_set_option(0, 'winbar', '%m %f')
-						else
-							vim.api.nvim_win_set_option(0, 'winbar', '')
-						end
+						vim.api.nvim_win_set_option(0, 'winbar', '')
 					end
 				end,
 				desc = 'Update Nvim GPS on move',

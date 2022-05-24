@@ -1,6 +1,13 @@
 <a name="latest"></a>
 ### [Latest]
 
+> Revert
+- winbar only appears when gps exists
+
+
+<a name="v4.9.2"></a>
+### [v4.9.2] - 2022-05-24
+
 > Bug Fixes
 - **winbar:** empty gps now not add | symbol
 
@@ -1052,7 +1059,8 @@
 - initial commit
 
 
-[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.9.1...HEAD
+[Latest]: https://github.com/tigorlazuardi/nvim/compare/v4.9.2...HEAD
+[v4.9.2]: https://github.com/tigorlazuardi/nvim/compare/v4.9.1...v4.9.2
 [v4.9.1]: https://github.com/tigorlazuardi/nvim/compare/v4.9.0...v4.9.1
 [v4.9.0]: https://github.com/tigorlazuardi/nvim/compare/v4.8.0...v4.9.0
 [v4.8.0]: https://github.com/tigorlazuardi/nvim/compare/v4.7.0...v4.8.0
