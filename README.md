@@ -33,6 +33,9 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 <a name="latest"></a>
 ### [Latest]
 
+> Features
+- **gps:** added augroup
+
 > Revert
 - winbar only appears when gps exists
 

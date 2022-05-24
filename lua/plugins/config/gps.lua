@@ -13,8 +13,10 @@ return function(use)
 					['tag-name'] = '炙', -- Tags (example: html tags)
 				},
 			})
+			local augroup = vim.api.nvim_create_augroup('gps_move', {})
 			vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI', 'BufEnter' }, {
 				pattern = { '*' },
+				group = augroup,
 				callback = function()
 					if gps.is_available() then
 						local g = gps.get_location()

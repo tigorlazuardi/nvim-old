@@ -1,6 +1,9 @@
 <a name="latest"></a>
 ### [Latest]
 
+> Features
+- **gps:** added augroup
+
 > Revert
 - winbar only appears when gps exists
 
