@@ -61,7 +61,7 @@ vim.api.nvim_create_autocmd('User', {
 			packer.snapshot('latest.json')
 		end
 
-		if vim.fn.filereadable(current_day_snapshot_path) == 0 then
+		if not #files > 10 and vim.fn.filereadable(current_day_snapshot_path) == 0 then
 			packer.snapshot(current_day_snapshot)
 		end
 	end,
@@ -72,6 +72,7 @@ local function update_and_roll()
 	local snapshot_path = util.join_paths(vim.fn.stdpath('config'), '.snapshots')
 	local latest_snapshot_path = util.join_paths(snapshot_path, 'latest.json')
 	local file_iterator = io.popen('ls ' .. snapshot_path)
+	assert(file_iterator, 'failed to list files')
 	local files = {}
 	local current_day_snapshot = os.date('%Y-%m-%d') .. '.json'
 	local current_day_snapshot_path = util.join_paths(snapshot_path, current_day_snapshot)
@@ -90,10 +91,10 @@ local function update_and_roll()
 		os.remove(current_day_snapshot_path)
 	end
 
-	--- only support 10 snapshots
-	if #files > 11 then
-		--- remove oldest not 'latest.json' file
+	while #files > 10 do
 		os.remove(util.join_paths(snapshot_path, files[#files - 1]))
+		local removed = table.remove(files, #files - 1)
+		vim.notify(([[removed snapshot file: '%s']]):format(removed), 'info', { title = 'Update and Roll' })
 	end
 
 	packer.sync()
