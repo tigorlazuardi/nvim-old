@@ -33,13 +33,20 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 <a name="latest"></a>
 ### [Latest]
 
+> Bug Fixes
+- **filetype:** fix filetypes
+- **snapshot:** fix logic for not creating new snapshot on full
+- **snapshot:** new snapshot will not be created if there's more than 10 already exist upon packer sync
+
 > Features
+- **filetype:** env file is now considered sh
 - **gps:** added augroup
 
 > Revert
 - winbar only appears when gps exists
 
 > Various Actions
+- update snapshot
 - update snapshot
 
 

@@ -18,6 +18,7 @@ return function(use)
 						['%.vscode/launch%.json'] = 'jsonc',
 						['nginx/.*%.conf'] = 'nginx',
 						['openvpn/.*%.conf'] = 'config',
+						['.*%.env'] = 'sh', -- dotenv files
 					},
 				},
 			})
