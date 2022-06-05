@@ -10,6 +10,7 @@
 - **filetype:** env file is now considered sh
 - **gps:** added augroup
 - **null-ls:** shellcheck runtime not run on .env files
+- **nvim-lsp-installer:** removed yammls, jsonls, tsserver from default install on windows
 
 > Revert
 - winbar only appears when gps exists

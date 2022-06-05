@@ -43,7 +43,9 @@ return function(use)
 		end,
 		config = function()
 			require('nvim-lsp-installer').setup({
-				automatic_installation = true,
+				automatic_installation = {
+					exclude = vim.g.is_windows and { 'yamlls', 'jsonls', 'tsserver', 'taplo' } or { 'taplo' },
+				},
 			})
 			local wk = require('which-key')
 
