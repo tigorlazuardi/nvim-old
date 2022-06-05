@@ -25,7 +25,14 @@ end
 
 -- shell script
 if exist('shellcheck') then
-	table.insert(sources, null_ls.builtins.diagnostics.shellcheck)
+	table.insert(
+		sources,
+		null_ls.builtins.diagnostics.shellcheck.with({
+			runtime_condition = function(_utils)
+				return vim.fn.expand('%:t'):find('.env') == nil
+			end,
+		})
+	)
 end
 
 -- shell script

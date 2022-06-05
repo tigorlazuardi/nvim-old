@@ -41,6 +41,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 > Features
 - **filetype:** env file is now considered sh
 - **gps:** added augroup
+- **null-ls:** shellcheck runtime not run on .env files
 
 > Revert
 - winbar only appears when gps exists
