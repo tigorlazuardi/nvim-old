@@ -48,6 +48,7 @@ After installation is done. Run `:WhichKey` for Normal mode mappings. Run `:Whic
 - winbar only appears when gps exists
 
 > Various Actions
+- update snapshots
 - update snapshot
 - update snapshot
 

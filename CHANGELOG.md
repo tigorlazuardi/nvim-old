@@ -16,6 +16,7 @@
 - winbar only appears when gps exists
 
 > Various Actions
+- update snapshots
 - update snapshot
 - update snapshot
 
